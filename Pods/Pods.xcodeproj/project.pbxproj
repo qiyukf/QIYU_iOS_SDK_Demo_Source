@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		353B6F271DA62BD0BF83796DA5FC58A5 /* YSFALImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = AE05AA56AB3587BD5DC22A05D2AA4289 /* YSFALImageViewController.nib */; };
-		42EE6B5F4D179AC563644D5B9DB04B15 /* YSFPHGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = A30DB44F6567A875084CFC6D77432FDB /* YSFPHGridViewController.nib */; };
-		46B73997930645BB4AF6D48FCAE8E1FB /* YSFALGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 9740C4D3CD8C17DD94F20143DA521094 /* YSFALGridViewController.nib */; };
+		353B6F271DA62BD0BF83796DA5FC58A5 /* YSFALImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9E715FE9558DB38ECD2C68667F8C6B /* YSFALImageViewController.nib */; };
+		42EE6B5F4D179AC563644D5B9DB04B15 /* YSFPHGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = B12C90E72863D73BB8D9510FA74B22DB /* YSFPHGridViewController.nib */; };
+		46B73997930645BB4AF6D48FCAE8E1FB /* YSFALGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 495ACADFF78FA5A26BA7F2BFC20B8C54 /* YSFALGridViewController.nib */; };
 		937FA858C4B637F1A5AB7CB15809C212 /* Pods-YSFDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */; };
-		980DAE9F77A626ACDECEFE2081162825 /* YSFIPGridCollectionViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7B070340E0657679F2DEA378D3396 /* YSFIPGridCollectionViewCell.nib */; };
-		C4CA5DB8E02949B0B380537EA4BB3084 /* YSFALVideoViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD8CAF8547B51C4060B7D35B26F133C /* YSFALVideoViewController.nib */; };
-		C5CF30AF349A17045DA2BCEA788F024D /* YSFPHListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 6ECCBFE6817A77141C009570D6A1F9AD /* YSFPHListViewController.nib */; };
+		980DAE9F77A626ACDECEFE2081162825 /* YSFIPGridCollectionViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = 63B6EC11ADF5994E8071B0868B64CEC1 /* YSFIPGridCollectionViewCell.nib */; };
+		C4CA5DB8E02949B0B380537EA4BB3084 /* YSFALVideoViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = B647C9E11D7E60FD09DDCDA0711BB646 /* YSFALVideoViewController.nib */; };
+		C5CF30AF349A17045DA2BCEA788F024D /* YSFPHListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD336DA829656461B8C1734895A8BC4 /* YSFPHListViewController.nib */; };
 		D1401329ADCB324C15ECF7B0E549E93C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		D9A7293A02608324E266793296DA8DB4 /* YSFIPListTableViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = C4F885D331C61AA66E653C023F83A69E /* YSFIPListTableViewCell.nib */; };
-		E66EFCA46D9A3B16E4E6D28791C4A054 /* YSFPHImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD497C307F9F1EB54D75A6ABD889B5 /* YSFPHImageViewController.nib */; };
-		EF8C1AD166BBF88F7A55C8D85FCD18F1 /* YSFALListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = C32394495B3659EF5AD6A6876C180CA5 /* YSFALListViewController.nib */; };
+		D9A7293A02608324E266793296DA8DB4 /* YSFIPListTableViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABDE89EC9971DA1EF61A13A8C30FA60 /* YSFIPListTableViewCell.nib */; };
+		E66EFCA46D9A3B16E4E6D28791C4A054 /* YSFPHImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = DB826C3C90BD932157615C5CC78F04FB /* YSFPHImageViewController.nib */; };
+		EF8C1AD166BBF88F7A55C8D85FCD18F1 /* YSFALListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0070D4E3DB737660806EB2BAD586DDC3 /* YSFALListViewController.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,36 +31,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0070D4E3DB737660806EB2BAD586DDC3 /* YSFALListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALListViewController.nib; sourceTree = "<group>"; };
+		02D58C92070D6C8D25D9F1014D0EA1D5 /* QYSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSDK.h; path = SDK/ExportHeaders/QYSDK.h; sourceTree = "<group>"; };
 		080B71375E0D200908CF0A4B6EF9E1F6 /* QYResource.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QYResource.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1057F9162C7155AD155815CDCD31C4AA /* Pods-YSFDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YSFDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		1AB7B070340E0657679F2DEA378D3396 /* YSFIPGridCollectionViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPGridCollectionViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPGridCollectionViewCell.nib; sourceTree = "<group>"; };
 		2C4EE74DACD9C4836A269DDEA419E068 /* libPods-YSFDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YSFDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		47E6B27F60961A68955E72186EDD4337 /* QYSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSDK.h; path = SDK/ExportHeaders/QYSDK.h; sourceTree = "<group>"; };
-		481DA712FDD1ED2E22B5B36423454F56 /* QYCustomUIConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCustomUIConfig.h; path = SDK/ExportHeaders/QYCustomUIConfig.h; sourceTree = "<group>"; };
-		6ECCBFE6817A77141C009570D6A1F9AD /* YSFPHListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHListViewController.nib; sourceTree = "<group>"; };
+		2E669D19336CC918E12E25E6CA589269 /* QYUserInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYUserInfo.h; path = SDK/ExportHeaders/QYUserInfo.h; sourceTree = "<group>"; };
+		330C10345B4CC770D8AB5C31DD545A91 /* QYResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYResource.bundle; path = SDK/QYResource.bundle; sourceTree = "<group>"; };
+		495ACADFF78FA5A26BA7F2BFC20B8C54 /* YSFALGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALGridViewController.nib; sourceTree = "<group>"; };
+		4E59EA1AFA6302FA166CFF77E8C91D2A /* QYCommodityInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCommodityInfo.h; path = SDK/ExportHeaders/QYCommodityInfo.h; sourceTree = "<group>"; };
+		5ABDE89EC9971DA1EF61A13A8C30FA60 /* YSFIPListTableViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPListTableViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPListTableViewCell.nib; sourceTree = "<group>"; };
+		5BCBA7D06D3DB55744F79E7EE33B14A4 /* QYSessionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSessionViewController.h; path = SDK/ExportHeaders/QYSessionViewController.h; sourceTree = "<group>"; };
+		61D52AB2E4262DD11011C2A3689A58A4 /* ResourceBundle-QYResource-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-QYResource-Info.plist"; sourceTree = "<group>"; };
+		63B6EC11ADF5994E8071B0868B64CEC1 /* YSFIPGridCollectionViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPGridCollectionViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPGridCollectionViewCell.nib; sourceTree = "<group>"; };
+		65ACE2ED5803E63A9FF967609A1FFB11 /* QYSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSource.h; path = SDK/ExportHeaders/QYSource.h; sourceTree = "<group>"; };
 		6F79746E24D2FBA21D24F8F5EB7B4D8E /* Pods-YSFDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YSFDemo-resources.sh"; sourceTree = "<group>"; };
-		710917F505740AAB70A7FF9B7B86C9CB /* QYSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSource.h; path = SDK/ExportHeaders/QYSource.h; sourceTree = "<group>"; };
-		756C0CC4208479A5E0958F46F44E08CC /* ResourceBundle-QYResource-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-QYResource-Info.plist"; sourceTree = "<group>"; };
 		7BEBA7F42FDFFD02734F00D1EA6807F6 /* Pods-YSFDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YSFDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7CF641801BFF74584CDCEC92BF201CE6 /* libQYSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libQYSDK.a; path = SDK/libQYSDK.a; sourceTree = "<group>"; };
+		8087ACDCA00F9DED21F3A5A12AEE6FB8 /* QYHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYHeaders.h; path = SDK/ExportHeaders/QYHeaders.h; sourceTree = "<group>"; };
+		8BD336DA829656461B8C1734895A8BC4 /* YSFPHListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHListViewController.nib; sourceTree = "<group>"; };
 		8C283CEE881476A8EFC5A52473A9B152 /* Pods-YSFDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YSFDemo-frameworks.sh"; sourceTree = "<group>"; };
-		8CAD9125C0767650DDDF4DE3C342C598 /* libQYSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libQYSDK.a; path = SDK/libQYSDK.a; sourceTree = "<group>"; };
-		8DCD497C307F9F1EB54D75A6ABD889B5 /* YSFPHImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHImageViewController.nib; sourceTree = "<group>"; };
+		8D9E715FE9558DB38ECD2C68667F8C6B /* YSFALImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALImageViewController.nib; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96937273D8CE012944AA565E4FF43922 /* QYConversationManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYConversationManagerProtocol.h; path = SDK/ExportHeaders/QYConversationManagerProtocol.h; sourceTree = "<group>"; };
-		9740C4D3CD8C17DD94F20143DA521094 /* YSFALGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALGridViewController.nib; sourceTree = "<group>"; };
-		974F797952E3B9B50D21300A7E1A25E7 /* QYUserInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYUserInfo.h; path = SDK/ExportHeaders/QYUserInfo.h; sourceTree = "<group>"; };
-		9AD8CAF8547B51C4060B7D35B26F133C /* YSFALVideoViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALVideoViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALVideoViewController.nib; sourceTree = "<group>"; };
 		9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YSFDemo-dummy.m"; sourceTree = "<group>"; };
-		A30DB44F6567A875084CFC6D77432FDB /* YSFPHGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHGridViewController.nib; sourceTree = "<group>"; };
-		A4FCB243C99745117C57ABC37176BE2F /* QYHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYHeaders.h; path = SDK/ExportHeaders/QYHeaders.h; sourceTree = "<group>"; };
-		AE05AA56AB3587BD5DC22A05D2AA4289 /* YSFALImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALImageViewController.nib; sourceTree = "<group>"; };
+		A36FDFD41F698988923E95E3EF7566D4 /* QYConversationManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYConversationManagerProtocol.h; path = SDK/ExportHeaders/QYConversationManagerProtocol.h; sourceTree = "<group>"; };
+		B12C90E72863D73BB8D9510FA74B22DB /* YSFPHGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHGridViewController.nib; sourceTree = "<group>"; };
 		B4986E45F980D5D9AB77662B994AAEAE /* Pods-YSFDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YSFDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C32394495B3659EF5AD6A6876C180CA5 /* YSFALListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALListViewController.nib; sourceTree = "<group>"; };
-		C4F885D331C61AA66E653C023F83A69E /* YSFIPListTableViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPListTableViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPListTableViewCell.nib; sourceTree = "<group>"; };
+		B647C9E11D7E60FD09DDCDA0711BB646 /* YSFALVideoViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALVideoViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALVideoViewController.nib; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DE356434A666DE5E87A16086716D7750 /* QYResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYResource.bundle; path = SDK/QYResource.bundle; sourceTree = "<group>"; };
+		DB826C3C90BD932157615C5CC78F04FB /* YSFPHImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHImageViewController.nib; sourceTree = "<group>"; };
+		EABDA418E6915B8EDE22C54147DD1685 /* QYCustomUIConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCustomUIConfig.h; path = SDK/ExportHeaders/QYCustomUIConfig.h; sourceTree = "<group>"; };
 		ED51FDC0207B9BFA6634197B4ABFD78D /* Pods-YSFDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YSFDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		EE04C84822D22D2772CB3B323D307C3F /* QYSessionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSessionViewController.h; path = SDK/ExportHeaders/QYSessionViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,29 +83,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2475B8B3FC20457389201CDBD72CAB9C /* Pods */ = {
+		334BE51E68E99AE74CDC9379B3E084DF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C87E3D214EFA5BA5BB24CB9EF66B72C /* QIYU_iOS_SDK */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		258D5FE241541AD17ED2189D114808B1 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				756C0CC4208479A5E0958F46F44E08CC /* ResourceBundle-QYResource-Info.plist */,
+				61D52AB2E4262DD11011C2A3689A58A4 /* ResourceBundle-QYResource-Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/QIYU_iOS_SDK";
-			sourceTree = "<group>";
-		};
-		387B2D17585D4D73283E4CAC8BC159CF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8CAD9125C0767650DDDF4DE3C342C598 /* libQYSDK.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -130,49 +115,41 @@
 			path = "Target Support Files/Pods-YSFDemo";
 			sourceTree = "<group>";
 		};
-		6882AB9D833692A8694D32923890F947 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DE356434A666DE5E87A16086716D7750 /* QYResource.bundle */,
-				9740C4D3CD8C17DD94F20143DA521094 /* YSFALGridViewController.nib */,
-				AE05AA56AB3587BD5DC22A05D2AA4289 /* YSFALImageViewController.nib */,
-				C32394495B3659EF5AD6A6876C180CA5 /* YSFALListViewController.nib */,
-				9AD8CAF8547B51C4060B7D35B26F133C /* YSFALVideoViewController.nib */,
-				1AB7B070340E0657679F2DEA378D3396 /* YSFIPGridCollectionViewCell.nib */,
-				C4F885D331C61AA66E653C023F83A69E /* YSFIPListTableViewCell.nib */,
-				A30DB44F6567A875084CFC6D77432FDB /* YSFPHGridViewController.nib */,
-				8DCD497C307F9F1EB54D75A6ABD889B5 /* YSFPHImageViewController.nib */,
-				6ECCBFE6817A77141C009570D6A1F9AD /* YSFPHListViewController.nib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		7C87E3D214EFA5BA5BB24CB9EF66B72C /* QIYU_iOS_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				96937273D8CE012944AA565E4FF43922 /* QYConversationManagerProtocol.h */,
-				481DA712FDD1ED2E22B5B36423454F56 /* QYCustomUIConfig.h */,
-				A4FCB243C99745117C57ABC37176BE2F /* QYHeaders.h */,
-				47E6B27F60961A68955E72186EDD4337 /* QYSDK.h */,
-				EE04C84822D22D2772CB3B323D307C3F /* QYSessionViewController.h */,
-				710917F505740AAB70A7FF9B7B86C9CB /* QYSource.h */,
-				974F797952E3B9B50D21300A7E1A25E7 /* QYUserInfo.h */,
-				387B2D17585D4D73283E4CAC8BC159CF /* Frameworks */,
-				6882AB9D833692A8694D32923890F947 /* Resources */,
-				258D5FE241541AD17ED2189D114808B1 /* Support Files */,
-			);
-			path = QIYU_iOS_SDK;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				2475B8B3FC20457389201CDBD72CAB9C /* Pods */,
+				F229423EBFF12C1B21CF65E284BEEDA4 /* Pods */,
 				AE7F4F19C8BF72B3522126336B7C5C24 /* Products */,
 				DED9A35BD34596FC92BEB850089532BF /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		98E00F1608827EA933ABC8D99270FD20 /* QIYU_iOS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				4E59EA1AFA6302FA166CFF77E8C91D2A /* QYCommodityInfo.h */,
+				A36FDFD41F698988923E95E3EF7566D4 /* QYConversationManagerProtocol.h */,
+				EABDA418E6915B8EDE22C54147DD1685 /* QYCustomUIConfig.h */,
+				8087ACDCA00F9DED21F3A5A12AEE6FB8 /* QYHeaders.h */,
+				02D58C92070D6C8D25D9F1014D0EA1D5 /* QYSDK.h */,
+				5BCBA7D06D3DB55744F79E7EE33B14A4 /* QYSessionViewController.h */,
+				65ACE2ED5803E63A9FF967609A1FFB11 /* QYSource.h */,
+				2E669D19336CC918E12E25E6CA589269 /* QYUserInfo.h */,
+				9E42295A6CFF64559331B6F041375570 /* Frameworks */,
+				D859A2CE9137E48DAF8E4EF39CF39317 /* Resources */,
+				334BE51E68E99AE74CDC9379B3E084DF /* Support Files */,
+			);
+			path = QIYU_iOS_SDK;
+			sourceTree = "<group>";
+		};
+		9E42295A6CFF64559331B6F041375570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CF641801BFF74584CDCEC92BF201CE6 /* libQYSDK.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AE7F4F19C8BF72B3522126336B7C5C24 /* Products */ = {
@@ -192,12 +169,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D859A2CE9137E48DAF8E4EF39CF39317 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				330C10345B4CC770D8AB5C31DD545A91 /* QYResource.bundle */,
+				495ACADFF78FA5A26BA7F2BFC20B8C54 /* YSFALGridViewController.nib */,
+				8D9E715FE9558DB38ECD2C68667F8C6B /* YSFALImageViewController.nib */,
+				0070D4E3DB737660806EB2BAD586DDC3 /* YSFALListViewController.nib */,
+				B647C9E11D7E60FD09DDCDA0711BB646 /* YSFALVideoViewController.nib */,
+				63B6EC11ADF5994E8071B0868B64CEC1 /* YSFIPGridCollectionViewCell.nib */,
+				5ABDE89EC9971DA1EF61A13A8C30FA60 /* YSFIPListTableViewCell.nib */,
+				B12C90E72863D73BB8D9510FA74B22DB /* YSFPHGridViewController.nib */,
+				DB826C3C90BD932157615C5CC78F04FB /* YSFPHImageViewController.nib */,
+				8BD336DA829656461B8C1734895A8BC4 /* YSFPHListViewController.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		DED9A35BD34596FC92BEB850089532BF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				494E9DA41A485EA633B5617A260FA3DF /* Pods-YSFDemo */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F229423EBFF12C1B21CF65E284BEEDA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98E00F1608827EA933ABC8D99270FD20 /* QIYU_iOS_SDK */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -2,9 +2,12 @@
 
 ## 简介
 
-网易七鱼 iOS SDK 是客服系统访客端的解决方案，既包含了客服聊天逻辑管理，也提供了聊天界面，开发者可方便的将客服功能集成到自己的 APP 中。iOS SDK 支持 iOS 7 以上版本，同时支持iPhone、iPad。
+网易七鱼 iOS SDK 是客服系统访客端的解决方案，既包含了客服聊天逻辑管理，也提供了聊天界面，开发者可方便的将客服功能集成到自己的 APP 中。iOS SDK 支持 iOS 7 以上版本，同时支持iPhone、iPad。在iOS 9.2 以上版本中支持 IPv6，能正常通过苹果审核。
 
 ## 前期准备
+
+### 手动集成
+
 * 下载 QY SDK，得到一个 .a 文件、 QYResouce 文件夹和 ExportHeaders 文件夹，将他们导入工程
 * 添加 QY SDK 依赖库
 
@@ -21,6 +24,31 @@
 	* libsqlite3.0.tbd
 
 * 在 Build Settings -> Other Linker Flags 中添加 -ObjC 
+
+### CocoaPods集成
+
+在 Podfile 文件中加入 
+
+```
+	pod    'QIYU_iOS_SDK',    '~> 2.3.0' 
+```
+
+### 解决符号重复的冲突
+
+如果您集成之后，遇到了符号重复的冲突，您可能同时使用了网易云信 iOS SDK，如果是这种情况，请通过 CocoaPods 集成，在 Podfile 文件中加入
+
+```
+	pod    'QIYU_iOS_SDK_Exclude_NIM',    '~> 2.3.0' 
+```
+
+或者，您可能同时使用了 OpenSSL 库，如果是这种情况，请通过 CocoaPods 集成，在 Podfile 文件中加入
+
+```
+	pod    'QIYU_iOS_SDK_Exclude_Libcrypto',    '~> 2.3.0' 
+```
+
+### 其他
+
 * 在Info.plist中加入以下内容：
 
 ```
@@ -86,7 +114,7 @@ appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添�
 	[[QYSDK sharedSDK] sessionViewController];
 ```
 
-应用层获取此 ViewController 之后，必须嵌入到 UINavigationcontroller 中，就可以获得聊天窗口的UI以及所有功能。 sessionViewController 只会使用到导航栏的 self.navigationItem.title 和 self.navigationItem.rightBarButtonItem 。 self.navigationItem.title 放置标题栏； self.navigationItem.rightBarButtonItem 放置"人工客服"、“评价”入口。
+应用层获取此 sessionViewController 之后，必须嵌入到 UINavigationcontroller 中，就可以获得聊天窗口的UI以及所有功能。 sessionViewController 只会使用到导航栏的 self.navigationItem.title 和 self.navigationItem.rightBarButtonItem 。 self.navigationItem.title 放置标题栏； self.navigationItem.rightBarButtonItem 放置"人工客服"、“评价”入口。必须注意， 不能在 sessionViewController 外层套其他 viewController 之后再嵌入到 UINavigationcontroller。
 
 如果调用代码所在的viewController在UINavigationcontroller中，可以如下方式集成（第一种集成方式）：
 
@@ -94,11 +122,18 @@ appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添�
     QYSource *source = [[QYSource alloc] init];
     source.title =  @"七鱼金融";
     source.urlString = @"https://8.163.com/";
-    QYSessionViewController *session = [[QYSDK sharedSDK] sessionViewController];
-    session.sessionTitle = @"七鱼金融";
-    session.source = source;
-    session.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:session animated:YES];
+    QYCommodityInfo *commodityInfo = [[QYCommodityInfo alloc] init];
+    commodityInfo.title = @"网易七鱼";
+    commodityInfo.desc = @"网易七鱼是网易旗下一款专注于解决企业与客户沟通的客服系统产品。";
+    commodityInfo.pictureUrlString = @"http://qiyukf.com/main/res/img/index/barcode.png";
+    commodityInfo.urlString = @"http://qiyukf.com/";
+    commodityInfo.note = @"￥10000";
+    QYSessionViewController *sessionViewController = [[QYSDK sharedSDK] sessionViewController];
+    sessionViewController.sessionTitle = @"七鱼金融";
+    sessionViewController.source = source;
+    sessionViewController.commodityInfo = commodityInfo;
+    sessionViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:sessionViewController animated:YES];
 ```
 
 如果调用代码所在的viewController不在UINavigationcontroller中，可如下方式集成（第二种集成方式）：
@@ -107,15 +142,39 @@ appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添�
     QYSource *source = [[QYSource alloc] init];
     source.title =  @"七鱼金融";
     source.urlString = @"https://8.163.com/";
-    QYSessionViewController *session = [[QYSDK sharedSDK] sessionViewController];
-    session.sessionTitle = @"七鱼金融";
-    session.source = source;
-    session.hidesBottomBarWhenPushed = YES;
+    QYCommodityInfo *commodityInfo = [[QYCommodityInfo alloc] init];
+    commodityInfo.title = @"网易七鱼";
+    commodityInfo.desc = @"网易七鱼是网易旗下一款专注于解决企业与客户沟通的客服系统产品。";
+    commodityInfo.pictureUrlString = @"http://qiyukf.com/main/res/img/index/barcode.png";
+    commodityInfo.urlString = @"http://qiyukf.com/";
+    commodityInfo.note = @"￥10000";
+    QYSessionViewController *sessionViewController = [[QYSDK sharedSDK] sessionViewController];
+    sessionViewController.sessionTitle = @"七鱼金融";
+    sessionViewController.source = source;
+    sessionViewController.commodityInfo = commodityInfo;
+    sessionViewController.hidesBottomBarWhenPushed = YES;
     UINavigationController *nav = 
-    		[[UINavigationController alloc] initWithRootViewController:session];
+    			[[UINavigationController alloc] initWithRootViewController:sessionViewController];
+        [self presentViewController:nav animated:YES completion:nil];
     [self presentViewController:nav animated:YES completion:nil];
 ```
+一般来说，第二种方式会需要在左上角加一个返回按钮，在 “initWithRootViewController:sessionViewController” 之前加上：
 
+```objc
+    sessionViewController.navigationItem.leftBarButtonItem = 
+    			[[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered 
+    								target:self action:@selector(onBack:)];
+```
+
+“onBack” 的样例：
+
+```objc
+- (void)onBack:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+```
+    								
 如果您的代码要求所有viewController继承某个公共基类，并且公共基类对UINavigationController统一做了某些处理；或者对UINavigationController做了自己的扩展，并且这会导致集成之后有某些问题；或者其他原因导致使用第一种方式集成会有问题；这些情况下，建议您使用第二种方式集成。
 
 ### 自定义访客端聊天组件UI效果
@@ -138,18 +197,22 @@ QYCustomUIConfig是负责自定义UI的类；目前主要是定义聊天界面�
     [[QYSDK sharedSDK] customUIConfig].customerHeadImage = [UIImage imageNamed:@"customer_head"];
     [[QYSDK sharedSDK] customUIConfig].serviceHeadImage = [UIImage imageNamed:@"service_head"];
     
-    [[QYSDK sharedSDK] customUIConfig].customerMessageBubbleNormalImage = [[UIImage imageNamed:@"icon_sender_node"]
-                                         resizableImageWithCapInsets:UIEdgeInsetsMake(15,15,30,30)
-                                         resizingMode:UIImageResizingModeStretch];
-    [[QYSDK sharedSDK] customUIConfig].customerMessageBubblePressedImage = [[UIImage imageNamed:@"icon_sender_node"]
-                                          resizableImageWithCapInsets:UIEdgeInsetsMake(15,15,30,30)
-                                          resizingMode:UIImageResizingModeStretch];
-    [[QYSDK sharedSDK] customUIConfig].serviceMessageBubbleNormalImage = [[UIImage imageNamed:@"icon_receiver_node"]
-                                        resizableImageWithCapInsets:UIEdgeInsetsMake(15,30,30,15)
-                                        resizingMode:UIImageResizingModeStretch];
-    [[QYSDK sharedSDK] customUIConfig].serviceMessageBubblePressedImage = [[UIImage imageNamed:@"icon_receiver_node"]
-                                         resizableImageWithCapInsets:UIEdgeInsetsMake(15,30,30,15)
-                                         resizingMode:UIImageResizingModeStretch];
+    [[QYSDK sharedSDK] customUIConfig].customerMessageBubbleNormalImage = 
+										[[UIImage imageNamed:@"icon_sender_node"]
+                                 resizableImageWithCapInsets:UIEdgeInsetsMake(15,15,30,30)
+                                 resizingMode:UIImageResizingModeStretch];
+    [[QYSDK sharedSDK] customUIConfig].customerMessageBubblePressedImage = 
+    									[[UIImage imageNamed:@"icon_sender_node"]
+                                  resizableImageWithCapInsets:UIEdgeInsetsMake(15,15,30,30)
+                                  resizingMode:UIImageResizingModeStretch];
+    [[QYSDK sharedSDK] customUIConfig].serviceMessageBubbleNormalImage = 
+    									[[UIImage imageNamed:@"icon_receiver_node"]
+                                  resizableImageWithCapInsets:UIEdgeInsetsMake(15,30,30,15)
+                                  resizingMode:UIImageResizingModeStretch];
+    [[QYSDK sharedSDK] customUIConfig].serviceMessageBubblePressedImage = 
+    									[[UIImage imageNamed:@"icon_receiver_node"]
+                                  resizableImageWithCapInsets:UIEdgeInsetsMake(15,30,30,15)
+                                  resizingMode:UIImageResizingModeStretch];
     [[QYSDK sharedSDK] customUIConfig].rightBarButtonItemColorBlackOrWhite = NO;
 ```
 
@@ -166,11 +229,12 @@ QYCustomUIConfig只是负责替换部分皮肤相关内容，不包含所有的�
 返回的是一个协议QYConversationManager；可通过此协议获得消息未读数以及设置Delegate,通过此Delegate可以监听未读数变化。
 
 ### APNS推送
-* [制作推送证书并在管理后台配置](./iOS_APNS.html "target=_blank")
+* [制作推送证书并在管理后台配置](./iOS_apns.html "target=_blank")
 * 初始化
 
 ```objc
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+	- (BOOL)application:(UIApplication *)application 
+										didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 	{    
 		......
 		
@@ -178,17 +242,20 @@ QYCustomUIConfig只是负责替换部分皮肤相关内容，不包含所有的�
 	   [[QYSDK sharedSDK] registerAppId:AppKey appName:App名称];
 	    
 		//注册 APNS
-		if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)])
+		if ([[UIApplication sharedApplication] 
+									respondsToSelector:@selector(registerForRemoteNotifications)])
 		{
-			UIUserNotificationType types = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | 		UIRemoteNotificationTypeAlert;
-			UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types
-			categories:nil];
+			UIUserNotificationType types = UIRemoteNotificationTypeBadge 
+									| UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert;
+			UIUserNotificationSettings *settings = 
+								[UIUserNotificationSettings settingsForTypes:types categories:nil];
 			[[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 			[[UIApplication sharedApplication] registerForRemoteNotifications];
 		}
 		else
 		{
-			UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound | 		UIRemoteNotificationTypeBadge;
+			UIRemoteNotificationType types = UIRemoteNotificationTypeAlert 
+								| UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge;
 			[[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
 		}
 		
@@ -201,7 +268,8 @@ QYCustomUIConfig只是负责替换部分皮肤相关内容，不包含所有的�
 * 把 APNS Token 传给 SDK
 
 ```objc
-	- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+	- (void)application:(UIApplication *)app 
+					didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 	{
 		......
 		
@@ -218,6 +286,18 @@ QYCustomUIConfig只是负责替换部分皮肤相关内容，不包含所有的�
 ```
 
 应用层退出自己的账号时需要调用 SDK 的注销操作，该操作会通知服务器进行 APNS 推送信息的解绑操作，避免用户已退出但推送依然发送到当前设备的情况发生。
+
+### 指定客服Id或客服组Id
+
+在获取 sessionViewController 之后，可以指定客服 Id 或客服组 Id
+
+```objc
+    QYSessionViewController *sessionViewController = [[QYSDK sharedSDK] sessionViewController];
+    sessionViewController.groupId = _groupId;
+    sessionViewController.staffId = _staffId;
+```
+
+指定之后，进入聊天界面时，会直接以此 id 去请求到对应的客服或者客服组。在 管理后台 -> 设置 -> 访客分配 -> ID 查询 中可查询到客服 Id 或客服组 Id 。
 
 ### CRM
 

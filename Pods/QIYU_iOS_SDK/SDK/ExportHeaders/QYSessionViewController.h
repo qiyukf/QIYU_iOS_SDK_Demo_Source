@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 @class QYSource;
+@class QYCommodityInfo;
 
 /**
  *  客服会话ViewController,必须嵌入到UINavigationcontroller中
@@ -33,4 +34,10 @@
  *  会话窗口来源
  */
 @property (nonatomic,strong)    QYSource   *source;
+
+/**
+ *  商品信息展示
+ */
+@property (nonatomic, strong) QYCommodityInfo *commodityInfo;
+
 @end
