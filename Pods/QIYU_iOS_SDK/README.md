@@ -177,6 +177,20 @@ appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添�
     								
 如果您的代码要求所有viewController继承某个公共基类，并且公共基类对UINavigationController统一做了某些处理；或者对UINavigationController做了自己的扩展，并且这会导致集成之后有某些问题；或者其他原因导致使用第一种方式集成会有问题；这些情况下，建议您使用第二种方式集成。
 
+### 自定义商品信息
+获取到 sessionViewController 之后，可以指定自定义商品信息。指定之后，在请求到客服时会自动发送一条商品信息的消息，客服端可看到此消息。
+
+```objc
+	QYCommodityInfo *commodityInfo = [[QYCommodityInfo alloc] init];
+    commodityInfo.title = @"网易七鱼";
+    commodityInfo.desc = @"网易七鱼是网易旗下一款专注于解决企业与客户沟通的客服系统产品。";
+    commodityInfo.pictureUrlString = @"http://qiyukf.com/main/res/img/index/barcode.png";
+    commodityInfo.urlString = @"http://qiyukf.com/";
+    commodityInfo.note = @"￥10000";
+
+	sessionViewController.commodityInfo = commodityInfo;
+```
+
 ### 自定义访客端聊天组件UI效果
 
 获取自定义UI类对象
@@ -312,7 +326,7 @@ userInfo: 字段“id”表示用户id，字段“data”表示用户信息，�
 
 ## 补充说明
 
-如果您看完此文档后，还有任何集成方面的疑问，可以参考下 iOS SDK Demo 源码，在官网即可下载得到。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
+如果您看完此文档后，还有任何集成方面的疑问，可以参考下 iOS SDK Demo 源码: https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 
 
