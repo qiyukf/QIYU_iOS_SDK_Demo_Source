@@ -2285,8 +2285,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "${XCCONFIG_CODE_SIGNING}";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "${XCCONFIG_CODE_SIGNING}";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = YSFDemo/YSFDemoPrefix.pch;
 				HEADER_SEARCH_PATHS = (
@@ -2306,9 +2306,9 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "${XCCONFIG_BUNDLE_ID}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.enterprise.ysf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "${XCCONFIG_PROVISIONING_PROFILE}";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2321,8 +2321,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "${XCCONFIG_CODE_SIGNING}";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "${XCCONFIG_CODE_SIGNING}";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = YSFDemo/YSFDemoPrefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2346,9 +2346,9 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "${XCCONFIG_BUNDLE_ID}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.enterprise.ysf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "${XCCONFIG_PROVISIONING_PROFILE}";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
