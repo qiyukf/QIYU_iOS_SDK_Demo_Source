@@ -17,7 +17,7 @@
 			<string>Copyright 2016 Netease 
 </string>
 			<key>Title</key>
-			<string>QIYU_iOS_SDK</string>
+			<string>QIYU_iOS_SDK_Exclude_Libcrypto</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

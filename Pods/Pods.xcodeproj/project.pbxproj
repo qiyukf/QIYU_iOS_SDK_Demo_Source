@@ -7,89 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		353B6F271DA62BD0BF83796DA5FC58A5 /* YSFALImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9E715FE9558DB38ECD2C68667F8C6B /* YSFALImageViewController.nib */; };
-		42EE6B5F4D179AC563644D5B9DB04B15 /* YSFPHGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = B12C90E72863D73BB8D9510FA74B22DB /* YSFPHGridViewController.nib */; };
-		46B73997930645BB4AF6D48FCAE8E1FB /* YSFALGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 495ACADFF78FA5A26BA7F2BFC20B8C54 /* YSFALGridViewController.nib */; };
-		937FA858C4B637F1A5AB7CB15809C212 /* Pods-YSFDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */; };
-		980DAE9F77A626ACDECEFE2081162825 /* YSFIPGridCollectionViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = 63B6EC11ADF5994E8071B0868B64CEC1 /* YSFIPGridCollectionViewCell.nib */; };
-		C4CA5DB8E02949B0B380537EA4BB3084 /* YSFALVideoViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = B647C9E11D7E60FD09DDCDA0711BB646 /* YSFALVideoViewController.nib */; };
-		C5CF30AF349A17045DA2BCEA788F024D /* YSFPHListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD336DA829656461B8C1734895A8BC4 /* YSFPHListViewController.nib */; };
-		D1401329ADCB324C15ECF7B0E549E93C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		D9A7293A02608324E266793296DA8DB4 /* YSFIPListTableViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABDE89EC9971DA1EF61A13A8C30FA60 /* YSFIPListTableViewCell.nib */; };
-		E66EFCA46D9A3B16E4E6D28791C4A054 /* YSFPHImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = DB826C3C90BD932157615C5CC78F04FB /* YSFPHImageViewController.nib */; };
-		EF8C1AD166BBF88F7A55C8D85FCD18F1 /* YSFALListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0070D4E3DB737660806EB2BAD586DDC3 /* YSFALListViewController.nib */; };
+		03D949612AA4E01589FDF2C6D86B6335 /* YSFALImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = A5741EB6945E1691C4B38C2CC0C93CFB /* YSFALImageViewController.nib */; };
+		1C354CDCB409D0B5A0B45DEB3064451D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		3E8B4E9E43C23C71B4ED668557CAB1EC /* YSFALListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 644093B690419CD579959C5E402EC455 /* YSFALListViewController.nib */; };
+		5209FFA614394E83CDE59E5BAD62B739 /* YSFALGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24001CB64945FA1EFBEEA68FB0ECD64D /* YSFALGridViewController.nib */; };
+		6E57E04F897054DAE166A9430D79784A /* YSFPHImageViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 94C4BF567A902AED7F3367AC2F46F96F /* YSFPHImageViewController.nib */; };
+		80EC4D43420424FFB05FD1A60200A711 /* YSFPHGridViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 40032B4A5DE2B72C7005932FA6947FC2 /* YSFPHGridViewController.nib */; };
+		A024E87AC02EC6D54061125D8BA9A3BA /* YSFPHListViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BA1257CF5B924C5CE2302EFBD177 /* YSFPHListViewController.nib */; };
+		A5D21D1E2A2703F50AB4B4733A89610F /* Pods-YSFDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */; };
+		AB00FC78C59EF315FB348EEAB3EE6A00 /* YSFALVideoViewController.nib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1EEB917C29A72EEEB4E483317CF3E7 /* YSFALVideoViewController.nib */; };
+		E4D1759DF2BC27D4D8B329499D982A12 /* YSFIPListTableViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = 9C538AE12949D4AB83E42076CEEFBE0C /* YSFIPListTableViewCell.nib */; };
+		FDCA36D00B76AD1DF90F440E666453B1 /* YSFIPGridCollectionViewCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = 78D7B8D3C1C9453B9D2CF2D3224017E1 /* YSFIPGridCollectionViewCell.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7B4D487DF725CD60E7AB6431FC58E684 /* PBXContainerItemProxy */ = {
+		87BDD3502B5527EF608BE5BD88FEF1E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F0A79066609B3AAB51CA2CC33708A7E6;
-			remoteInfo = "QIYU_iOS_SDK-QYResource";
+			remoteGlobalIDString = 2543DA29B920E608C9614444720D261B;
+			remoteInfo = "QIYU_iOS_SDK_Exclude_Libcrypto-QYResource";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0070D4E3DB737660806EB2BAD586DDC3 /* YSFALListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALListViewController.nib; sourceTree = "<group>"; };
-		02D58C92070D6C8D25D9F1014D0EA1D5 /* QYSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSDK.h; path = SDK/ExportHeaders/QYSDK.h; sourceTree = "<group>"; };
+		070FDBBAB81519AC506E801625CEB5E4 /* QYSessionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSessionViewController.h; path = SDK/ExportHeaders/QYSessionViewController.h; sourceTree = "<group>"; };
 		080B71375E0D200908CF0A4B6EF9E1F6 /* QYResource.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QYResource.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1057F9162C7155AD155815CDCD31C4AA /* Pods-YSFDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YSFDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		1856FF13B270E90E9DBA9A724E11D6E9 /* QYSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSDK.h; path = SDK/ExportHeaders/QYSDK.h; sourceTree = "<group>"; };
+		24001CB64945FA1EFBEEA68FB0ECD64D /* YSFALGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALGridViewController.nib; sourceTree = "<group>"; };
 		2C4EE74DACD9C4836A269DDEA419E068 /* libPods-YSFDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YSFDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E669D19336CC918E12E25E6CA589269 /* QYUserInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYUserInfo.h; path = SDK/ExportHeaders/QYUserInfo.h; sourceTree = "<group>"; };
-		330C10345B4CC770D8AB5C31DD545A91 /* QYResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYResource.bundle; path = SDK/QYResource.bundle; sourceTree = "<group>"; };
-		495ACADFF78FA5A26BA7F2BFC20B8C54 /* YSFALGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALGridViewController.nib; sourceTree = "<group>"; };
-		4E59EA1AFA6302FA166CFF77E8C91D2A /* QYCommodityInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCommodityInfo.h; path = SDK/ExportHeaders/QYCommodityInfo.h; sourceTree = "<group>"; };
-		5ABDE89EC9971DA1EF61A13A8C30FA60 /* YSFIPListTableViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPListTableViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPListTableViewCell.nib; sourceTree = "<group>"; };
-		5BCBA7D06D3DB55744F79E7EE33B14A4 /* QYSessionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSessionViewController.h; path = SDK/ExportHeaders/QYSessionViewController.h; sourceTree = "<group>"; };
-		61D52AB2E4262DD11011C2A3689A58A4 /* ResourceBundle-QYResource-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-QYResource-Info.plist"; sourceTree = "<group>"; };
-		63B6EC11ADF5994E8071B0868B64CEC1 /* YSFIPGridCollectionViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPGridCollectionViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPGridCollectionViewCell.nib; sourceTree = "<group>"; };
-		65ACE2ED5803E63A9FF967609A1FFB11 /* QYSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSource.h; path = SDK/ExportHeaders/QYSource.h; sourceTree = "<group>"; };
+		3AD9BA1257CF5B924C5CE2302EFBD177 /* YSFPHListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHListViewController.nib; sourceTree = "<group>"; };
+		40032B4A5DE2B72C7005932FA6947FC2 /* YSFPHGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHGridViewController.nib; sourceTree = "<group>"; };
+		472AA2FDE41CCF0EB179EEEF51AFDFD1 /* QYUserInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYUserInfo.h; path = SDK/ExportHeaders/QYUserInfo.h; sourceTree = "<group>"; };
+		559B8CC40AC7C5F6323A5DA45284C42F /* QYCustomUIConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCustomUIConfig.h; path = SDK/ExportHeaders/QYCustomUIConfig.h; sourceTree = "<group>"; };
+		5E4CC861A3F4D0FF7A6951E5B2A7DE68 /* libQYSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libQYSDK.a; path = SDK/libQYSDK.a; sourceTree = "<group>"; };
+		644093B690419CD579959C5E402EC455 /* YSFALListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALListViewController.nib; sourceTree = "<group>"; };
 		6F79746E24D2FBA21D24F8F5EB7B4D8E /* Pods-YSFDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YSFDemo-resources.sh"; sourceTree = "<group>"; };
+		74333E0E72260C9D96053DFEE14C5D55 /* QYCommodityInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCommodityInfo.h; path = SDK/ExportHeaders/QYCommodityInfo.h; sourceTree = "<group>"; };
+		78D7B8D3C1C9453B9D2CF2D3224017E1 /* YSFIPGridCollectionViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPGridCollectionViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPGridCollectionViewCell.nib; sourceTree = "<group>"; };
 		7BEBA7F42FDFFD02734F00D1EA6807F6 /* Pods-YSFDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YSFDemo.release.xcconfig"; sourceTree = "<group>"; };
-		7CF641801BFF74584CDCEC92BF201CE6 /* libQYSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libQYSDK.a; path = SDK/libQYSDK.a; sourceTree = "<group>"; };
-		8087ACDCA00F9DED21F3A5A12AEE6FB8 /* QYHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYHeaders.h; path = SDK/ExportHeaders/QYHeaders.h; sourceTree = "<group>"; };
-		8BD336DA829656461B8C1734895A8BC4 /* YSFPHListViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHListViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHListViewController.nib; sourceTree = "<group>"; };
+		7C1EEB917C29A72EEEB4E483317CF3E7 /* YSFALVideoViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALVideoViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALVideoViewController.nib; sourceTree = "<group>"; };
+		8258D51F1BD2AF96B5B6054921B638E3 /* QYHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYHeaders.h; path = SDK/ExportHeaders/QYHeaders.h; sourceTree = "<group>"; };
 		8C283CEE881476A8EFC5A52473A9B152 /* Pods-YSFDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YSFDemo-frameworks.sh"; sourceTree = "<group>"; };
-		8D9E715FE9558DB38ECD2C68667F8C6B /* YSFALImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALImageViewController.nib; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94C4BF567A902AED7F3367AC2F46F96F /* YSFPHImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHImageViewController.nib; sourceTree = "<group>"; };
+		9561970484945BEA3FF77C3147323FE1 /* QYConversationManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYConversationManagerProtocol.h; path = SDK/ExportHeaders/QYConversationManagerProtocol.h; sourceTree = "<group>"; };
+		9C538AE12949D4AB83E42076CEEFBE0C /* YSFIPListTableViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFIPListTableViewCell.nib; path = SDK/QYResource.bundle/NIB/YSFIPListTableViewCell.nib; sourceTree = "<group>"; };
 		9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YSFDemo-dummy.m"; sourceTree = "<group>"; };
-		A36FDFD41F698988923E95E3EF7566D4 /* QYConversationManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYConversationManagerProtocol.h; path = SDK/ExportHeaders/QYConversationManagerProtocol.h; sourceTree = "<group>"; };
-		B12C90E72863D73BB8D9510FA74B22DB /* YSFPHGridViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHGridViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHGridViewController.nib; sourceTree = "<group>"; };
+		A5741EB6945E1691C4B38C2CC0C93CFB /* YSFALImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALImageViewController.nib; sourceTree = "<group>"; };
 		B4986E45F980D5D9AB77662B994AAEAE /* Pods-YSFDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YSFDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B647C9E11D7E60FD09DDCDA0711BB646 /* YSFALVideoViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFALVideoViewController.nib; path = SDK/QYResource.bundle/NIB/YSFALVideoViewController.nib; sourceTree = "<group>"; };
+		B53D438DDE5894D3E38FC0555CAE14B8 /* QYSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSource.h; path = SDK/ExportHeaders/QYSource.h; sourceTree = "<group>"; };
+		BD3D45D59695B9FB44CC2AF3000726F7 /* QYResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYResource.bundle; path = SDK/QYResource.bundle; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DB826C3C90BD932157615C5CC78F04FB /* YSFPHImageViewController.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = YSFPHImageViewController.nib; path = SDK/QYResource.bundle/NIB/YSFPHImageViewController.nib; sourceTree = "<group>"; };
-		EABDA418E6915B8EDE22C54147DD1685 /* QYCustomUIConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCustomUIConfig.h; path = SDK/ExportHeaders/QYCustomUIConfig.h; sourceTree = "<group>"; };
+		E50CDA1265DFE708F566BDF80DD80A30 /* ResourceBundle-QYResource-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-QYResource-Info.plist"; sourceTree = "<group>"; };
 		ED51FDC0207B9BFA6634197B4ABFD78D /* Pods-YSFDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YSFDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		258046ED539BC9B08E06B0F55BFD7BDC /* Frameworks */ = {
+		AF98F0CC3D602480B684313F632D7B5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1401329ADCB324C15ECF7B0E549E93C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5BDE902DF3A63FB23619B1749080D73C /* Frameworks */ = {
+		B489A6DFCAE75462B2C16168164A3797 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C354CDCB409D0B5A0B45DEB3064451D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		334BE51E68E99AE74CDC9379B3E084DF /* Support Files */ = {
+		12A92BD70528A16B67460B2635B3B769 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				61D52AB2E4262DD11011C2A3689A58A4 /* ResourceBundle-QYResource-Info.plist */,
+				AADE527E04B98C30A01D62E8071CFE38 /* QIYU_iOS_SDK_Exclude_Libcrypto */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/QIYU_iOS_SDK";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -115,41 +114,59 @@
 			path = "Target Support Files/Pods-YSFDemo";
 			sourceTree = "<group>";
 		};
+		53A5725D0DE5C63052EA298EA744B260 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD3D45D59695B9FB44CC2AF3000726F7 /* QYResource.bundle */,
+				24001CB64945FA1EFBEEA68FB0ECD64D /* YSFALGridViewController.nib */,
+				A5741EB6945E1691C4B38C2CC0C93CFB /* YSFALImageViewController.nib */,
+				644093B690419CD579959C5E402EC455 /* YSFALListViewController.nib */,
+				7C1EEB917C29A72EEEB4E483317CF3E7 /* YSFALVideoViewController.nib */,
+				78D7B8D3C1C9453B9D2CF2D3224017E1 /* YSFIPGridCollectionViewCell.nib */,
+				9C538AE12949D4AB83E42076CEEFBE0C /* YSFIPListTableViewCell.nib */,
+				40032B4A5DE2B72C7005932FA6947FC2 /* YSFPHGridViewController.nib */,
+				94C4BF567A902AED7F3367AC2F46F96F /* YSFPHImageViewController.nib */,
+				3AD9BA1257CF5B924C5CE2302EFBD177 /* YSFPHListViewController.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				F229423EBFF12C1B21CF65E284BEEDA4 /* Pods */,
+				12A92BD70528A16B67460B2635B3B769 /* Pods */,
 				AE7F4F19C8BF72B3522126336B7C5C24 /* Products */,
 				DED9A35BD34596FC92BEB850089532BF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		98E00F1608827EA933ABC8D99270FD20 /* QIYU_iOS_SDK */ = {
+		A7193A253A3F2856AE24AB32487A3ECD /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E59EA1AFA6302FA166CFF77E8C91D2A /* QYCommodityInfo.h */,
-				A36FDFD41F698988923E95E3EF7566D4 /* QYConversationManagerProtocol.h */,
-				EABDA418E6915B8EDE22C54147DD1685 /* QYCustomUIConfig.h */,
-				8087ACDCA00F9DED21F3A5A12AEE6FB8 /* QYHeaders.h */,
-				02D58C92070D6C8D25D9F1014D0EA1D5 /* QYSDK.h */,
-				5BCBA7D06D3DB55744F79E7EE33B14A4 /* QYSessionViewController.h */,
-				65ACE2ED5803E63A9FF967609A1FFB11 /* QYSource.h */,
-				2E669D19336CC918E12E25E6CA589269 /* QYUserInfo.h */,
-				9E42295A6CFF64559331B6F041375570 /* Frameworks */,
-				D859A2CE9137E48DAF8E4EF39CF39317 /* Resources */,
-				334BE51E68E99AE74CDC9379B3E084DF /* Support Files */,
+				E50CDA1265DFE708F566BDF80DD80A30 /* ResourceBundle-QYResource-Info.plist */,
 			);
-			path = QIYU_iOS_SDK;
+			name = "Support Files";
+			path = "../Target Support Files/QIYU_iOS_SDK_Exclude_Libcrypto";
 			sourceTree = "<group>";
 		};
-		9E42295A6CFF64559331B6F041375570 /* Frameworks */ = {
+		AADE527E04B98C30A01D62E8071CFE38 /* QIYU_iOS_SDK_Exclude_Libcrypto */ = {
 			isa = PBXGroup;
 			children = (
-				7CF641801BFF74584CDCEC92BF201CE6 /* libQYSDK.a */,
+				74333E0E72260C9D96053DFEE14C5D55 /* QYCommodityInfo.h */,
+				9561970484945BEA3FF77C3147323FE1 /* QYConversationManagerProtocol.h */,
+				559B8CC40AC7C5F6323A5DA45284C42F /* QYCustomUIConfig.h */,
+				8258D51F1BD2AF96B5B6054921B638E3 /* QYHeaders.h */,
+				1856FF13B270E90E9DBA9A724E11D6E9 /* QYSDK.h */,
+				070FDBBAB81519AC506E801625CEB5E4 /* QYSessionViewController.h */,
+				B53D438DDE5894D3E38FC0555CAE14B8 /* QYSource.h */,
+				472AA2FDE41CCF0EB179EEEF51AFDFD1 /* QYUserInfo.h */,
+				C8CB3FD8C70F3B2719E84EA79E6684EE /* Frameworks */,
+				53A5725D0DE5C63052EA298EA744B260 /* Resources */,
+				A7193A253A3F2856AE24AB32487A3ECD /* Support Files */,
 			);
-			name = Frameworks;
+			path = QIYU_iOS_SDK_Exclude_Libcrypto;
 			sourceTree = "<group>";
 		};
 		AE7F4F19C8BF72B3522126336B7C5C24 /* Products */ = {
@@ -169,21 +186,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D859A2CE9137E48DAF8E4EF39CF39317 /* Resources */ = {
+		C8CB3FD8C70F3B2719E84EA79E6684EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				330C10345B4CC770D8AB5C31DD545A91 /* QYResource.bundle */,
-				495ACADFF78FA5A26BA7F2BFC20B8C54 /* YSFALGridViewController.nib */,
-				8D9E715FE9558DB38ECD2C68667F8C6B /* YSFALImageViewController.nib */,
-				0070D4E3DB737660806EB2BAD586DDC3 /* YSFALListViewController.nib */,
-				B647C9E11D7E60FD09DDCDA0711BB646 /* YSFALVideoViewController.nib */,
-				63B6EC11ADF5994E8071B0868B64CEC1 /* YSFIPGridCollectionViewCell.nib */,
-				5ABDE89EC9971DA1EF61A13A8C30FA60 /* YSFIPListTableViewCell.nib */,
-				B12C90E72863D73BB8D9510FA74B22DB /* YSFPHGridViewController.nib */,
-				DB826C3C90BD932157615C5CC78F04FB /* YSFPHImageViewController.nib */,
-				8BD336DA829656461B8C1734895A8BC4 /* YSFPHListViewController.nib */,
+				5E4CC861A3F4D0FF7A6951E5B2A7DE68 /* libQYSDK.a */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DED9A35BD34596FC92BEB850089532BF /* Targets Support Files */ = {
@@ -194,50 +202,42 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F229423EBFF12C1B21CF65E284BEEDA4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				98E00F1608827EA933ABC8D99270FD20 /* QIYU_iOS_SDK */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE488CA1A8A840D6ABEC49844B1DAD3D /* Pods-YSFDemo */ = {
+		2543DA29B920E608C9614444720D261B /* QIYU_iOS_SDK_Exclude_Libcrypto-QYResource */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECD3436D54E95F4353E5D94A86BF0576 /* Build configuration list for PBXNativeTarget "Pods-YSFDemo" */;
+			buildConfigurationList = E1EBDC8D6C5D1EC7D40A167593912F13 /* Build configuration list for PBXNativeTarget "QIYU_iOS_SDK_Exclude_Libcrypto-QYResource" */;
 			buildPhases = (
-				1D6A6BD2DB6543386F0979A819C09DDB /* Sources */,
-				258046ED539BC9B08E06B0F55BFD7BDC /* Frameworks */,
+				247560FBDA9A1B7F4764433B639B7D21 /* Sources */,
+				AF98F0CC3D602480B684313F632D7B5F /* Frameworks */,
+				5C965A80C4F316B9917187940FF488ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C6B5DCA3607678F060051AA780212620 /* PBXTargetDependency */,
+			);
+			name = "QIYU_iOS_SDK_Exclude_Libcrypto-QYResource";
+			productName = "QIYU_iOS_SDK_Exclude_Libcrypto-QYResource";
+			productReference = 080B71375E0D200908CF0A4B6EF9E1F6 /* QYResource.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		EAA5F0BE53CA51C5DB7963C344322684 /* Pods-YSFDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F65C24317EE70CFC9195A8431D280D /* Build configuration list for PBXNativeTarget "Pods-YSFDemo" */;
+			buildPhases = (
+				E05346ABF50EA977F02F639E9AD6E5D6 /* Sources */,
+				B489A6DFCAE75462B2C16168164A3797 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7889CF090D2728E23E79DB38B4FBC7B5 /* PBXTargetDependency */,
 			);
 			name = "Pods-YSFDemo";
 			productName = "Pods-YSFDemo";
 			productReference = 2C4EE74DACD9C4836A269DDEA419E068 /* libPods-YSFDemo.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		F0A79066609B3AAB51CA2CC33708A7E6 /* QIYU_iOS_SDK-QYResource */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 291FC3EBE38A6B626D5EF913FF444151 /* Build configuration list for PBXNativeTarget "QIYU_iOS_SDK-QYResource" */;
-			buildPhases = (
-				6A0296DB346F9EF8088F814E0B9F6E43 /* Sources */,
-				5BDE902DF3A63FB23619B1749080D73C /* Frameworks */,
-				6770E620D6E3A5C8CA38BB08E62FE0C4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QIYU_iOS_SDK-QYResource";
-			productName = "QIYU_iOS_SDK-QYResource";
-			productReference = 080B71375E0D200908CF0A4B6EF9E1F6 /* QYResource.bundle */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -260,70 +260,86 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE488CA1A8A840D6ABEC49844B1DAD3D /* Pods-YSFDemo */,
-				F0A79066609B3AAB51CA2CC33708A7E6 /* QIYU_iOS_SDK-QYResource */,
+				EAA5F0BE53CA51C5DB7963C344322684 /* Pods-YSFDemo */,
+				2543DA29B920E608C9614444720D261B /* QIYU_iOS_SDK_Exclude_Libcrypto-QYResource */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6770E620D6E3A5C8CA38BB08E62FE0C4 /* Resources */ = {
+		5C965A80C4F316B9917187940FF488ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46B73997930645BB4AF6D48FCAE8E1FB /* YSFALGridViewController.nib in Resources */,
-				353B6F271DA62BD0BF83796DA5FC58A5 /* YSFALImageViewController.nib in Resources */,
-				EF8C1AD166BBF88F7A55C8D85FCD18F1 /* YSFALListViewController.nib in Resources */,
-				C4CA5DB8E02949B0B380537EA4BB3084 /* YSFALVideoViewController.nib in Resources */,
-				980DAE9F77A626ACDECEFE2081162825 /* YSFIPGridCollectionViewCell.nib in Resources */,
-				D9A7293A02608324E266793296DA8DB4 /* YSFIPListTableViewCell.nib in Resources */,
-				42EE6B5F4D179AC563644D5B9DB04B15 /* YSFPHGridViewController.nib in Resources */,
-				E66EFCA46D9A3B16E4E6D28791C4A054 /* YSFPHImageViewController.nib in Resources */,
-				C5CF30AF349A17045DA2BCEA788F024D /* YSFPHListViewController.nib in Resources */,
+				5209FFA614394E83CDE59E5BAD62B739 /* YSFALGridViewController.nib in Resources */,
+				03D949612AA4E01589FDF2C6D86B6335 /* YSFALImageViewController.nib in Resources */,
+				3E8B4E9E43C23C71B4ED668557CAB1EC /* YSFALListViewController.nib in Resources */,
+				AB00FC78C59EF315FB348EEAB3EE6A00 /* YSFALVideoViewController.nib in Resources */,
+				FDCA36D00B76AD1DF90F440E666453B1 /* YSFIPGridCollectionViewCell.nib in Resources */,
+				E4D1759DF2BC27D4D8B329499D982A12 /* YSFIPListTableViewCell.nib in Resources */,
+				80EC4D43420424FFB05FD1A60200A711 /* YSFPHGridViewController.nib in Resources */,
+				6E57E04F897054DAE166A9430D79784A /* YSFPHImageViewController.nib in Resources */,
+				A024E87AC02EC6D54061125D8BA9A3BA /* YSFPHListViewController.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D6A6BD2DB6543386F0979A819C09DDB /* Sources */ = {
+		247560FBDA9A1B7F4764433B639B7D21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				937FA858C4B637F1A5AB7CB15809C212 /* Pods-YSFDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A0296DB346F9EF8088F814E0B9F6E43 /* Sources */ = {
+		E05346ABF50EA977F02F639E9AD6E5D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D21D1E2A2703F50AB4B4733A89610F /* Pods-YSFDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C6B5DCA3607678F060051AA780212620 /* PBXTargetDependency */ = {
+		7889CF090D2728E23E79DB38B4FBC7B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "QIYU_iOS_SDK-QYResource";
-			target = F0A79066609B3AAB51CA2CC33708A7E6 /* QIYU_iOS_SDK-QYResource */;
-			targetProxy = 7B4D487DF725CD60E7AB6431FC58E684 /* PBXContainerItemProxy */;
+			name = "QIYU_iOS_SDK_Exclude_Libcrypto-QYResource";
+			target = 2543DA29B920E608C9614444720D261B /* QIYU_iOS_SDK_Exclude_Libcrypto-QYResource */;
+			targetProxy = 87BDD3502B5527EF608BE5BD88FEF1E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		05D0D06973C5BB1D64743D1DD2F82C14 /* Debug */ = {
+		0DA0465C08CEACCE10EB649A7FF77B08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED51FDC0207B9BFA6634197B4ABFD78D /* Pods-YSFDemo.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/QIYU_iOS_SDK_Exclude_Libcrypto";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/QIYU_iOS_SDK_Exclude_Libcrypto/ResourceBundle-QYResource-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = QYResource;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		29B541D41CF5B3DBFC33F0441818F722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BEBA7F42FDFFD02734F00D1EA6807F6 /* Pods-YSFDemo.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -332,15 +348,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		068779F7B1854636C2311B0FEF34D920 /* Debug */ = {
+		36068285A8C4387FAEA8924B858902B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/QIYU_iOS_SDK";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/QIYU_iOS_SDK_Exclude_Libcrypto";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/QIYU_iOS_SDK/ResourceBundle-QYResource-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/QIYU_iOS_SDK_Exclude_Libcrypto/ResourceBundle-QYResource-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = QYResource;
 				SDKROOT = iphoneos;
@@ -392,33 +408,17 @@
 			};
 			name = Debug;
 		};
-		5DDA532B728441A756628B4CE5DF0564 /* Release */ = {
+		D55CA2A0415F29C540B2C0FD5F12C435 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/QIYU_iOS_SDK";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/QIYU_iOS_SDK/ResourceBundle-QYResource-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = QYResource;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		7C2B61BC5408AE2D73245F11CD5A3E87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BEBA7F42FDFFD02734F00D1EA6807F6 /* Pods-YSFDemo.release.xcconfig */;
+			baseConfigurationReference = ED51FDC0207B9BFA6634197B4ABFD78D /* Pods-YSFDemo.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -427,7 +427,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -470,15 +470,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		291FC3EBE38A6B626D5EF913FF444151 /* Build configuration list for PBXNativeTarget "QIYU_iOS_SDK-QYResource" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				068779F7B1854636C2311B0FEF34D920 /* Debug */,
-				5DDA532B728441A756628B4CE5DF0564 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -488,11 +479,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECD3436D54E95F4353E5D94A86BF0576 /* Build configuration list for PBXNativeTarget "Pods-YSFDemo" */ = {
+		38F65C24317EE70CFC9195A8431D280D /* Build configuration list for PBXNativeTarget "Pods-YSFDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				05D0D06973C5BB1D64743D1DD2F82C14 /* Debug */,
-				7C2B61BC5408AE2D73245F11CD5A3E87 /* Release */,
+				D55CA2A0415F29C540B2C0FD5F12C435 /* Debug */,
+				29B541D41CF5B3DBFC33F0441818F722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1EBDC8D6C5D1EC7D40A167593912F13 /* Build configuration list for PBXNativeTarget "QIYU_iOS_SDK_Exclude_Libcrypto-QYResource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36068285A8C4387FAEA8924B858902B8 /* Debug */,
+				0DA0465C08CEACCE10EB649A7FF77B08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

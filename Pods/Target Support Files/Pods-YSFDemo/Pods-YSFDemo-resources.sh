@@ -80,12 +80,12 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "QIYU_iOS_SDK/SDK/QYResource.bundle"
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/QIYU_iOS_SDK/QYResource.bundle"
+  install_resource "QIYU_iOS_SDK_Exclude_Libcrypto/SDK/QYResource.bundle"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/QIYU_iOS_SDK_Exclude_Libcrypto/QYResource.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "QIYU_iOS_SDK/SDK/QYResource.bundle"
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/QIYU_iOS_SDK/QYResource.bundle"
+  install_resource "QIYU_iOS_SDK_Exclude_Libcrypto/SDK/QYResource.bundle"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/QIYU_iOS_SDK_Exclude_Libcrypto/QYResource.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
