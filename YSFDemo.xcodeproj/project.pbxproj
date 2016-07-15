@@ -245,7 +245,6 @@
 		2B1E49BD1CEAC7580059D95B /* QYReportUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1E49A91CEAC7580059D95B /* QYReportUserInfoViewController.xib */; };
 		2B1E49BE1CEAC7580059D95B /* QYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49AB1CEAC7580059D95B /* QYSettingViewController.m */; };
 		2B1E49BF1CEAC7580059D95B /* QYUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49AD1CEAC7580059D95B /* QYUserTableViewController.m */; };
-		2B9E63091D250B9F00F0351C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9E63081D250B9F00F0351C /* libcrypto.a */; };
 		E48973051B8C016E001C96EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973041B8C016E001C96EC /* main.m */; };
 		E48973081B8C016E001C96EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973071B8C016E001C96EC /* AppDelegate.m */; };
 		E48973101B8C016E001C96EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E489730F1B8C016E001C96EC /* Images.xcassets */; };
@@ -773,7 +772,6 @@
 		2B1E49AB1CEAC7580059D95B /* QYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYSettingViewController.m; sourceTree = "<group>"; };
 		2B1E49AC1CEAC7580059D95B /* QYUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYUserTableViewController.h; sourceTree = "<group>"; };
 		2B1E49AD1CEAC7580059D95B /* QYUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYUserTableViewController.m; sourceTree = "<group>"; };
-		2B9E63081D250B9F00F0351C /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = YSFDemo/libcrypto.a; sourceTree = "<group>"; };
 		E43BA2081BA27C9E0046F016 /* ysf_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_debug.xcconfig; sourceTree = "<group>"; };
 		E48972FF1B8C016E001C96EC /* YSFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48973031B8C016E001C96EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -793,7 +791,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E48973891B8C0671001C96EC /* libz.dylib in Frameworks */,
-				2B9E63091D250B9F00F0351C /* libcrypto.a in Frameworks */,
 				E48973871B8C066A001C96EC /* libsqlite3.0.dylib in Frameworks */,
 				E48973851B8C0662001C96EC /* libstdc++.6.0.9.dylib in Frameworks */,
 				EDCEC8EFADBCAAD802C80918 /* libPods-YSFDemo.a in Frameworks */,
@@ -1776,7 +1773,6 @@
 				E48973881B8C0671001C96EC /* libz.dylib */,
 				E48973861B8C066A001C96EC /* libsqlite3.0.dylib */,
 				E48973841B8C0662001C96EC /* libstdc++.6.0.9.dylib */,
-				2B9E63081D250B9F00F0351C /* libcrypto.a */,
 				E48973011B8C016E001C96EC /* YSFDemo */,
 				E48973001B8C016E001C96EC /* Products */,
 				D1144DF30DBD71DFE6A282A9 /* Pods */,
@@ -2305,7 +2301,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YSFDemo/libs",
 					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)/YSFDemo",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2346,7 +2341,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YSFDemo/libs",
 					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)/YSFDemo",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>QIYU_iOS_SDK_Exclude_Libcrypto-QYResource.xcscheme</key>
+		<key>QIYU_iOS_SDK-QYResource.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2543DA29B920E608C9614444720D261B</key>
+		<key>EE488CA1A8A840D6ABEC49844B1DAD3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EAA5F0BE53CA51C5DB7963C344322684</key>
+		<key>F0A79066609B3AAB51CA2CC33708A7E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
