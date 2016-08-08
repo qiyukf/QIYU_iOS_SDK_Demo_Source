@@ -125,6 +125,21 @@
  */
 @property (nonatomic, assign) BOOL rightBarButtonItemColorBlackOrWhite;
 
+/**
+ *  默认是YES,默认显示发送语音入口，设置为NO，可以修改为隐藏
+ */
+@property (nonatomic, assign) BOOL showAudioEntry;
+
+/**
+ *  默认是YES,默认显示发送表情入口，设置为NO，可以修改为隐藏
+ */
+@property (nonatomic, assign) BOOL showEmoticonEntry;
+
+/**
+ *  默认是YES,默认进入聊天界面，是文本输入模式的话，会弹出键盘，设置为NO，可以修改为不弹出
+ */
+@property (nonatomic, assign) BOOL autoShowKeyboard;
+
 @end
 
 

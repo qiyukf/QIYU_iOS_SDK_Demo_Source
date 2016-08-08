@@ -50,6 +50,13 @@ typedef void(^QYCompletionBlock)();
 - (QYCustomUIConfig *)customUIConfig;
 
 /**
+ *  返回自定义事件处理类,通过此类可以设置sessionViewController内的事件处理
+ *
+ *  @return 自定义事件处理类
+ */
+- (QYCustomActionConfig *)customActionConfig;
+
+/**
  *  返回会话管理类
  *
  *  @return 会话管理类

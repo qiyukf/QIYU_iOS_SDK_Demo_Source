@@ -30,7 +30,7 @@
 在 Podfile 文件中加入 
 
 ```
-	pod    'QIYU_iOS_SDK',    '~> 2.3.0' 
+	pod    'QIYU_iOS_SDK',    '~> 2.6.0' 
 ```
 
 ### 解决符号重复的冲突
@@ -38,13 +38,13 @@
 如果您集成之后，遇到了符号重复的冲突，您可能同时使用了网易云信 iOS SDK，如果是这种情况，请通过 CocoaPods 集成，在 Podfile 文件中加入
 
 ```
-	pod    'QIYU_iOS_SDK_Exclude_NIM',    '~> 2.3.0' 
+	pod    'QIYU_iOS_SDK_Exclude_NIM',    '~> 2.6.0' 
 ```
 
 或者，您可能同时使用了 OpenSSL 库，如果是这种情况，请通过 CocoaPods 集成，在 Podfile 文件中加入
 
 ```
-	pod    'QIYU_iOS_SDK_Exclude_Libcrypto',    '~> 2.3.0' 
+	pod    'QIYU_iOS_SDK_Exclude_Libcrypto',    '~> 2.6.0' 
 ```
 
 ### 其他
@@ -187,6 +187,7 @@ appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添�
     commodityInfo.pictureUrlString = @"http://qiyukf.com/main/res/img/index/barcode.png";
     commodityInfo.urlString = @"http://qiyukf.com/";
     commodityInfo.note = @"￥10000";
+    commodityInfo.show = YES; //访客端是否要在消息中显示商品信息，YES代表显示,NO代表不显示
 
 	sessionViewController.commodityInfo = commodityInfo;
 ```
@@ -201,33 +202,103 @@ appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添�
 QYCustomUIConfig是负责自定义UI的类；目前主要是定义聊天界面中的字体颜色、大小、头像等。相关设置必须在集成访客端聊天组件之前进行。调整UI样例代码：
 
 ```objc
+	/**
+	 *  访客文本消息字体颜色
+	 */
     [[QYSDK sharedSDK] customUIConfig].customMessageTextColor = [UIColor blackColor];
+    /**
+	 *  客服文本消息字体颜色
+	 */
     [[QYSDK sharedSDK] customUIConfig].serviceMessageTextColor = [UIColor blackColor];
-
+	/**
+	 *  消息tableview的背景图片
+	 */
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"session_bg"]];
     imageView.contentMode = UIViewContentModeScaleToFill;
     [[QYSDK sharedSDK] customUIConfig].sessionBackground = imageView;
-
+	/**
+	 *  访客头像
+	 */
     [[QYSDK sharedSDK] customUIConfig].customerHeadImage = [UIImage imageNamed:@"customer_head"];
+    /**
+	 *  客服头像
+	 */
     [[QYSDK sharedSDK] customUIConfig].serviceHeadImage = [UIImage imageNamed:@"service_head"];
-    
+    /**
+	 *  访客消息气泡normal图片
+	 */
     [[QYSDK sharedSDK] customUIConfig].customerMessageBubbleNormalImage = 
 										[[UIImage imageNamed:@"icon_sender_node"]
                                  resizableImageWithCapInsets:UIEdgeInsetsMake(15,15,30,30)
                                  resizingMode:UIImageResizingModeStretch];
+    /**
+	 *  访客消息气泡pressed图片
+	 */
     [[QYSDK sharedSDK] customUIConfig].customerMessageBubblePressedImage = 
     									[[UIImage imageNamed:@"icon_sender_node"]
                                   resizableImageWithCapInsets:UIEdgeInsetsMake(15,15,30,30)
                                   resizingMode:UIImageResizingModeStretch];
+	/**
+	 *  客服消息气泡normal图片
+	 */
     [[QYSDK sharedSDK] customUIConfig].serviceMessageBubbleNormalImage = 
     									[[UIImage imageNamed:@"icon_receiver_node"]
                                   resizableImageWithCapInsets:UIEdgeInsetsMake(15,30,30,15)
                                   resizingMode:UIImageResizingModeStretch];
+    /**
+	 *  客服消息气泡pressed图片
+	 */
     [[QYSDK sharedSDK] customUIConfig].serviceMessageBubblePressedImage = 
     									[[UIImage imageNamed:@"icon_receiver_node"]
                                   resizableImageWithCapInsets:UIEdgeInsetsMake(15,30,30,15)
                                   resizingMode:UIImageResizingModeStretch];
+    /**
+	 *  默认是YES,默认rightBarButtonItem内容是黑色，设置为NO，可以修改为白色
+	 */
     [[QYSDK sharedSDK] customUIConfig].rightBarButtonItemColorBlackOrWhite = NO;
+    /**
+	 *  默认是YES,默认显示发送语音入口，设置为NO，可以修改为隐藏
+	 */
+    [QYCustomUIConfig sharedInstance].showAudioEntry = YSE;
+    /**
+	 *  默认是YES,默认显示发送表情入口，设置为NO，可以修改为隐藏
+	 */
+    [QYCustomUIConfig sharedInstance].showEmoticonEntry = YES;
+	/**
+	 *  默认是YES,默认进入聊天界面，是文本输入模式的话，会弹出键盘，设置为NO，可以修改为不弹出
+	 */
+    [QYCustomUIConfig sharedInstance].autoShowKeyboard = YES;
+```
+
+### 自定义访客端聊天组件事件处理
+
+获取自定义事件处理类对象
+
+```objc
+	[[QYSDK sharedSDK] customActionConfig];
+```
+QYCustomActionConfig是负责自定义事件处理的类；目前支持自定义点击事件。
+
+```objc
+
+/**
+ *  提供了所有自定义行为的接口;每个接口对应一个自定义行为的处理，
+ *  如果设置了，则使用设置的处理，如果不设置，则采用默认处理
+ */
+
+typedef void (^QYLinkClickBlock)(NSString *linkAddress);
+
+@interface QYCustomActionConfig : NSObject
+
++ (instancetype)sharedInstance;
+
+/**
+ *  所有消息中的链接（自定义商品消息、文本消息、机器人答案消息）的回调处理
+ */
+@property (nonatomic, copy) QYLinkClickBlock linkClickBlock;
+
+@end
+
 ```
 
 ### 更换图片素材
@@ -319,7 +390,7 @@ QYCustomUIConfig只是负责替换部分皮肤相关内容，不包含所有的�
 	[[QYSDK sharedSDK] setUserInfo:userInfo];
 ```
 userInfo: 字段“id”表示用户id，字段“data”表示用户信息，具体请看官网CRM相关文档:
-<a>http://qiyukf.com/doc/sdk/_book/qiyu_crm_interface.html</a>
+<a>http://qiyukf.com/newdoc/html/qiyu_crm_interface.html</a>
 
 ## FAQ
 如果集成过程中遇到任何问题，可查看 [FAQ](./iOS_FAQ.html "target=_blank")

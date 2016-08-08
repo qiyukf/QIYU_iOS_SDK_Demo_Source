@@ -14,5 +14,6 @@
 #import "QYSessionViewController.h"
 #import "QYConversationManagerProtocol.h"
 #import "QYCustomUIConfig.h"
+#import "QYCustomActionConfig.h"
 
 #endif
