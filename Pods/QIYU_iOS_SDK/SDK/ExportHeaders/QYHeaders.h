@@ -15,5 +15,6 @@
 #import "QYConversationManagerProtocol.h"
 #import "QYCustomUIConfig.h"
 #import "QYCustomActionConfig.h"
+#import "QYCommodityInfo.h"
 
 #endif
