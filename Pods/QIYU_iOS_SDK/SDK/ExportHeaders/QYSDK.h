@@ -14,6 +14,10 @@
  */
 typedef void(^QYCompletionBlock)();
 
+/**
+ *  推送消息回调
+ */
+typedef void(^QYPushMessageBlock)(QYPushMessage *);
 
 /**
  *  所有SDK接口都从此类获得
@@ -83,6 +87,20 @@ typedef void(^QYCompletionBlock)();
  *  @param userInfo 个人信息
  */
 - (void)setUserInfo:(QYUserInfo *)userInfo;
+
+/**
+ *  获取推送消息
+ *
+ *  @param messageId 消息id
+ */
+- (void)getPushMessage:(NSString *)messageId;
+
+/**
+ *  注册推送消息通知回调
+ *
+ *  @param messageId 消息id
+ */
+- (void)RegisterPushMessageNotification:(QYPushMessageBlock)block;
 
 /**
  *  返回AppKey

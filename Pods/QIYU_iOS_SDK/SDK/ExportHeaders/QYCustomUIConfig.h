@@ -131,6 +131,11 @@
 @property (nonatomic, assign) BOOL showAudioEntry;
 
 /**
+ *  默认是YES,默认在机器人模式下显示发送语音入口，设置为NO，可以修改为隐藏
+ */
+@property (nonatomic, assign) BOOL showAudioEntryInRobotMode;
+
+/**
  *  默认是YES,默认显示发送表情入口，设置为NO，可以修改为隐藏
  */
 @property (nonatomic, assign) BOOL showEmoticonEntry;
@@ -139,6 +144,11 @@
  *  默认是YES,默认进入聊天界面，是文本输入模式的话，会弹出键盘，设置为NO，可以修改为不弹出
  */
 @property (nonatomic, assign) BOOL autoShowKeyboard;
+
+/**
+ *  表示聊天组件离界面底部的间距，默认是0；比较典型的是底部有tabbar，这时候设置为tabbar的高度即可
+ */
+@property (nonatomic, assign) CGFloat bottomMargin;
 
 @end
 

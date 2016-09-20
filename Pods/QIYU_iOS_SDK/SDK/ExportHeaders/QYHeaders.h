@@ -16,5 +16,6 @@
 #import "QYCustomUIConfig.h"
 #import "QYCustomActionConfig.h"
 #import "QYCommodityInfo.h"
+#import "QYPushMessage.h"
 
 #endif
