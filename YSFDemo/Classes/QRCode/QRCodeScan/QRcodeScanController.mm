@@ -147,14 +147,13 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            CGRect scanRect = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height- 64);
-            self.capture.cropRect = self.view.frame;
+            //中间扫描区域框width&height为300
+            CGRect scanRect = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2, ([UIScreen mainScreen].bounds.size.height - 300) / 2, 300, 300);
+            self.capture.cropRect = scanRect;
             self.capture.scaleSize = scanRect.size;
             self.capture.scale = 1.0f;
             
-            self.capture.captureLayer.frame = scanRect;
-            self.capture.captureLayer.transform = CATransform3DMakeScale(self.capture.scale, self.capture.scale, 1.0);
-            self.capture.captureLayer.sublayerTransform = CATransform3DMakeScale(self.capture.scale, self.capture.scale, 1.0);
+            self.capture.captureLayer.frame = self.view.frame;
             //[self.view.layer addSublayer:self.capture.captureLayer];
             [self.captureLayer.layer addSublayer:self.capture.captureLayer];
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -197,10 +196,10 @@
         appkey = [scanResult substringWithRange:NSMakeRange(startIndex, 32)];
     }
     NSRange range2 = [scanResult rangeOfString:@"testing="];
-    BOOL isTesting = NO;
+    NSUInteger isTesting = 0;
     if (range2.location != NSNotFound) {
         unsigned long startIndex2 = range2.location + range2.length;
-        isTesting = [[scanResult substringWithRange:NSMakeRange(startIndex2, 1)] boolValue];
+        isTesting = [[scanResult substringWithRange:NSMakeRange(startIndex2, 1)] integerValue];
     }
     
     if (!appkey) {

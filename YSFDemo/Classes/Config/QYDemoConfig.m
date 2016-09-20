@@ -40,12 +40,9 @@
 }
 
 
-- (void)setEnvironment:(BOOL)fromConfig
+- (void)setEnvironment:(NSInteger)isTest
 {
-    if (fromConfig)
-    {
-        [[QYSDK sharedSDK] performSelector:@selector(readEnvironmentConfig)];
-    }
+    [[QYSDK sharedSDK] performSelector:@selector(readEnvironmentConfig:) withObject:@(isTest)];
 }
 
 @end

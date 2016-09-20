@@ -52,7 +52,7 @@
     [_contact addTarget:self action:@selector(onChat:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)viewWillLayoutSubviews
+- (void)viewDidLayoutSubviews
 {
     _contact.ysf_frameWidth = (self.view.ysf_frameWidth - 40)/2;
     _contact.ysf_frameRight = self.view.ysf_frameWidth - 10;

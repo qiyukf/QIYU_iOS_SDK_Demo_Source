@@ -15,7 +15,7 @@
  */
 @protocol QRCodeScanDelegate <NSObject>
 
-- (void)qRcodeScanSucess:(NSString *)appkey isTesting:(BOOL)isTesting;
+- (void)qRcodeScanSucess:(NSString *)appkey isTesting:(NSInteger)isTesting;
 
 @end
 

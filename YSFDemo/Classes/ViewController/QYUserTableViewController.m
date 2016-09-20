@@ -40,6 +40,8 @@
 
 @end
 
+BOOL isTestMode = NO;
+
 @implementation QYUserTableViewController
 
 - (void)viewDidLoad {
@@ -70,9 +72,23 @@
     [self buildData];
     [self.tableView reloadData];
     
+    //增加测试模式
+    UITapGestureRecognizer *testTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(testTap:)];
+    testTap.numberOfTapsRequired = 10;
+    [self.view addGestureRecognizer:testTap];
 
 }
 
+- (void)testTap:(id)sender
+{
+    if (!isTestMode) {
+        isTestMode = YES;
+        [self.navigationController.view ysf_makeToast:@"Test Mode"];
+    } else {
+        isTestMode = NO;
+        [self.navigationController.view ysf_makeToast:@"Normal Mode"];
+    }
+}
 
 - (void)buildData
 {
@@ -173,12 +189,41 @@
     NSString *name = @"";
     if ([userInfo.userId isEqualToString:@"1"]) {
         name = @"账号A";
-        userInfo.data = @"[{\"key\":\"real_name\", \"value\":\"边晨\"},"
-                         "{\"key\":\"mobile_phone\", \"value\":\"13805713536\", \"hidden\":false},"
-                         "{\"key\":\"email\", \"value\":\"bianchen@163.com\"},"
-                         "{\"index\":0, \"key\":\"authentication\", \"label\":\"实名认证\", \"value\":\"已认证\"},"
-                        "{\"index\":1, \"key\":\"bankcard\", \"label\":\"绑定银行卡\", \"value\":\"622202******01116068\"},"
-                        "{\"index\":1, \"key\":\"bankcard\", \"label\":\"最近订单\", \"value\":\"七鱼宝（2016010701）\"}]";
+        NSMutableArray *array = [NSMutableArray new];
+        NSMutableDictionary *dictRealName = [NSMutableDictionary new];
+        [dictRealName setObject:@"real_name" forKey:@"key"];
+        [dictRealName setObject:@"边晨" forKey:@"value"];
+        [array addObject:dictRealName];
+        NSMutableDictionary *dictMobilePhone = [NSMutableDictionary new];
+        [dictMobilePhone setObject:@"mobile_phone" forKey:@"key"];
+        [dictMobilePhone setObject:@"13805713536" forKey:@"value"];
+        [dictMobilePhone setObject:@(NO) forKey:@"hidden"];
+        [array addObject:dictMobilePhone];
+        NSMutableDictionary *dictEmail = [NSMutableDictionary new];
+        [dictEmail setObject:@"email" forKey:@"key"];
+        [dictEmail setObject:@"bianchen@163.com" forKey:@"value"];
+        [array addObject:dictEmail];
+        NSMutableDictionary *dictAuthentication = [NSMutableDictionary new];
+        [dictAuthentication setObject:@"0" forKey:@"index"];
+        [dictAuthentication setObject:@"authentication" forKey:@"key"];
+        [dictAuthentication setObject:@"实名认证" forKey:@"label"];
+        [dictAuthentication setObject:@"已认证" forKey:@"value"];
+        [array addObject:dictAuthentication];
+        NSMutableDictionary *dictBankcard = [NSMutableDictionary new];
+        [dictBankcard setObject:@"1" forKey:@"index"];
+        [dictBankcard setObject:@"bankcard" forKey:@"key"];
+        [dictBankcard setObject:@"绑定银行卡" forKey:@"label"];
+        [dictBankcard setObject:@"622202******01116068" forKey:@"value"];
+        [array addObject:dictBankcard];
+        
+        NSData *data = [NSJSONSerialization dataWithJSONObject:array
+                                                       options:0
+                                                         error:nil];
+        if (data)
+        {
+            userInfo.data = [[NSString alloc] initWithData:data
+                                            encoding:NSUTF8StringEncoding];
+        }
 
     }
     else if ([userInfo.userId isEqualToString:@"2"]) {
@@ -188,7 +233,7 @@
         "{\"key\":\"email\", \"value\":\"ouyang@163.com\"},"
         "{\"index\":0, \"key\":\"authentication\", \"label\":\"实名认证\", \"value\":\"未认证\"},"
         "{\"index\":1, \"key\":\"bankcard\", \"label\":\"绑定银行卡\", \"value\":\"622202******01110520\"},"
-        "{\"index\":1, \"key\":\"bankcard\", \"label\":\"最近订单\", \"value\":\"七鱼银票（2016010703）\"}]";
+        "{\"index\":2, \"key\":\"lastorder\", \"label\":\"最近订单\", \"value\":\"七鱼银票（2016010703）\"}]";
     }
     else if ([userInfo.userId isEqualToString:@"3"]) {
         name = @"账号C";
@@ -197,7 +242,7 @@
         "{\"key\":\"email\", \"value\":\"xiaotong@163.com\"},"
         "{\"index\":0, \"key\":\"authentication\", \"label\":\"实名认证\", \"value\":\"已认证\"},"
         "{\"index\":1, \"key\":\"bankcard\", \"label\":\"绑定银行卡\", \"value\":\"622202******0111015\"},"
-        "{\"index\":1, \"key\":\"bankcard\", \"label\":\"最近订单\", \"value\":\"七鱼银票(2016010702)\"}]";
+        "{\"index\":2, \"key\":\"lastorder\", \"label\":\"最近订单\", \"value\":\"七鱼银票(2016010702)\"}]";
     }
     else if ([userInfo.userId isEqualToString:@"4"]) {
         name = @"账号D";
@@ -221,6 +266,8 @@
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
+    
+    NSLog(@"-----%@------",userInfo.data);
     
     [[QYSDK sharedSDK] setUserInfo:userInfo];
     

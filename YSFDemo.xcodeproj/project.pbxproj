@@ -227,24 +227,26 @@
 		2B035C5D1CE07AB900A66338 /* ZXQRCodeWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B035B6F1CE07AB900A66338 /* ZXQRCodeWriter.m */; };
 		2B035C5E1CE07AB900A66338 /* ZXMultiFormatReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B035B721CE07AB900A66338 /* ZXMultiFormatReader.m */; };
 		2B035C5F1CE07AB900A66338 /* ZXMultiFormatWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B035B741CE07AB900A66338 /* ZXMultiFormatWriter.m */; };
-		2B1E49AE1CEAC7580059D95B /* QYDemoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E498C1CEAC7580059D95B /* QYDemoConfig.m */; };
-		2B1E49AF1CEAC7580059D95B /* QRcodeScanController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49901CEAC7580059D95B /* QRcodeScanController.mm */; };
-		2B1E49B01CEAC7580059D95B /* YXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49921CEAC7580059D95B /* YXCapture.m */; };
-		2B1E49B11CEAC7580059D95B /* QYDemoBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49951CEAC7580059D95B /* QYDemoBadgeView.m */; };
-		2B1E49B21CEAC7580059D95B /* QYAddAppKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49981CEAC7580059D95B /* QYAddAppKeyViewController.m */; };
-		2B1E49B31CEAC7580059D95B /* QYAddAppKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1E49991CEAC7580059D95B /* QYAddAppKeyViewController.xib */; };
-		2B1E49B41CEAC7580059D95B /* QYBindAppkeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E499B1CEAC7580059D95B /* QYBindAppkeyViewController.m */; };
-		2B1E49B51CEAC7580059D95B /* QYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E499D1CEAC7580059D95B /* QYDetailViewController.m */; };
-		2B1E49B61CEAC7580059D95B /* QYDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1E499E1CEAC7580059D95B /* QYDetailViewController.xib */; };
-		2B1E49B71CEAC7580059D95B /* QYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49A01CEAC7580059D95B /* QYHomePageViewController.m */; };
-		2B1E49B81CEAC7580059D95B /* QYLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49A21CEAC7580059D95B /* QYLogViewController.m */; };
-		2B1E49B91CEAC7580059D95B /* QYLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1E49A31CEAC7580059D95B /* QYLogViewController.xib */; };
-		2B1E49BA1CEAC7580059D95B /* QYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49A51CEAC7580059D95B /* QYMainViewController.m */; };
-		2B1E49BB1CEAC7580059D95B /* QYMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1E49A61CEAC7580059D95B /* QYMainViewController.xib */; };
-		2B1E49BC1CEAC7580059D95B /* QYReportUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49A81CEAC7580059D95B /* QYReportUserInfoViewController.m */; };
-		2B1E49BD1CEAC7580059D95B /* QYReportUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1E49A91CEAC7580059D95B /* QYReportUserInfoViewController.xib */; };
-		2B1E49BE1CEAC7580059D95B /* QYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49AB1CEAC7580059D95B /* QYSettingViewController.m */; };
-		2B1E49BF1CEAC7580059D95B /* QYUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E49AD1CEAC7580059D95B /* QYUserTableViewController.m */; };
+		2B334FB51D91671C00FACC95 /* QYDemoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334F8F1D91671C00FACC95 /* QYDemoConfig.m */; };
+		2B334FB61D91671C00FACC95 /* QRcodeScanController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B334F931D91671C00FACC95 /* QRcodeScanController.mm */; };
+		2B334FB71D91671C00FACC95 /* YXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334F951D91671C00FACC95 /* YXCapture.m */; };
+		2B334FB81D91671C00FACC95 /* QYDemoBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334F981D91671C00FACC95 /* QYDemoBadgeView.m */; };
+		2B334FB91D91671C00FACC95 /* QYAddAppKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334F9B1D91671C00FACC95 /* QYAddAppKeyViewController.m */; };
+		2B334FBA1D91671C00FACC95 /* QYAddAppKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B334F9C1D91671C00FACC95 /* QYAddAppKeyViewController.xib */; };
+		2B334FBB1D91671C00FACC95 /* QYBindAppkeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334F9E1D91671C00FACC95 /* QYBindAppkeyViewController.m */; };
+		2B334FBC1D91671C00FACC95 /* QYCommodityInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FA01D91671C00FACC95 /* QYCommodityInfoViewController.m */; };
+		2B334FBD1D91671C00FACC95 /* QYCommodityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B334FA11D91671C00FACC95 /* QYCommodityInfoViewController.xib */; };
+		2B334FBE1D91671C00FACC95 /* QYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FA31D91671C00FACC95 /* QYDetailViewController.m */; };
+		2B334FBF1D91671C00FACC95 /* QYDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B334FA41D91671C00FACC95 /* QYDetailViewController.xib */; };
+		2B334FC01D91671C00FACC95 /* QYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FA61D91671C00FACC95 /* QYHomePageViewController.m */; };
+		2B334FC11D91671C00FACC95 /* QYLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FA81D91671C00FACC95 /* QYLogViewController.m */; };
+		2B334FC21D91671C00FACC95 /* QYLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B334FA91D91671C00FACC95 /* QYLogViewController.xib */; };
+		2B334FC31D91671C00FACC95 /* QYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FAB1D91671C00FACC95 /* QYMainViewController.m */; };
+		2B334FC41D91671C00FACC95 /* QYMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B334FAC1D91671C00FACC95 /* QYMainViewController.xib */; };
+		2B334FC51D91671C00FACC95 /* QYReportUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FAE1D91671C00FACC95 /* QYReportUserInfoViewController.m */; };
+		2B334FC61D91671C00FACC95 /* QYReportUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B334FAF1D91671C00FACC95 /* QYReportUserInfoViewController.xib */; };
+		2B334FC71D91671C00FACC95 /* QYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FB11D91671C00FACC95 /* QYSettingViewController.m */; };
+		2B334FC81D91671C00FACC95 /* QYUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B334FB31D91671C00FACC95 /* QYUserTableViewController.m */; };
 		E48973051B8C016E001C96EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973041B8C016E001C96EC /* main.m */; };
 		E48973081B8C016E001C96EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973071B8C016E001C96EC /* AppDelegate.m */; };
 		E48973101B8C016E001C96EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E489730F1B8C016E001C96EC /* Images.xcassets */; };
@@ -741,37 +743,40 @@
 		2B035C741CE07C6B00A66338 /* YSFPresentTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFPresentTransitioningDelegate.h; sourceTree = "<group>"; };
 		2B035C761CE07C6B00A66338 /* YSFPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFPresentViewController.h; sourceTree = "<group>"; };
 		2B035CB51CE07C6B00A66338 /* YSFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFWebViewController.h; sourceTree = "<group>"; };
-		2B1E498B1CEAC7580059D95B /* QYDemoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDemoConfig.h; sourceTree = "<group>"; };
-		2B1E498C1CEAC7580059D95B /* QYDemoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDemoConfig.m; sourceTree = "<group>"; };
-		2B1E498F1CEAC7580059D95B /* QRcodeScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRcodeScanController.h; sourceTree = "<group>"; };
-		2B1E49901CEAC7580059D95B /* QRcodeScanController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QRcodeScanController.mm; sourceTree = "<group>"; };
-		2B1E49911CEAC7580059D95B /* YXCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCapture.h; sourceTree = "<group>"; };
-		2B1E49921CEAC7580059D95B /* YXCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCapture.m; sourceTree = "<group>"; };
-		2B1E49941CEAC7580059D95B /* QYDemoBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDemoBadgeView.h; sourceTree = "<group>"; };
-		2B1E49951CEAC7580059D95B /* QYDemoBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDemoBadgeView.m; sourceTree = "<group>"; };
-		2B1E49971CEAC7580059D95B /* QYAddAppKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYAddAppKeyViewController.h; sourceTree = "<group>"; };
-		2B1E49981CEAC7580059D95B /* QYAddAppKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYAddAppKeyViewController.m; sourceTree = "<group>"; };
-		2B1E49991CEAC7580059D95B /* QYAddAppKeyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYAddAppKeyViewController.xib; sourceTree = "<group>"; };
-		2B1E499A1CEAC7580059D95B /* QYBindAppkeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBindAppkeyViewController.h; sourceTree = "<group>"; };
-		2B1E499B1CEAC7580059D95B /* QYBindAppkeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBindAppkeyViewController.m; sourceTree = "<group>"; };
-		2B1E499C1CEAC7580059D95B /* QYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDetailViewController.h; sourceTree = "<group>"; };
-		2B1E499D1CEAC7580059D95B /* QYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDetailViewController.m; sourceTree = "<group>"; };
-		2B1E499E1CEAC7580059D95B /* QYDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYDetailViewController.xib; sourceTree = "<group>"; };
-		2B1E499F1CEAC7580059D95B /* QYHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHomePageViewController.h; sourceTree = "<group>"; };
-		2B1E49A01CEAC7580059D95B /* QYHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHomePageViewController.m; sourceTree = "<group>"; };
-		2B1E49A11CEAC7580059D95B /* QYLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYLogViewController.h; sourceTree = "<group>"; };
-		2B1E49A21CEAC7580059D95B /* QYLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYLogViewController.m; sourceTree = "<group>"; };
-		2B1E49A31CEAC7580059D95B /* QYLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYLogViewController.xib; sourceTree = "<group>"; };
-		2B1E49A41CEAC7580059D95B /* QYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYMainViewController.h; sourceTree = "<group>"; };
-		2B1E49A51CEAC7580059D95B /* QYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYMainViewController.m; sourceTree = "<group>"; };
-		2B1E49A61CEAC7580059D95B /* QYMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYMainViewController.xib; sourceTree = "<group>"; };
-		2B1E49A71CEAC7580059D95B /* QYReportUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYReportUserInfoViewController.h; sourceTree = "<group>"; };
-		2B1E49A81CEAC7580059D95B /* QYReportUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYReportUserInfoViewController.m; sourceTree = "<group>"; };
-		2B1E49A91CEAC7580059D95B /* QYReportUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYReportUserInfoViewController.xib; sourceTree = "<group>"; };
-		2B1E49AA1CEAC7580059D95B /* QYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYSettingViewController.h; sourceTree = "<group>"; };
-		2B1E49AB1CEAC7580059D95B /* QYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYSettingViewController.m; sourceTree = "<group>"; };
-		2B1E49AC1CEAC7580059D95B /* QYUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYUserTableViewController.h; sourceTree = "<group>"; };
-		2B1E49AD1CEAC7580059D95B /* QYUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYUserTableViewController.m; sourceTree = "<group>"; };
+		2B334F8E1D91671C00FACC95 /* QYDemoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDemoConfig.h; sourceTree = "<group>"; };
+		2B334F8F1D91671C00FACC95 /* QYDemoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDemoConfig.m; sourceTree = "<group>"; };
+		2B334F921D91671C00FACC95 /* QRcodeScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRcodeScanController.h; sourceTree = "<group>"; };
+		2B334F931D91671C00FACC95 /* QRcodeScanController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QRcodeScanController.mm; sourceTree = "<group>"; };
+		2B334F941D91671C00FACC95 /* YXCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCapture.h; sourceTree = "<group>"; };
+		2B334F951D91671C00FACC95 /* YXCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCapture.m; sourceTree = "<group>"; };
+		2B334F971D91671C00FACC95 /* QYDemoBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDemoBadgeView.h; sourceTree = "<group>"; };
+		2B334F981D91671C00FACC95 /* QYDemoBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDemoBadgeView.m; sourceTree = "<group>"; };
+		2B334F9A1D91671C00FACC95 /* QYAddAppKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYAddAppKeyViewController.h; sourceTree = "<group>"; };
+		2B334F9B1D91671C00FACC95 /* QYAddAppKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYAddAppKeyViewController.m; sourceTree = "<group>"; };
+		2B334F9C1D91671C00FACC95 /* QYAddAppKeyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYAddAppKeyViewController.xib; sourceTree = "<group>"; };
+		2B334F9D1D91671C00FACC95 /* QYBindAppkeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBindAppkeyViewController.h; sourceTree = "<group>"; };
+		2B334F9E1D91671C00FACC95 /* QYBindAppkeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBindAppkeyViewController.m; sourceTree = "<group>"; };
+		2B334F9F1D91671C00FACC95 /* QYCommodityInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCommodityInfoViewController.h; sourceTree = "<group>"; };
+		2B334FA01D91671C00FACC95 /* QYCommodityInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCommodityInfoViewController.m; sourceTree = "<group>"; };
+		2B334FA11D91671C00FACC95 /* QYCommodityInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYCommodityInfoViewController.xib; sourceTree = "<group>"; };
+		2B334FA21D91671C00FACC95 /* QYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDetailViewController.h; sourceTree = "<group>"; };
+		2B334FA31D91671C00FACC95 /* QYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDetailViewController.m; sourceTree = "<group>"; };
+		2B334FA41D91671C00FACC95 /* QYDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYDetailViewController.xib; sourceTree = "<group>"; };
+		2B334FA51D91671C00FACC95 /* QYHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHomePageViewController.h; sourceTree = "<group>"; };
+		2B334FA61D91671C00FACC95 /* QYHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHomePageViewController.m; sourceTree = "<group>"; };
+		2B334FA71D91671C00FACC95 /* QYLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYLogViewController.h; sourceTree = "<group>"; };
+		2B334FA81D91671C00FACC95 /* QYLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYLogViewController.m; sourceTree = "<group>"; };
+		2B334FA91D91671C00FACC95 /* QYLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYLogViewController.xib; sourceTree = "<group>"; };
+		2B334FAA1D91671C00FACC95 /* QYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYMainViewController.h; sourceTree = "<group>"; };
+		2B334FAB1D91671C00FACC95 /* QYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYMainViewController.m; sourceTree = "<group>"; };
+		2B334FAC1D91671C00FACC95 /* QYMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYMainViewController.xib; sourceTree = "<group>"; };
+		2B334FAD1D91671C00FACC95 /* QYReportUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYReportUserInfoViewController.h; sourceTree = "<group>"; };
+		2B334FAE1D91671C00FACC95 /* QYReportUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYReportUserInfoViewController.m; sourceTree = "<group>"; };
+		2B334FAF1D91671C00FACC95 /* QYReportUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYReportUserInfoViewController.xib; sourceTree = "<group>"; };
+		2B334FB01D91671C00FACC95 /* QYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYSettingViewController.h; sourceTree = "<group>"; };
+		2B334FB11D91671C00FACC95 /* QYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYSettingViewController.m; sourceTree = "<group>"; };
+		2B334FB21D91671C00FACC95 /* QYUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYUserTableViewController.h; sourceTree = "<group>"; };
+		2B334FB31D91671C00FACC95 /* QYUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYUserTableViewController.m; sourceTree = "<group>"; };
 		E43BA2081BA27C9E0046F016 /* ysf_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_debug.xcconfig; sourceTree = "<group>"; };
 		E48972FF1B8C016E001C96EC /* YSFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48973031B8C016E001C96EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1674,80 +1679,83 @@
 			path = YSFVendor;
 			sourceTree = "<group>";
 		};
-		2B1E49891CEAC7580059D95B /* Classes */ = {
+		2B334F8A1D91671C00FACC95 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2B1E498A1CEAC7580059D95B /* Config */,
-				2B1E498D1CEAC7580059D95B /* QRCode */,
-				2B1E49931CEAC7580059D95B /* UI */,
-				2B1E49961CEAC7580059D95B /* ViewController */,
+				2B334F8B1D91671C00FACC95 /* Config */,
+				2B334F901D91671C00FACC95 /* QRCode */,
+				2B334F961D91671C00FACC95 /* UI */,
+				2B334F991D91671C00FACC95 /* ViewController */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		2B1E498A1CEAC7580059D95B /* Config */ = {
+		2B334F8B1D91671C00FACC95 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				2B1E498B1CEAC7580059D95B /* QYDemoConfig.h */,
-				2B1E498C1CEAC7580059D95B /* QYDemoConfig.m */,
+				2B334F8E1D91671C00FACC95 /* QYDemoConfig.h */,
+				2B334F8F1D91671C00FACC95 /* QYDemoConfig.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
 		};
-		2B1E498D1CEAC7580059D95B /* QRCode */ = {
+		2B334F901D91671C00FACC95 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				2B1E498E1CEAC7580059D95B /* QRCodeScan */,
+				2B334F911D91671C00FACC95 /* QRCodeScan */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
 		};
-		2B1E498E1CEAC7580059D95B /* QRCodeScan */ = {
+		2B334F911D91671C00FACC95 /* QRCodeScan */ = {
 			isa = PBXGroup;
 			children = (
-				2B1E498F1CEAC7580059D95B /* QRcodeScanController.h */,
-				2B1E49901CEAC7580059D95B /* QRcodeScanController.mm */,
-				2B1E49911CEAC7580059D95B /* YXCapture.h */,
-				2B1E49921CEAC7580059D95B /* YXCapture.m */,
+				2B334F921D91671C00FACC95 /* QRcodeScanController.h */,
+				2B334F931D91671C00FACC95 /* QRcodeScanController.mm */,
+				2B334F941D91671C00FACC95 /* YXCapture.h */,
+				2B334F951D91671C00FACC95 /* YXCapture.m */,
 			);
 			path = QRCodeScan;
 			sourceTree = "<group>";
 		};
-		2B1E49931CEAC7580059D95B /* UI */ = {
+		2B334F961D91671C00FACC95 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2B1E49941CEAC7580059D95B /* QYDemoBadgeView.h */,
-				2B1E49951CEAC7580059D95B /* QYDemoBadgeView.m */,
+				2B334F971D91671C00FACC95 /* QYDemoBadgeView.h */,
+				2B334F981D91671C00FACC95 /* QYDemoBadgeView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		2B1E49961CEAC7580059D95B /* ViewController */ = {
+		2B334F991D91671C00FACC95 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2B1E49971CEAC7580059D95B /* QYAddAppKeyViewController.h */,
-				2B1E49981CEAC7580059D95B /* QYAddAppKeyViewController.m */,
-				2B1E49991CEAC7580059D95B /* QYAddAppKeyViewController.xib */,
-				2B1E499A1CEAC7580059D95B /* QYBindAppkeyViewController.h */,
-				2B1E499B1CEAC7580059D95B /* QYBindAppkeyViewController.m */,
-				2B1E499C1CEAC7580059D95B /* QYDetailViewController.h */,
-				2B1E499D1CEAC7580059D95B /* QYDetailViewController.m */,
-				2B1E499E1CEAC7580059D95B /* QYDetailViewController.xib */,
-				2B1E499F1CEAC7580059D95B /* QYHomePageViewController.h */,
-				2B1E49A01CEAC7580059D95B /* QYHomePageViewController.m */,
-				2B1E49A11CEAC7580059D95B /* QYLogViewController.h */,
-				2B1E49A21CEAC7580059D95B /* QYLogViewController.m */,
-				2B1E49A31CEAC7580059D95B /* QYLogViewController.xib */,
-				2B1E49A41CEAC7580059D95B /* QYMainViewController.h */,
-				2B1E49A51CEAC7580059D95B /* QYMainViewController.m */,
-				2B1E49A61CEAC7580059D95B /* QYMainViewController.xib */,
-				2B1E49A71CEAC7580059D95B /* QYReportUserInfoViewController.h */,
-				2B1E49A81CEAC7580059D95B /* QYReportUserInfoViewController.m */,
-				2B1E49A91CEAC7580059D95B /* QYReportUserInfoViewController.xib */,
-				2B1E49AA1CEAC7580059D95B /* QYSettingViewController.h */,
-				2B1E49AB1CEAC7580059D95B /* QYSettingViewController.m */,
-				2B1E49AC1CEAC7580059D95B /* QYUserTableViewController.h */,
-				2B1E49AD1CEAC7580059D95B /* QYUserTableViewController.m */,
+				2B334F9A1D91671C00FACC95 /* QYAddAppKeyViewController.h */,
+				2B334F9B1D91671C00FACC95 /* QYAddAppKeyViewController.m */,
+				2B334F9C1D91671C00FACC95 /* QYAddAppKeyViewController.xib */,
+				2B334F9D1D91671C00FACC95 /* QYBindAppkeyViewController.h */,
+				2B334F9E1D91671C00FACC95 /* QYBindAppkeyViewController.m */,
+				2B334F9F1D91671C00FACC95 /* QYCommodityInfoViewController.h */,
+				2B334FA01D91671C00FACC95 /* QYCommodityInfoViewController.m */,
+				2B334FA11D91671C00FACC95 /* QYCommodityInfoViewController.xib */,
+				2B334FA21D91671C00FACC95 /* QYDetailViewController.h */,
+				2B334FA31D91671C00FACC95 /* QYDetailViewController.m */,
+				2B334FA41D91671C00FACC95 /* QYDetailViewController.xib */,
+				2B334FA51D91671C00FACC95 /* QYHomePageViewController.h */,
+				2B334FA61D91671C00FACC95 /* QYHomePageViewController.m */,
+				2B334FA71D91671C00FACC95 /* QYLogViewController.h */,
+				2B334FA81D91671C00FACC95 /* QYLogViewController.m */,
+				2B334FA91D91671C00FACC95 /* QYLogViewController.xib */,
+				2B334FAA1D91671C00FACC95 /* QYMainViewController.h */,
+				2B334FAB1D91671C00FACC95 /* QYMainViewController.m */,
+				2B334FAC1D91671C00FACC95 /* QYMainViewController.xib */,
+				2B334FAD1D91671C00FACC95 /* QYReportUserInfoViewController.h */,
+				2B334FAE1D91671C00FACC95 /* QYReportUserInfoViewController.m */,
+				2B334FAF1D91671C00FACC95 /* QYReportUserInfoViewController.xib */,
+				2B334FB01D91671C00FACC95 /* QYSettingViewController.h */,
+				2B334FB11D91671C00FACC95 /* QYSettingViewController.m */,
+				2B334FB21D91671C00FACC95 /* QYUserTableViewController.h */,
+				2B334FB31D91671C00FACC95 /* QYUserTableViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1793,7 +1801,7 @@
 			children = (
 				2B0359641CE07AB900A66338 /* OtherVendor */,
 				2B1688B91C47BEB2003BC21A /* YSFVendor */,
-				2B1E49891CEAC7580059D95B /* Classes */,
+				2B334F8A1D91671C00FACC95 /* Classes */,
 				E48973061B8C016E001C96EC /* AppDelegate.h */,
 				E48973071B8C016E001C96EC /* AppDelegate.m */,
 				2B035C601CE07ADC00A66338 /* YSFDemoPrefix.pch */,
@@ -1876,12 +1884,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B1E49B31CEAC7580059D95B /* QYAddAppKeyViewController.xib in Resources */,
+				2B334FC21D91671C00FACC95 /* QYLogViewController.xib in Resources */,
+				2B334FBD1D91671C00FACC95 /* QYCommodityInfoViewController.xib in Resources */,
+				2B334FBA1D91671C00FACC95 /* QYAddAppKeyViewController.xib in Resources */,
 				E48973101B8C016E001C96EC /* Images.xcassets in Resources */,
-				2B1E49B61CEAC7580059D95B /* QYDetailViewController.xib in Resources */,
-				2B1E49BD1CEAC7580059D95B /* QYReportUserInfoViewController.xib in Resources */,
-				2B1E49B91CEAC7580059D95B /* QYLogViewController.xib in Resources */,
-				2B1E49BB1CEAC7580059D95B /* QYMainViewController.xib in Resources */,
+				2B334FBF1D91671C00FACC95 /* QYDetailViewController.xib in Resources */,
+				2B334FC61D91671C00FACC95 /* QYReportUserInfoViewController.xib in Resources */,
+				2B334FC41D91671C00FACC95 /* QYMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1964,6 +1973,7 @@
 				2B035C391CE07AB900A66338 /* ZXPDF417DetectorResult.m in Sources */,
 				2B035BE21CE07AB900A66338 /* ZXDataMatrixC40Encoder.m in Sources */,
 				2B035BC71CE07AB900A66338 /* ZXGlobalHistogramBinarizer.m in Sources */,
+				2B334FC11D91671C00FACC95 /* QYLogViewController.m in Sources */,
 				2B035C2C1CE07AB900A66338 /* ZXModulusPoly.m in Sources */,
 				2B035BBF1CE07AB900A66338 /* ZXBitMatrix.m in Sources */,
 				2B035BF01CE07AB900A66338 /* ZXMaxiCodeDecoder.m in Sources */,
@@ -1971,7 +1981,9 @@
 				2B035C031CE07AB900A66338 /* ZXRSSExpandedDecodedNumeric.m in Sources */,
 				2B035BF11CE07AB900A66338 /* ZXMaxiCodeReader.m in Sources */,
 				2B035BB11CE07AB900A66338 /* ZXVINResultParser.m in Sources */,
+				2B334FB91D91671C00FACC95 /* QYAddAppKeyViewController.m in Sources */,
 				2B035BA01CE07AB900A66338 /* ZXParsedResult.m in Sources */,
+				2B334FC01D91671C00FACC95 /* QYHomePageViewController.m in Sources */,
 				2B035B9C1CE07AB900A66338 /* ZXGeoParsedResult.m in Sources */,
 				2B035C021CE07AB900A66338 /* ZXRSSExpandedDecodedInformation.m in Sources */,
 				2B035BB71CE07AB900A66338 /* ZXMathUtils.m in Sources */,
@@ -1991,7 +2003,6 @@
 				2B035B941CE07AB900A66338 /* ZXBizcardResultParser.m in Sources */,
 				2B035C4F1CE07AB900A66338 /* ZXQRCodeAlignmentPatternFinder.m in Sources */,
 				2B035BA61CE07AB900A66338 /* ZXSMSTOMMSTOResultParser.m in Sources */,
-				2B1E49AF1CEAC7580059D95B /* QRcodeScanController.mm in Sources */,
 				2B035BE81CE07AB900A66338 /* ZXDataMatrixSymbolInfo.m in Sources */,
 				2B035C0E1CE07AB900A66338 /* ZXRSSFinderPattern.m in Sources */,
 				2B035C241CE07AB900A66338 /* ZXUPCAWriter.m in Sources */,
@@ -2000,12 +2011,12 @@
 				2B035C5D1CE07AB900A66338 /* ZXQRCodeWriter.m in Sources */,
 				2B035BC41CE07AB900A66338 /* ZXDecoderResult.m in Sources */,
 				2B035BC91CE07AB900A66338 /* ZXHybridBinarizer.m in Sources */,
+				2B334FB51D91671C00FACC95 /* QYDemoConfig.m in Sources */,
 				2B035BC11CE07AB900A66338 /* ZXBoolArray.m in Sources */,
 				2B035BB51CE07AB900A66338 /* ZXCGImageLuminanceSource.m in Sources */,
 				2B035C251CE07AB900A66338 /* ZXUPCEANExtension2Support.m in Sources */,
 				2B035B971CE07AB900A66338 /* ZXEmailAddressParsedResult.m in Sources */,
 				2B035BAE1CE07AB900A66338 /* ZXVCardResultParser.m in Sources */,
-				2B1E49B51CEAC7580059D95B /* QYDetailViewController.m in Sources */,
 				2B035C481CE07AB900A66338 /* ZXQRCodeDecoder.m in Sources */,
 				2B035BD51CE07AB900A66338 /* ZXLuminanceSource.m in Sources */,
 				2B035BB91CE07AB900A66338 /* ZXWhiteRectangleDetector.m in Sources */,
@@ -2014,7 +2025,6 @@
 				2B035C5B1CE07AB900A66338 /* ZXQRCodeMultiReader.m in Sources */,
 				2B035C131CE07AB900A66338 /* ZXCode128Reader.m in Sources */,
 				2B035C121CE07AB900A66338 /* ZXCodaBarWriter.m in Sources */,
-				2B1E49BE1CEAC7580059D95B /* QYSettingViewController.m in Sources */,
 				2B035C0B1CE07AB900A66338 /* ZXAbstractRSSReader.m in Sources */,
 				2B035BF61CE07AB900A66338 /* ZXAI01320xDecoder.m in Sources */,
 				2B035C221CE07AB900A66338 /* ZXOneDReader.m in Sources */,
@@ -2027,25 +2037,27 @@
 				2B035C1D1CE07AB900A66338 /* ZXITFReader.m in Sources */,
 				2B035C5E1CE07AB900A66338 /* ZXMultiFormatReader.m in Sources */,
 				2B035BDC1CE07AB900A66338 /* ZXDataMatrixDecodedBitStreamParser.m in Sources */,
+				2B334FC81D91671C00FACC95 /* QYUserTableViewController.m in Sources */,
 				2B035BCF1CE07AB900A66338 /* ZXByteMatrix.m in Sources */,
 				2B035BD41CE07AB900A66338 /* ZXInvertedLuminanceSource.m in Sources */,
 				2B035C0C1CE07AB900A66338 /* ZXRSS14Reader.m in Sources */,
 				2B035BF21CE07AB900A66338 /* ZXByQuadrantReader.m in Sources */,
 				2B035BE91CE07AB900A66338 /* ZXDataMatrixSymbolInfo144.m in Sources */,
 				2B035C401CE07AB900A66338 /* ZXPDF417Common.m in Sources */,
+				2B334FB81D91671C00FACC95 /* QYDemoBadgeView.m in Sources */,
 				2B035BBC1CE07AB900A66338 /* ZXReedSolomonDecoder.m in Sources */,
 				2B035B8D1CE07AB900A66338 /* ZXAztecDetectorResult.m in Sources */,
 				2B035BDF1CE07AB900A66338 /* ZXDataMatrixDetector.m in Sources */,
+				2B334FB71D91671C00FACC95 /* YXCapture.m in Sources */,
 				2B035C491CE07AB900A66338 /* ZXQRCodeDecoderMetaData.m in Sources */,
 				2B035BB61CE07AB900A66338 /* ZXImage.m in Sources */,
-				2B1E49B71CEAC7580059D95B /* QYHomePageViewController.m in Sources */,
-				2B1E49B11CEAC7580059D95B /* QYDemoBadgeView.m in Sources */,
 				2B035B9D1CE07AB900A66338 /* ZXGeoResultParser.m in Sources */,
 				2B035BCB1CE07AB900A66338 /* ZXPerspectiveTransform.m in Sources */,
 				2B035C2A1CE07AB900A66338 /* ZXUPCEReader.m in Sources */,
 				2B035BBA1CE07AB900A66338 /* ZXGenericGF.m in Sources */,
 				2B035C4C1CE07AB900A66338 /* ZXQRCodeMode.m in Sources */,
 				2B035B921CE07AB900A66338 /* ZXAddressBookDoCoMoResultParser.m in Sources */,
+				2B334FBC1D91671C00FACC95 /* QYCommodityInfoViewController.m in Sources */,
 				2B035C301CE07AB900A66338 /* ZXPDF417BoundingBox.m in Sources */,
 				2B035C271CE07AB900A66338 /* ZXUPCEANExtensionSupport.m in Sources */,
 				2B035C4E1CE07AB900A66338 /* ZXQRCodeAlignmentPattern.m in Sources */,
@@ -2054,10 +2066,10 @@
 				2B035C3A1CE07AB900A66338 /* ZXPDF417.m in Sources */,
 				2B035C141CE07AB900A66338 /* ZXCode128Writer.m in Sources */,
 				2B035B9F1CE07AB900A66338 /* ZXISBNResultParser.m in Sources */,
-				2B1E49B21CEAC7580059D95B /* QYAddAppKeyViewController.m in Sources */,
 				2B035BFD1CE07AB900A66338 /* ZXAI01weightDecoder.m in Sources */,
 				2B035C001CE07AB900A66338 /* ZXRSSExpandedCurrentParsingState.m in Sources */,
 				2B035C0A1CE07AB900A66338 /* ZXRSSExpandedRow.m in Sources */,
+				2B334FB61D91671C00FACC95 /* QRcodeScanController.mm in Sources */,
 				2B035BE01CE07AB900A66338 /* ZXDataMatrixASCIIEncoder.m in Sources */,
 				2B035BFB1CE07AB900A66338 /* ZXAI01AndOtherAIs.m in Sources */,
 				2B035B891CE07AB900A66338 /* ZXAztecHighLevelEncoder.m in Sources */,
@@ -2069,20 +2081,18 @@
 				2B035C201CE07AB900A66338 /* ZXMultiFormatUPCEANReader.m in Sources */,
 				2B035C501CE07AB900A66338 /* ZXQRCodeDetector.m in Sources */,
 				2B035C2D1CE07AB900A66338 /* ZXPDF417ECErrorCorrection.m in Sources */,
-				2B1E49BC1CEAC7580059D95B /* QYReportUserInfoViewController.m in Sources */,
 				2B035BA81CE07AB900A66338 /* ZXTelParsedResult.m in Sources */,
 				2B035BCD1CE07AB900A66338 /* ZXBinarizer.m in Sources */,
 				2B035BBB1CE07AB900A66338 /* ZXGenericGFPoly.m in Sources */,
 				2B035B951CE07AB900A66338 /* ZXBookmarkDoCoMoResultParser.m in Sources */,
-				2B1E49BA1CEAC7580059D95B /* QYMainViewController.m in Sources */,
-				2B1E49B81CEAC7580059D95B /* QYLogViewController.m in Sources */,
 				2B035C551CE07AB900A66338 /* ZXQRCodeBlockPair.m in Sources */,
 				2B035BEC1CE07AB900A66338 /* ZXDataMatrixReader.m in Sources */,
 				2B035C3B1CE07AB900A66338 /* ZXPDF417BarcodeMatrix.m in Sources */,
+				2B334FC51D91671C00FACC95 /* QYReportUserInfoViewController.m in Sources */,
 				2B035BAD1CE07AB900A66338 /* ZXURLTOResultParser.m in Sources */,
-				2B1E49AE1CEAC7580059D95B /* QYDemoConfig.m in Sources */,
 				2B035BF31CE07AB900A66338 /* ZXGenericMultipleBarcodeReader.m in Sources */,
 				2B035BF51CE07AB900A66338 /* ZXAI013103decoder.m in Sources */,
+				2B334FBB1D91671C00FACC95 /* QYBindAppkeyViewController.m in Sources */,
 				2B035C041CE07AB900A66338 /* ZXRSSExpandedDecodedObject.m in Sources */,
 				2B035B861CE07AB900A66338 /* ZXAztecBinaryShiftToken.m in Sources */,
 				2B035BB31CE07AB900A66338 /* ZXWifiResultParser.m in Sources */,
@@ -2099,6 +2109,7 @@
 				2B035BCC1CE07AB900A66338 /* ZXStringUtils.m in Sources */,
 				2B035C261CE07AB900A66338 /* ZXUPCEANExtension5Support.m in Sources */,
 				2B035C561CE07AB900A66338 /* ZXQRCodeEncoder.m in Sources */,
+				2B334FC71D91671C00FACC95 /* QYSettingViewController.m in Sources */,
 				2B035C2F1CE07AB900A66338 /* ZXPDF417BarcodeValue.m in Sources */,
 				2B035C191CE07AB900A66338 /* ZXEAN13Writer.m in Sources */,
 				2B035C111CE07AB900A66338 /* ZXCodaBarReader.m in Sources */,
@@ -2108,6 +2119,7 @@
 				2B035C1B1CE07AB900A66338 /* ZXEAN8Writer.m in Sources */,
 				2B035C541CE07AB900A66338 /* ZXQRCode.m in Sources */,
 				2B035C011CE07AB900A66338 /* ZXRSSExpandedDecodedChar.m in Sources */,
+				2B334FBE1D91671C00FACC95 /* QYDetailViewController.m in Sources */,
 				2B035BE11CE07AB900A66338 /* ZXDataMatrixBase256Encoder.m in Sources */,
 				2B035BD21CE07AB900A66338 /* ZXEncodeHints.m in Sources */,
 				2B035C051CE07AB900A66338 /* ZXRSSExpandedFieldParser.m in Sources */,
@@ -2151,11 +2163,10 @@
 				2B035BA21CE07AB900A66338 /* ZXProductResultParser.m in Sources */,
 				2B035BD11CE07AB900A66338 /* ZXDimension.m in Sources */,
 				2B035C2E1CE07AB900A66338 /* ZXPDF417BarcodeMetadata.m in Sources */,
-				2B1E49B01CEAC7580059D95B /* YXCapture.m in Sources */,
 				2B035C581CE07AB900A66338 /* ZXQRCodeMatrixUtil.m in Sources */,
 				2B035BA11CE07AB900A66338 /* ZXProductParsedResult.m in Sources */,
+				2B334FC31D91671C00FACC95 /* QYMainViewController.m in Sources */,
 				2B035B8C1CE07AB900A66338 /* ZXAztecToken.m in Sources */,
-				2B1E49BF1CEAC7580059D95B /* QYUserTableViewController.m in Sources */,
 				2B035C311CE07AB900A66338 /* ZXPDF417Codeword.m in Sources */,
 				2B035C4B1CE07AB900A66338 /* ZXQRCodeFormatInformation.m in Sources */,
 				2B035C331CE07AB900A66338 /* ZXPDF417DecodedBitStreamParser.m in Sources */,
@@ -2163,7 +2174,6 @@
 				2B035BF81CE07AB900A66338 /* ZXAI01393xDecoder.m in Sources */,
 				2B035BE71CE07AB900A66338 /* ZXDataMatrixHighLevelEncoder.m in Sources */,
 				2B035C5F1CE07AB900A66338 /* ZXMultiFormatWriter.m in Sources */,
-				2B1E49B41CEAC7580059D95B /* QYBindAppkeyViewController.m in Sources */,
 				2B035C211CE07AB900A66338 /* ZXOneDimensionalCodeWriter.m in Sources */,
 				2B035C3E1CE07AB900A66338 /* ZXPDF417ErrorCorrection.m in Sources */,
 				2B035BFE1CE07AB900A66338 /* ZXAnyAIDecoder.m in Sources */,

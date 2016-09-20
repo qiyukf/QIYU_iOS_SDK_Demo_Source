@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
+extern BOOL isTestMode;
+
 @interface QYUserTableViewController : UITableViewController
 
 @end

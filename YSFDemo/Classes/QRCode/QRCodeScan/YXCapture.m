@@ -152,7 +152,7 @@
 
 - (void)setDeviceOutput
 {
-    AVCaptureVideoDataOutput *deviceOutput = [[AVCaptureVideoDataOutput alloc] init];
+    AVCaptureVideoDataOutput *deviceOutput = [[AVCaptureVideoDataOutput alloc] init]; 
     [deviceOutput setSampleBufferDelegate:self queue:_captureOutputBufferQueue];
     [deviceOutput setAlwaysDiscardsLateVideoFrames:YES];
     
@@ -256,18 +256,14 @@
             // 计算cropRect 对应到videoFrame 中的裁剪区域
             CVImageBufferRef videoFrame = CMSampleBufferGetImageBuffer(sampleBuffer);
         
+            //得到的是图像帧size
             CGSize size = CVImageBufferGetDisplaySize(videoFrame);
 
-            //CGFloat tScale = CGRectGetWidth(self.cropRect)/(self.scale*self.scaleSize.width);
-            CGFloat tScale = 300/(self.scale*self.scaleSize.width);
-            CGFloat offset = 50;
-            CGFloat offsetY = 10;
-            CGSize cropSize = CGSizeMake(size.height*tScale + offset,
-                                         size.height*tScale + offset);
+            CGSize cropSize = self.scaleSize;
            
-            cropRectForImage = CGRectMake((size.width - cropSize.width)/2.0 ,
-                                          (size.height - cropSize.height)/2.0 - offsetY,
-                                          cropSize.width, cropSize.height);
+            cropRectForImage = CGRectMake((size.width - cropSize.width * 2)/2.0,
+                                          (size.height - cropSize.height * 2)/2.0,
+                                          cropSize.width * 2, cropSize.height * 2);
  
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.delegate captureCameraIsReady:self];

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QYMainViewController">
@@ -32,13 +32,13 @@
                             <color key="backgroundColor" red="0.95959595959999999" green="0.95959595959999999" blue="0.95959595959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
                         </imageView>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hp_2" translatesAutoresizingMaskIntoConstraints="NO" id="Tf2-S3-bhh" userLabel="h4">
-                            <rect key="frame" x="0.0" y="536" width="320" height="152"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hp_1" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-sE-aYX" userLabel="h3">
+                            <rect key="frame" x="0.0" y="364" width="320" height="152"/>
                             <color key="backgroundColor" red="0.95959595959999999" green="0.95959595959999999" blue="0.95959595959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
                         </imageView>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hp_1" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-sE-aYX" userLabel="h3">
-                            <rect key="frame" x="0.0" y="364" width="320" height="152"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hp_2" translatesAutoresizingMaskIntoConstraints="NO" id="Tf2-S3-bhh" userLabel="h4">
+                            <rect key="frame" x="0.0" y="537" width="320" height="152"/>
                             <color key="backgroundColor" red="0.95959595959999999" green="0.95959595959999999" blue="0.95959595959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
                         </imageView>

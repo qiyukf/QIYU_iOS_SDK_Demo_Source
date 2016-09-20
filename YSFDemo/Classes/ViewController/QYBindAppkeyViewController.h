@@ -3,7 +3,7 @@
 
 @interface QYAppKeyConfig : NSObject<NSCoding>
 @property (nonatomic,copy)      NSString    *appKey;
-@property (nonatomic,assign)    BOOL        useDevEnvironment;
+@property (nonatomic,assign)    NSInteger   useDevEnvironment;
 @end
 
 @interface QYBindAppkeyViewController : UITableViewController

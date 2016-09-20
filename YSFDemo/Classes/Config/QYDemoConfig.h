@@ -12,5 +12,5 @@
 + (instancetype)sharedConfig;
 @property (nonatomic,copy)  NSString    *appKey;
 @property (nonatomic,copy)  NSString    *appName;
-- (void)setEnvironment:(BOOL)fromConfig;
+- (void)setEnvironment:(NSInteger)isTest;
 @end

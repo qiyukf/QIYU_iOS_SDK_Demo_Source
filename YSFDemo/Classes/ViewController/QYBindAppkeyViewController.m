@@ -25,7 +25,7 @@
     if (self = [super init])
     {
         _appKey             = [aDecoder decodeObjectForKey:@"appkey"];
-        _useDevEnvironment  = [[aDecoder decodeObjectForKey:@"dev"] boolValue];
+        _useDevEnvironment  = [[aDecoder decodeObjectForKey:@"dev"] integerValue];
     }
     return self;
 }
@@ -100,7 +100,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)qRcodeScanSucess:(NSString *)appkey isTesting:(BOOL)isTesting
+- (void)qRcodeScanSucess:(NSString *)appkey isTesting:(NSInteger)isTesting
 {
     [self save:appkey isTesting:isTesting];
 }
@@ -118,7 +118,7 @@
     return [dir stringByAppendingPathComponent:@"qy_appkey.plist"];
 }
 
-- (void)save:(NSString *)appkey isTesting:(BOOL)isTesting
+- (void)save:(NSString *)appkey isTesting:(NSInteger)isTesting
 {
     [[QYDemoConfig sharedConfig] setAppKey:appkey];
     [[QYDemoConfig sharedConfig] setEnvironment:isTesting];

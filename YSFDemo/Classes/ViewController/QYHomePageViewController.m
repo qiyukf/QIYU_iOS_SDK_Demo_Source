@@ -10,6 +10,7 @@
 #import "QYBindAppkeyViewController.h"
 #import "QYDemoConfig.h"
 #import "QYSDK.h"
+#import "UIView+YSFToast.h"
 
 #define TabbarVC    @"vc"
 #define TabbarTitle @"title"
@@ -47,7 +48,7 @@
     self.viewControllers = array;
     
     [self readAppkey];
-    
+
 }
 
 - (NSArray*)tabbars
@@ -76,15 +77,11 @@
     {
         [[QYDemoConfig sharedConfig] setAppKey:config.appKey];
         [[QYDemoConfig sharedConfig] setEnvironment:config.useDevEnvironment];
-        NSString *appKey = [[QYDemoConfig sharedConfig] appKey];
-        NSString *appName= [[QYDemoConfig sharedConfig] appName];
-        [[QYSDK sharedSDK] registerAppId:appKey appName:appName];
     }
-    else {
-        NSString *appKey = [[QYDemoConfig sharedConfig] appKey];
-        NSString *appName= [[QYDemoConfig sharedConfig] appName];
-        [[QYSDK sharedSDK] registerAppId:appKey appName:appName];
-    }
+
+    NSString *appKey = [[QYDemoConfig sharedConfig] appKey];
+    NSString *appName= [[QYDemoConfig sharedConfig] appName];
+    [[QYSDK sharedSDK] registerAppId:appKey appName:appName];
 }
 
 - (NSString *)configFilepath
