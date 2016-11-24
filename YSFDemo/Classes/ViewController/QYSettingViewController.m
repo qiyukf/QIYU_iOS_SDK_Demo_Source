@@ -88,7 +88,7 @@
     self.tableView.dataSource = self.delegator;
     [self buildData];
     
-    [[QYSDK sharedSDK] RegisterPushMessageNotification:^(QYPushMessage *message) {
+    [[QYSDK sharedSDK] registerPushMessageNotification:^(QYPushMessage *message) {
         NSString *time = [QYSettingViewController showTime:message.time showDetail:YES];
         NSString *content = [NSString stringWithFormat:@"时间%@ 内容：%@", time, message.text] ;
         UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"推送消息"

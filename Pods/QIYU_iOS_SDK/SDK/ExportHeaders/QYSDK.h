@@ -100,7 +100,7 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *);
  *
  *  @param messageId 消息id
  */
-- (void)RegisterPushMessageNotification:(QYPushMessageBlock)block;
+- (void)registerPushMessageNotification:(QYPushMessageBlock)block;
 
 /**
  *  返回AppKey

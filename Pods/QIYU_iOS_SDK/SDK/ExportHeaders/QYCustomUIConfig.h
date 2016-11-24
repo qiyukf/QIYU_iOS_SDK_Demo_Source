@@ -84,11 +84,13 @@
  *  访客头像
  */
 @property (nonatomic, strong) UIImage *customerHeadImage;
+@property (nonatomic, copy) NSString *customerHeadImageUrl;
 
 /**
  *  客服头像
  */
 @property (nonatomic, strong) UIImage *serviceHeadImage;
+@property (nonatomic, copy) NSString *serviceHeadImageUrl;
 
 /**
  *  访客消息气泡normal图片
