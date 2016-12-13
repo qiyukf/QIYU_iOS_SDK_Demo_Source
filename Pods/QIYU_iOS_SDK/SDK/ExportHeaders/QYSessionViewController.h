@@ -21,14 +21,24 @@
 @property (nonatomic,copy)      NSString    *sessionTitle;
 
 /**
- *  分组Id
+ *  访客分流 分组Id
  */
 @property (nonatomic,assign)    int64_t groupId;
 
 /**
- *  客服Id
+ *  访客分流 客服Id
  */
 @property (nonatomic,assign)    int64_t staffId;
+
+/**
+ *  访客分流 是否开启机器人
+ */
+@property (nonatomic,assign)    BOOL openRobotInShuntMode;
+
+/**
+ *  常见问题 模版Id
+ */
+@property (nonatomic,assign)    int64_t commonQuestionTemplateId;
 
 /**
  *  会话窗口来源

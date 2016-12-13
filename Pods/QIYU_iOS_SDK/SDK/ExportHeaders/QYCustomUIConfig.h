@@ -36,6 +36,11 @@
 @property (nonatomic, strong) UIColor *customMessageTextColor;
 
 /**
+ *  访客文本消息中的链接字体颜色
+ */
+@property (nonatomic, strong) UIColor *customMessageHyperLinkColor;
+
+/**
  *  访客文本消息字体大小
  */
 @property (nonatomic, assign) CGFloat customMessageTextFontSize;
@@ -44,6 +49,11 @@
  *  客服文本消息字体颜色
  */
 @property (nonatomic, strong) UIColor *serviceMessageTextColor;
+
+/**
+ *  客服文本消息中的链接字体颜色
+ */
+@property (nonatomic, strong) UIColor *serviceMessageHyperLinkColor;
 
 /**
  *  客服文本消息字体大小
