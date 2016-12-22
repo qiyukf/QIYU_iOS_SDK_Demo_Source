@@ -145,14 +145,8 @@
                                    },
                                
                                @{
-                                   YSFTitle      :@"查看云信log",
-                                   YSFCellAction :@"viewNimLog:",
-                                   YSFShowAccessory : @(YES)
-                                   },
-                               
-                               @{
                                    YSFTitle      :@"查看七鱼log",
-                                   YSFCellAction :@"viewYsfLog:",
+                                   YSFCellAction :@"viewNimLog:",
                                    YSFShowAccessory : @(YES)
                                    },
                                
@@ -289,15 +283,6 @@
 - (void)viewNimLog:(id)sender
 {
     NSString *path = [[QYSDK sharedSDK] performSelector:@selector(nimLog)];
-    QYLogViewController *vc = [[QYLogViewController alloc] initWithFilepath:path];
-    vc.title = @"云信log";
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)viewYsfLog:(id)sender
-{
-    NSString *path =  [[QYSDK sharedSDK] performSelector:@selector(ysfLog)];
     QYLogViewController *vc = [[QYLogViewController alloc] initWithFilepath:path];
     vc.title = @"七鱼log";
     vc.hidesBottomBarWhenPushed = YES;
