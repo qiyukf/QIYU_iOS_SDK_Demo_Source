@@ -9,20 +9,10 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>QIYU_iOS_SDK-QYResource.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>EE488CA1A8A840D6ABEC49844B1DAD3D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F0A79066609B3AAB51CA2CC33708A7E6</key>
+		<key>6C63F8A81C0B1C81A4EE6FC4DADF8E64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
