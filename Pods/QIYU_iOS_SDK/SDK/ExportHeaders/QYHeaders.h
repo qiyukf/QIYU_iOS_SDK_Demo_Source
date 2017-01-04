@@ -12,10 +12,11 @@
 #import "QYSource.h"
 #import "QYUserInfo.h"
 #import "QYSessionViewController.h"
-#import "QYConversationManagerProtocol.h"
+#import "QYConversationManager.h"
 #import "QYCustomUIConfig.h"
 #import "QYCustomActionConfig.h"
 #import "QYCommodityInfo.h"
 #import "QYPushMessage.h"
+
 
 #endif

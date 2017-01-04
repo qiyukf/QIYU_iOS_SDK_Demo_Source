@@ -10,6 +10,7 @@
 @class QYSource;
 @class QYCommodityInfo;
 
+
 /**
  *  客服会话ViewController,必须嵌入到UINavigationcontroller中
  */
@@ -51,3 +52,5 @@
 @property (nonatomic, strong) QYCommodityInfo *commodityInfo;
 
 @end
+
+

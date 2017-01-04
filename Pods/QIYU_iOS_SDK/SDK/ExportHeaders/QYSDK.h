@@ -2,6 +2,8 @@
 //  QYSDK.h
 //  QYSDK
 //
+//  version 3.2.0
+//
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2016 Netease. All rights reserved.
 //
@@ -65,7 +67,8 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *);
  *
  *  @return 会话管理类
  */
-- (id<YSFConversationManager>)conversationManager;
+- (QYConversationManager *)conversationManager;
+
 
 /**
  *  更新推送token
@@ -116,6 +119,9 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *);
  *  @param attributes 附加信息
  */
 - (void)trackHistory:(NSString *)urlString withAttributes:(NSDictionary *)attributes;
+
+
+#pragma mark - Deprecated
 
 /**
  *  已废弃，使用setUserInfo替代，设置userInfo.userId即可，userInfo.data忽略

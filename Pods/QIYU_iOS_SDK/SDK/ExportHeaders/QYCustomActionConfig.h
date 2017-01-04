@@ -16,6 +16,9 @@ typedef void (^QYLinkClickBlock)(NSString *linkAddress);
 
 + (instancetype)sharedInstance;
 
+/**
+ *  所有消息中的链接（自定义商品消息、文本消息、机器人答案消息）的回调处理
+ */
 @property (nonatomic, copy) QYLinkClickBlock linkClickBlock;
 
 @end
