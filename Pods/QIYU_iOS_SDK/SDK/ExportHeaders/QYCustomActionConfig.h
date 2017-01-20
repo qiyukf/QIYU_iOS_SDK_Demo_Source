@@ -21,6 +21,13 @@ typedef void (^QYLinkClickBlock)(NSString *linkAddress);
  */
 @property (nonatomic, copy) QYLinkClickBlock linkClickBlock;
 
+/**
+ *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession
+ *
+ *  @param deactivate 是否deactivate，默认为YES
+ */
+- (void)setDeactivateAudioSessionAfterComplete:(BOOL)deactivate;
+
 @end
 
 

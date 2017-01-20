@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 
+typedef NS_ENUM(NSInteger, QYSessionStatus) {
+    QYSessionStatusNone,
+    QYSessionStatusInSession,
+    QYSessionStatusWaiting
+};
 
 /**
  *  平台电商专用；会话列表中的会话详情信息
@@ -39,6 +44,11 @@
  *  会话未读数
  */
 @property (nonatomic, assign) NSInteger unreadCount;
+
+/**
+ *  会话状态
+ */
+@property (nonatomic, assign) QYSessionStatus status;
 
 /**
  *  会话最后一条消息的时间
