@@ -27,6 +27,8 @@
 
 /**
  *  收到消息
+ *
+ *  @param message 消息信息
  */
 - (void)onReceiveMessage:(QYPOPMessageInfo *)message;
 

@@ -1,13 +1,14 @@
 //
 //  QYCustomUIConfig.h
-//  QYCustomUIConfig
+//  QYSDK
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2016 Netease. All rights reserved.
 //
 
 /**
- *  提供了所有自定义UI的接口；如果想要替换图片素材，可以在QYCustomResource.bundle中放置跟QYResource.bundle中同名的图片素材，即可对应替换
+ *  自定义UI配置类；如果想要替换图片素材，可以自己创建一个QYCustomResource.bundle，在其中放置跟QYResource.bundle中同名的图片素材，即可实现替换。
+ *  SDK会优先使用QYCustomResource.bundle中的图片素材，当QYCustomResource.bundle中没有的时候，才会使用QYResource.bundle中的图片素材
  */
 @interface QYCustomUIConfig : NSObject
 
@@ -29,6 +30,11 @@
  *  会话窗口上方提示条中的文本字体大小
  */
 @property (nonatomic, assign) CGFloat sessionTipTextFontSize;
+
+/**
+ *  会话窗口上方提示条中的背景颜色
+ */
+@property (nonatomic, strong) UIColor *sessionTipBackgroundColor;
 
 /**
  *  访客文本消息字体颜色
@@ -61,12 +67,12 @@
 @property (nonatomic, assign) CGFloat serviceMessageTextFontSize;
 
 /**
- *  提示文本消息字体颜色
+ *  提示文本消息字体颜色；提示文本消息有很多种，比如“***为你服务”就是一种
  */
 @property (nonatomic, strong) UIColor *tipMessageTextColor;
 
 /**
- *  提示文本消息字体大小
+ *  提示文本消息字体大小；提示文本消息有很多种，比如“***为你服务”就是一种
  */
 @property (nonatomic, assign) CGFloat tipMessageTextFontSize;
 
@@ -84,11 +90,6 @@
  *  消息tableview的背景图片
  */
 @property (nonatomic, strong) UIImageView *sessionBackground;
-
-/**
- *  会话窗口上方提示条中的背景颜色
- */
-@property (nonatomic, strong) UIColor *sessionTipBackgroundColor;
 
 /**
  *  访客头像

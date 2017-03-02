@@ -8,11 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-
+/**
+ *  平台电商专用；会话状态
+ */
 typedef NS_ENUM(NSInteger, QYSessionStatus) {
+    /**
+     *  无状态
+     */
     QYSessionStatusNone,
-    QYSessionStatusInSession,
-    QYSessionStatusWaiting
+    /**
+     *  等待状态
+     */
+    QYSessionStatusWaiting,
+    /**
+     *  会话中
+     */
+    QYSessionStatusInSession
 };
 
 /**

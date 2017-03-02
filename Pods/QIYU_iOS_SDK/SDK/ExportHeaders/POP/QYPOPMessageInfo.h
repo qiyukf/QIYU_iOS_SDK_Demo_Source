@@ -1,14 +1,15 @@
 //
 //  QYPOPMessageInfo.h
-//  YSFSDK
+//  QYSDK
 //
 //  Created by towik on 16/12/29.
 //  Copyright © 2016年 Netease. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
-
+/**
+ *  消息信息
+ */
 @interface QYPOPMessageInfo : NSObject
 
 /**

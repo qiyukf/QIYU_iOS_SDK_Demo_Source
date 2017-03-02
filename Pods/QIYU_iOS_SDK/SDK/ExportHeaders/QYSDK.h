@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 3.2.0
+//  version 3.3.2
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2016 Netease. All rights reserved.
@@ -20,6 +20,11 @@ typedef void(^QYCompletionBlock)();
  *  推送消息回调
  */
 typedef void(^QYPushMessageBlock)(QYPushMessage *);
+
+/**
+ *  清理文件缓存回调
+ */
+typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 
 /**
  *  所有SDK接口都从此类获得
@@ -101,7 +106,7 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *);
 /**
  *  注册推送消息通知回调
  *
- *  @param messageId 消息id
+ *  @param block 收到消息的回调
  */
 - (void)registerPushMessageNotification:(QYPushMessageBlock)block;
 
@@ -120,6 +125,11 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *);
  */
 - (void)trackHistory:(NSString *)urlString withAttributes:(NSDictionary *)attributes;
 
+/**
+ 清理接收文件缓存
+ @param completeBlock 清理缓存完成block
+ */
+- (void)cleanResourceCacheWithBlock:(QYCleanResourceCacheCompleteBlock)completeBlock;
 
 #pragma mark - Deprecated
 
