@@ -11,11 +11,12 @@
 #import "QYSDK.h"
 #import "QYDemoConfig.h"
 
+
 #define YSFSelectAppKey 1
 
 @interface AppDelegate ()
 
-@end
+@end  
 
 @implementation AppDelegate
 
@@ -32,7 +33,7 @@
     //推送消息相关处理
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)])
     {
-        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound |         UIUserNotificationTypeAlert;
+        UIUserNotificationType types = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound |         UIRemoteNotificationTypeAlert;
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types
                                                                                  categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];

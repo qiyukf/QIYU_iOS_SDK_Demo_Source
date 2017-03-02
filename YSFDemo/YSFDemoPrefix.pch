@@ -13,6 +13,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "YSFMacro.h"
+#import "UILayoutKit.h"
+#import "UIView+YSFWebCacheOperation.h"
 
 #endif
 #endif
