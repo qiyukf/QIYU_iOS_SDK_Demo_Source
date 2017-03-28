@@ -321,7 +321,7 @@ BOOL    g_openRobotInShuntMode;
 
 - (void)viewNimLog:(id)sender
 {
-    NSString *path = [[QYSDK sharedSDK] performSelector:@selector(nimLog)];
+    NSString *path = [[QYSDK sharedSDK] qiyuLogPath];
     QYLogViewController *vc = [[QYLogViewController alloc] initWithFilepath:path];
     vc.title = @"log";
     vc.hidesBottomBarWhenPushed = YES;

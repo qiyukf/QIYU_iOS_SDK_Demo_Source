@@ -3,7 +3,7 @@
 //  QYSDK
 //
 //  Created by towik on 12/21/15.
-//  Copyright (c) 2016 Netease. All rights reserved.
+//  Copyright (c) 2017 Netease. All rights reserved.
 //
 
 /**
@@ -109,14 +109,14 @@
 @property (nonatomic, strong) UIImage *customerMessageBubbleNormalImage;
 
 /**
- *  客服消息气泡normal图片
- */
-@property (nonatomic, strong) UIImage *serviceMessageBubbleNormalImage;
-
-/**
  *  访客消息气泡pressed图片
  */
 @property (nonatomic, strong) UIImage *customerMessageBubblePressedImage;
+
+/**
+ *  客服消息气泡normal图片
+ */
+@property (nonatomic, strong) UIImage *serviceMessageBubbleNormalImage;
 
 /**
  *  客服消息气泡pressed图片

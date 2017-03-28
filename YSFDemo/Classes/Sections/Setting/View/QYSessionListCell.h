@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class QYPOPSessionInfo;
+@class QYSessionInfo;
 
 @interface QYSessionListCell : UITableViewCell
 
 
-@property (nonatomic, strong) QYPOPSessionInfo *sessionInfo;
+@property (nonatomic, strong) QYSessionInfo *sessionInfo;
 
 @end

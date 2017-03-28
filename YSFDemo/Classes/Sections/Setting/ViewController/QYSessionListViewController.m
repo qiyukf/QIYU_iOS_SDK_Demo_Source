@@ -22,10 +22,10 @@
 
 
 
-@interface QYSessionListViewController ()<UITableViewDelegate, UITableViewDataSource, QYSessionViewDelegate, QYPOPConversationManagerDelegate>
+@interface QYSessionListViewController ()<UITableViewDelegate, UITableViewDataSource, QYSessionViewDelegate, QYConversationManagerDelegate>
 
 
-@property (nonatomic, strong) NSArray<QYPOPSessionInfo*> *recentSessionArray;
+@property (nonatomic, strong) NSArray<QYSessionInfo*> *recentSessionArray;
 
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -55,7 +55,7 @@
 
 - (void)initialize
 {
-    [[[QYSDK sharedSDK] conversationManager] popSetDelegate:self];
+    [[[QYSDK sharedSDK] conversationManager] setDelegate:self];
     
 }
 
@@ -159,7 +159,7 @@
     if (!cell) {
         cell = [[QYSessionListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    QYPOPSessionInfo *sessionInfo = _recentSessionArray[indexPath.row];
+    QYSessionInfo *sessionInfo = _recentSessionArray[indexPath.row];
     cell.sessionInfo = sessionInfo;
     
     return cell;
@@ -184,7 +184,7 @@
     [self reloadData];
 }
 
-- (void)onReceiveMessage:(QYPOPMessageInfo *)message
+- (void)onReceiveMessage:(QYMessageInfo *)message
 {
     NSString *messageString = [NSString stringWithFormat:@"shopid: %@\navatarImageUrlString: %@\nsessionName: %@\nlastMessageText: %@\nlastMessageTimeStamp: %lf",
                         message.shopId, message.avatarImageUrlString, message.sender,

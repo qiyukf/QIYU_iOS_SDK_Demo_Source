@@ -10,18 +10,18 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>074B36E6CDA040BA1B033E19586362B5</key>
+		<key>02982751D0542A0977492577359F8EED</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libaacplus.a</string>
+			<string>QYUserInfo.h</string>
 			<key>path</key>
-			<string>SDK/libaacplus.a</string>
+			<string>SDK/ExportHeaders/QYUserInfo.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -71,51 +71,6 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>1D627B730C4FF2251FBA84C56E5B3DD2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPSessionViewController.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPSessionViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>271E5D0A4C31875FDEB51DB784248670</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPSDK.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPSDK.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2BA546C77F8C3CE34DD8B555E988F57F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYSDK.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYSDK.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -130,7 +85,7 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>30A463E1217F8CB8C4A06A11255DF035</key>
+		<key>3A2CB3CADF881D6367A962B6F02607A2</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -139,24 +94,24 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QYSource.h</string>
+			<string>QYPOPSDK.h</string>
 			<key>path</key>
-			<string>SDK/ExportHeaders/QYSource.h</string>
+			<string>SDK/ExportHeaders/POP/QYPOPSDK.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>380FFD2349117F5188E76AA3C21AD69D</key>
+		<key>3AA3FC84267AF82045737A2E6D13D85F</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libQYSDK.a</string>
+			<string>QYCommodityInfo.h</string>
 			<key>path</key>
-			<string>SDK/libQYSDK.a</string>
+			<string>SDK/ExportHeaders/QYCommodityInfo.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -170,36 +125,6 @@
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3E8C42A45FCB70EFA99D783069AF3375</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYConversationManager.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYConversationManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3F6F0FBA9E968AD5AF3FF0EAC5166782</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.plug-in</string>
-			<key>name</key>
-			<string>QYResource.bundle</string>
-			<key>path</key>
-			<string>SDK/QYResource.bundle</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -281,6 +206,21 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>4074230349C754A61B75063CFB29CC78</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QYSessionInfo.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/QYSessionInfo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>412EB50E6785EE2C91660F606AE4FB38</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -294,6 +234,36 @@
 			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
+		</dict>
+		<key>425D4B7FD10B374554DE245A8E80B0E8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QYHeaders.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/QYHeaders.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>44E897CD0450F5293F9C149BC1BC21B9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QYCustomActionConfig.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/QYCustomActionConfig.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>494E9DA41A485EA633B5617A260FA3DF</key>
 		<dict>
@@ -316,7 +286,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>4F1D16B88B3370BF3FE79BBC565883FC</key>
+		<key>4A9710C70F89592DACB1574319299F2B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -325,13 +295,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QYPOPMessageInfo.h</string>
+			<string>QYSource.h</string>
 			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPMessageInfo.h</string>
+			<string>SDK/ExportHeaders/QYSource.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6A76991E9913A50EE3190130D9593E5E</key>
+		<key>59554EDE563A5E151293B252F3059334</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -340,9 +310,84 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QYPOPCustomUIConfig.h</string>
+			<string>QYPushMessage.h</string>
 			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPCustomUIConfig.h</string>
+			<string>SDK/ExportHeaders/QYPushMessage.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5BFFD3BF26FC4C72CB2AB1280C50CEF1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A133A865CE2B7AAA0D6E34D090E0094</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5D1444BCE636A2222EA18F411FA7DA8E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6DAD20F472F4DE661B0D9CEC735B8D2C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5FC6B998D0FFE752B08E59B439C79996</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QYPOPSessionViewController.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/POP/QYPOPSessionViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A133A865CE2B7AAA0D6E34D090E0094</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3AA3FC84267AF82045737A2E6D13D85F</string>
+				<string>7F165F7EE9FAC1EBEA061194AD32B86C</string>
+				<string>44E897CD0450F5293F9C149BC1BC21B9</string>
+				<string>E1618F0ED55BC02FB5625D23416F8307</string>
+				<string>425D4B7FD10B374554DE245A8E80B0E8</string>
+				<string>A24F6E76DE87C6A4621FE6B8F097949C</string>
+				<string>E5BC9A532F0B89F6C33A9BA7BCD08150</string>
+				<string>F297C1445ABD9704EE8F101ABD176203</string>
+				<string>708218BCAD938E3127608A9BE5C3244D</string>
+				<string>3A2CB3CADF881D6367A962B6F02607A2</string>
+				<string>6D238AAD4176E934399D82F3B47582F3</string>
+				<string>5FC6B998D0FFE752B08E59B439C79996</string>
+				<string>59554EDE563A5E151293B252F3059334</string>
+				<string>9AD05EA35981DB597342F037940CFFEA</string>
+				<string>4074230349C754A61B75063CFB29CC78</string>
+				<string>DFAF0B1F35B123A43397BEF7E41FDD34</string>
+				<string>4A9710C70F89592DACB1574319299F2B</string>
+				<string>02982751D0542A0977492577359F8EED</string>
+				<string>8A1C69863B0FC84921D93C2F9BAAF867</string>
+				<string>5D1444BCE636A2222EA18F411FA7DA8E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>QIYU_iOS_SDK</string>
+			<key>path</key>
+			<string>QIYU_iOS_SDK</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -370,6 +415,36 @@
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
+		<key>6D238AAD4176E934399D82F3B47582F3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QYPOPSessionInfo.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/POP/QYPOPSessionInfo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6DAD20F472F4DE661B0D9CEC735B8D2C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.plug-in</string>
+			<key>name</key>
+			<string>QYResource.bundle</string>
+			<key>path</key>
+			<string>SDK/QYResource.bundle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6F79746E24D2FBA21D24F8F5EB7B4D8E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -383,18 +458,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>745670F237D31F2B41EB7CAF71FB2EAC</key>
+		<key>708218BCAD938E3127608A9BE5C3244D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libevent.a</string>
+			<string>QYPOPMessageInfo.h</string>
 			<key>path</key>
-			<string>SDK/libevent.a</string>
+			<string>SDK/ExportHeaders/POP/QYPOPMessageInfo.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -417,12 +492,27 @@
 			<array>
 				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
 				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>9F2E03D84EF011F3CD9520608017EA42</string>
+				<string>5BFFD3BF26FC4C72CB2AB1280C50CEF1</string>
 				<string>09F99A59B8E3FB49BC5E214DD44BBAD5</string>
 				<string>DED9A35BD34596FC92BEB850089532BF</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7F165F7EE9FAC1EBEA061194AD32B86C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QYConversationManager.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/QYConversationManager.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -466,18 +556,18 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>82A5EEE395C80FB9EEA33F3433C6E153</key>
+		<key>8A1C69863B0FC84921D93C2F9BAAF867</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>BF2E8ED258098C377F32E1F97CA0F7DE</string>
+				<string>B9EDBEE572D19270621F99C047EB4C3E</string>
+				<string>FC8E99A9994F945A56D75D6710533EF4</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>QYPOPSessionInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPSessionInfo.h</string>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -513,18 +603,18 @@
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
 		</dict>
-		<key>9B3B144405E123351508B13EF820ABB7</key>
+		<key>9AD05EA35981DB597342F037940CFFEA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libcrypto.a</string>
+			<string>QYSDK.h</string>
 			<key>path</key>
-			<string>SDK/libcrypto.a</string>
+			<string>SDK/ExportHeaders/QYSDK.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -541,36 +631,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9F2E03D84EF011F3CD9520608017EA42</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F9B631FF9ED5C5954236EDFBAA339AB0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F5BC9CC8112CA0DFC48C713569F0C92</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>074B36E6CDA040BA1B033E19586362B5</string>
-				<string>9B3B144405E123351508B13EF820ABB7</string>
-				<string>745670F237D31F2B41EB7CAF71FB2EAC</string>
-				<string>380FFD2349117F5188E76AA3C21AD69D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A78CF7C34E71F7F4EB849F5D66AA5AEC</key>
+		<key>A24F6E76DE87C6A4621FE6B8F097949C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -579,39 +640,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QYCustomUIConfig.h</string>
+			<string>QYMessageInfo.h</string>
 			<key>path</key>
-			<string>SDK/ExportHeaders/QYCustomUIConfig.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ABEFE6F33C916D32F921AEADBBA29C63</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYCommodityInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYCommodityInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFAF296076E0C17DF1F18D2B931C06A7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYUserInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYUserInfo.h</string>
+			<string>SDK/ExportHeaders/QYMessageInfo.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -628,6 +659,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>B9EDBEE572D19270621F99C047EB4C3E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libevent.a</string>
+			<key>path</key>
+			<string>SDK/libevent.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
 		<dict>
 			<key>children</key>
@@ -641,16 +687,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C58584CD9B5C6FC6B1AC96BD367B4EB6</key>
+		<key>BF2E8ED258098C377F32E1F97CA0F7DE</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>3F6F0FBA9E968AD5AF3FF0EAC5166782</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>Resources</string>
+			<string>libcrypto.a</string>
+			<key>path</key>
+			<string>SDK/libcrypto.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -666,21 +714,6 @@
 			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework</string>
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>D30129DF1495EEB19FD97310DDA244C7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYCustomActionConfig.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYCustomActionConfig.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D41D8CD98F00B204E9800998ECF8427E</key>
 		<dict>
@@ -760,7 +793,20 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>DACBAC2609DD29CC23C007B20E2ECB16</key>
+		<key>DED9A35BD34596FC92BEB850089532BF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>494E9DA41A485EA633B5617A260FA3DF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DFAF0B1F35B123A43397BEF7E41FDD34</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -775,20 +821,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>DED9A35BD34596FC92BEB850089532BF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>494E9DA41A485EA633B5617A260FA3DF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E173637773BD0CF09FA6A94BA42D1A3A</key>
+		<key>E1618F0ED55BC02FB5625D23416F8307</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -797,9 +830,24 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QYPushMessage.h</string>
+			<string>QYCustomUIConfig.h</string>
 			<key>path</key>
-			<string>SDK/ExportHeaders/QYPushMessage.h</string>
+			<string>SDK/ExportHeaders/QYCustomUIConfig.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E5BC9A532F0B89F6C33A9BA7BCD08150</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QYPOPConversationManager.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/POP/QYPOPConversationManager.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -818,21 +866,6 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>EC29EFF91885E38E1A1C190F2AB82F73</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYHeaders.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYHeaders.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>ED51FDC0207B9BFA6634197B4ABFD78D</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -846,7 +879,14 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>EF49C1CDB1C0C8B547D9D023A63D6766</key>
+		<key>F19BBBF4235ED48EE2D70B77DA2EDAEA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9E56189CDD03C80114CA898330B0C53E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F297C1445ABD9704EE8F101ABD176203</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -855,18 +895,11 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QYPOPConversationManager.h</string>
+			<string>QYPOPCustomUIConfig.h</string>
 			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPConversationManager.h</string>
+			<string>SDK/ExportHeaders/POP/QYPOPCustomUIConfig.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F19BBBF4235ED48EE2D70B77DA2EDAEA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9E56189CDD03C80114CA898330B0C53E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>F325026B55060D3B22BEC0BAB5FA7344</key>
 		<dict>
@@ -939,38 +972,6 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>F9B631FF9ED5C5954236EDFBAA339AB0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>ABEFE6F33C916D32F921AEADBBA29C63</string>
-				<string>3E8C42A45FCB70EFA99D783069AF3375</string>
-				<string>D30129DF1495EEB19FD97310DDA244C7</string>
-				<string>A78CF7C34E71F7F4EB849F5D66AA5AEC</string>
-				<string>EC29EFF91885E38E1A1C190F2AB82F73</string>
-				<string>EF49C1CDB1C0C8B547D9D023A63D6766</string>
-				<string>6A76991E9913A50EE3190130D9593E5E</string>
-				<string>4F1D16B88B3370BF3FE79BBC565883FC</string>
-				<string>271E5D0A4C31875FDEB51DB784248670</string>
-				<string>82A5EEE395C80FB9EEA33F3433C6E153</string>
-				<string>1D627B730C4FF2251FBA84C56E5B3DD2</string>
-				<string>E173637773BD0CF09FA6A94BA42D1A3A</string>
-				<string>2BA546C77F8C3CE34DD8B555E988F57F</string>
-				<string>DACBAC2609DD29CC23C007B20E2ECB16</string>
-				<string>30A463E1217F8CB8C4A06A11255DF035</string>
-				<string>AFAF296076E0C17DF1F18D2B931C06A7</string>
-				<string>9F5BC9CC8112CA0DFC48C713569F0C92</string>
-				<string>C58584CD9B5C6FC6B1AC96BD367B4EB6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>QIYU_iOS_SDK</string>
-			<key>path</key>
-			<string>QIYU_iOS_SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>F9F4BDD9A2F2B2C34097F5751F7681BB</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -983,6 +984,21 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>FC8E99A9994F945A56D75D6710533EF4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libQYSDK.a</string>
+			<key>path</key>
+			<string>SDK/libQYSDK.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

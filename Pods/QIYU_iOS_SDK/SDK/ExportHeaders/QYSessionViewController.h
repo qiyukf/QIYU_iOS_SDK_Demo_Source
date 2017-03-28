@@ -3,7 +3,7 @@
 //  QYSDK
 //
 //  Created by towik on 12/21/15.
-//  Copyright (c) 2016 Netease. All rights reserved.
+//  Copyright (c) 2017 Netease. All rights reserved.
 //
 #import <UIKit/UIKit.h>
 
@@ -30,6 +30,11 @@
  *  访客分流 客服Id
  */
 @property (nonatomic,assign)    int64_t staffId;
+
+/**
+ *  vip等级
+ */
+@property (nonatomic,assign)    NSInteger   vipLevel;
 
 /**
  *  访客分流 是否开启机器人

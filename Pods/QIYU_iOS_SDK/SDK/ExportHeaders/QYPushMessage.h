@@ -3,7 +3,7 @@
 //  QYSDK
 //
 //  Created by towik on 9/10/16.
-//  Copyright (c) 2016 Netease. All rights reserved.
+//  Copyright (c) 2017 Netease. All rights reserved.
 //
 
 /**

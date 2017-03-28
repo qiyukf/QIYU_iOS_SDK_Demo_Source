@@ -2,10 +2,10 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 3.3.2
+//  version 3.5.0
 //
 //  Created by towik on 12/21/15.
-//  Copyright (c) 2016 Netease. All rights reserved.
+//  Copyright (c) 2017 Netease. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -74,7 +74,6 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
  */
 - (QYConversationManager *)conversationManager;
 
-
 /**
  *  更新推送token
  *
@@ -95,6 +94,13 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
  *  @param userInfo 个人信息
  */
 - (void)setUserInfo:(QYUserInfo *)userInfo;
+
+
+/**
+ *  设置authToken
+ *
+ */
+- (void)setAuthToken:(NSString *)authToken;
 
 /**
  *  获取推送消息
@@ -130,6 +136,14 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
  @param completeBlock 清理缓存完成block
  */
 - (void)cleanResourceCacheWithBlock:(QYCleanResourceCacheCompleteBlock)completeBlock;
+
+/**
+ 获取七鱼的日志文件路径
+ *
+ *  @return 日志文件路径
+ */
+- (NSString *)qiyuLogPath;
+
 
 #pragma mark - Deprecated
 

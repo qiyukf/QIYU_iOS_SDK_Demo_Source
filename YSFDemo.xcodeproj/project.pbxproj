@@ -873,7 +873,6 @@
 		2B065B8D1E683D7600D9CB59 /* ULKScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULKScrollView.h; sourceTree = "<group>"; };
 		2B065B8E1E683D7600D9CB59 /* UILayoutKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayoutKit.h; sourceTree = "<group>"; };
 		2B065B901E683D7600D9CB59 /* YSFKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFKeyboardManager.h; sourceTree = "<group>"; };
-		2B065B931E683D7600D9CB59 /* aacplus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aacplus.h; sourceTree = "<group>"; };
 		2B065B951E683D7600D9CB59 /* NIMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMDatabase.h; sourceTree = "<group>"; };
 		2B065B961E683D7600D9CB59 /* NIMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMDatabaseAdditions.h; sourceTree = "<group>"; };
 		2B065B971E683D7600D9CB59 /* NIMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMDatabaseQueue.h; sourceTree = "<group>"; };
@@ -2185,20 +2184,11 @@
 		2B065B911E683D7600D9CB59 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				2B065B921E683D7600D9CB59 /* AACPlus */,
 				2B065B941E683D7600D9CB59 /* FMDB */,
 				2B065B9A1E683D7600D9CB59 /* Reachability */,
 				2B065B9C1E683D7600D9CB59 /* RealTimeNIO */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		2B065B921E683D7600D9CB59 /* AACPlus */ = {
-			isa = PBXGroup;
-			children = (
-				2B065B931E683D7600D9CB59 /* aacplus.h */,
-			);
-			path = AACPlus;
 			sourceTree = "<group>";
 		};
 		2B065B941E683D7600D9CB59 /* FMDB */ = {
@@ -2411,7 +2401,7 @@
 				TargetAttributes = {
 					E48972FE1B8C016E001C96EC = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = MWYKGVPTJP;
+						DevelopmentTeam = 569GNZ5392;
 					};
 				};
 			};
@@ -2859,6 +2849,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 569GNZ5392;
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = YSFDemo/YSFDemoPrefix.pch;
 				HEADER_SEARCH_PATHS = (
@@ -2895,6 +2886,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 569GNZ5392;
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = YSFDemo/YSFDemoPrefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
