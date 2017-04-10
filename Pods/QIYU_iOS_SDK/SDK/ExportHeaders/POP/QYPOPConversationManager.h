@@ -8,11 +8,6 @@
 
 #import "QYConversationManager.h"
 
-/**
- *  平台电商专用
- */
-@class QYPOPSessionInfo;
-@class QYPOPMessageInfo;
 
 /**
  *  会话委托
@@ -29,7 +24,7 @@
  *
  *  @param message 消息信息
  */
-- (void)onReceiveMessage:(QYPOPMessageInfo *)message;
+- (void)onReceiveMessage:(QYMessageInfo *)message;
 
 @end
 
@@ -37,7 +32,14 @@
  *  平台电商专用;会话管理类委托
  */
 @interface QYConversationManager (POP)
-    
+
+/**
+ *  清空未读数
+ *
+ *  @param shopId 商铺ID
+ */
+- (void)clearUnreadCount:(NSString *)shopId;
+
 /**
  *  删除会话列表中的会话
  *

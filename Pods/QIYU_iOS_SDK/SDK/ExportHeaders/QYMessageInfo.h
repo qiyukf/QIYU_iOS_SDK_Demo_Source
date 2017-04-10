@@ -8,13 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  消息类型
+ */
 typedef NS_ENUM(NSInteger, QYMessageType) {
-    QYMessageTypeText,
-    QYMessageTypeImage,
-    QYMessageTypeAudio,
-    QYMessageTypeCustom
+    QYMessageTypeText,      //文本
+    QYMessageTypeImage,     //图片
+    QYMessageTypeAudio,     //语音
+    QYMessageTypeCustom     //自定义
 };
 
+/**
+ *  消息
+ */
 @interface QYMessageInfo : NSObject
 
 /**

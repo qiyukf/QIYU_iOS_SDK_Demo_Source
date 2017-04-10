@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "QYMessageInfo.h"
-#import "QYSessionInfo.h"
+
+@class QYMessageInfo;
+@class QYSessionInfo;
+
 
 /**
  *  会话委托
@@ -46,6 +48,12 @@
  *  @return 未读数
  */
 - (NSInteger)allUnreadCount;
+
+/**
+ *  清空未读数
+ *
+ */
+- (void)clearUnreadCount;
 
 /**
  *  获取所有会话的列表；非平台电商用户，只有一个会话项，平台电商用户，有多个会话项

@@ -9,14 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "QYMessageInfo.h"
 
+/**
+ *  会话状态类型
+ */
 typedef NS_ENUM(NSInteger, QYSessionStatus) {
-    QYSessionStatusNone,
-    QYSessionStatusInSession,
-    QYSessionStatusWaiting
+    QYSessionStatusNone,        //无
+    QYSessionStatusWaiting,     //排队中
+    QYSessionStatusInSession    //会话中
 };
 
 /**
- *  平台电商专用；会话列表中的会话详情信息
+ *  会话列表中的会话详情信息
  */
 @interface QYSessionInfo : NSObject
 
