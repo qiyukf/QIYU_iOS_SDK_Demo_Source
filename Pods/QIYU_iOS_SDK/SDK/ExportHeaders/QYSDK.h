@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 3.5.5
+//  version 3.7.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -107,7 +107,7 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 - (void)setAuthToken:(NSString *)authToken;
 
 /**
- *  设置个人信息，附带token校验
+ *  设置个人信息，带authToken校验。用户帐号登录成功之后，调用此函数
  *
  *  @param userInfo 个人信息
  *  @param block authToken校验结果的回调

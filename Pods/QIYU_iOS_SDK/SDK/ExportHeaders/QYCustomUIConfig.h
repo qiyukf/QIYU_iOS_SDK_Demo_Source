@@ -124,6 +124,16 @@
 @property (nonatomic, strong) UIImage *serviceMessageBubblePressedImage;
 
 /**
+ *  输入框上方操作按钮文字颜色
+ */
+@property (nonatomic, strong) UIColor *actionButtonTextColor;
+
+/**
+ *  输入框上方操作按钮边框颜色
+ */
+@property (nonatomic, strong) UIColor *actionButtonBorderColor;
+
+/**
  *  消息竖直方向间距
  */
 @property (nonatomic, assign) CGFloat sessionMessageSpacing;
@@ -162,36 +172,6 @@
  *  表示聊天组件离界面底部的间距，默认是0；比较典型的是底部有tabbar，这时候设置为tabbar的高度即可
  */
 @property (nonatomic, assign) CGFloat bottomMargin;
-
-/**
- *  聊天窗口右上角商铺入口显示，默认不显示
- */
-@property (nonatomic, assign)   BOOL showShopEntrance;
-
-/**
- *  聊天窗口右上角商铺入口icon
- */
-@property (nonatomic, strong) UIImage *shopEntranceImage;
-
-/**
- *  聊天窗口右上角商铺入口文本
- */
-@property (nonatomic, copy) NSString *shopEntranceText;
-
-/**
- *  聊天窗口右边会话列表入口，默认不显示
- */
-@property (nonatomic, assign) BOOL showSessionListEntrance;
-
-/**
- *  会话列表入口在聊天页面的位置，YES代表在右上角，NO代表在左上角，默认在右上角
- */
-@property (nonatomic, assign) BOOL sessionListEntrancePosition;
-
-/**
- *  会话列表入口icon
- */
-@property (nonatomic, strong) UIImage *sessionListEntranceImage;
 
 /**
  *  是否显示关闭会话入口

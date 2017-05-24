@@ -255,6 +255,7 @@
 		2B06594F1E683B9900D9CB59 /* QYUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B06592F1E683B9900D9CB59 /* QYUserTableViewController.m */; };
 		2B0659501E683B9900D9CB59 /* QYAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0659321E683B9900D9CB59 /* QYAvatarImageView.m */; };
 		2B0659511E683B9900D9CB59 /* QYDemoBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0659341E683B9900D9CB59 /* QYDemoBadgeView.m */; };
+		2BF494CE1ED5AF230040B597 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF494CD1ED5AF230040B597 /* libxml2.tbd */; };
 		E48973051B8C016E001C96EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973041B8C016E001C96EC /* main.m */; };
 		E48973081B8C016E001C96EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973071B8C016E001C96EC /* AppDelegate.m */; };
 		E48973101B8C016E001C96EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E489730F1B8C016E001C96EC /* Images.xcassets */; };
@@ -909,6 +910,7 @@
 		2B065BBE1E683D7600D9CB59 /* opus_multistream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_multistream.h; sourceTree = "<group>"; };
 		2B065BBF1E683D7600D9CB59 /* opus_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_types.h; sourceTree = "<group>"; };
 		2B065BC11E683D7600D9CB59 /* noise_suppression_x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noise_suppression_x.h; sourceTree = "<group>"; };
+		2BF494CD1ED5AF230040B597 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		E43BA2081BA27C9E0046F016 /* ysf_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_debug.xcconfig; sourceTree = "<group>"; };
 		E48972FF1B8C016E001C96EC /* YSFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48973031B8C016E001C96EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF494CE1ED5AF230040B597 /* libxml2.tbd in Frameworks */,
 				E48973891B8C0671001C96EC /* libz.dylib in Frameworks */,
 				E48973871B8C066A001C96EC /* libsqlite3.0.dylib in Frameworks */,
 				E48973851B8C0662001C96EC /* libstdc++.6.0.9.dylib in Frameworks */,
@@ -2307,6 +2310,7 @@
 		C8B56D12702B1E3BD097043B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BF494CD1ED5AF230040B597 /* libxml2.tbd */,
 				0BB1707CDF1C700141D16272 /* libPods-YSFDemo.a */,
 			);
 			name = Frameworks;
