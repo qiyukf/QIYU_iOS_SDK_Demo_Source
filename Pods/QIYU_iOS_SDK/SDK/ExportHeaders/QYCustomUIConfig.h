@@ -178,6 +178,8 @@
  */
 @property (nonatomic, assign) BOOL showCloseSessionEntry;
 
+@property (nonatomic, assign) BOOL showTransWords;
+
 @end
 
 
