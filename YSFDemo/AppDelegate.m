@@ -10,7 +10,8 @@
 #import "QYHomePageViewController.h"
 #import "QYSDK.h"
 #import "QYDemoConfig.h"
-
+#import "NSDictionary+YSF.h"
+#import "QYSettingViewController.h"
 
 #define YSFSelectAppKey 1
 
@@ -45,6 +46,12 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
     }
     
+    
+    NSDictionary *remoteNotificationInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (remoteNotificationInfo) {
+        [self showChatViewController:remoteNotificationInfo];
+    }
+    
     return YES;
 }
 
@@ -76,7 +83,31 @@
     NSLog(@"register remote notification failed %@",error);
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateInactive) {
+        [self showChatViewController:userInfo];
+    }
+}
 
-
+- (void)showChatViewController:(NSDictionary *)remoteNotificationInfo
+{
+    id object = [remoteNotificationInfo objectForKey:@"nim"]; //含有“nim”字段，就表示是七鱼的消息
+    if (object)
+    {
+        //所有 UINavigationController 都先 popToRootViewController，
+        //然后将聊天窗口 push 进某个 UINavigationController
+        QYHomePageViewController *rootVc = (QYHomePageViewController *)_window.rootViewController;
+        assert(rootVc.viewControllers.count == 2);
+        UINavigationController *mainNav = rootVc.viewControllers[0];
+        [mainNav popToRootViewControllerAnimated:NO];
+        UINavigationController *settingNav = rootVc.viewControllers[1];
+        [settingNav popToRootViewControllerAnimated:NO];
+        [rootVc setSelectedIndex:1];
+        assert(settingNav.viewControllers.count > 0);
+        QYSettingViewController *settingViewController = settingNav.viewControllers[0];
+        [settingViewController onChat];
+    }
+}
 
 @end

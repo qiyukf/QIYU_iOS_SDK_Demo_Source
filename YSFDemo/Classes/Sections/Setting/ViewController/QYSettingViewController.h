@@ -9,4 +9,7 @@ extern int64_t    g_questionId;
 extern BOOL    g_openRobotInShuntMode;
 
 @interface QYSettingViewController : UITableViewController
+
+- (void)onChat;
+
 @end
