@@ -2873,7 +2873,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.enterprise.ysf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netease.enterprise.ysf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2914,7 +2914,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.enterprise.ysf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netease.enterprise.ysf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
