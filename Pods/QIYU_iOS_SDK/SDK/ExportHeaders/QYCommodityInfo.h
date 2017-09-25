@@ -47,6 +47,6 @@
 /**
  *  一般用户不需要填这个字段，这个字段仅供特定用户使用
  */
-@property (nonatomic, copy) NSString *userData;
+@property (nonatomic, copy) NSString *ext;
 
 @end

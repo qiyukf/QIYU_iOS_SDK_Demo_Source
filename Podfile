@@ -2,6 +2,6 @@ platform :ios, '7.0'
 
 target 'YSFDemo' do
     
-pod 'QIYU_iOS_SDK',  '~> 3.10.0'
+pod 'QIYU_iOS_SDK',  '~> 3.11.0'
 
 end

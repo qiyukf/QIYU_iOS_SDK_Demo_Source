@@ -1,1007 +1,393 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>02982751D0542A0977492577359F8EED</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYUserInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYUserInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>09F99A59B8E3FB49BC5E214DD44BBAD5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>EBA467ED5F5B536DAD75B7BCF792153E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1057F9162C7155AD155815CDCD31C4AA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-YSFDemo-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1589A7DC081D1AE96EE658B52E39C16E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>198781078BB2F951CAF46013B06D4D92</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F19BBBF4235ED48EE2D70B77DA2EDAEA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3FA2475660FFC880302AD18E29B2E5FC</string>
-				<string>F325026B55060D3B22BEC0BAB5FA7344</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3A2CB3CADF881D6367A962B6F02607A2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPSDK.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPSDK.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3AA3FC84267AF82045737A2E6D13D85F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYCommodityInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYCommodityInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3DCAB2B7CDE207B3958B6CB957FCC758</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3FA2475660FFC880302AD18E29B2E5FC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>POD_CONFIGURATION_DEBUG=1</string>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>4074230349C754A61B75063CFB29CC78</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYSessionInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYSessionInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>412EB50E6785EE2C91660F606AE4FB38</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D4BEE6BAA5E63230E1880A14824592B3</string>
-				<string>7F8E6EAD791EB7CB0E998A5E1AF7649D</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>425D4B7FD10B374554DE245A8E80B0E8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYHeaders.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYHeaders.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>44E897CD0450F5293F9C149BC1BC21B9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYCustomActionConfig.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYCustomActionConfig.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>494E9DA41A485EA633B5617A260FA3DF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B4986E45F980D5D9AB77662B994AAEAE</string>
-				<string>1057F9162C7155AD155815CDCD31C4AA</string>
-				<string>9E56189CDD03C80114CA898330B0C53E</string>
-				<string>8C283CEE881476A8EFC5A52473A9B152</string>
-				<string>6F79746E24D2FBA21D24F8F5EB7B4D8E</string>
-				<string>ED51FDC0207B9BFA6634197B4ABFD78D</string>
-				<string>7BEBA7F42FDFFD02734F00D1EA6807F6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-YSFDemo</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-YSFDemo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4A9710C70F89592DACB1574319299F2B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYSource.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYSource.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>59554EDE563A5E151293B252F3059334</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPushMessage.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYPushMessage.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5BFFD3BF26FC4C72CB2AB1280C50CEF1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6A133A865CE2B7AAA0D6E34D090E0094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5D1444BCE636A2222EA18F411FA7DA8E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6DAD20F472F4DE661B0D9CEC735B8D2C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FC6B998D0FFE752B08E59B439C79996</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPSessionViewController.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPSessionViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6A133A865CE2B7AAA0D6E34D090E0094</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3AA3FC84267AF82045737A2E6D13D85F</string>
-				<string>7F165F7EE9FAC1EBEA061194AD32B86C</string>
-				<string>44E897CD0450F5293F9C149BC1BC21B9</string>
-				<string>E1618F0ED55BC02FB5625D23416F8307</string>
-				<string>425D4B7FD10B374554DE245A8E80B0E8</string>
-				<string>A24F6E76DE87C6A4621FE6B8F097949C</string>
-				<string>E5BC9A532F0B89F6C33A9BA7BCD08150</string>
-				<string>F297C1445ABD9704EE8F101ABD176203</string>
-				<string>708218BCAD938E3127608A9BE5C3244D</string>
-				<string>3A2CB3CADF881D6367A962B6F02607A2</string>
-				<string>6D238AAD4176E934399D82F3B47582F3</string>
-				<string>5FC6B998D0FFE752B08E59B439C79996</string>
-				<string>59554EDE563A5E151293B252F3059334</string>
-				<string>9AD05EA35981DB597342F037940CFFEA</string>
-				<string>4074230349C754A61B75063CFB29CC78</string>
-				<string>DFAF0B1F35B123A43397BEF7E41FDD34</string>
-				<string>4A9710C70F89592DACB1574319299F2B</string>
-				<string>02982751D0542A0977492577359F8EED</string>
-				<string>8A1C69863B0FC84921D93C2F9BAAF867</string>
-				<string>5D1444BCE636A2222EA18F411FA7DA8E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>QIYU_iOS_SDK</string>
-			<key>path</key>
-			<string>QIYU_iOS_SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C63F8A81C0B1C81A4EE6FC4DADF8E64</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>412EB50E6785EE2C91660F606AE4FB38</string>
-			<key>buildPhases</key>
-			<array>
-				<string>198781078BB2F951CAF46013B06D4D92</string>
-				<string>F9F4BDD9A2F2B2C34097F5751F7681BB</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-YSFDemo</string>
-			<key>productName</key>
-			<string>Pods-YSFDemo</string>
-			<key>productReference</key>
-			<string>EBA467ED5F5B536DAD75B7BCF792153E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>6D238AAD4176E934399D82F3B47582F3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPSessionInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPSessionInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6DAD20F472F4DE661B0D9CEC735B8D2C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.plug-in</string>
-			<key>name</key>
-			<string>QYResource.bundle</string>
-			<key>path</key>
-			<string>SDK/QYResource.bundle</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6F79746E24D2FBA21D24F8F5EB7B4D8E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-YSFDemo-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>708218BCAD938E3127608A9BE5C3244D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPMessageInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPMessageInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7BEBA7F42FDFFD02734F00D1EA6807F6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-YSFDemo.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
-				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>5BFFD3BF26FC4C72CB2AB1280C50CEF1</string>
-				<string>09F99A59B8E3FB49BC5E214DD44BBAD5</string>
-				<string>DED9A35BD34596FC92BEB850089532BF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7F165F7EE9FAC1EBEA061194AD32B86C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYConversationManager.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYConversationManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7F8E6EAD791EB7CB0E998A5E1AF7649D</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7BEBA7F42FDFFD02734F00D1EA6807F6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>8A1C69863B0FC84921D93C2F9BAAF867</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BF2E8ED258098C377F32E1F97CA0F7DE</string>
-				<string>B9EDBEE572D19270621F99C047EB4C3E</string>
-				<string>FC8E99A9994F945A56D75D6710533EF4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8C283CEE881476A8EFC5A52473A9B152</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-YSFDemo-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93A4A3777CF96A4AAC1D13BA6DCCEA73</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>text.script.ruby</string>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>9AD05EA35981DB597342F037940CFFEA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYSDK.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYSDK.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9E56189CDD03C80114CA898330B0C53E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-YSFDemo-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A24F6E76DE87C6A4621FE6B8F097949C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYMessageInfo.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYMessageInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B4986E45F980D5D9AB77662B994AAEAE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-YSFDemo-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B9EDBEE572D19270621F99C047EB4C3E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libevent.a</string>
-			<key>path</key>
-			<string>SDK/libevent.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3DCAB2B7CDE207B3958B6CB957FCC758</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BF2E8ED258098C377F32E1F97CA0F7DE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libcrypto.a</string>
-			<key>path</key>
-			<string>SDK/libcrypto.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CEC22C73C1608DFA5D5D78BDCB218219</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>D41D8CD98F00B204E9800998ECF8427E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0700</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>7DB346D0F39D3F0E887471402A8071AB</string>
-			<key>productRefGroup</key>
-			<string>09F99A59B8E3FB49BC5E214DD44BBAD5</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>6C63F8A81C0B1C81A4EE6FC4DADF8E64</string>
-			</array>
-		</dict>
-		<key>D4BEE6BAA5E63230E1880A14824592B3</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ED51FDC0207B9BFA6634197B4ABFD78D</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DED9A35BD34596FC92BEB850089532BF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>494E9DA41A485EA633B5617A260FA3DF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DFAF0B1F35B123A43397BEF7E41FDD34</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYSessionViewController.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYSessionViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1618F0ED55BC02FB5625D23416F8307</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYCustomUIConfig.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/QYCustomUIConfig.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E5BC9A532F0B89F6C33A9BA7BCD08150</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPConversationManager.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPConversationManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EBA467ED5F5B536DAD75B7BCF792153E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-YSFDemo.a</string>
-			<key>path</key>
-			<string>libPods-YSFDemo.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>ED51FDC0207B9BFA6634197B4ABFD78D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-YSFDemo.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F19BBBF4235ED48EE2D70B77DA2EDAEA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9E56189CDD03C80114CA898330B0C53E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F297C1445ABD9704EE8F101ABD176203</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QYPOPCustomUIConfig.h</string>
-			<key>path</key>
-			<string>SDK/ExportHeaders/POP/QYPOPCustomUIConfig.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F325026B55060D3B22BEC0BAB5FA7344</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>POD_CONFIGURATION_RELEASE=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F9F4BDD9A2F2B2C34097F5751F7681BB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>1589A7DC081D1AE96EE658B52E39C16E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FC8E99A9994F945A56D75D6710533EF4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libQYSDK.a</string>
-			<key>path</key>
-			<string>SDK/libQYSDK.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D41D8CD98F00B204E9800998ECF8427E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B76926A3E8365CB343F905754EDBB5A /* Pods-YSFDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */; };
+		EBD592E825C1B138AE982E9C1D9F867C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02982751D0542A0977492577359F8EED /* QYUserInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYUserInfo.h; path = SDK/ExportHeaders/QYUserInfo.h; sourceTree = "<group>"; };
+		1057F9162C7155AD155815CDCD31C4AA /* Pods-YSFDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YSFDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		3A2CB3CADF881D6367A962B6F02607A2 /* QYPOPSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYPOPSDK.h; path = SDK/ExportHeaders/POP/QYPOPSDK.h; sourceTree = "<group>"; };
+		3AA3FC84267AF82045737A2E6D13D85F /* QYCommodityInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCommodityInfo.h; path = SDK/ExportHeaders/QYCommodityInfo.h; sourceTree = "<group>"; };
+		4074230349C754A61B75063CFB29CC78 /* QYSessionInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSessionInfo.h; path = SDK/ExportHeaders/QYSessionInfo.h; sourceTree = "<group>"; };
+		425D4B7FD10B374554DE245A8E80B0E8 /* QYHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYHeaders.h; path = SDK/ExportHeaders/QYHeaders.h; sourceTree = "<group>"; };
+		44E897CD0450F5293F9C149BC1BC21B9 /* QYCustomActionConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCustomActionConfig.h; path = SDK/ExportHeaders/QYCustomActionConfig.h; sourceTree = "<group>"; };
+		4A9710C70F89592DACB1574319299F2B /* QYSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSource.h; path = SDK/ExportHeaders/QYSource.h; sourceTree = "<group>"; };
+		59554EDE563A5E151293B252F3059334 /* QYPushMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYPushMessage.h; path = SDK/ExportHeaders/QYPushMessage.h; sourceTree = "<group>"; };
+		5FC6B998D0FFE752B08E59B439C79996 /* QYPOPSessionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYPOPSessionViewController.h; path = SDK/ExportHeaders/POP/QYPOPSessionViewController.h; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6D238AAD4176E934399D82F3B47582F3 /* QYPOPSessionInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYPOPSessionInfo.h; path = SDK/ExportHeaders/POP/QYPOPSessionInfo.h; sourceTree = "<group>"; };
+		6DAD20F472F4DE661B0D9CEC735B8D2C /* QYResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYResource.bundle; path = SDK/QYResource.bundle; sourceTree = "<group>"; };
+		6F79746E24D2FBA21D24F8F5EB7B4D8E /* Pods-YSFDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YSFDemo-resources.sh"; sourceTree = "<group>"; };
+		708218BCAD938E3127608A9BE5C3244D /* QYPOPMessageInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYPOPMessageInfo.h; path = SDK/ExportHeaders/POP/QYPOPMessageInfo.h; sourceTree = "<group>"; };
+		7BEBA7F42FDFFD02734F00D1EA6807F6 /* Pods-YSFDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YSFDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7F165F7EE9FAC1EBEA061194AD32B86C /* QYConversationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYConversationManager.h; path = SDK/ExportHeaders/QYConversationManager.h; sourceTree = "<group>"; };
+		8C283CEE881476A8EFC5A52473A9B152 /* Pods-YSFDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YSFDemo-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9AD05EA35981DB597342F037940CFFEA /* QYSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSDK.h; path = SDK/ExportHeaders/QYSDK.h; sourceTree = "<group>"; };
+		9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YSFDemo-dummy.m"; sourceTree = "<group>"; };
+		A24F6E76DE87C6A4621FE6B8F097949C /* QYMessageInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYMessageInfo.h; path = SDK/ExportHeaders/QYMessageInfo.h; sourceTree = "<group>"; };
+		B4986E45F980D5D9AB77662B994AAEAE /* Pods-YSFDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YSFDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B9EDBEE572D19270621F99C047EB4C3E /* libevent.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libevent.a; path = SDK/libevent.a; sourceTree = "<group>"; };
+		BF2E8ED258098C377F32E1F97CA0F7DE /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = SDK/libcrypto.a; sourceTree = "<group>"; };
+		DFAF0B1F35B123A43397BEF7E41FDD34 /* QYSessionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYSessionViewController.h; path = SDK/ExportHeaders/QYSessionViewController.h; sourceTree = "<group>"; };
+		E1618F0ED55BC02FB5625D23416F8307 /* QYCustomUIConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYCustomUIConfig.h; path = SDK/ExportHeaders/QYCustomUIConfig.h; sourceTree = "<group>"; };
+		E5BC9A532F0B89F6C33A9BA7BCD08150 /* QYPOPConversationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYPOPConversationManager.h; path = SDK/ExportHeaders/POP/QYPOPConversationManager.h; sourceTree = "<group>"; };
+		EBA467ED5F5B536DAD75B7BCF792153E /* libPods-YSFDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-YSFDemo.a"; path = "libPods-YSFDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED51FDC0207B9BFA6634197B4ABFD78D /* Pods-YSFDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YSFDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F297C1445ABD9704EE8F101ABD176203 /* QYPOPCustomUIConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QYPOPCustomUIConfig.h; path = SDK/ExportHeaders/POP/QYPOPCustomUIConfig.h; sourceTree = "<group>"; };
+		FC8E99A9994F945A56D75D6710533EF4 /* libQYSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libQYSDK.a; path = SDK/libQYSDK.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D4543473AC47A10765AD6E16724C333 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD592E825C1B138AE982E9C1D9F867C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09F99A59B8E3FB49BC5E214DD44BBAD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBA467ED5F5B536DAD75B7BCF792153E /* libPods-YSFDemo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		494E9DA41A485EA633B5617A260FA3DF /* Pods-YSFDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B4986E45F980D5D9AB77662B994AAEAE /* Pods-YSFDemo-acknowledgements.markdown */,
+				1057F9162C7155AD155815CDCD31C4AA /* Pods-YSFDemo-acknowledgements.plist */,
+				9E56189CDD03C80114CA898330B0C53E /* Pods-YSFDemo-dummy.m */,
+				8C283CEE881476A8EFC5A52473A9B152 /* Pods-YSFDemo-frameworks.sh */,
+				6F79746E24D2FBA21D24F8F5EB7B4D8E /* Pods-YSFDemo-resources.sh */,
+				ED51FDC0207B9BFA6634197B4ABFD78D /* Pods-YSFDemo.debug.xcconfig */,
+				7BEBA7F42FDFFD02734F00D1EA6807F6 /* Pods-YSFDemo.release.xcconfig */,
+			);
+			name = "Pods-YSFDemo";
+			path = "Target Support Files/Pods-YSFDemo";
+			sourceTree = "<group>";
+		};
+		5BFFD3BF26FC4C72CB2AB1280C50CEF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A133A865CE2B7AAA0D6E34D090E0094 /* QIYU_iOS_SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D1444BCE636A2222EA18F411FA7DA8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6DAD20F472F4DE661B0D9CEC735B8D2C /* QYResource.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6A133A865CE2B7AAA0D6E34D090E0094 /* QIYU_iOS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3AA3FC84267AF82045737A2E6D13D85F /* QYCommodityInfo.h */,
+				7F165F7EE9FAC1EBEA061194AD32B86C /* QYConversationManager.h */,
+				44E897CD0450F5293F9C149BC1BC21B9 /* QYCustomActionConfig.h */,
+				E1618F0ED55BC02FB5625D23416F8307 /* QYCustomUIConfig.h */,
+				425D4B7FD10B374554DE245A8E80B0E8 /* QYHeaders.h */,
+				A24F6E76DE87C6A4621FE6B8F097949C /* QYMessageInfo.h */,
+				E5BC9A532F0B89F6C33A9BA7BCD08150 /* QYPOPConversationManager.h */,
+				F297C1445ABD9704EE8F101ABD176203 /* QYPOPCustomUIConfig.h */,
+				708218BCAD938E3127608A9BE5C3244D /* QYPOPMessageInfo.h */,
+				3A2CB3CADF881D6367A962B6F02607A2 /* QYPOPSDK.h */,
+				6D238AAD4176E934399D82F3B47582F3 /* QYPOPSessionInfo.h */,
+				5FC6B998D0FFE752B08E59B439C79996 /* QYPOPSessionViewController.h */,
+				59554EDE563A5E151293B252F3059334 /* QYPushMessage.h */,
+				9AD05EA35981DB597342F037940CFFEA /* QYSDK.h */,
+				4074230349C754A61B75063CFB29CC78 /* QYSessionInfo.h */,
+				DFAF0B1F35B123A43397BEF7E41FDD34 /* QYSessionViewController.h */,
+				4A9710C70F89592DACB1574319299F2B /* QYSource.h */,
+				02982751D0542A0977492577359F8EED /* QYUserInfo.h */,
+				8A1C69863B0FC84921D93C2F9BAAF867 /* Frameworks */,
+				5D1444BCE636A2222EA18F411FA7DA8E /* Resources */,
+			);
+			name = QIYU_iOS_SDK;
+			path = QIYU_iOS_SDK;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5BFFD3BF26FC4C72CB2AB1280C50CEF1 /* Pods */,
+				09F99A59B8E3FB49BC5E214DD44BBAD5 /* Products */,
+				DED9A35BD34596FC92BEB850089532BF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8A1C69863B0FC84921D93C2F9BAAF867 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E8ED258098C377F32E1F97CA0F7DE /* libcrypto.a */,
+				B9EDBEE572D19270621F99C047EB4C3E /* libevent.a */,
+				FC8E99A9994F945A56D75D6710533EF4 /* libQYSDK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DED9A35BD34596FC92BEB850089532BF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				494E9DA41A485EA633B5617A260FA3DF /* Pods-YSFDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9903CA1DA3FB11493D2F39E24E8873F /* Pods-YSFDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8CC1E2C1AC0BB2C68A5F62ED321040A /* Build configuration list for PBXNativeTarget "Pods-YSFDemo" */;
+			buildPhases = (
+				AA8628DE30AC1BFF36DC2858FEDDDA36 /* Sources */,
+				7D4543473AC47A10765AD6E16724C333 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-YSFDemo";
+			productName = "Pods-YSFDemo";
+			productReference = EBA467ED5F5B536DAD75B7BCF792153E /* libPods-YSFDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 09F99A59B8E3FB49BC5E214DD44BBAD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9903CA1DA3FB11493D2F39E24E8873F /* Pods-YSFDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA8628DE30AC1BFF36DC2858FEDDDA36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B76926A3E8365CB343F905754EDBB5A /* Pods-YSFDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3890D7C92DE120C2BA762135796CFA80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BADA370475E93942AD0153572E1B595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B9836ABE43FC596A126E8895131CECFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED51FDC0207B9BFA6634197B4ABFD78D /* Pods-YSFDemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F728C1DF64C37B44F3A26DF46420186C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BEBA7F42FDFFD02734F00D1EA6807F6 /* Pods-YSFDemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BADA370475E93942AD0153572E1B595 /* Debug */,
+				3890D7C92DE120C2BA762135796CFA80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8CC1E2C1AC0BB2C68A5F62ED321040A /* Build configuration list for PBXNativeTarget "Pods-YSFDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9836ABE43FC596A126E8895131CECFA /* Debug */,
+				F728C1DF64C37B44F3A26DF46420186C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

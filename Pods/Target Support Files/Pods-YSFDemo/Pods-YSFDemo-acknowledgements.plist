@@ -16,6 +16,8 @@
 			<key>FooterText</key>
 			<string>Copyright 2016 Netease 
 </string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>QIYU_iOS_SDK</string>
 			<key>Type</key>
