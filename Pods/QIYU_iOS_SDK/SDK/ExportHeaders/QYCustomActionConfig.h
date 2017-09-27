@@ -34,7 +34,7 @@ typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
 /**
  *  是否退出排队回调
  */
-typedef void (^QYQuitBlock)(QYQuitWaitingBlock block);
+typedef void (^QYShowQuitBlock)(QYQuitWaitingBlock block);
 
 
 /**
@@ -54,7 +54,7 @@ typedef void (^QYQuitBlock)(QYQuitWaitingBlock block);
  */
 @property (nonatomic, copy) QYBotClickBlock botClick;
 
-@property (nonatomic, copy) QYQuitBlock showQuitBlock;
+@property (nonatomic, copy) QYShowQuitBlock showQuitBlock;
 
 /**
  *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession
