@@ -32,6 +32,11 @@
 @property (nonatomic,assign)    int64_t staffId;
 
 /**
+ *  机器人Id
+ */
+@property (nonatomic,assign)    int64_t robotId;
+
+/**
  *  vip等级
  */
 @property (nonatomic,assign)    NSInteger   vipLevel;
