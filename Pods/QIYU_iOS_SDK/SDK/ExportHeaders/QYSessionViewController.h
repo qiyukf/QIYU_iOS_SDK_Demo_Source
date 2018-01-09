@@ -10,6 +10,23 @@
 @class QYSource;
 @class QYCommodityInfo;
 
+/**
+ *  输入区域上方工具栏内的按钮信息
+ */
+@interface QYButtonInfo : NSObject
+
+@property (nonatomic,strong)    id      buttonId;
+@property (nonatomic,copy)      NSString *title;
+@property (nonatomic,strong)    id      userData;
+
+@end
+
+
+/**
+ *  输入区域上方工具栏内的按钮点击回调
+ */
+typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
+
 
 /**
  *  客服会话ViewController,必须嵌入到UINavigationcontroller中
@@ -60,6 +77,21 @@
  *  商品信息展示
  */
 @property (nonatomic, strong) QYCommodityInfo *commodityInfo;
+
+/**
+ *  输入区域上方工具栏内的按钮信息
+ */
+@property (nonatomic, copy) NSArray<QYButtonInfo *> *buttonInfoArray;
+
+/**
+ *  输入区域上方工具栏内的按钮点击回调
+ */
+@property (nonatomic, copy) QYButtonClickBlock buttonClickBlock;
+
+/**
+ *  发送商品信息展示
+ */
+- (void)sendCommodityInfo:(QYCommodityInfo *)commodityInfo;
 
 @end
 

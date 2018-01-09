@@ -179,11 +179,9 @@
 @property (nonatomic, assign) CGFloat bottomMargin;
 
 /**
- *  是否显示关闭会话入口
+ *  默认是NO,默认隐藏关闭会话入口，设置为YES，可以修改为显示
  */
 @property (nonatomic, assign) BOOL showCloseSessionEntry;
-
-@property (nonatomic, assign) BOOL showTransWords;
 
 @end
 

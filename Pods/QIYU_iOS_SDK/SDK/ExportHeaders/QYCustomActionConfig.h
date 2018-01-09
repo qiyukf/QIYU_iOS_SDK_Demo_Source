@@ -31,11 +31,6 @@ typedef void (^QYBotClickBlock)(NSString *target, NSString *params);
  */
 typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
 
-/**
- *  是否退出排队回调
- */
-typedef void (^QYShowQuitBlock)(QYQuitWaitingBlock block);
-
 
 /**
  *  自定义行为配置类
@@ -53,8 +48,6 @@ typedef void (^QYShowQuitBlock)(QYQuitWaitingBlock block);
  *  bot相关点击
  */
 @property (nonatomic, copy) QYBotClickBlock botClick;
-
-@property (nonatomic, copy) QYShowQuitBlock showQuitBlock;
 
 /**
  *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession

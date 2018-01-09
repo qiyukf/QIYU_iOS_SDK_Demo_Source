@@ -40,7 +40,7 @@
 @property (nonatomic, copy) NSString *note;
 
 /**
- *  发送时是否要在用户端隐藏，1为显示，0为隐藏，默认为不显示
+ *  发送时是否要在用户端隐藏，YES为显示，NO为隐藏，默认为不显示
  */
 @property (nonatomic, assign) BOOL show;
 
