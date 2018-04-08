@@ -7,6 +7,16 @@
 //
 
 /**
+ *  访客分流展示模式
+ */
+typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
+    QYBypassDisplayModeNone,
+    QYBypassDisplayModeCenter,
+    QYBypassDisplayModeBottom
+};
+
+
+/**
  *  自定义UI配置类；如果想要替换图片素材，可以自己创建一个QYCustomResource.bundle，在其中放置跟QYResource.bundle中同名的图片素材，即可实现替换。
  *  SDK会优先使用QYCustomResource.bundle中的图片素材，当QYCustomResource.bundle中没有的时候，才会使用QYResource.bundle中的图片素材
  */
@@ -182,6 +192,11 @@
  *  默认是NO,默认隐藏关闭会话入口，设置为YES，可以修改为显示
  */
 @property (nonatomic, assign) BOOL showCloseSessionEntry;
+
+/**
+ *  访客分流展示模式
+ */
+@property (nonatomic, assign) QYBypassDisplayMode bypassDisplayMode;
 
 @end
 

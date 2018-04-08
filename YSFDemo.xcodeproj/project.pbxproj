@@ -35,6 +35,8 @@
 		2B06594F1E683B9900D9CB59 /* QYUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B06592F1E683B9900D9CB59 /* QYUserTableViewController.m */; };
 		2B0659501E683B9900D9CB59 /* QYAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0659321E683B9900D9CB59 /* QYAvatarImageView.m */; };
 		2B0659511E683B9900D9CB59 /* QYDemoBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0659341E683B9900D9CB59 /* QYDemoBadgeView.m */; };
+		2BAAAD582079EC6D0008B4F8 /* YSFCommonTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD542079EC6D0008B4F8 /* YSFCommonTableData.m */; };
+		2BAAAD592079EC6D0008B4F8 /* YSFCommonTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD572079EC6D0008B4F8 /* YSFCommonTableDelegate.m */; };
 		E48973051B8C016E001C96EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973041B8C016E001C96EC /* main.m */; };
 		E48973081B8C016E001C96EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973071B8C016E001C96EC /* AppDelegate.m */; };
 		E48973101B8C016E001C96EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E489730F1B8C016E001C96EC /* Images.xcassets */; };
@@ -139,9 +141,6 @@
 		2B065B421E683D7600D9CB59 /* YSFHTMLPreprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFHTMLPreprocessor.h; sourceTree = "<group>"; };
 		2B065B441E683D7600D9CB59 /* YSFAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFAlertController.h; sourceTree = "<group>"; };
 		2B065B461E683D7600D9CB59 /* UIView+YSFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSFToast.h"; sourceTree = "<group>"; };
-		2B065B491E683D7600D9CB59 /* YSFCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableData.h; sourceTree = "<group>"; };
-		2B065B4A1E683D7600D9CB59 /* YSFCommonTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableDelegate.h; sourceTree = "<group>"; };
-		2B065B4B1E683D7600D9CB59 /* YSFCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableViewCell.h; sourceTree = "<group>"; };
 		2B065B4D1E683D7600D9CB59 /* YSFGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFGalleryViewController.h; sourceTree = "<group>"; };
 		2B065B4E1E683D7600D9CB59 /* YSFPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFPageView.h; sourceTree = "<group>"; };
 		2B065B501E683D7600D9CB59 /* YSFPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFPresentationController.h; sourceTree = "<group>"; };
@@ -229,6 +228,11 @@
 		2B065BBE1E683D7600D9CB59 /* opus_multistream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_multistream.h; sourceTree = "<group>"; };
 		2B065BBF1E683D7600D9CB59 /* opus_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_types.h; sourceTree = "<group>"; };
 		2B065BC11E683D7600D9CB59 /* noise_suppression_x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noise_suppression_x.h; sourceTree = "<group>"; };
+		2BAAAD532079EC6D0008B4F8 /* YSFCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableViewCell.h; sourceTree = "<group>"; };
+		2BAAAD542079EC6D0008B4F8 /* YSFCommonTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFCommonTableData.m; sourceTree = "<group>"; };
+		2BAAAD552079EC6D0008B4F8 /* YSFCommonTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableDelegate.h; sourceTree = "<group>"; };
+		2BAAAD562079EC6D0008B4F8 /* YSFCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableData.h; sourceTree = "<group>"; };
+		2BAAAD572079EC6D0008B4F8 /* YSFCommonTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFCommonTableDelegate.m; sourceTree = "<group>"; };
 		2BF494CD1ED5AF230040B597 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		E43BA2081BA27C9E0046F016 /* ysf_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_debug.xcconfig; sourceTree = "<group>"; };
 		E48972FF1B8C016E001C96EC /* YSFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -574,9 +578,11 @@
 		2B065B481E683D7600D9CB59 /* CommonTable */ = {
 			isa = PBXGroup;
 			children = (
-				2B065B491E683D7600D9CB59 /* YSFCommonTableData.h */,
-				2B065B4A1E683D7600D9CB59 /* YSFCommonTableDelegate.h */,
-				2B065B4B1E683D7600D9CB59 /* YSFCommonTableViewCell.h */,
+				2BAAAD562079EC6D0008B4F8 /* YSFCommonTableData.h */,
+				2BAAAD542079EC6D0008B4F8 /* YSFCommonTableData.m */,
+				2BAAAD552079EC6D0008B4F8 /* YSFCommonTableDelegate.h */,
+				2BAAAD572079EC6D0008B4F8 /* YSFCommonTableDelegate.m */,
+				2BAAAD532079EC6D0008B4F8 /* YSFCommonTableViewCell.h */,
 			);
 			path = CommonTable;
 			sourceTree = "<group>";
@@ -1113,6 +1119,7 @@
 				2B0659361E683B9900D9CB59 /* QYDemoConfig.m in Sources */,
 				2B06594F1E683B9900D9CB59 /* QYUserTableViewController.m in Sources */,
 				2B06594D1E683B9900D9CB59 /* QYTestModeViewController.m in Sources */,
+				2BAAAD592079EC6D0008B4F8 /* YSFCommonTableDelegate.m in Sources */,
 				2B0659381E683B9900D9CB59 /* YXCapture.m in Sources */,
 				2B06593E1E683B9900D9CB59 /* QYBadgeView.m in Sources */,
 				2B0659421E683B9900D9CB59 /* QYBindAppkeyViewController.m in Sources */,
@@ -1123,6 +1130,7 @@
 				E48973051B8C016E001C96EC /* main.m in Sources */,
 				2B0659501E683B9900D9CB59 /* QYAvatarImageView.m in Sources */,
 				2B0659511E683B9900D9CB59 /* QYDemoBadgeView.m in Sources */,
+				2BAAAD582079EC6D0008B4F8 /* YSFCommonTableData.m in Sources */,
 				2B0659391E683B9900D9CB59 /* QYDetailViewController.m in Sources */,
 				2B0659451E683B9900D9CB59 /* QYLogViewController.m in Sources */,
 				2B06593B1E683B9900D9CB59 /* QYHomePageViewController.m in Sources */,
