@@ -63,6 +63,12 @@ typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
  */
 - (void)showQuitWaiting:(QYQuitWaitingBlock)quitWaitingBlock;
 
+
+/**
+ *  推送消息相关点击
+ */
+@property (nonatomic, copy) QYLinkClickBlock pushMessageClick;
+
 @end
 
 

@@ -1,17 +1,17 @@
 PODS:
-  - QIYU_iOS_SDK (4.0.0)
+  - QIYU_iOS_SDK (4.2.1)
   - ZXingObjC (3.1.0):
     - ZXingObjC/All (= 3.1.0)
   - ZXingObjC/All (3.1.0)
 
 DEPENDENCIES:
-  - QIYU_iOS_SDK (~> 4.0.0)
+  - QIYU_iOS_SDK (~> 4.2.1)
   - ZXingObjC (~> 3.1.0)
 
 SPEC CHECKSUMS:
-  QIYU_iOS_SDK: d9e30ca7f3fe18ccc8ffe8b88271bfcac6d48fb8
+  QIYU_iOS_SDK: 9dc5cb1dee3abdccca56cc282ecbfc841e366680
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: 17109dc2edb1247c98c7d8db61ccebe20bf44a6a
+PODFILE CHECKSUM: e3847afd1751fffa8863629de88432d34872b0de
 
 COCOAPODS: 1.4.0

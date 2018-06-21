@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  自定义商品信息按钮信息
+ */
+@interface QYCommodityTag : NSObject
+
+@property (nonatomic,copy)      NSString *label;
+@property (nonatomic,copy)      NSString *url;
+@property (nonatomic,copy)      NSString *focusIframe;
+@property (nonatomic,copy)      NSString *data;
+
+@end
+
 
 /**
  *  商品详情信息展示
@@ -48,5 +60,15 @@
  *  一般用户不需要填这个字段，这个字段仅供特定用户使用
  */
 @property (nonatomic, copy) NSString *ext;
+
+/**
+ *  自定义商品信息按钮数组，最多显示三个按钮;
+ */
+@property (nonatomic, copy) NSArray<QYCommodityTag *> *tagsArray;
+
+/**
+ *  自定义商品信息按钮数组，最多显示三个按钮;NSString *类型，跟上面的数组类型二选一
+ */
+@property (nonatomic, copy) NSString *tagsString;
 
 @end
