@@ -6,6 +6,8 @@
 //  Copyright (c) 2017 Netease. All rights reserved.
 //
 
+@class QYSelectedCommodityInfo;
+
 /**
  *  退出排队结果类型
  */
@@ -14,6 +16,17 @@ typedef NS_ENUM(NSInteger, QuitWaitingType) {
     QuitWaitingTypeContinue, //继续排队
     QuitWaitingTypeQuit,     //退出排队
     QuitWaitingTypeCancel,   //取消操作
+};
+
+/**
+ *  请求客服场景
+ */
+typedef NS_ENUM(NSInteger, QYRequestStaffScene) {
+    QYRequestStaffSceneNone,               //无需关心的请求客服场景
+    QYRequestStaffSceneInit,               //进入会话页面，初次请求客服
+    QYRequestStaffSceneRobotUnable,        //机器人模式下告知无法解答，点击按钮请求人工客服
+    QYRequestStaffSceneNavHumanButton,     //机器人模式下，点击右上角人工按钮
+    QYRequestStaffSceneActiveRequest,      //主动请求人工客服
 };
 
 /**
@@ -31,6 +44,28 @@ typedef void (^QYBotClickBlock)(NSString *target, NSString *params);
  */
 typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
 
+/**
+ *  显示bot自定义信息回调
+ */
+typedef void (^QYShowBotCustomInfoBlock)(NSArray *array);
+
+/**
+ *  bot商品卡片按钮点击事件回调
+ */
+typedef void (^QYSelectedCommodityActionBlock)(QYSelectedCommodityInfo *commodityInfo);
+
+/**
+ *  请求客服-回传结果
+ */
+typedef void (^QYRequestStaffCompletion)(BOOL needed);
+
+/**
+ *  请求客服前回调
+ *
+ *  @param scene 请求客服场景
+ *  @param completion 处理完成后的回调，若需继续请求客服，则调用completion(YES)；若需停止请求，调用completion(NO)
+ */
+typedef void (^QYRequestStaffBlock)(QYRequestStaffScene scene, QYRequestStaffCompletion completion);
 
 /**
  *  自定义行为配置类
@@ -68,6 +103,21 @@ typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
  *  推送消息相关点击
  */
 @property (nonatomic, copy) QYLinkClickBlock pushMessageClick;
+
+/**
+ *  显示bot自定义信息
+ */
+@property (nonatomic, copy) QYShowBotCustomInfoBlock showBotCustomInfoBlock;
+
+/**
+ *  bot商品卡片按钮点击事件
+ */
+@property (nonatomic, copy) QYSelectedCommodityActionBlock commodityActionBlock;
+
+/**
+ *  请求客服前调用
+ */
+@property (nonatomic, copy) QYRequestStaffBlock requestStaffBlock;
 
 @end
 

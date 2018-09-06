@@ -8,23 +8,6 @@
 
 #import "QYSessionViewController.h"
 
-/**
- *  平台电商专用
- */
-@protocol QYSessionViewDelegate <NSObject>
-
-/**
- *  点击商铺入口按钮回调
- */
-- (void)onTapShopEntrance;
-
-/**
- *  点击聊天窗口右边或左边会话列表按钮回调
- */
-- (void)onTapSessionListEntrance;
-
-
-@end
 
 /**
  *  平台电商专用

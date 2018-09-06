@@ -15,6 +15,5 @@
 #import "QYPOPSessionInfo.h"
 #import "QYPOPSessionViewController.h"
 #import "QYPOPConversationManager.h"
-#import "QYPOPCustomUIConfig.h"
 
 

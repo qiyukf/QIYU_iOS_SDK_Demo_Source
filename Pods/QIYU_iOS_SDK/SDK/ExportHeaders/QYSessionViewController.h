@@ -11,6 +11,39 @@
 @class QYCommodityInfo;
 
 /**
+ *  右上角入口以及聊天内容区域的按钮 点击以后的回调
+ */
+@protocol QYSessionViewDelegate <NSObject>
+
+/**
+ *  点击右上角（对于平台电商来说，这里可以考虑放“商铺入口”）按钮回调
+ */
+- (void)onTapShopEntrance;
+
+/**
+ *  点击聊天内容区域的按钮（对于平台电商来说，这里可以考虑放置“会话列表入口“）回调
+ */
+- (void)onTapSessionListEntrance;
+
+@end
+
+
+@interface QYSelectedCommodityInfo : NSObject
+
+@property (nonatomic,copy)    NSString *target;
+@property (nonatomic,copy)    NSString *params;
+@property (nonatomic,copy)    NSString *p_status;
+@property (nonatomic,copy)    NSString *p_img;
+@property (nonatomic,copy)    NSString *p_name;
+@property (nonatomic,copy)    NSString *p_price;
+@property (nonatomic,copy)    NSString *p_count;
+@property (nonatomic,copy)    NSString *p_stock;
+@property (nonatomic,copy)    NSString *p_action;
+@property (nonatomic,copy)    NSString *p_userData;
+
+@end
+
+/**
  *  输入区域上方工具栏内的按钮信息
  */
 @interface QYButtonInfo : NSObject
@@ -89,9 +122,29 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 @property (nonatomic, copy) QYButtonClickBlock buttonClickBlock;
 
 /**
+ *  机器人自动发送商品信息功能
+ */
+@property (nonatomic,assign) BOOL autoSendInRobot;
+
+/**
  *  发送商品信息展示
  */
 - (void)sendCommodityInfo:(QYCommodityInfo *)commodityInfo;
+
+/**
+ *  发送订单列表中选中的商品信息
+ */
+- (void)sendSelectedCommodityInfo:(QYSelectedCommodityInfo *)commodityInfo;
+
+/**
+ *  发送图片
+ */
+- (void)sendPicture:(UIImage *)picture;
+
+/**
+ *  请求人工客服
+ */
+- (void)requestHumanStaff;
 
 @end
 

@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 4.2.1
+//  version 4.4.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -149,6 +149,13 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
  *  @param enterOrOut 进入还是退出
  */
 - (void)trackHistory:(NSString *)title enterOrOut:(BOOL)enterOrOut key:(NSString *)key;
+
+/**
+ *  行为轨迹
+ *  @param title 标题
+ *  @param description 具体信息，以key-value表示信息对，例如key为“商品价格”，value为“999”
+ */
+- (void)trackHistory:(NSString *)title description:(NSDictionary *)description key:(NSString *)key;
 
 /**
  获取七鱼的日志文件路径
