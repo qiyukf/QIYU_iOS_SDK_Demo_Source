@@ -2,7 +2,7 @@ GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/QIYU_iOS_SDK" "${PODS_ROOT}/Headers/Public/ZXingObjC"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ZXingObjC" "${PODS_ROOT}/QIYU_iOS_SDK/SDK"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/QIYU_iOS_SDK" -isystem "${PODS_ROOT}/Headers/Public/ZXingObjC"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"QYSDK" -l"ZXingObjC" -l"c++" -l"crypto" -l"event" -l"sqlite3.0" -l"xml2" -l"z" -framework "AVFoundation" -framework "AssetsLibrary" -framework "AudioToolbox" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreTelephony" -framework "CoreText" -framework "CoreVideo" -framework "ImageIO" -framework "MobileCoreServices" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"QYSDK" -l"ZXingObjC" -l"c++" -l"crypto" -l"event" -l"sqlite3.0" -l"xml2" -l"z" -framework "AVFoundation" -framework "AssetsLibrary" -framework "AudioToolbox" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreMotion" -framework "CoreTelephony" -framework "CoreText" -framework "CoreVideo" -framework "ImageIO" -framework "MobileCoreServices" -framework "Photos" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

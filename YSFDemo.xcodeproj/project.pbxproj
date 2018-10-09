@@ -233,7 +233,6 @@
 		2BAAAD552079EC6D0008B4F8 /* YSFCommonTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableDelegate.h; sourceTree = "<group>"; };
 		2BAAAD562079EC6D0008B4F8 /* YSFCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableData.h; sourceTree = "<group>"; };
 		2BAAAD572079EC6D0008B4F8 /* YSFCommonTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFCommonTableDelegate.m; sourceTree = "<group>"; };
-		2BF494CD1ED5AF230040B597 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		E43BA2081BA27C9E0046F016 /* ysf_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_debug.xcconfig; sourceTree = "<group>"; };
 		E48972FF1B8C016E001C96EC /* YSFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48973031B8C016E001C96EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,9 +240,6 @@
 		E48973061B8C016E001C96EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E48973071B8C016E001C96EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E489730F1B8C016E001C96EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E48973841B8C0662001C96EC /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
-		E48973861B8C066A001C96EC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		E48973881B8C0671001C96EC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		E4F0F06A1BB12B9300577B26 /* ysf_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -903,7 +899,6 @@
 		C8B56D12702B1E3BD097043B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2BF494CD1ED5AF230040B597 /* libxml2.tbd */,
 				0BB1707CDF1C700141D16272 /* libPods-YSFDemo.a */,
 			);
 			name = Frameworks;
@@ -919,9 +914,6 @@
 		E48972F61B8C016E001C96EC = {
 			isa = PBXGroup;
 			children = (
-				E48973881B8C0671001C96EC /* libz.dylib */,
-				E48973861B8C066A001C96EC /* libsqlite3.0.dylib */,
-				E48973841B8C0662001C96EC /* libstdc++.6.0.9.dylib */,
 				E48973011B8C016E001C96EC /* YSFDemo */,
 				E48973001B8C016E001C96EC /* Products */,
 				D1144DF30DBD71DFE6A282A9 /* Pods */,
@@ -974,7 +966,7 @@
 				E48972FC1B8C016E001C96EC /* Frameworks */,
 				E48972FD1B8C016E001C96EC /* Resources */,
 				E4EF22AE1B9FD3C20043AA69 /* ShellScript */,
-				CEE458F82A6FE5157B1E1928 /* [CP] Copy Pods Resources */,
+				476ADE22CDEFCB22A633AAF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1038,6 +1030,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		476ADE22CDEFCB22A633AAF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh",
+				"${PODS_ROOT}/QIYU_iOS_SDK/SDK/QYResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QYResource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4BE39FE8ADD7BFE118CF27F6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1054,24 +1064,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CEE458F82A6FE5157B1E1928 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh",
-				"${PODS_ROOT}/QIYU_iOS_SDK/SDK/QYResource.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QYResource.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E4EF22AE1B9FD3C20043AA69 /* ShellScript */ = {

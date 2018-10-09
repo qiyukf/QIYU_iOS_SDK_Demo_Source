@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 4.4.0
+//  version 4.5.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -134,8 +134,6 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
  *  @return appKey
  */
 - (NSString *)appKey;
-
-
 
 /**
  *  清理接收文件缓存
