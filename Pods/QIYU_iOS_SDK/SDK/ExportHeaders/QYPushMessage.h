@@ -7,12 +7,12 @@
 //
 
 /**
- *  访客分流展示模式
+ *  推送消息类型
  */
 typedef NS_ENUM(NSInteger, QYPushMessageType) {
     QYPushMessageTypeText,
     QYPushMessageTypeRichText,
-    QYPushMessageTypeImage
+    QYPushMessageTypeImage,
 };
 
 /**
@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, QYPushMessageType) {
  */
 @interface QYPushMessage : NSObject
 
+/**
+ *  消息类型
+ */
 @property (nonatomic, assign) QYPushMessageType type;
 
 /**

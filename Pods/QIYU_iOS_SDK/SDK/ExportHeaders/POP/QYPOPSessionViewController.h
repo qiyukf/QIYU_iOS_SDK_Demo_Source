@@ -8,7 +8,6 @@
 
 #import "QYSessionViewController.h"
 
-
 /**
  *  平台电商专用
  */
@@ -17,7 +16,7 @@
 /**
  *  平台电商店铺Id，不是平台电商不用管
  */
-@property (nonatomic,copy)    NSString *shopId;
+@property (nonatomic, copy) NSString *shopId;
 
 /**
  *  会话窗口回调

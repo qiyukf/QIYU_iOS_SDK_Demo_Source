@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 4.5.0
+//  version 4.6.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -17,22 +17,23 @@
 typedef void(^QYCompletionBlock)();
 
 /**
- *  完成回调
+ *  完成结果回调
  */
 typedef void(^QYCompletionWithResultBlock)(BOOL isSuccess);
 
 /**
  *  推送消息回调
  */
-typedef void(^QYPushMessageBlock)(QYPushMessage *);
+typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
 
 /**
  *  清理文件缓存回调
  */
 typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 
+
 /**
- *  所有SDK接口都从此类获得
+ *  QYSDK：单例模式，所有SDK接口都从此类获得
  */
 @interface QYSDK : NSObject
 
@@ -46,13 +47,14 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 /**
  *  注册SDK
  *
- *  @param appKey  appKey 对应管理后台分配的appkey
- *  @param appName appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添加一个app时填写的App名称
+ *  @param appKey  对应管理后台分配的appkey
+ *  @param appName  对应管理后台添加一个App时填写的App名称 (就是SDK1.0.0版本的cerName,参数名变动)
  */
 - (void)registerAppId:(NSString *)appKey appName:(NSString *)appName;
 
 /**
- *  返回客服聊天ViewController，必须嵌入到UINavigationController中，全局只能有一个sessionViewController实例
+ *  返回客服聊天ViewController，必须嵌入至UINavigationController中
+ *  须保证全局只有一个sessionViewController实例，退出后能够正确释放实例
  *
  *  @return 会话ViewController
  */
@@ -102,7 +104,6 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 
 /**
  *  设置authToken
- *
  */
 - (void)setAuthToken:(NSString *)authToken;
 
@@ -156,7 +157,7 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 - (void)trackHistory:(NSString *)title description:(NSDictionary *)description key:(NSString *)key;
 
 /**
- 获取七鱼的日志文件路径
+ *  获取七鱼日志文件路径
  *
  *  @return 日志文件路径
  */

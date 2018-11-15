@@ -8,7 +8,6 @@
 
 #import "QYConversationManager.h"
 
-
 /**
  *  会话委托
  */
@@ -47,5 +46,5 @@
  *  @param isDelete 是否删除消息记录，YES删除，NO不删除
  */
 - (void)deleteRecentSessionByShopId:(NSString *)shopId deleteMessages:(BOOL)isDelete;
-    
+
 @end

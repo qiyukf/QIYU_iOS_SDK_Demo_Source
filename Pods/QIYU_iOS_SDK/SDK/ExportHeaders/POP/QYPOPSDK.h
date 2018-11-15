@@ -11,9 +11,9 @@
  *  平台电商专用
  */
 #import "QYSDK.h"
-#import "QYPOPMessageInfo.h"
-#import "QYPOPSessionInfo.h"
 #import "QYPOPSessionViewController.h"
 #import "QYPOPConversationManager.h"
+#import "QYPOPMessageInfo.h"
+#import "QYPOPSessionInfo.h"
 
 

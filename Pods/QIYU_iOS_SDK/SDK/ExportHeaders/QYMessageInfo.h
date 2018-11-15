@@ -39,5 +39,4 @@ typedef NS_ENUM(NSInteger, QYMessageType) {
  */
 @property (nonatomic, assign) NSTimeInterval timeStamp;
 
-
 @end

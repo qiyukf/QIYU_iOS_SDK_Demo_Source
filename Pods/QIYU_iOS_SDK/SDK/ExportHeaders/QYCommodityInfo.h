@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  自定义商品信息按钮信息
+ *  QYCommodityTag：自定义商品信息卡片按钮信息
  */
 @interface QYCommodityTag : NSObject
 
@@ -22,7 +22,7 @@
 
 
 /**
- *  商品详情信息展示
+ *  商品信息类：QYCommodityInfo
  */
 @interface QYCommodityInfo : NSObject
 
@@ -52,7 +52,7 @@
 @property (nonatomic, copy) NSString *note;
 
 /**
- *  发送时是否要在用户端隐藏，YES为显示，NO为隐藏，默认为不显示
+ *  发送时是否要在用户端隐藏，YES为显示，NO为隐藏，默认为NO
  */
 @property (nonatomic, assign) BOOL show;
 
@@ -67,12 +67,13 @@
 @property (nonatomic, copy) NSString *tagsString;
 
 /**
- *  是否自定义，YES代表是，NO代表否，默认NO。自定义的话，只有pictureUrlString、urlString有效，只显示一张图片 (v4.4.0)
+ *  是否自定义，YES代表是，NO代表否，默认NO。
+ *  自定义的话，只有pictureUrlString、urlString有效，只显示一张图片 (v4.4.0)
  */
 @property (nonatomic, assign) BOOL isCustom;
 
 /**
- *  是否由访客手动发送，YES代表是，NO代表否 (v4.4.0)
+ *  是否由访客手动发送，YES代表是，NO代表否，默认NO (v4.4.0)
  */
 @property (nonatomic, assign) BOOL sendByUser;
 

@@ -7,13 +7,8 @@
 //
 
 /**
- *  访客分流展示模式
+ *  工具栏自定义配置项：QYCustomInputItem
  */
-typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
-    QYBypassDisplayModeNone,
-    QYBypassDisplayModeCenter,
-    QYBypassDisplayModeBottom
-};
 
 /**
  *  输入框下方“更多”配置项点击回调
@@ -32,16 +27,28 @@ typedef void (^QYCustomInputItemBlock)();
 
 @end
 
+
 /**
- *  自定义UI配置类；如果想要替换图片素材，可以自己创建一个QYCustomResource.bundle，在其中放置跟QYResource.bundle中同名的图片素材，即可实现替换。
- *  SDK会优先使用QYCustomResource.bundle中的图片素材，当QYCustomResource.bundle中没有的时候，才会使用QYResource.bundle中的图片素材
+ *  自定义UI配置类：QYCustomUIConfig，单例模式
+ *  如果想要替换图片素材，可以自己创建一个QYCustomResource.bundle，在其中放置与QYResource.bundle同名的图片素材，即可实现替换。
+ *  SDK会优先使用QYCustomResource.bundle中的图片素材，若QYCustomResource.bundle中没有，才会使用QYResource.bundle中的图片素材。
  */
+
+/**
+ *  访客分流展示模式
+ */
+typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
+    QYBypassDisplayModeNone,
+    QYBypassDisplayModeCenter,
+    QYBypassDisplayModeBottom
+};
+
 @interface QYCustomUIConfig : NSObject
 
 + (instancetype)sharedInstance;
 
 /**
- *  恢复成默认设置
+ *  恢复默认设置
  */
 - (void)restoreToDefault;
 
@@ -128,6 +135,11 @@ typedef void (^QYCustomInputItemBlock)();
 @property (nonatomic, copy) NSString *serviceHeadImageUrl;
 
 /**
+ *  人工按钮文案
+ */
+@property (nonatomic, copy) NSString *humanButtonText;
+
+/**
  *  访客消息气泡normal图片
  */
 @property (nonatomic, strong) UIImage *customerMessageBubbleNormalImage;
@@ -161,6 +173,11 @@ typedef void (^QYCustomInputItemBlock)();
  *  消息竖直方向间距
  */
 @property (nonatomic, assign) CGFloat sessionMessageSpacing;
+
+/**
+ *  头像与消息气泡间距，默认为5pt
+ */
+@property (nonatomic, assign) CGFloat headMessageSpacing;
 
 /**
  *  是否显示头像
