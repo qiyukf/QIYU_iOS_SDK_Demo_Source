@@ -1,8 +1,8 @@
 //
 //  QYAction.h
-//  YSFSDK
+//  QYSDK
 //
-//  Created by liaosipei on 2018/10/25.
+//  Created by Netease on 2018/10/25.
 //  Copyright © 2018年 Netease. All rights reserved.
 //
 

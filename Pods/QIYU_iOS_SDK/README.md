@@ -2,14 +2,14 @@
 
 ## 简介
 
-网易七鱼 iOS SDK 是客服系统访客端的解决方案，既包含了客服聊天逻辑管理，也提供了聊天界面，开发者可方便的将客服功能集成到自己的 App 中。iOS SDK 支持 iOS 7 以上版本，同时支持 iPhone、iPad，同时支持竖屏和横屏。
+网易七鱼 iOS SDK 是客服系统访客端的解决方案，既包含了客服聊天逻辑管理，也提供了聊天界面，开发者可方便的将客服功能集成到自己的 App 中。iOS SDK 支持 iOS7 以上版本，同时支持 iPhone、iPad，同时支持竖屏和横屏。
 
 ## 将SDK导入工程（必须）
 
 ### 手动集成
 
-* 下载 QY SDK，得到3个 .a 文件、 QYResouce 文件夹和 ExportHeaders 文件夹，将他们导入工程
-* 添加 QY SDK 依赖库
+* 下载 QY SDK，得到3个 .a 文件、 QYResouce 文件夹和 ExportHeaders 文件夹，将他们导入工程。
+* 添加 QY SDK 依赖库：
 
   * UIKit.framework
   * AVFoundation.framework
@@ -27,22 +27,22 @@
   * libsqlite3.0.tbd
   * libxml2.tbd
 
-* 在 Build Settings -> Other Linker Flags 中添加 -ObjC 
+* 在 Build Settings -> Other Linker Flags 中添加 -ObjC 。
 
 ### CocoaPods集成
 
-在 Podfile 文件中加入 
+在 Podfile 文件中加入：
 
 ```objective-c
 pod    'QIYU_iOS_SDK',    '~> x.x.x'
 ```
-"x.x.x" 代表版本号，比如想要使用 3.0.0 版本，就写
+"x.x.x" 代表版本号，比如想要使用 3.0.0 版本，可加入如下代码：
 
 ```objective-c
 pod    'QIYU_iOS_SDK',    '~> 3.0.0'
 ```
 
-如果无法安装 SDK 最新版本，运行以下命令更新本地的 CocoaPods 仓库列表
+如果无法安装 SDK 最新版本，运行以下命令更新本地的 CocoaPods 仓库列表：
 
 ```objective-c
 pod repo update
@@ -50,7 +50,7 @@ pod repo update
 
 ### 解决符号重复的冲突
 
-从 V3.1.0 开始，没有 QIYU_iOS_SDK_Exclude_Libcrypto、QIYU_iOS_SDK_Exclude_NIM 版本了，统一使用 QIYU_iOS_SDK，此 SDK 中将各个第三方库独立出来了，总共3个.a：libQYSDK.a、libcrypto.a、libevent.a。
+从 v3.1.0 开始，没有 QIYU_iOS_SDK_Exclude_Libcrypto、QIYU_iOS_SDK_Exclude_NIM 版本了，统一使用 QIYU_iOS_SDK，此 SDK 中将各个第三方库独立出来了，总共3个.a：libQYSDK.a、libcrypto.a、libevent.a。
 
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
@@ -58,7 +58,7 @@ pod repo update
 
 ### https相关
 
-V3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能存在链接，点击链接会用 UIWebView 打开，链接地址有可能是 http 的，为了能够正常打开，需要增加配置项。在 Info.plist 中加入以下内容：
+v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能存在链接，点击链接会用 UIWebView 打开，链接地址有可能是 http 的，为了能够正常打开，需要增加配置项。在 Info.plist 中加入以下内容：
 
 ```objective-c
 <key>NSAppTransportSecurity</key>
@@ -100,12 +100,12 @@ V3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
 
 ### iOS11兼容性
 
-请使用 V3.11.0 以上的版本。
+请使用 v3.11.0 以上的版本。
 
 ### 其它说明
 
 * 在需要使用 SDK 的地方 import "QYSDK.h"。
-* 由于 SDK 是静态库，且为了方便开发者使用，我们将 armv7 arm64 i386 x86_64 平台的静态库合并成一个 Fat Library，导致整个 SDK 比较大。但实际编译后大约只会增加 App 4-5M 大小。
+* 由于 SDK 是静态库，且为了方便开发者使用，我们将 armv7、arm64、i386、x86_64 平台的静态库合并成一个 Fat Library，导致整个 SDK 比较大。但实际编译后大约只会增加 App 4-5M 大小。
 
 ### 可能遇到的问题1
 1. 无法用 CocoaPods 下载到最新的 SDK
@@ -124,7 +124,7 @@ V3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
     return YES;
 }
 ```
-1. AppKey 可以在“管理后台” -> “设置” -> “App接入” -> “2. App Key” 找到。
+1. AppKey 可以在 管理后台 -> 设置 -> App接入 -> 2. App Key 找到。
 AppName 对应管理后台添加一个 App 时填写的 “App 名称”。如果管理后台还没有添加 App，请及时添加。如果 AppName 跟管理后台 App 的 “App 名称” 不一致，会导致无法正常收到苹果的消息推送。
 2. 一般在 “application: didFinishLaunchingWithOptions:” 这个方法里面调用 “registerAppId: appName:” 方法，如果在其他时刻调用，在调用之前，就等于没有在使用七鱼的服务。在整个软件运行期间必须只调用一次，如果调用多次，将会有严重的不可预测的问题。
 
@@ -379,7 +379,7 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 }
 ```
 
-* 将获取到的 deviceToken 传给 SDK
+* 将获取到的 deviceToken 传给 SDK。
 
 ```objective-c
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -421,12 +421,12 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 
 ### 自定义聊天组件UI效果
 
-获取自定义UI类对象：
+获取自定义 UI 类对象：
 
 ```objective-c
 [[QYSDK sharedSDK] customUIConfig];
 ```
-QYCustomUIConfig 是负责自定义UI的类，必须在集成聊天组件之前完成配置项设置。相关内容如下：
+QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之前完成配置项设置。相关内容如下：
 
 ```objective-c
 /**
@@ -619,7 +619,7 @@ QYCustomUIConfig 是负责自定义UI的类，必须在集成聊天组件之前�
 @property (nonatomic, assign) QYBypassDisplayMode bypassDisplayMode;
 
 /**
- *  以下配置项在V4.4.0版本前，只有平台电商版本有；V4.4.0以后，平台电商/非平台电商均有这些配置项
+ *  以下配置项在v4.4.0版本前，只有平台电商版本有；v4.4.0以后，平台电商/非平台电商均有这些配置项
  *  聊天窗口右上角按钮（对于平台电商来说，这里可以考虑放“商铺入口”）显示，默认不显示
  */
 @property (nonatomic, assign)   BOOL showShopEntrance;
@@ -679,7 +679,7 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 
 #### “照相机”替换为“更多”按钮
 
-在 V4.4.0 版本中，聊天界面输入区域 “照相机” 按钮可替换成 “更多” 按钮，点击“更多”按钮展开显示配置的选项。需要设置 QYCustomUIConfig 的 customInputItems 属性，该属性为数组类型，每个元素均为  QYCustomInputItem 类型对象，代表一个选项。QYCustomInputItem 定义如下：
+在 v4.4.0 版本中，聊天界面输入区域 “照相机” 按钮可替换成 “更多” 按钮，点击“更多”按钮展开显示配置的选项。需要设置 QYCustomUIConfig 的 customInputItems 属性，该属性为数组类型，每个元素均为  QYCustomInputItem 类型对象，代表一个选项。QYCustomInputItem 定义如下：
 
 ```objective-c
 /**
@@ -715,13 +715,13 @@ cameraItem.selectedImage = [UIImage imageNamed:@"icon_media_camera_pressed"];
 cameraItem.text = @"拍摄";
 cameraItem.block = ^{ };
 
-QYCustomInputItem *fileTransItem = [[QYCustomInputItem alloc] init];
-fileTransItem.normalImage = [UIImage imageNamed:@"icon_media_file_trans_normal"];
-fileTransItem.selectedImage = [UIImage imageNamed:@"icon_media_file_trans_pressed"];
-fileTransItem.text = @"文件传输";
-fileTransItem.block = ^{ };
+QYCustomInputItem *humanItem = [[QYCustomInputItem alloc] init];
+humanItem.normalImage = [UIImage imageNamed:@"icon_media_human_normal"];
+humanItem.selectedImage = [UIImage imageNamed:@"icon_media_human_pressed"];
+humanItem.text = @"人工客服";
+humanItem.block = ^{ };
 	    
-NSArray *items = @[photoItem, cameraItem, fileTransItem];
+NSArray *items = @[photoItem, cameraItem, humanItem];
 [[QYSDK sharedSDK] customUIConfig].customInputItems = items;
 ```
 
@@ -865,7 +865,7 @@ typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString 
 
 #### 客服相关事件处理
 
-在 V4.6.0 版本中，修改了关于客服相关事件的对外接口，可以拦截所有请求客服前和请求客服后的事件，需要设置 QYCustomActionConfig 中的 actionBlock 属性，该 block 返回一个 QYAction 对象，此对象定义如下：
+在 v4.6.0 版本中，修改了关于客服相关事件的对外接口，可以拦截所有请求客服前和请求客服后的事件，需要设置 QYCustomActionConfig 中的 actionBlock 属性，该 block 返回一个 QYAction 对象，此对象定义如下：
 
 ```objective-c
 /**
@@ -979,7 +979,7 @@ QYActionBlock actionBlock = ^(QYAction *action) {
 [[QYSDK sharedSDK] customActionConfig].actionBlock = actionBlock;
 ```
 
-注：在 V4.4.0 版本中，仅可拦截请求客服前事件；若要拦截，请设置 QYCustomActionConfig 中的 requestStaffBlock，处理完成后，请主动调用该 block 中的 completion 回调，并设置 needed 参数，YES 表示继续请求客服，NO 表示中断请求客服。
+注：在 v4.4.0 版本中，仅可拦截请求客服前事件；若要拦截，请设置 QYCustomActionConfig 中的 requestStaffBlock，处理完成后，请主动调用该 block 中的 completion 回调，并设置 needed 参数，YES 表示继续请求客服，NO 表示中断请求客服。
 
 ### 自定义商品信息
 
@@ -1087,7 +1087,7 @@ QYCommodityInfo.h 相关内容如下：
 @end
 ```
 
-以上的自动发送商品信息功能仅在人工客服下有效，在 V4.4.0 版本中，获取到 sessionViewController 后，可设置机器人模式下是否开启自动发送商品卡片功能，默认不开启。若开启，则设置商品信息后，机器人模式下也可直接发送商品卡片：
+以上的自动发送商品信息功能仅在人工客服下有效，在 v4.4.0 版本中，获取到 sessionViewController 后，可设置机器人模式下是否开启自动发送商品卡片功能，默认不开启。若开启，则设置商品信息后，机器人模式下也可直接发送商品卡片：
 
 ```objective-c
 sessionViewController.autoSendInRobot = YES;
@@ -1146,7 +1146,7 @@ sessionViewController.openRobotInShuntMode = YES;
 
 ### 自定义客服信息
 
-在 V4.6.0 版本中，新增自定义人工客服信息功能，配置完成后人工客服的昵称、头像、接入语等均会被设置的信息替换。需要在 QYSessionViewController 中设置如下属性：
+在 v4.6.0 版本中，新增自定义人工客服信息功能，配置完成后人工客服的昵称、头像、接入语等均会被设置的信息替换。需要在 QYSessionViewController 中设置如下属性：
 
 ```objective-c
 /**
@@ -1193,7 +1193,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 ### 请求人工客服
 
-在 V4.4.0 版本中，获取到 sessionViewController 后，提供直接请求人工客服接口：
+在 v4.4.0 版本中，获取到 sessionViewController 后，提供直接请求人工客服接口：
 
 ```objective-c
 [sessionViewController requestHumanStaff];
@@ -1203,7 +1203,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 ### 切换人工客服
 
-在 V4.6.0 版本中，获取到 sessionViewController 后，提供切换人工客服接口：
+在 v4.6.0 版本中，获取到 sessionViewController 后，提供切换人工客服接口：
 
 ```objective-c
 /**
@@ -1226,7 +1226,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 ### 设置VIP等级 
 
-在获取 sessionViewController 之后，可以设置访客的VIP等级，默认是非VIP。VIP等级分两种，一种是非VIP和VIP1～VIP10，VIP对应的数值是1～10；另一种是非VIP和VIP，VIP对应的数值是11。
+在获取 sessionViewController 之后，可以设置访客的 VIP 等级，默认是 非VIP 。VIP 等级分两种，一种是 非VIP 和 VIP1 ～ VIP10，VIP 对应的数值是1 ～ 10；另一种是 非VIP 和 VIP ，VIP 对应的数值是11。
 
 ```objective-c
 sessionViewController.vipLevel = 1;
@@ -1332,7 +1332,7 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
 
 ### 设置输入区域上方工具栏
 
-在 V3.13.0 版本 中，开放了输入区域上方工具栏按钮设置，设置 QYSessionViewController 中如下属性：
+在 v3.13.0 版本 中，开放了输入区域上方工具栏按钮设置，设置 QYSessionViewController 中如下属性：
 
 ```objective-c
 /**
@@ -1394,7 +1394,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 #### 访问轨迹
 
-在 V4.0.0 版本中，SDK 支持记录用户在 App 内的访问轨迹并上报。使用该功能，需要企业开通 “访问轨迹” 功能。访问轨迹接口定义在 QYSDK.h 中：
+在 v4.0.0 版本中，SDK 支持记录用户在 App 内的访问轨迹并上报。使用该功能，需要企业开通 “访问轨迹” 功能。访问轨迹接口定义在 QYSDK.h 中：
 
 ```objective-c
 /**
@@ -1427,7 +1427,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 #### 行为轨迹
 
-在 V4.4.0 版本中，SDK 支持记录用户在 App 内的行为轨迹并上报。使用该功能，需要企业开通 “行为轨迹” 功能。行为轨迹是建立在访问轨迹之上的，如果需要使用行为轨迹，请先开启访问轨迹。
+在 v4.4.0 版本中，SDK 支持记录用户在 App 内的行为轨迹并上报。使用该功能，需要企业开通 “行为轨迹” 功能。行为轨迹是建立在访问轨迹之上的，如果需要使用行为轨迹，请先开启访问轨迹。
 
 行为轨迹主要用于记录用户行为，例如购买了某件商品，可设置 title 参数为“购买xxx商品”，并在 description 参数中以 key-value 形式设置详细的商品信息，客服可查看此类信息，用于分析用户行为。行为轨迹接口定义在 QYSDK.h 中：
 
@@ -1438,6 +1438,50 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
  *  @param description 具体信息，以key-value表示信息对，例如key为“商品价格”，value为“999”
  */
 - (void)trackHistory:(NSString *)title description:(NSDictionary *)description key:(NSString *)key;
+```
+
+### 历史消息收起
+
+在 v4.7.0 版本中，获取到 sessionViewController 后，可配置每页消息加载最大数量，该设置项控制了初次进入聊天界面的消息数量以及历史消息每次下拉加载的数量，默认为20条：
+
+```objective-c
+sessionViewController.messagePageLimit = 20;
+```
+
+可配置进入聊天界面时是否收起之前的历史消息，仅在创建新会话时收起，若为以下情况：上一次会话未结束、新会话创建失败、最后一条消息为可点击的访客分流消息、有未读消息，则仍显示历史会话，此配置项默认为NO：
+
+```objective-c
+sessionViewController.hideHistoryMessages = NO;
+```
+
+hideHistoryMessages = YES 情况下，首次下拉加载历史消息时会显示提示消息，提示文案可配置，默认为 “以上是历史消息” ：
+
+```objective-c
+sessionViewController.historyMessagesTip = @"以上是历史消息";
+```
+
+### 自定义顶部区域
+
+在 v4.7.0 版本中，获取到 sessionViewController 后，可自定义聊天界面顶部区域，支持外部注册入视图，可配置视图高度和边距；此视图悬停在聊天界面导航栏下方、消息列表上方，不随消息流滚动。注册接口为：
+
+```objective-c
+/**
+ *  注册聊天界面顶部悬停视图
+ *
+ *  @param hoverView 顶部悬停视图
+ *  @param height 视图高度
+ *  @param insets 视图边距，默认UIEdgeInsetsZero；top表示视图与导航栏底部距离，bottom设置无效，left/right分别表示距离屏幕左右边距
+ */
+- (void)registerTopHoverView:(UIView *)hoverView height:(CGFloat)height marginInsets:(UIEdgeInsets)insets;
+```
+
+支持销毁此视图，支持设置是否有渐隐动画及动画时长，销毁接口如下：
+
+```objective-c
+/**
+ *  销毁聊天界面顶部悬停视图
+ */
+- (void)destroyTopHoverViewWithAnmation:(BOOL)animated duration:(NSTimeInterval)duration;
 ```
 
 ### 清理文件缓存
@@ -1528,9 +1572,16 @@ sessionViewController.delegate = self;
 
 ## 参考DEMO源码
 
-如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码: https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
+如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V4.7.0（2018-12-05）
+
+1. 支持进入新会话时收起历史消息
+2. 新增自定义聊天界面顶部悬停区域
+3. 满意度评价支持顺序调整和标签/备注必填
+4. 新增自定义消息及视图功能
 
 #### V4.6.0（2018-11-15）
 
@@ -1578,7 +1629,7 @@ sessionViewController.delegate = self;
 
 1. 访客排队过程中可与机器人会话
 2. 新增反垃圾处理
-3. 新增 APP 访问轨迹
+3. 新增 App 访问轨迹
 4. 访客分流支持不同的展现方式
 5. UI优化：机器人订单选择器样式、机器人热门问题样式、物流消息折叠
 

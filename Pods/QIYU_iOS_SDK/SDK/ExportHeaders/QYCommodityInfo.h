@@ -93,3 +93,22 @@
 @property (nonatomic, copy) NSString *ext;
 
 @end
+
+
+/**
+ *  自定义商品信息类：QYSelectedCommodityInfo，用于机器人模式下发送商品/订单等场景
+ */
+@interface QYSelectedCommodityInfo : NSObject
+
+@property (nonatomic, copy) NSString *target;
+@property (nonatomic, copy) NSString *params;
+@property (nonatomic, copy) NSString *p_status;
+@property (nonatomic, copy) NSString *p_img;
+@property (nonatomic, copy) NSString *p_name;
+@property (nonatomic, copy) NSString *p_price;
+@property (nonatomic, copy) NSString *p_count;
+@property (nonatomic, copy) NSString *p_stock;
+@property (nonatomic, copy) NSString *p_action;
+@property (nonatomic, copy) NSString *p_userData;
+
+@end

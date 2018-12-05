@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class QYSource;
-@class QYCommodityInfo;
 @class QYStaffInfo;
+@class QYCommodityInfo;
+@class QYSelectedCommodityInfo;
+
 
 /**
  *  QYSessionViewDelegate：右上角入口以及聊天内容区域按钮点击回调
@@ -31,25 +33,6 @@
 
 
 /**
- *  自定义商品信息类：QYSelectedCommodityInfo
- */
-@interface QYSelectedCommodityInfo : NSObject
-
-@property (nonatomic, copy) NSString *target;
-@property (nonatomic, copy) NSString *params;
-@property (nonatomic, copy) NSString *p_status;
-@property (nonatomic, copy) NSString *p_img;
-@property (nonatomic, copy) NSString *p_name;
-@property (nonatomic, copy) NSString *p_price;
-@property (nonatomic, copy) NSString *p_count;
-@property (nonatomic, copy) NSString *p_stock;
-@property (nonatomic, copy) NSString *p_action;
-@property (nonatomic, copy) NSString *p_userData;
-
-@end
-
-
-/**
  *  输入区域上方工具栏内按钮信息类：QYButtonInfo
  *  注: actionType及index为button点击事件传递信息，仅可读
  *  actionType为1表示发送文本消息title，2表示openURL或是自定义行为；index表示该button位置
@@ -63,6 +46,7 @@
 @property (nonatomic, assign, readonly) NSUInteger index;
 
 @end
+
 
 /**
  *  通用完成回调
@@ -147,6 +131,24 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 @property (nonatomic, assign) BOOL autoSendInRobot;
 
 /**
+ *  每页消息加载的最大数量，默认为20条
+ */
+@property (nonatomic, assign) NSInteger messagePageLimit;
+
+/**
+ *  是否收起历史消息，默认为NO；若设置为YES，进入会话界面时若需创建新会话，则收起历史消息
+ */
+@property (nonatomic, assign) BOOL hideHistoryMessages;
+
+/**
+ *  历史消息提示文案，默认为“——以上是历史消息——”；仅在hideHistoryMessages为YES，首次下拉历史消息时展示
+ */
+@property (nonatomic, copy) NSString *historyMessagesTip;
+
+
+/** 以下为客服相关接口 **/
+
+/**
  *  请求人工客服
  */
 - (void)requestHumanStaff;
@@ -166,6 +168,9 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
                     closeCompletion:(QYCompletion)closeCompletion
                   requestCompletion:(QYCompletion)requestCompletion;
 
+
+/** 以下为发送相关接口 **/
+
 /**
  *  发送商品信息展示
  */
@@ -180,6 +185,23 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
  *  发送图片
  */
 - (void)sendPicture:(UIImage *)picture;
+
+
+/** 以下为自定义视图相关接口 **/
+
+/**
+ *  注册聊天界面顶部悬停视图
+ *
+ *  @param hoverView 顶部悬停视图
+ *  @param height 视图高度
+ *  @param insets 视图边距，默认UIEdgeInsetsZero；top表示视图与导航栏底部距离，bottom设置无效，left/right分别表示距离屏幕左右边距
+ */
+- (void)registerTopHoverView:(UIView *)hoverView height:(CGFloat)height marginInsets:(UIEdgeInsets)insets;
+
+/**
+ *  销毁聊天界面顶部悬停视图
+ */
+- (void)destroyTopHoverViewWithAnmation:(BOOL)animated duration:(NSTimeInterval)duration;
 
 @end
 
