@@ -109,6 +109,7 @@
 @property (nonatomic, copy) NSString *p_count;
 @property (nonatomic, copy) NSString *p_stock;
 @property (nonatomic, copy) NSString *p_action;
+@property (nonatomic, copy) NSString *p_url;
 @property (nonatomic, copy) NSString *p_userData;
 
 @end

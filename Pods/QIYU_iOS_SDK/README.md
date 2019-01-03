@@ -33,18 +33,18 @@
 
 在 Podfile 文件中加入：
 
-```objective-c
+```objectivec
 pod    'QIYU_iOS_SDK',    '~> x.x.x'
 ```
 "x.x.x" 代表版本号，比如想要使用 3.0.0 版本，可加入如下代码：
 
-```objective-c
+```objectivec
 pod    'QIYU_iOS_SDK',    '~> 3.0.0'
 ```
 
 如果无法安装 SDK 最新版本，运行以下命令更新本地的 CocoaPods 仓库列表：
 
-```objective-c
+```objectivec
 pod repo update
 ```
 
@@ -60,7 +60,7 @@ pod repo update
 
 v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能存在链接，点击链接会用 UIWebView 打开，链接地址有可能是 http 的，为了能够正常打开，需要增加配置项。在 Info.plist 中加入以下内容：
 
-```objective-c
+```objectivec
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>
@@ -76,7 +76,7 @@ v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
 
 在 Info.plist 中加入以下内容：
 
-```objective-c
+```objectivec
 <key>NSPhotoLibraryUsageDescription</key>
 <string>需要照片权限</string>
 <key>NSCameraUsageDescription</key>
@@ -91,7 +91,7 @@ v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
 
 在 Info.plist 中加入以下内容：
 
-```objective-c
+```objectivec
 <key>NSPhotoLibraryAddUsageDescription</key>
 <string>App需要您的同意,才能添加照片到相册</string>
 ```
@@ -113,7 +113,7 @@ v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
 
 ## 初始化SDK（必须）
 
-```objective-c
+```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ......
     
@@ -130,7 +130,7 @@ AppName 对应管理后台添加一个 App 时填写的 “App 名称”。如�
 
 ## 集成聊天组件（必须）
 
-```objective-c
+```objectivec
 [[QYSDK sharedSDK] sessionViewController];
 ```
 
@@ -140,7 +140,10 @@ AppName 对应管理后台添加一个 App 时填写的 “App 名称”。如�
 
 如果调用代码所在的 viewController 在 UINavigationController 中，可如下方式集成：
 
-```objective-c
+
+
+
+```objectivec
 QYSource *source = [[QYSource alloc] init];
 source.title = @"七鱼金融";
 source.urlString = @"https://8.163.com/";
@@ -155,7 +158,7 @@ sessionViewController.hidesBottomBarWhenPushed = YES;
 
 如果调用代码所在的 viewController 不在 UINavigationController 中，可如下方式集成：
 
-```objective-c
+```objectivec
 QYSource *source = [[QYSource alloc] init];
 source.title = @"七鱼金融";
 source.urlString = @"https://8.163.com/";
@@ -167,14 +170,14 @@ UINavigationController *nav = [[UINavigationController alloc] initWithRootViewCo
 ```
 一般来说，第二种方式需要在左上角加一个返回按钮，在 “initWithRootViewController:” 之前加上：
 
-```objective-c
+```objectivec
 UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
 sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 ```
 
 “onBack:” 的样例：
 
-```objective-c
+```objectivec
 - (void)onBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -193,7 +196,7 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 
    - 请参考 UINavigationControllerDelegate 中提供的转场函数：
 
-     ```objective-c
+     ```objectivec
      - (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC;
      ```
 5. sessionViewController 的导航栏可以自定义吗
@@ -206,20 +209,20 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 
    - 检查下 App 中是否用到了会影响全局的键盘处理，如果是这种情况，需要对 QYSessionViewController 做屏蔽。典型的比如第三方键盘库 IQKeyboardManager，如果用的是 IQKeyboardManager v4.0.4 以前的版本（不包括 v4.0.4 ），加入以下屏蔽代码：
 
-     ```objective-c
+     ```objectivec
      [[IQKeyboardManager sharedManager] disableDistanceHandlingInViewControllerClass:[QYSessionViewController class]];
      ```
 
    - 如果用的是 IQKeyboardManager v4.0.4 或以后的版本，加入以下屏蔽代码：
 
-     ```objective-c
+     ```objectivec
      [[IQKeyboardManager sharedManager].disabledDistanceHandlingClasses addObject:[QYSessionViewController class]];
      ```
 9. 如何强制竖屏
 
    - 如果您的 App 是横屏的，但是希望聊天界面是竖屏的，可以在 sessionViewController 所在的 UINavigationController 中实现以下方法，返回 UIInterfaceOrientationMaskPortrait 即可：
 
-     ```objective-c
+     ```objectivec
      - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
          return UIInterfaceOrientationMaskPortrait;
      }
@@ -227,7 +230,7 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 
 ## 注销（必须）
 
-```objective-c
+```objectivec
 [[QYSDK sharedSDK] logout:^{}];
 ```
 
@@ -239,7 +242,7 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 
 #### 获取会话管理类
 
-```objective-c
+```objectivec
 [[QYSDK sharedSDK] conversationManager];
 ```
 
@@ -247,7 +250,7 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 
 #### 获取消息未读数
 
-```objective-c
+```objectivec
 [[[QYSDK sharedSDK] conversationManager] allUnreadCount];
 ```
 
@@ -255,12 +258,12 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 
 #### 获取会话列表
 
-```objective-c
+```objectivec
 [[[QYSDK sharedSDK] conversationManager] getSessionList];
 ```
 返回结果是 QYSessionInfo 数组，QYSessionInfo.h 内容如下：
 
-```objective-c
+```objectivec
 /**
  *  会话状态类型
  */
@@ -312,13 +315,13 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 
 需要遵循协议 QYConversationManagerDelegate，并设置会话管理类的 delegate 委托：
 
-```objective-c
+```objectivec
 [[[QYSDK sharedSDK] conversationManager] setDelegate:self];
 ```
 
 然后实现该 delegate 中的如下方法：
 
-```objective-c
+```objectivec
 /**
  *  会话未读数变化
  *
@@ -331,7 +334,7 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 
 实现协议 QYConversationManagerDelegate 中的如下方法：
 
-```objective-c
+```objectivec
 /**
  *  会话列表变化；非平台电商用户，只有一个会话项，平台电商用户，有多个会话项
  */
@@ -342,7 +345,7 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 
 实现协议 QYConversationManagerDelegate 中的如下方法：
 
-```objective-c
+```objectivec
 /**
  *  接收消息
  */
@@ -353,7 +356,7 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 * [制作推送证书并在管理后台配置](./iOS_apns.html "target=_blank")
 * 初始化，注册推送服务 APNS；注意 iOS10 及以上系统推送相关 API 变化较大，可分系统做注册处理。
 
-```objective-c
+```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ......
     
@@ -381,7 +384,7 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 
 * 将获取到的 deviceToken 传给 SDK。
 
-```objective-c
+```objectivec
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     ......
     
@@ -399,7 +402,7 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 
    - 检查证书的线上、测试环境是否跟管理后台配置的相同。请注意，若您想同时在 Debug 包和 Release 包中均接收推送消息，应添加两个 App，分别填入不同的名称并上传线上环境和测试环境的证书，同时在注册 AppKey 的地方这样写代码：
 
-    ```objective-c
+    ```objectivec
     #if DEBUG
         [[QYSDK sharedSDK] registerAppId:Appkey appName:Debug包App名称];
     #else
@@ -423,12 +426,12 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
 
 获取自定义 UI 类对象：
 
-```objective-c
+```objectivec
 [[QYSDK sharedSDK] customUIConfig];
 ```
 QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之前完成配置项设置。相关内容如下：
 
-```objective-c
+```objectivec
 /**
  *  自定义UI配置类：QYCustomUIConfig，单例模式
  */
@@ -666,7 +669,7 @@ QYCustomUIConfig 只负责修改部分样式效果，不包含所有图片素材
 
 QYCustomUIConfig 中 bypassDisplayMode 用于指定访客分流展示样式，默认分流弹层从底部弹出，还可指定 None 或是从中间弹出：
 
-```objective-c
+```objectivec
 /**
  *  访客分流展示模式
  */
@@ -681,7 +684,7 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 
 在 v4.4.0 版本中，聊天界面输入区域 “照相机” 按钮可替换成 “更多” 按钮，点击“更多”按钮展开显示配置的选项。需要设置 QYCustomUIConfig 的 customInputItems 属性，该属性为数组类型，每个元素均为  QYCustomInputItem 类型对象，代表一个选项。QYCustomInputItem 定义如下：
 
-```objective-c
+```objectivec
 /**
  *  输入框下方“更多”配置项点击回调
  */
@@ -702,7 +705,7 @@ typedef void (^QYCustomInputItemBlock)();
 
 配置 customInputItems 示例如下：
 
-```objective-c
+```objectivec
 QYCustomInputItem *photoItem = [[QYCustomInputItem alloc] init];
 photoItem.normalImage = [UIImage imageNamed:@"icon_media_photo_normal"];
 photoItem.selectedImage = [UIImage imageNamed:@"icon_media_photo_pressed"];
@@ -729,12 +732,12 @@ NSArray *items = @[photoItem, cameraItem, humanItem];
 
 获取自定义事件处理类对象：
 
-```objective-c
+```objectivec
 [[QYSDK sharedSDK] customActionConfig];
 ```
 QYCustomActionConfig 是负责自定义事件处理的类。相关内容如下：
 
-```objc
+```objectivec
 /**
  *  本类提供了所有自定义行为的接口
  *  每个接口对应一个自定义行为的处理，如果设置了，则使用设置的处理，如果不设置，则采用默认处理
@@ -867,7 +870,7 @@ typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString 
 
 在 v4.6.0 版本中，修改了关于客服相关事件的对外接口，可以拦截所有请求客服前和请求客服后的事件，需要设置 QYCustomActionConfig 中的 actionBlock 属性，该 block 返回一个 QYAction 对象，此对象定义如下：
 
-```objective-c
+```objectivec
 /**
  *  QYAction定义了部分动作，通过type区分不同情形，并调用各自对应的回调
  *  若需要获取这部分动作，请在QYCustomActionConfig单例中设置QYAction属性
@@ -894,7 +897,7 @@ typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString 
 
 其中 QYActionType 目前定义了如下动作场景：
 
-```objective-c
+```objectivec
 /**
  *  动作类型
  */
@@ -907,7 +910,7 @@ typedef NS_ENUM(NSInteger, QYActionType) {
 
 QYRequestStaffBeforeBlock 为请求客服前回调的 block，该事件给出了当前请求客服是何种场景，开发者可针对不同场景做定制化处理，其定义如下：
 
-```objective-c
+```objectivec
 /**
  *  通用回调，一般用于告诉SDK是否继续进行后续操作
  *  例如：设置了请求客服前回调后，通过调用此QYCallback来继续或是中断请求客服
@@ -938,7 +941,7 @@ typedef void (^QYRequestStaffBeforeBlock)(QYRequestStaffBeforeScene scene, BOOL 
 
 QYRequestStaffAfterBlock 为请求客服后回调的 block，其中 info 为新会话的相关信息，包括客服ID、昵称、头像等，block 定义如下：
 
-```objective-c
+```objectivec
 /**
  *  请求客服后回调
  *
@@ -950,7 +953,7 @@ typedef void (^QYRequestStaffAfterBlock)(NSDictionary *info, NSError *error);
 
 以下为客服相关事件处理的示例代码：
 
-```objective-c
+```objectivec
 QYActionBlock actionBlock = ^(QYAction *action) {
     if (action.type == QYActionTypeRequestStaffBefore) {
         action.requestStaffBeforeBlock = ^(QYRequestStaffBeforeScene scene, BOOL onlyHuman, QYCallback callback) {
@@ -985,7 +988,7 @@ QYActionBlock actionBlock = ^(QYAction *action) {
 
 获取到 sessionViewController 之后，可以指定商品信息并主动发送给客服。带着商品信息进入聊天界面，分为两种情况：如果当前还没请求到人工客服， 则不会发送商品信息，等待请求人工客服成功后会主动发送；如果当前已经处于人工客服会话状态中了，会立即发送商品信息。示例如下：
 
-```objective-c
+```objectivec
 QYCommodityInfo *commodityInfo = [[QYCommodityInfo alloc] init];
 commodityInfo.title = @"网易七鱼";
 commodityInfo.desc = @"网易七鱼是网易旗下一款专注于解决企业与客户沟通的客服系统产品。";
@@ -999,7 +1002,7 @@ sessionViewController.commodityInfo = commodityInfo;
 
 QYCommodityInfo.h 相关内容如下：
 
-```objective-c
+```objectivec
 /**
  *  QYCommodityTag：自定义商品信息卡片按钮信息
  */
@@ -1089,7 +1092,7 @@ QYCommodityInfo.h 相关内容如下：
 
 以上的自动发送商品信息功能仅在人工客服下有效，在 v4.4.0 版本中，获取到 sessionViewController 后，可设置机器人模式下是否开启自动发送商品卡片功能，默认不开启。若开启，则设置商品信息后，机器人模式下也可直接发送商品卡片：
 
-```objective-c
+```objectivec
 sessionViewController.autoSendInRobot = YES;
 ```
 
@@ -1097,7 +1100,7 @@ sessionViewController.autoSendInRobot = YES;
 
 QYSessionViewController.h 中开放了发送商品信息接口，可以主动调用发送：
 
-```objective-c
+```objectivec
 [sessionViewController sendCommodityInfo:commodityInfo];
 ```
 
@@ -1109,7 +1112,7 @@ QYSessionViewController.h 中开放了发送商品信息接口，可以主动调
 
 在获取 sessionViewController 之后，可以指定客服ID或客服组ID：
 
-```objective-c
+```objectivec
 sessionViewController.groupId = groupId;
 sessionViewController.staffId = staffId;
 ```
@@ -1120,7 +1123,7 @@ sessionViewController.staffId = staffId;
 
 在获取 sessionViewController 之后，可以指定机器人ID：
 
-```objective-c
+```objectivec
 sessionViewController.robotId = robotId;
 ```
 
@@ -1130,7 +1133,7 @@ sessionViewController.robotId = robotId;
 
 在获取 sessionViewController 之后，可以指定常见问题模版ID：
 
-```objective-c
+```objectivec
 sessionViewController.commonQuestionTemplateId = commonQuestionTemplateId;
 ```
 
@@ -1140,7 +1143,7 @@ sessionViewController.commonQuestionTemplateId = commonQuestionTemplateId;
 
 在获取 sessionViewController 之后，可以指定访客分流是否开启机器人，默认不开启。如果开启机器人，则选择客服或者客服分组之后，先进入机器人模式：
 
-```objective-c
+```objectivec
 sessionViewController.openRobotInShuntMode = YES;
 ```
 
@@ -1148,7 +1151,7 @@ sessionViewController.openRobotInShuntMode = YES;
 
 在 v4.6.0 版本中，新增自定义人工客服信息功能，配置完成后人工客服的昵称、头像、接入语等均会被设置的信息替换。需要在 QYSessionViewController 中设置如下属性：
 
-```objective-c
+```objectivec
 /**
  *  人工客服信息
  */
@@ -1157,7 +1160,7 @@ sessionViewController.openRobotInShuntMode = YES;
 
 QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staffId，用以区分人工客服；其他的配置项若设置了则替换，未设置则使用默认，QYStaffInfo 定义如下：
 
-```objective-c
+```objectivec
 /**
  *  人工客服信息
  */
@@ -1195,7 +1198,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 在 v4.4.0 版本中，获取到 sessionViewController 后，提供直接请求人工客服接口：
 
-```objective-c
+```objectivec
 [sessionViewController requestHumanStaff];
 ```
 
@@ -1205,7 +1208,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 在 v4.6.0 版本中，获取到 sessionViewController 后，提供切换人工客服接口：
 
-```objective-c
+```objectivec
 /**
  *  切换人工客服
  *
@@ -1228,7 +1231,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 在获取 sessionViewController 之后，可以设置访客的 VIP 等级，默认是 非VIP 。VIP 等级分两种，一种是 非VIP 和 VIP1 ～ VIP10，VIP 对应的数值是1 ～ 10；另一种是 非VIP 和 VIP ，VIP 对应的数值是11。
 
-```objective-c
+```objectivec
 sessionViewController.vipLevel = 1;
 ```
 
@@ -1236,7 +1239,7 @@ sessionViewController.vipLevel = 1;
 
 可以主动上报 CRM 信息，使用 QYSDK.h 中的 setUserInfo: 接口设置用户信息，QYUserInfo 定义如下：
 
-```objective-c
+```objectivec
 /**
  *  个人信息
  */
@@ -1257,7 +1260,7 @@ sessionViewController.vipLevel = 1;
 
 示例代码：
 
-```objective-c
+```objectivec
 static NSString * const QYKey = @"key";
 static NSString * const QYValue = @"value";
 static NSString * const QYHidden = @"hidden";
@@ -1299,13 +1302,13 @@ if (data) {
 
 [[QYSDK sharedSDK] setUserInfo:userInfo];
 ```
-具体请看官网 CRM 相关文档：<a>http://qiyukf.com/newdoc/html/qiyu_crm_interface.html</a>
+[具体请看官网 CRM 相关文档](../crm/qiyu_crm_interface.html)
 
 ### 七鱼系统推送消息
 
 七鱼系统推送消息与苹果的 APNS 推送无关。可以主动要求服务器推送指定的消息：
 
-```objc
+```objectivec
 /**
  *  获取推送消息
  *
@@ -1316,7 +1319,7 @@ if (data) {
 
 可以接收服务器返回的消息，进行界面展示；不管是主动获取的消息还是管理后台主动推送的消息，都通过此接口获取：
 
-```objective-c
+```objectivec
 /**
  *  推送消息回调
  */
@@ -1334,7 +1337,7 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
 
 在 v3.13.0 版本 中，开放了输入区域上方工具栏按钮设置，设置 QYSessionViewController 中如下属性：
 
-```objective-c
+```objectivec
 /**
  *  输入区域上方工具栏内的按钮信息
  */
@@ -1343,7 +1346,7 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
 
 数组中元素为 QYButtonInfo 对象，定义如下：
 
-```objective-c
+```objectivec
 /**
  *  输入区域上方工具栏内按钮信息类：QYButtonInfo
  *  注: actionType及index为button点击事件传递信息，仅可读
@@ -1362,7 +1365,7 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
 
 添加按钮的示例代码：
 
-```objective-c
+```objectivec
 QYButtonInfo *button_1 = [[QYButtonInfo alloc] init];
 button_1.buttonId = [NSNumber numberWithLongLong:1001];
 button_1.title = @"按钮标题1";
@@ -1378,7 +1381,7 @@ sessionViewController.buttonInfoArray = @[button_1, button_2];
 
 按钮点击事件回调定义在 QYSessionViewController 中，该 block 透传 QYButtonInfo 相关信息：
 
-```objective-c
+```objectivec
 /**
  *  工具栏内按钮点击回调定义
  */
@@ -1396,7 +1399,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 在 v4.0.0 版本中，SDK 支持记录用户在 App 内的访问轨迹并上报。使用该功能，需要企业开通 “访问轨迹” 功能。访问轨迹接口定义在 QYSDK.h 中：
 
-```objective-c
+```objectivec
 /**
  *  访问轨迹
  *  @param title 标题
@@ -1407,7 +1410,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 接口调用示例：
 
-```objective-c
+```objectivec
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (!_key) {
@@ -1431,7 +1434,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 行为轨迹主要用于记录用户行为，例如购买了某件商品，可设置 title 参数为“购买xxx商品”，并在 description 参数中以 key-value 形式设置详细的商品信息，客服可查看此类信息，用于分析用户行为。行为轨迹接口定义在 QYSDK.h 中：
 
-```objective-c
+```objectivec
 /**
  *  行为轨迹
  *  @param title 标题
@@ -1444,19 +1447,19 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 在 v4.7.0 版本中，获取到 sessionViewController 后，可配置每页消息加载最大数量，该设置项控制了初次进入聊天界面的消息数量以及历史消息每次下拉加载的数量，默认为20条：
 
-```objective-c
+```objectivec
 sessionViewController.messagePageLimit = 20;
 ```
 
 可配置进入聊天界面时是否收起之前的历史消息，仅在创建新会话时收起，若为以下情况：上一次会话未结束、新会话创建失败、最后一条消息为可点击的访客分流消息、有未读消息，则仍显示历史会话，此配置项默认为NO：
 
-```objective-c
+```objectivec
 sessionViewController.hideHistoryMessages = NO;
 ```
 
 hideHistoryMessages = YES 情况下，首次下拉加载历史消息时会显示提示消息，提示文案可配置，默认为 “以上是历史消息” ：
 
-```objective-c
+```objectivec
 sessionViewController.historyMessagesTip = @"以上是历史消息";
 ```
 
@@ -1464,7 +1467,7 @@ sessionViewController.historyMessagesTip = @"以上是历史消息";
 
 在 v4.7.0 版本中，获取到 sessionViewController 后，可自定义聊天界面顶部区域，支持外部注册入视图，可配置视图高度和边距；此视图悬停在聊天界面导航栏下方、消息列表上方，不随消息流滚动。注册接口为：
 
-```objective-c
+```objectivec
 /**
  *  注册聊天界面顶部悬停视图
  *
@@ -1477,7 +1480,7 @@ sessionViewController.historyMessagesTip = @"以上是历史消息";
 
 支持销毁此视图，支持设置是否有渐隐动画及动画时长，销毁接口如下：
 
-```objective-c
+```objectivec
 /**
  *  销毁聊天界面顶部悬停视图
  */
@@ -1488,7 +1491,7 @@ sessionViewController.historyMessagesTip = @"以上是历史消息";
 
 部分带附件的消息接收并下载后可以通过此接口清理已下载到本地的缓存文件：
 
-```objective-c
+```objectivec
 /**
  *  清理接收文件缓存
  *  @param completeBlock 清理缓存完成block
@@ -1500,7 +1503,7 @@ sessionViewController.historyMessagesTip = @"以上是历史消息";
 
 平台电商版本相关头文件全部在 "QIYU_iOS_SDK/POP" 目录下。在需要使用的地方 import "QYPOPSDK.h"。平台电商版本针对 QYSessionViewController 扩展了分类 QYPOPSessionViewController，增加了两个配置项：
 
-```objective-c
+```objectivec
 /**
  *  平台电商专用
  */
@@ -1523,7 +1526,7 @@ sessionViewController.historyMessagesTip = @"以上是历史消息";
 
 通过设置 shopId 可以在进入聊天窗口后请求对应的商家客服：
 
-```objective-c
+```objectivec
 sessionViewController.shopId = @"shopId";
 ```
 
@@ -1531,13 +1534,13 @@ sessionViewController.shopId = @"shopId";
 
 通过设置 delegate 可以监听聊天窗口部分事件：
 
-```objective-c
+```objectivec
 sessionViewController.delegate = self;
 ```
 
 协议为 QYSessionViewDelegate，定义如下：
 
-```objective-c
+```objectivec
 /**
  *  QYSessionViewDelegate：右上角入口以及聊天内容区域按钮点击回调
  */
@@ -1560,7 +1563,7 @@ sessionViewController.delegate = self;
 
 使用 QYPOPConversationManager 中如下接口删除会话列表中某一项：
 
-```objective-c
+```objectivec
 /**
  *  删除会话列表中的会话
  *
@@ -1576,7 +1579,13 @@ sessionViewController.delegate = self;
 
 ## 更新说明
 
-#### V4.7.1（2018-12-17）
+#### V4.8.0（2019-01-03）
+
+1. 新增机器人答案差评转人工功能
+2. 部分bot卡片支持链接跳转
+3. 修复部分已知问题
+
+#### V4.7.1（2018-12-18）
 
 1. 修复部分已知问题
 
