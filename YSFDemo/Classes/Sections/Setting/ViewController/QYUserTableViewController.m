@@ -301,12 +301,14 @@ BOOL isTestMode = NO;
          if (index == 1) {
              [weakSelf.view ysf_makeToast:@"正在注销" duration:2
                              position:YSFToastPositionCenter];
-             [[QYSDK sharedSDK] logout:^{
-                 [weakSelf.view ysf_makeToast:@"注销成功" duration:2
-                                 position:YSFToastPositionCenter];
-                 
-                 [weakSelf buildData];
-                 [weakSelf.tableView reloadData];
+             [[QYSDK sharedSDK] logout:^(BOOL success) {
+                 if (success) {
+                     [weakSelf.view ysf_makeToast:@"注销成功" duration:2 position:YSFToastPositionCenter];
+                     [weakSelf buildData];
+                     [weakSelf.tableView reloadData];
+                 } else {
+                     [weakSelf.view ysf_makeToast:@"注销失败" duration:2 position:YSFToastPositionCenter];
+                 }
              }];
          }
 
