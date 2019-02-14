@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 4.8.0
+//  version 4.9.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -14,7 +14,7 @@
 /**
  *  完成回调
  */
-typedef void(^QYCompletionBlock)();
+typedef void(^QYCompletionBlock)(BOOL success);
 
 /**
  *  完成结果回调

@@ -231,7 +231,7 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 ## 注销（必须）
 
 ```objectivec
-[[QYSDK sharedSDK] logout:^{}];
+[[QYSDK sharedSDK] logout:^(BOOL success) {}];
 ```
 
 应用层退出自己的账号时必须调用 SDK 的注销操作。该接口仅在用户注销账号或是账号过期等情况下调用，应避免频繁调用造成反复创建账号。
@@ -1578,6 +1578,14 @@ sessionViewController.delegate = self;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V4.9.0（2019-02-14）
+
+1. 新增消息阅读状态显示功能
+2. 新增自定义表情功能
+3. 满意度评价入口支持隐藏及回合数设置
+4. 优化账号登录及登出逻辑
+5. 修复部分已知问题
 
 #### V4.8.0（2019-01-03）
 
