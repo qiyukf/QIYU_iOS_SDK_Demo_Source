@@ -172,6 +172,16 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 /** 以下为发送相关接口 **/
 
 /**
+ *  发送文本消息
+ */
+- (void)sendText:(NSString *)text;
+
+/**
+ *  发送图片消息
+ */
+- (void)sendPicture:(UIImage *)picture;
+
+/**
  *  发送商品信息展示
  */
 - (void)sendCommodityInfo:(QYCommodityInfo *)commodityInfo;
@@ -180,11 +190,6 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
  *  发送订单列表中选中的商品信息
  */
 - (void)sendSelectedCommodityInfo:(QYSelectedCommodityInfo *)commodityInfo;
-
-/**
- *  发送图片
- */
-- (void)sendPicture:(UIImage *)picture;
 
 
 /** 以下为自定义视图相关接口 **/

@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 4.9.0
+//  version 4.10.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -97,6 +97,7 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 
 /**
  *  设置个人信息。用户帐号登录成功之后，调用此函数
+ *  注意：此方法尽量在账号登录成功后调用，而不应仅在进入客服界面时调用；否则可能会造成客服连接状态不稳定
  *
  *  @param userInfo 个人信息
  */

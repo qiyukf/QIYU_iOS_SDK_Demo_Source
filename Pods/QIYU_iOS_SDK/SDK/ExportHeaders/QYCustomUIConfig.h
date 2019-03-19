@@ -16,7 +16,8 @@
 typedef void (^QYCustomInputItemBlock)();
 
 /**
- *  输入框下方“完全自定义”配置项
+ *  输入框下方“更多”配置项
+ *  注：为达到最佳效果，配置项图片最佳尺寸为55ptx55pt
  */
 @interface QYCustomInputItem : NSObject
 

@@ -691,7 +691,8 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 typedef void (^QYCustomInputItemBlock)();
 
 /**
- *  输入框下方“完全自定义”配置项
+ *  输入框下方“更多”配置项
+ *  注：为达到最佳效果，配置项图片最佳尺寸为55ptx55pt
  */
 @interface QYCustomInputItem : NSObject
 
@@ -706,25 +707,35 @@ typedef void (^QYCustomInputItemBlock)();
 配置 customInputItems 示例如下：
 
 ```objectivec
+/**
+ * 可自由配置customInputItems，目前SDK对外开放了发送图片、文本、商品、订单等能力
+ * 针对相册或拍摄按钮，点击时可直接调用系统UIImagePickerController，也可调起自定义界面，选择照片后调用接口发送图片消息即可
+ */
 QYCustomInputItem *photoItem = [[QYCustomInputItem alloc] init];
-photoItem.normalImage = [UIImage imageNamed:@"icon_media_photo_normal"];
-photoItem.selectedImage = [UIImage imageNamed:@"icon_media_photo_pressed"];
+photoItem.normalImage = [UIImage imageNamed:@"icon_photo_normal"];
+photoItem.selectedImage = [UIImage imageNamed:@"icon_photo_pressed"];
 photoItem.text = @"相册";
 photoItem.block = ^{ };
 
 QYCustomInputItem *cameraItem = [[QYCustomInputItem alloc] init];
-cameraItem.normalImage = [UIImage imageNamed:@"icon_media_camera_normal"];
-cameraItem.selectedImage = [UIImage imageNamed:@"icon_media_camera_pressed"];
+cameraItem.normalImage = [UIImage imageNamed:@"icon_camera_normal"];
+cameraItem.selectedImage = [UIImage imageNamed:@"icon_camera_pressed"];
 cameraItem.text = @"拍摄";
 cameraItem.block = ^{ };
 
-QYCustomInputItem *humanItem = [[QYCustomInputItem alloc] init];
-humanItem.normalImage = [UIImage imageNamed:@"icon_media_human_normal"];
-humanItem.selectedImage = [UIImage imageNamed:@"icon_media_human_pressed"];
-humanItem.text = @"人工客服";
-humanItem.block = ^{ };
+QYCustomInputItem *textItem = [[QYCustomInputItem alloc] init];
+textItem.normalImage = [UIImage imageNamed:@"icon_file_normal"];
+textItem.selectedImage = [UIImage imageNamed:@"icon_file_pressed"];
+textItem.text = @"发送文本";
+textItem.block = ^{ };
+
+QYCustomInputItem *productItem = [[QYCustomInputItem alloc] init];
+productItem.normalImage = [UIImage imageNamed:@"icon_card_normal"];
+productItem.selectedImage = [UIImage imageNamed:@"icon_card_pressed"];
+productItem.text = @"发送商品";
+productItem.block = ^{ };
 	    
-NSArray *items = @[photoItem, cameraItem, humanItem];
+NSArray *items = @[photoItem, cameraItem, textItem, productItem];
 [[QYSDK sharedSDK] customUIConfig].customInputItems = items;
 ```
 
@@ -1304,6 +1315,11 @@ if (data) {
 ```
 [具体请看官网 CRM 相关文档](../crm/qiyu_crm_interface.html)
 
+#### 可能遇到的问题5
+
+1. 首次安装 App 无法连接客服，或客服连接状态不稳定
+   - 检查 setUserInfo: 接口调用时机，应在账号登录成功后立即调用该接口上报 CRM 信息，而不应仅在进入客服界面时刻调用；若 setUserInfo: 接口调用时机与连接客服时机太近，底层账号还未登录及初始化成功，会造成客服连接状态不稳定等问题。
+
 ### 七鱼系统推送消息
 
 七鱼系统推送消息与苹果的 APNS 推送无关。可以主动要求服务器推送指定的消息：
@@ -1578,6 +1594,13 @@ sessionViewController.delegate = self;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V4.10.0（2019-03-19）
+
+1. 优化访客分流逻辑
+2. 优化输入栏+按钮功能，提供发送文本消息接口
+3. 支持切换账户后拉取未读历史消息
+4. 修复部分已知问题
 
 #### V4.9.0（2019-02-14）
 
