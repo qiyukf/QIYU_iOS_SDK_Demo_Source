@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 4.10.0
+//  version 4.11.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.

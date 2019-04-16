@@ -53,7 +53,7 @@ pod repo update
 从 v3.1.0 开始，没有 QIYU_iOS_SDK_Exclude_Libcrypto、QIYU_iOS_SDK_Exclude_NIM 版本了，统一使用 QIYU_iOS_SDK，此 SDK 中将各个第三方库独立出来了，总共3个.a：libQYSDK.a、libcrypto.a、libevent.a。
 
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
-2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
+2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。请注意，SDK 依赖的 OpenSSL 库版本为 1.0.2d，与 1.1.0 及以上版本存在兼容问题。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 ### https相关
@@ -110,6 +110,24 @@ v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
 ### 可能遇到的问题1
 1. 无法用 CocoaPods 下载到最新的 SDK
    - 有可能是使用了淘宝源，尝试使用默认源。
+
+2. 使用 CocoaPods 更新 SDK 后编译报错
+
+   - 需检查下载的 SDK 中三个 .a 静态库文件大小，若明显偏小，则需安装 Git LFS（Large File Storage）服务来下载原始 SDK。
+
+   - 可使用 Homebrew 安装 Git LFS：
+
+     ```objective-c
+     brew install git-lfs
+     ```
+
+   - 启动 Git LFS：
+
+     ```objective-c
+     git lfs install
+     ```
+
+   - 安装后请重新 pod update，若仍报错，尝试清理缓存：pod cache clean --all 。
 
 ## 初始化SDK（必须）
 
@@ -1594,6 +1612,15 @@ sessionViewController.delegate = self;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V4.11.0（2019-04-16）
+
+1. 留言功能新增表单样式
+2. 新增客服正在输入提示功能
+3. 优化图片浏览体验
+4. 统一消息字体，优化UI相关配置
+5. 增加客服手动结束会话提示语
+6. 修复部分已知问题
 
 #### V4.10.0（2019-03-19）
 

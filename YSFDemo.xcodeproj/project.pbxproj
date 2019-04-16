@@ -45,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0BB1707CDF1C700141D16272 /* libPods-YSFDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YSFDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28116B8E6C04851BF30AC389 /* Pods-YSFDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSFDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2B035C601CE07ADC00A66338 /* YSFDemoPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFDemoPrefix.pch; sourceTree = "<group>"; };
 		2B0658FC1E683B9900D9CB59 /* QYDemoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDemoConfig.h; sourceTree = "<group>"; };
 		2B0658FD1E683B9900D9CB59 /* QYDemoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDemoConfig.m; sourceTree = "<group>"; };
@@ -233,6 +234,7 @@
 		2BAAAD552079EC6D0008B4F8 /* YSFCommonTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableDelegate.h; sourceTree = "<group>"; };
 		2BAAAD562079EC6D0008B4F8 /* YSFCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableData.h; sourceTree = "<group>"; };
 		2BAAAD572079EC6D0008B4F8 /* YSFCommonTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFCommonTableDelegate.m; sourceTree = "<group>"; };
+		BD9556B2FAF23A8783095EC7 /* Pods-YSFDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSFDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E43BA2081BA27C9E0046F016 /* ysf_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_debug.xcconfig; sourceTree = "<group>"; };
 		E48972FF1B8C016E001C96EC /* YSFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48973031B8C016E001C96EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -907,6 +909,8 @@
 		D1144DF30DBD71DFE6A282A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				BD9556B2FAF23A8783095EC7 /* Pods-YSFDemo.debug.xcconfig */,
+				28116B8E6C04851BF30AC389 /* Pods-YSFDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -997,6 +1001,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1036,7 +1041,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh",
 				"${PODS_ROOT}/QIYU_iOS_SDK/SDK/QYResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1045,7 +1050,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4BE39FE8ADD7BFE118CF27F6 /* [CP] Check Pods Manifest.lock */ = {

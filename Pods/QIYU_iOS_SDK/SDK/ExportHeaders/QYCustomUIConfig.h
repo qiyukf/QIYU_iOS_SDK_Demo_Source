@@ -186,9 +186,14 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 @property (nonatomic, assign) BOOL showHeadImage;
 
 /**
- *  默认是YES,默认rightBarButtonItem内容是黑色，设置为NO，可以修改为白色
+ *  默认是YES,默认rightBarButtonItem是灰色风格，设置为NO，可修改为白色
  */
-@property (nonatomic, assign) BOOL rightBarButtonItemColorBlackOrWhite;
+@property (nonatomic, assign) BOOL rightItemStyleGrayOrWhite;
+
+/**
+ *  导航栏右侧按钮文案颜色,默认是灰色,优先级高于rightItemStyleGrayOrWhite
+ */
+@property (nonatomic, strong) UIColor *rightItemTextColor;
 
 /**
  *  默认是YES,默认显示发送语音入口，设置为NO，可以修改为隐藏

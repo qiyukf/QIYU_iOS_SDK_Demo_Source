@@ -307,7 +307,7 @@ BOOL    g_openRobotInShuntMode;
         [[QYSDK sharedSDK] customUIConfig].serviceMessageBubblePressedImage = [[UIImage imageNamed:@"icon_receiver_node"]
                                              resizableImageWithCapInsets:UIEdgeInsetsMake(15,30,30,15)
                                              resizingMode:UIImageResizingModeStretch];
-        [[QYSDK sharedSDK] customUIConfig].rightBarButtonItemColorBlackOrWhite = NO;
+        [[QYSDK sharedSDK] customUIConfig].rightItemStyleGrayOrWhite = NO;
         
         
     }
@@ -380,7 +380,7 @@ BOOL    g_openRobotInShuntMode;
         [self presentViewController:nav animated:YES completion:nil];
     }
     
-    if ([[QYSDK sharedSDK] customUIConfig].rightBarButtonItemColorBlackOrWhite == NO) {
+    if ([[QYSDK sharedSDK] customUIConfig].rightItemStyleGrayOrWhite == NO) {
         sessionViewController.navigationController.navigationBar.translucent = NO;
         NSDictionary * dict = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
         sessionViewController.navigationController.navigationBar.titleTextAttributes = dict;
