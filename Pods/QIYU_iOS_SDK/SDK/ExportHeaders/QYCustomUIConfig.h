@@ -236,6 +236,11 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 @property (nonatomic, assign) QYBypassDisplayMode bypassDisplayMode;
 
 /**
+ * 照片/视频选择页面主题颜色，默认为蓝色
+ */
+@property (nonatomic, strong) UIColor *imagePickerColor;
+
+/**
  *  以下配置项在V4.4.0版本前，只有平台电商版本有；V4.4.0以后，平台电商/非平台电商均有这些配置项
  *  聊天窗口右上角按钮（对于平台电商来说，这里可以考虑放“商铺入口”）显示，默认不显示
  */

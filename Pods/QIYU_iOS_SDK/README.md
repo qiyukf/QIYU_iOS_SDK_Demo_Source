@@ -53,7 +53,9 @@ pod repo update
 从 v3.1.0 开始，没有 QIYU_iOS_SDK_Exclude_Libcrypto、QIYU_iOS_SDK_Exclude_NIM 版本了，统一使用 QIYU_iOS_SDK，此 SDK 中将各个第三方库独立出来了，总共3个.a：libQYSDK.a、libcrypto.a、libevent.a。
 
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
-2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。请注意，SDK 依赖的 OpenSSL 库版本为 1.0.2d，与 1.1.0 及以上版本存在兼容问题。
+2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
+   - 请注意，SDK 依赖的 OpenSSL 库版本为 1.0.2d，与 1.1.0 及以上版本存在兼容问题。
+   - 如遇到版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v4.12.0.zip')">QIYU_iOS_SDK_SSL</a> ，依赖的 OpenSSL 库版本为 1.1.0c  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 ### https相关
@@ -70,7 +72,7 @@ v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
 </dict>
 ```
 
-加了这些配置项，在 iOS9 下，会放开所有 http 请求，在 iOS10 下，因 iOS10 规定，如果设置了 NSAllowsArbitraryLoadsInWebContent，就会忽略 NSAllowsArbitraryLoads，所以效果是只允许 UIWebView 中使用 http。
+加了这些配置项，在 iOS9 下，系统仅读取 NSAllowsArbitraryLoads，会放开所有 http 请求；在 iOS10 及以上系统，设置了 NSAllowsArbitraryLoadsInWebContent，就会忽略 NSAllowsArbitraryLoads，效果是只允许 WKWebView 中使用 http。SDK 消息流链接默认使用 UIWebView 打开，可通过截获链接点击事件使用自定义视图。
 
 ### iOS10权限设置
 
@@ -595,9 +597,14 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
 @property (nonatomic, assign) BOOL showHeadImage;
 
 /**
- *  默认是YES,默认rightBarButtonItem内容是黑色，设置为NO，可以修改为白色
+ *  默认是YES,默认rightBarButtonItem是灰色风格，设置为NO，可修改为白色
  */
-@property (nonatomic, assign) BOOL rightBarButtonItemColorBlackOrWhite;
+@property (nonatomic, assign) BOOL rightItemStyleGrayOrWhite;
+
+/**
+ *  导航栏右侧按钮文案颜色,默认是灰色,优先级高于rightItemStyleGrayOrWhite
+ */
+@property (nonatomic, strong) UIColor *rightItemTextColor;
 
 /**
  *  默认是YES,默认显示发送语音入口，设置为NO，可以修改为隐藏
@@ -640,7 +647,12 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
 @property (nonatomic, assign) QYBypassDisplayMode bypassDisplayMode;
 
 /**
- *  以下配置项在v4.4.0版本前，只有平台电商版本有；v4.4.0以后，平台电商/非平台电商均有这些配置项
+ * 照片/视频选择页面主题颜色，默认为蓝色
+ */
+@property (nonatomic, strong) UIColor *imagePickerColor;
+
+/**
+ *  以下配置项在V4.4.0版本前，只有平台电商版本有；V4.4.0以后，平台电商/非平台电商均有这些配置项
  *  聊天窗口右上角按钮（对于平台电商来说，这里可以考虑放“商铺入口”）显示，默认不显示
  */
 @property (nonatomic, assign)   BOOL showShopEntrance;
@@ -1612,6 +1624,16 @@ sessionViewController.delegate = self;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V4.12.0（2019-05-16）
+
+1. 新增相册视频发送功能
+2. 留言表单新增附件上传功能
+3. 优化图片选择器，支持预览及原图等功能
+4. 新增客服超时未回复安抚语功能
+5. 优化部分接口请求量
+6. 优化部分接口编码，增加兼容性
+7. 修复部分线上问题
 
 #### V4.11.0（2019-04-16）
 
