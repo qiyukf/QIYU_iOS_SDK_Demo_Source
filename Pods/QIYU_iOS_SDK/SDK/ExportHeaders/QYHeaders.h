@@ -21,5 +21,6 @@
 #import "QYCommodityInfo.h"
 #import "QYPushMessage.h"
 #import "QYAction.h"
+#import "QYEvaluation.h"
 
 #endif

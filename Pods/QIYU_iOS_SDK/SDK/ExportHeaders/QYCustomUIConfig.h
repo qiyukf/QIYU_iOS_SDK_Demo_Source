@@ -44,6 +44,16 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
     QYBypassDisplayModeBottom
 };
 
+/**
+ *  消息下拉加载状态
+ */
+typedef NS_ENUM(NSInteger, QYMessagesLoadState) {
+    QYMessagesLoadStateIdle,
+    QYMessagesLoadStateWillLoad,
+    QYMessagesLoadStateLoading,
+};
+
+
 @interface QYCustomUIConfig : NSObject
 
 + (instancetype)sharedInstance;
@@ -161,6 +171,16 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 @property (nonatomic, strong) UIImage *serviceMessageBubblePressedImage;
 
 /**
+ *  消息内强提示按钮文字颜色，例如"立即评价"按钮，默认白色
+ */
+@property (nonatomic, strong) UIColor *messageButtonTextColor;
+
+/**
+ *  消息内强提示按钮底色，例如"立即评价"按钮，默认蓝色
+ */
+@property (nonatomic, strong) UIColor *messageButtonBackColor;
+
+/**
  *  输入框上方操作按钮文字颜色
  */
 @property (nonatomic, strong) UIColor *actionButtonTextColor;
@@ -181,9 +201,14 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 @property (nonatomic, assign) CGFloat headMessageSpacing;
 
 /**
- *  是否显示头像
+ *  是否显示消息流头像
  */
 @property (nonatomic, assign) BOOL showHeadImage;
+
+/**
+ *  是否显示导航栏客服头像
+ */
+@property (nonatomic, assign) BOOL showTopHeadImage;
 
 /**
  *  默认是YES,默认rightBarButtonItem是灰色风格，设置为NO，可修改为白色
@@ -275,6 +300,11 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
  *  输入框下方“完全自定义”配置项
  */
 @property (nonatomic, strong) NSArray<QYCustomInputItem *> *customInputItems;
+
+/**
+ *  消息下拉刷新loading图片设置，区分不同state状态
+ */
+- (void)setMessagesLoadImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(QYMessagesLoadState)state;
 
 @end
 

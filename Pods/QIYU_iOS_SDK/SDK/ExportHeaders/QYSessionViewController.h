@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QYEvaluation.h"
 
 @class QYSource;
 @class QYStaffInfo;
@@ -141,7 +142,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 @property (nonatomic, assign) BOOL hideHistoryMessages;
 
 /**
- *  历史消息提示文案，默认为“——以上是历史消息——”；仅在hideHistoryMessages为YES，首次下拉历史消息时展示
+ *  历史消息提示文案，默认为“——以上为历史消息——”；仅在hideHistoryMessages为YES，首次下拉历史消息时展示
  */
 @property (nonatomic, copy) NSString *historyMessagesTip;
 
@@ -207,6 +208,34 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
  *  销毁聊天界面顶部悬停视图
  */
 - (void)destroyTopHoverViewWithAnmation:(BOOL)animated duration:(NSTimeInterval)duration;
+
+
+/** 以下为满意度评价相关接口 **/
+
+/**
+ *  满意度评价事件回调
+ *
+ *  @param data 评价数据，包括评价模式、选项及标签、上次评价结果等数据，据此构建评价界面
+ */
+typedef void (^QYEvaluationBlock)(QYEvaluactionData *data);
+
+/**
+ *  评价结果回调
+ *
+ *  @param state 结果
+ */
+typedef void (^QYEvaluationCompletion)(QYEvaluationState state);
+
+/**
+ *  满意度评价事件
+ */
+@property (nonatomic, copy) QYEvaluationBlock evaluationBlock;
+
+/**
+ *  发送满意度评价结果
+ */
+- (void)sendEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
+
 
 @end
 

@@ -130,6 +130,11 @@ typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString 
 @property (nonatomic, copy) QYEventBlock eventClickBlock;
 
 /**
+ *  账号登录后是否拉取漫游消息
+ */
+@property (nonatomic, assign) BOOL pullRoamMessage;
+
+/**
  *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession
  *
  *  @param deactivate 是否deactivate，默认为YES

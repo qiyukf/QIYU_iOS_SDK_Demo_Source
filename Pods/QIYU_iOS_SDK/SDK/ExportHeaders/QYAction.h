@@ -35,6 +35,7 @@ typedef NS_ENUM(NSInteger, QYRequestStaffBeforeScene) {
     QYRequestStaffBeforeSceneNavHumanButton,     //机器人模式下，点击右上角人工按钮
     QYRequestStaffBeforeSceneActiveRequest,      //主动请求人工客服
     QYRequestStaffBeforeSceneChangeStaff,        //切换人工客服
+    QYRequestStaffBeforeSceneReconnect,          //重新连接客服
 };
 
 /**

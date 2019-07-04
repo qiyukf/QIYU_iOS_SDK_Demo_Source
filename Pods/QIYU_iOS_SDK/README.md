@@ -55,7 +55,7 @@ pod repo update
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
    - 请注意，SDK 依赖的 OpenSSL 库版本为 1.0.2d，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇到版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v4.12.0.zip')">QIYU_iOS_SDK_SSL</a> ，依赖的 OpenSSL 库版本为 1.1.0c  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+   - 如遇到版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.0.0.zip')">QIYU_iOS_SDK_SSL</a> ，依赖的 OpenSSL 库版本为 1.1.0c  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 ### https相关
@@ -209,7 +209,8 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 1. 进入访客聊天界面马上 crash
    - 检查 App 工程配置－> Build Phases -> copy Bundle Resources 里面有没有 QYResource.bundle；如果没有，必须加上。
 2. 一直显示正在连接客服
-   - 可能是 AppKey 填写错误。
+   - 可能是 AppKey 填写错误，请确保完全正确，勿带空格。
+   - 可能是 App 引入或 App 使用的第三方 SDK 引入 OpenSSL 版本不兼容，导致底层数据加解密抛异常；关于 OpenSSL 版本问题需具体情况具体分析。
 3. 能否同时创建多个 sessionViewController
    - 不能，需要保持全局唯一。每次调用 [[QYSDK sharedSDK] sessionViewController] 会得到一个全新的 QYSessionViewController 对象，开发者需要保证此对象全局唯一，尽量避免循环引用导致的内存泄漏问题。
 4. 怎么知道 sessionViewController 被 pop 了
@@ -572,6 +573,16 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
 @property (nonatomic, strong) UIImage *serviceMessageBubblePressedImage;
 
 /**
+ *  消息内强提示按钮文字颜色，例如"立即评价"按钮，默认白色
+ */
+@property (nonatomic, strong) UIColor *messageButtonTextColor;
+
+/**
+ *  消息内强提示按钮底色，例如"立即评价"按钮，默认蓝色
+ */
+@property (nonatomic, strong) UIColor *messageButtonBackColor;
+
+/**
  *  输入框上方操作按钮文字颜色
  */
 @property (nonatomic, strong) UIColor *actionButtonTextColor;
@@ -592,9 +603,14 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
 @property (nonatomic, assign) CGFloat headMessageSpacing;
 
 /**
- *  是否显示头像
+ *  是否显示消息流头像
  */
 @property (nonatomic, assign) BOOL showHeadImage;
+
+/**
+ *  是否显示导航栏客服头像
+ */
+@property (nonatomic, assign) BOOL showTopHeadImage;
 
 /**
  *  默认是YES,默认rightBarButtonItem是灰色风格，设置为NO，可修改为白色
@@ -687,8 +703,12 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 @property (nonatomic, strong) NSArray<QYCustomInputItem *> *customInputItems;
 
-@end
+/**
+ *  消息下拉刷新loading图片设置，区分不同state状态
+ */
+- (void)setMessagesLoadImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(QYMessagesLoadState)state;
 
+@end
 ```
 
 #### 更换图片素材
@@ -712,7 +732,7 @@ typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
 
 #### “照相机”替换为“更多”按钮
 
-在 v4.4.0 版本中，聊天界面输入区域 “照相机” 按钮可替换成 “更多” 按钮，点击“更多”按钮展开显示配置的选项。需要设置 QYCustomUIConfig 的 customInputItems 属性，该属性为数组类型，每个元素均为  QYCustomInputItem 类型对象，代表一个选项。QYCustomInputItem 定义如下：
+在 v4.4.0 版本之后，聊天界面输入区域 “照相机” 按钮可替换成 “更多” 按钮，点击“更多”按钮展开显示配置的选项。需要设置 QYCustomUIConfig 的 customInputItems 属性，该属性为数组类型，每个元素均为  QYCustomInputItem 类型对象，代表一个选项。QYCustomInputItem 定义如下：
 
 ```objectivec
 /**
@@ -891,6 +911,11 @@ typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString 
 @property (nonatomic, copy) QYEventBlock eventClickBlock;
 
 /**
+ *  账号登录后是否拉取漫游消息
+ */
+@property (nonatomic, assign) BOOL pullRoamMessage;
+
+/**
  *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession
  *
  *  @param deactivate 是否deactivate，默认为YES
@@ -909,7 +934,7 @@ typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString 
 
 #### 客服相关事件处理
 
-在 v4.6.0 版本中，修改了关于客服相关事件的对外接口，可以拦截所有请求客服前和请求客服后的事件，需要设置 QYCustomActionConfig 中的 actionBlock 属性，该 block 返回一个 QYAction 对象，此对象定义如下：
+在 v4.6.0 版本之后，修改了关于客服相关事件的对外接口，可以拦截所有请求客服前和请求客服后的事件，需要设置 QYCustomActionConfig 中的 actionBlock 属性，该 block 返回一个 QYAction 对象，此对象定义如下：
 
 ```objectivec
 /**
@@ -968,6 +993,7 @@ typedef NS_ENUM(NSInteger, QYRequestStaffBeforeScene) {
     QYRequestStaffBeforeSceneNavHumanButton,     //机器人模式下，点击右上角人工按钮
     QYRequestStaffBeforeSceneActiveRequest,      //主动请求人工客服
     QYRequestStaffBeforeSceneChangeStaff,        //切换人工客服
+    QYRequestStaffBeforeSceneReconnect,          //重新连接客服
 };
 
 /**
@@ -1131,7 +1157,7 @@ QYCommodityInfo.h 相关内容如下：
 @end
 ```
 
-以上的自动发送商品信息功能仅在人工客服下有效，在 v4.4.0 版本中，获取到 sessionViewController 后，可设置机器人模式下是否开启自动发送商品卡片功能，默认不开启。若开启，则设置商品信息后，机器人模式下也可直接发送商品卡片：
+以上的自动发送商品信息功能仅在人工客服下有效，在 v4.4.0 版本之后，获取到 sessionViewController 后，可设置机器人模式下是否开启自动发送商品卡片功能，默认不开启。若开启，则设置商品信息后，机器人模式下也可直接发送商品卡片：
 
 ```objectivec
 sessionViewController.autoSendInRobot = YES;
@@ -1190,7 +1216,7 @@ sessionViewController.openRobotInShuntMode = YES;
 
 ### 自定义客服信息
 
-在 v4.6.0 版本中，新增自定义人工客服信息功能，配置完成后人工客服的昵称、头像、接入语等均会被设置的信息替换。需要在 QYSessionViewController 中设置如下属性：
+在 v4.6.0 版本之后，新增自定义人工客服信息功能，配置完成后人工客服的昵称、头像、接入语等均会被设置的信息替换。需要在 QYSessionViewController 中设置如下属性：
 
 ```objectivec
 /**
@@ -1237,7 +1263,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 ### 请求人工客服
 
-在 v4.4.0 版本中，获取到 sessionViewController 后，提供直接请求人工客服接口：
+在 v4.4.0 版本之后，获取到 sessionViewController 后，提供直接请求人工客服接口：
 
 ```objectivec
 [sessionViewController requestHumanStaff];
@@ -1247,7 +1273,7 @@ QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staf
 
 ### 切换人工客服
 
-在 v4.6.0 版本中，获取到 sessionViewController 后，提供切换人工客服接口：
+在 v4.6.0 版本之后，获取到 sessionViewController 后，提供切换人工客服接口：
 
 ```objectivec
 /**
@@ -1381,7 +1407,7 @@ typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
 
 ### 设置输入区域上方工具栏
 
-在 v3.13.0 版本 中，开放了输入区域上方工具栏按钮设置，设置 QYSessionViewController 中如下属性：
+在 v3.13.0 版本之后，开放了输入区域上方工具栏按钮设置，设置 QYSessionViewController 中如下属性：
 
 ```objectivec
 /**
@@ -1443,7 +1469,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 #### 访问轨迹
 
-在 v4.0.0 版本中，SDK 支持记录用户在 App 内的访问轨迹并上报。使用该功能，需要企业开通 “访问轨迹” 功能。访问轨迹接口定义在 QYSDK.h 中：
+在 v4.0.0 版本之后，SDK 支持记录用户在 App 内的访问轨迹并上报。使用该功能，需要企业开通 “访问轨迹” 功能。访问轨迹接口定义在 QYSDK.h 中：
 
 ```objectivec
 /**
@@ -1476,7 +1502,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 #### 行为轨迹
 
-在 v4.4.0 版本中，SDK 支持记录用户在 App 内的行为轨迹并上报。使用该功能，需要企业开通 “行为轨迹” 功能。行为轨迹是建立在访问轨迹之上的，如果需要使用行为轨迹，请先开启访问轨迹。
+在 v4.4.0 版本之后，SDK 支持记录用户在 App 内的行为轨迹并上报。使用该功能，需要企业开通 “行为轨迹” 功能。行为轨迹是建立在访问轨迹之上的，如果需要使用行为轨迹，请先开启访问轨迹。
 
 行为轨迹主要用于记录用户行为，例如购买了某件商品，可设置 title 参数为“购买xxx商品”，并在 description 参数中以 key-value 形式设置详细的商品信息，客服可查看此类信息，用于分析用户行为。行为轨迹接口定义在 QYSDK.h 中：
 
@@ -1491,7 +1517,7 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
 ### 历史消息收起
 
-在 v4.7.0 版本中，获取到 sessionViewController 后，可配置每页消息加载最大数量，该设置项控制了初次进入聊天界面的消息数量以及历史消息每次下拉加载的数量，默认为20条：
+在 v4.7.0 版本之后，获取到 sessionViewController 后，可配置每页消息加载最大数量，该设置项控制了初次进入聊天界面的消息数量以及历史消息每次下拉加载的数量，默认为20条：
 
 ```objectivec
 sessionViewController.messagePageLimit = 20;
@@ -1511,7 +1537,7 @@ sessionViewController.historyMessagesTip = @"以上是历史消息";
 
 ### 自定义顶部区域
 
-在 v4.7.0 版本中，获取到 sessionViewController 后，可自定义聊天界面顶部区域，支持外部注册入视图，可配置视图高度和边距；此视图悬停在聊天界面导航栏下方、消息列表上方，不随消息流滚动。注册接口为：
+在 v4.7.0 版本之后，获取到 sessionViewController 后，可自定义聊天界面顶部区域，支持外部注册入视图，可配置视图高度和边距；此视图悬停在聊天界面导航栏下方、消息列表上方，不随消息流滚动。注册接口为：
 
 ```objectivec
 /**
@@ -1531,6 +1557,40 @@ sessionViewController.historyMessagesTip = @"以上是历史消息";
  *  销毁聊天界面顶部悬停视图
  */
 - (void)destroyTopHoverViewWithAnmation:(BOOL)animated duration:(NSTimeInterval)duration;
+```
+
+### 自定义评价界面
+
+在 v5.0.0 版本之后，获取到 sessionViewController 后，可自定义满意度评价界面。对外提供评价界面事件回调，并根据管理端满意度配置提供评价相关数据，便于构建界面：
+
+```objectivec
+/**
+ *  满意度评价事件回调
+ *
+ *  @param data 评价数据，包括评价模式、选项及标签、上次评价结果等数据，据此构建评价界面
+ */
+typedef void (^QYEvaluationBlock)(QYEvaluactionData *data);
+
+/**
+ *  满意度评价事件
+ */
+@property (nonatomic, copy) QYEvaluationBlock evaluationBlock;
+```
+
+评价完成后，需调用发送评价结果接口将数据回传，同时接口会反馈评价数据发送结果，请根据是否成功做相应的交互，以保证满意度流程完整性：
+
+```objectivec
+/**
+ *  评价结果回调
+ *
+ *  @param state 结果
+ */
+typedef void (^QYEvaluationCompletion)(QYEvaluationState state);
+
+/**
+ *  发送满意度评价结果
+ */
+- (void)sendEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
 ```
 
 ### 清理文件缓存
@@ -1624,6 +1684,17 @@ sessionViewController.delegate = self;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.0.0（2019-07-04）
+
+1. 机器人新增抽屉列表/气泡列表/横滑卡片/气泡节点模板消息
+2. 机器人一触即达对话节点支持按钮交互
+3. 引导语自定义及样式调整
+4. 支持自定义评价界面
+5. 支持自定义下拉加载loading动效
+6. 客服头像支持导航栏显示
+7. 消息气泡样式优化
+8. 修复部分已知问题
 
 #### V4.12.0（2019-05-16）
 
