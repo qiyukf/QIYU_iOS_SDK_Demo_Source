@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 5.0.0
+//  version 5.1.0
 //
 //  Created by towik on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -27,9 +27,9 @@ typedef void(^QYCompletionWithResultBlock)(BOOL isSuccess);
 typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
 
 /**
- *  清理文件缓存回调
+ *  清理缓存回调
  */
-typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
+typedef void(^QYCleanCacheCompletion)(NSError *error);
 
 
 /**
@@ -138,12 +138,6 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
 - (NSString *)appKey;
 
 /**
- *  清理接收文件缓存
- *  @param completeBlock 清理缓存完成block
- */
-- (void)cleanResourceCacheWithBlock:(QYCleanResourceCacheCompleteBlock)completeBlock;
-
-/**
  *  访问轨迹
  *  @param title 标题
  *  @param enterOrOut 进入还是退出
@@ -164,6 +158,19 @@ typedef void(^QYCleanResourceCacheCompleteBlock)(NSError *error);
  */
 - (NSString *)qiyuLogPath;
 
+/**
+ *  清理接收文件缓存
+ *  @param completion 清理缓存完成回调
+ */
+- (void)cleanResourceCacheWithBlock:(QYCleanCacheCompletion)completion;
+
+/**
+ *  清理账号信息
+ *  @discussion 清理全部账号信息会登出当前账号，并新建匿名账号，请在调用完成后使用setUserInfo:接口恢复为有名账号；请在合理时机调用本接口
+ *  @param cleanAll 是否清理当前所有账号信息，NO表示清理历史无用账号，YES表示清理全部
+ *  @param completion 清理缓存完成回调
+ */
+- (void)cleanAccountInfoForAll:(BOOL)cleanAll completion:(QYCleanCacheCompletion)completion;
 
 #pragma mark - Deprecated
 ///**

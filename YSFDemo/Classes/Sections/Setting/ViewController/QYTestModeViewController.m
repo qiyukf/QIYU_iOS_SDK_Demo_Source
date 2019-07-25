@@ -88,7 +88,6 @@
     [QYCustomUIConfig sharedInstance].autoShowKeyboard = [[NSUserDefaults standardUserDefaults] boolForKey:YSFDemoOnShowKeyboard];
     [QYCustomUIConfig sharedInstance].showShopEntrance = [[NSUserDefaults standardUserDefaults] boolForKey:YSFDemoShopInfoOnShowShopEntrance];
     [self setShopEntranceImage];
-    [QYCustomUIConfig sharedInstance].shopEntranceText = [[NSUserDefaults standardUserDefaults] valueForKey:YSFDemoShopInfoShopName];
     [QYCustomUIConfig sharedInstance].showSessionListEntrance = [[NSUserDefaults standardUserDefaults] boolForKey:YSFDemoShopInfoOnShowSessionListEntrance];;
     [QYCustomUIConfig sharedInstance].sessionListEntrancePosition = ![[NSUserDefaults standardUserDefaults] boolForKey:YSFDemoShopInfoOnSessionListEntrancePosition];
     [self setSessionListEntranceImage];
@@ -97,14 +96,15 @@
 - (void)setShopEntranceImage
 {
     float value = [[NSUserDefaults standardUserDefaults] floatForKey:YSFDemoShopInfoOnShopEntranceIconValue];
+    //shopEntranceImage已废弃，可直接替换图片素材
     if (value > 0.9) {
-        [QYCustomUIConfig sharedInstance].shopEntranceImage = [UIImage imageNamed:@"service_head"];
+//        [QYCustomUIConfig sharedInstance].shopEntranceImage = [UIImage imageNamed:@"service_head"];
     } else if (value > 0.5) {
-        [QYCustomUIConfig sharedInstance].shopEntranceImage = [UIImage imageNamed:@"customer_head"];
+//        [QYCustomUIConfig sharedInstance].shopEntranceImage = [UIImage imageNamed:@"customer_head"];
     } else if (value > 0.2) {
-        [QYCustomUIConfig sharedInstance].shopEntranceImage = [UIImage imageNamed:@"icon_homepage_selected"];
+//        [QYCustomUIConfig sharedInstance].shopEntranceImage = [UIImage imageNamed:@"icon_homepage_selected"];
     } else {
-        [QYCustomUIConfig sharedInstance].shopEntranceImage = nil;
+//        [QYCustomUIConfig sharedInstance].shopEntranceImage = nil;
     }
 }
 

@@ -55,7 +55,7 @@ pod repo update
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
    - 请注意，SDK 依赖的 OpenSSL 库版本为 1.0.2d，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇到版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.0.0.zip')">QIYU_iOS_SDK_SSL</a> ，依赖的 OpenSSL 库版本为 1.1.0c  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+   - 如遇到版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.1.0.zip')">QIYU_iOS_SDK_SSL</a> ，依赖的 OpenSSL 库版本为 1.1.0c  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 ### https相关
@@ -159,8 +159,6 @@ AppName 对应管理后台添加一个 App 时填写的 “App 名称”。如�
 ### 集成方式一
 
 如果调用代码所在的 viewController 在 UINavigationController 中，可如下方式集成：
-
-
 
 
 ```objectivec
@@ -465,20 +463,54 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 - (void)restoreToDefault;
 
-/**
- *  会话窗口上方提示条中的文本字体颜色
- */
-@property (nonatomic, strong) UIColor *sessionTipTextColor;
+//聊天背景设置
 
 /**
- *  会话窗口上方提示条中的文本字体大小
+ *  消息tableview的背景图片
  */
-@property (nonatomic, assign) CGFloat sessionTipTextFontSize;
+@property (nonatomic, strong) UIImageView *sessionBackground;
+
+
+//导航栏相关设置（人工/评价按钮可后台关闭显示）
 
 /**
- *  会话窗口上方提示条中的背景颜色
+ *  导航栏右侧按钮风格，默认灰色风格，NO为白色风格
  */
-@property (nonatomic, strong) UIColor *sessionTipBackgroundColor;
+@property (nonatomic, assign) BOOL rightItemStyleGrayOrWhite;
+
+/**
+ *  导航栏右侧退出会话按钮是否显示，默认为NO
+ */
+@property (nonatomic, assign) BOOL showCloseSessionEntry;
+
+/**
+ *  是否显示消息流头像
+ */
+@property (nonatomic, assign) BOOL showHeadImage;
+
+/**
+ *  是否显示导航栏客服头像
+ */
+@property (nonatomic, assign) BOOL showTopHeadImage;
+
+
+//访客相关设置
+
+/**
+ *  访客头像
+ */
+@property (nonatomic, strong) UIImage *customerHeadImage;
+@property (nonatomic, copy) NSString *customerHeadImageUrl;
+
+/**
+ *  访客消息气泡normal图片
+ */
+@property (nonatomic, strong) UIImage *customerMessageBubbleNormalImage;
+
+/**
+ *  访客消息气泡pressed图片
+ */
+@property (nonatomic, strong) UIImage *customerMessageBubblePressedImage;
 
 /**
  *  访客文本消息字体颜色
@@ -495,6 +527,25 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 @property (nonatomic, assign) CGFloat customMessageTextFontSize;
 
+
+//客服相关设置
+
+/**
+ *  客服头像
+ */
+@property (nonatomic, strong) UIImage *serviceHeadImage;
+@property (nonatomic, copy) NSString *serviceHeadImageUrl;
+
+/**
+ *  客服消息气泡normal图片
+ */
+@property (nonatomic, strong) UIImage *serviceMessageBubbleNormalImage;
+
+/**
+ *  客服消息气泡pressed图片
+ */
+@property (nonatomic, strong) UIImage *serviceMessageBubblePressedImage;
+
 /**
  *  客服文本消息字体颜色
  */
@@ -510,6 +561,9 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 @property (nonatomic, assign) CGFloat serviceMessageTextFontSize;
 
+
+//提示消息相关设置（例：***为你服务）
+
 /**
  *  提示文本消息字体颜色；提示文本消息有很多种，比如“***为你服务”就是一种
  */
@@ -520,57 +574,23 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 @property (nonatomic, assign) CGFloat tipMessageTextFontSize;
 
-/**
- *  输入框文本消息字体颜色
- */
-@property (nonatomic, strong) UIColor *inputTextColor;
+
+//消息相关设置
 
 /**
- *  输入框文本消息字体大小
+ *  访客分流展示模式
  */
-@property (nonatomic, assign) CGFloat inputTextFontSize;
+@property (nonatomic, assign) QYBypassDisplayMode bypassDisplayMode;
 
 /**
- *  消息tableview的背景图片
+ *  消息竖直方向间距
  */
-@property (nonatomic, strong) UIImageView *sessionBackground;
+@property (nonatomic, assign) CGFloat sessionMessageSpacing;
 
 /**
- *  访客头像
+ *  头像与消息气泡间距，默认为4pt
  */
-@property (nonatomic, strong) UIImage *customerHeadImage;
-@property (nonatomic, copy) NSString *customerHeadImageUrl;
-
-/**
- *  客服头像
- */
-@property (nonatomic, strong) UIImage *serviceHeadImage;
-@property (nonatomic, copy) NSString *serviceHeadImageUrl;
-
-/**
- *  人工按钮文案
- */
-@property (nonatomic, copy) NSString *humanButtonText;
-
-/**
- *  访客消息气泡normal图片
- */
-@property (nonatomic, strong) UIImage *customerMessageBubbleNormalImage;
-
-/**
- *  访客消息气泡pressed图片
- */
-@property (nonatomic, strong) UIImage *customerMessageBubblePressedImage;
-
-/**
- *  客服消息气泡normal图片
- */
-@property (nonatomic, strong) UIImage *serviceMessageBubbleNormalImage;
-
-/**
- *  客服消息气泡pressed图片
- */
-@property (nonatomic, strong) UIImage *serviceMessageBubblePressedImage;
+@property (nonatomic, assign) CGFloat headMessageSpacing;
 
 /**
  *  消息内强提示按钮文字颜色，例如"立即评价"按钮，默认白色
@@ -582,6 +602,9 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 @property (nonatomic, strong) UIColor *messageButtonBackColor;
 
+
+//输入栏上方操作按钮设置
+
 /**
  *  输入框上方操作按钮文字颜色
  */
@@ -592,58 +615,51 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 @property (nonatomic, strong) UIColor *actionButtonBorderColor;
 
-/**
- *  消息竖直方向间距
- */
-@property (nonatomic, assign) CGFloat sessionMessageSpacing;
+
+//输入栏设置
 
 /**
- *  头像与消息气泡间距，默认为5pt
+ *  输入框字体颜色
  */
-@property (nonatomic, assign) CGFloat headMessageSpacing;
+@property (nonatomic, strong) UIColor *inputTextColor;
 
 /**
- *  是否显示消息流头像
+ *  输入框字体大小
  */
-@property (nonatomic, assign) BOOL showHeadImage;
+@property (nonatomic, assign) CGFloat inputTextFontSize;
 
 /**
- *  是否显示导航栏客服头像
+ *  输入框占位文案
  */
-@property (nonatomic, assign) BOOL showTopHeadImage;
+@property (nonatomic, copy) NSString *inputTextPlaceholder;
 
 /**
- *  默认是YES,默认rightBarButtonItem是灰色风格，设置为NO，可修改为白色
- */
-@property (nonatomic, assign) BOOL rightItemStyleGrayOrWhite;
-
-/**
- *  导航栏右侧按钮文案颜色,默认是灰色,优先级高于rightItemStyleGrayOrWhite
- */
-@property (nonatomic, strong) UIColor *rightItemTextColor;
-
-/**
- *  默认是YES,默认显示发送语音入口，设置为NO，可以修改为隐藏
+ *  输入栏语音按钮，人工模式下是否显示，默认为YES
  */
 @property (nonatomic, assign) BOOL showAudioEntry;
 
 /**
- *  默认是YES,默认在机器人模式下显示发送语音入口，设置为NO，可以修改为隐藏
+ *  输入栏语音按钮，机器人模式下是否显示，默认为YES
  */
 @property (nonatomic, assign) BOOL showAudioEntryInRobotMode;
 
 /**
- *  默认是YES,默认显示发送表情入口，设置为NO，可以修改为隐藏
+ *  输入栏表情按钮是否显示，默认为YES
  */
 @property (nonatomic, assign) BOOL showEmoticonEntry;
 
 /**
- *  默认是YES,默认显示发送图片入口，设置为NO，可以修改为隐藏
+ *  输入栏相机按钮是否显示，默认为YES
  */
 @property (nonatomic, assign) BOOL showImageEntry;
 
 /**
- *  默认是YES,默认进入聊天界面，是文本输入模式的话，会弹出键盘，设置为NO，可以修改为不弹出
+ * 照片/视频选择页面主题颜色，默认为蓝色
+ */
+@property (nonatomic, strong) UIColor *imagePickerColor;
+
+/**
+ *  进入聊天界面是否自动弹出键盘，默认为YES
  */
 @property (nonatomic, assign) BOOL autoShowKeyboard;
 
@@ -652,36 +668,13 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
  */
 @property (nonatomic, assign) CGFloat bottomMargin;
 
-/**
- *  默认是NO,默认隐藏关闭会话入口，设置为YES，可以修改为显示
- */
-@property (nonatomic, assign) BOOL showCloseSessionEntry;
+
+//平台电商相关设置
 
 /**
- *  访客分流展示模式
+ *  导航栏右侧商铺入口按钮是否显示，默认为NO
  */
-@property (nonatomic, assign) QYBypassDisplayMode bypassDisplayMode;
-
-/**
- * 照片/视频选择页面主题颜色，默认为蓝色
- */
-@property (nonatomic, strong) UIColor *imagePickerColor;
-
-/**
- *  以下配置项在V4.4.0版本前，只有平台电商版本有；V4.4.0以后，平台电商/非平台电商均有这些配置项
- *  聊天窗口右上角按钮（对于平台电商来说，这里可以考虑放“商铺入口”）显示，默认不显示
- */
-@property (nonatomic, assign)   BOOL showShopEntrance;
-
-/**
- *  聊天窗口右上角按钮（对于平台电商来说，这里可以考虑放“商铺入口”）icon
- */
-@property (nonatomic, strong) UIImage *shopEntranceImage;
-
-/**
- *  聊天窗口右上角按钮（对于平台电商来说，这里可以考虑放“商铺入口”）文本
- */
-@property (nonatomic, copy) NSString *shopEntranceText;
+@property (nonatomic, assign) BOOL showShopEntrance;
 
 /**
  *  聊天内容区域的按钮（对于平台电商来说，这里可以考虑放置“会话列表入口“）显示，默认不显示
@@ -689,14 +682,32 @@ QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之�
 @property (nonatomic, assign) BOOL showSessionListEntrance;
 
 /**
+ *  会话列表入口icon
+ */
+@property (nonatomic, strong) UIImage *sessionListEntranceImage;
+
+/**
  *  聊天内容区域的按钮（对于平台电商来说，这里可以考虑放置“会话列表入口“）在聊天页面的位置，YES代表在右上角，NO代表在左上角，默认在右上角
  */
 @property (nonatomic, assign) BOOL sessionListEntrancePosition;
 
+
+//会话窗口上方提示条相关设置
+
 /**
- *  会话列表入口icon
+ *  会话窗口上方提示条中的文本字体颜色
  */
-@property (nonatomic, strong) UIImage *sessionListEntranceImage;
+@property (nonatomic, strong) UIColor *sessionTipTextColor;
+
+/**
+ *  会话窗口上方提示条中的文本字体大小
+ */
+@property (nonatomic, assign) CGFloat sessionTipTextFontSize;
+
+/**
+ *  会话窗口上方提示条中的背景颜色
+ */
+@property (nonatomic, strong) UIColor *sessionTipBackgroundColor;
 
 /**
  *  输入框下方“完全自定义”配置项
@@ -742,7 +753,7 @@ typedef void (^QYCustomInputItemBlock)();
 
 /**
  *  输入框下方“更多”配置项
- *  注：为达到最佳效果，配置项图片最佳尺寸为55ptx55pt
+ *  注：为达到最佳效果，配置项图片最佳尺寸为64ptx64pt
  */
 @interface QYCustomInputItem : NSObject
 
@@ -1684,6 +1695,13 @@ sessionViewController.delegate = self;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.1.0（2019-07-25）
+
+1. 聊天页面样式全面升级
+2. 满意度功能升级：新增气泡样式/四级满意度/问题解决选择
+3. 新增清理账号信息接口
+4. 修复部分已知问题
 
 #### V5.0.0（2019-07-04）
 

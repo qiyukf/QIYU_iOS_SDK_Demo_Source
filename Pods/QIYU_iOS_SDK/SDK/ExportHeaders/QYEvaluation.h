@@ -15,7 +15,8 @@
 typedef NS_ENUM(NSUInteger, QYEvaluationMode) {
     QYEvaluationModeTwoLevel = 1,   //模式一（二级满意度）：满意/不满意
     QYEvaluationModeThreeLevel,     //模式二（三级满意度）：满意/一般/不满意
-    QYEvaluationModeFiveLevel,      //模式三（五级满意度）：非常满意/满意/一般/不满意/非常不满意
+    QYEvaluationModeFourLevel,      //模式三（四级满意度）：非常满意/满意/不满意/非常不满意
+    QYEvaluationModeFiveLevel,      //模式四（五级满意度）：非常满意/满意/一般/不满意/非常不满意
 };
 
 /**
@@ -40,6 +41,15 @@ typedef NS_ENUM(NSInteger, QYEvaluationState) {
     QYEvaluationStateFailNetTimeout,    //失败-网络超时
     QYEvaluationStateFailTimeout,       //失败-评价超时
     QYEvaluationStateFailUnknown,       //失败-未知原因不可评价
+};
+
+/**
+ *  满意度评价是否解决选择项
+ */
+typedef NS_ENUM(NSInteger, QYEvaluationResolveStatus) {
+    QYEvaluationResolveStatusNone = 0,
+    QYEvaluationResolveStatusResolved = 1,
+    QYEvaluationResolveStatusUnsolved = 2,
 };
 
 
@@ -106,6 +116,11 @@ typedef NS_ENUM(NSInteger, QYEvaluationState) {
  */
 @property (nonatomic, copy) NSString *remarkString;
 
+/**
+ *  是否解决，若resolvedRequired必填，则resolveStatus不可为None
+ */
+@property (nonatomic, assign) QYEvaluationResolveStatus resolveStatus;
+
 @end
 
 
@@ -128,6 +143,16 @@ typedef NS_ENUM(NSInteger, QYEvaluationState) {
  *  选项数据
  */
 @property (nonatomic, strong) NSArray <QYEvaluationOptionData *> *optionList;
+
+/**
+ *  是否向访客收集“您的问题是否解决”
+ */
+@property (nonatomic, assign) BOOL resolvedEnabled;
+
+/**
+ *  “您的问题是否解决”是否必填
+ */
+@property (nonatomic, assign) BOOL resolvedRequired;
 
 /**
  *  上次评价结果
