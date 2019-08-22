@@ -59,6 +59,12 @@ typedef void (^QYCompletion)(BOOL success, NSError *error);
  */
 typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 
+/**
+ *  拍摄视频完成回调
+ *  @param filePath 视频存储路径
+ */
+typedef void (^QYVideoCompletion)(NSString *filePath);
+
 
 /**
  *  会话类：QYSessionViewController
@@ -183,6 +189,11 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 - (void)sendPicture:(UIImage *)picture;
 
 /**
+ *  发送视频消息
+ */
+- (void)sendVideo:(NSString *)filePath;
+
+/**
  *  发送商品信息展示
  */
 - (void)sendCommodityInfo:(QYCommodityInfo *)commodityInfo;
@@ -191,6 +202,19 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
  *  发送订单列表中选中的商品信息
  */
 - (void)sendSelectedCommodityInfo:(QYSelectedCommodityInfo *)commodityInfo;
+
+
+/** 以下为开放能力接口 **/
+
+/**
+ *  退出会话/退出排队
+ */
+- (void)closeSession;
+
+/**
+ *  拍摄视频
+ */
+- (void)shootVideoWithCompletion:(QYVideoCompletion)completion;
 
 
 /** 以下为自定义视图相关接口 **/

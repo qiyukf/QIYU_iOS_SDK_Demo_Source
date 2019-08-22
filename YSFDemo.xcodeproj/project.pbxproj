@@ -1058,15 +1058,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YSFDemo/Pods-YSFDemo-resources.sh",
 				"${PODS_ROOT}/QIYU_iOS_SDK/SDK/QYResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QYResource.bundle",
 			);

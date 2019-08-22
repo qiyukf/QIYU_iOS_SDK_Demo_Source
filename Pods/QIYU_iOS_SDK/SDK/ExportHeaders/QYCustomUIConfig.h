@@ -73,6 +73,15 @@ typedef NS_ENUM(NSInteger, QYMessagesLoadState) {
 @property (nonatomic, strong) UIImageView *sessionBackground;
 
 
+//主题色设置
+
+/**
+ *  聊天页面主题色，包括访客气泡填充色、按钮填充色、默认头像填充色、“+”按钮填充色等；默认蓝色
+ *  注意：设置主题色会修改部分属性，例如访客默认头像、访客消息气泡等，后续再次修改此类属性会覆盖主题色设置
+ */
+@property (nonatomic, strong) UIColor *themeColor;
+
+
 //导航栏相关设置（人工/评价按钮可后台关闭显示）
 
 /**

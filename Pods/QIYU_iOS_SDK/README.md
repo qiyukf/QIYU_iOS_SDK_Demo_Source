@@ -1,14 +1,16 @@
 # 网易七鱼 iOS SDK 开发指南
 
-## 简介
+## 概述
 
 网易七鱼 iOS SDK 是客服系统访客端的解决方案，既包含了客服聊天逻辑管理，也提供了聊天界面，开发者可方便的将客服功能集成到自己的 App 中。iOS SDK 支持 iOS7 以上版本，同时支持 iPhone、iPad，同时支持竖屏和横屏。
 
-## 将SDK导入工程（必须）
+## 接入说明
 
-### 手动集成
+### 导入SDK
 
-* 下载 QY SDK，得到3个 .a 文件、 QYResouce 文件夹和 ExportHeaders 文件夹，将他们导入工程。
+#### 手动集成
+
+* 下载 QY SDK，得到3个 **.a** 文件、 **QYResouce** 资源文件和 **ExportHeaders** 文件夹，将他们导入工程。
 * 添加 QY SDK 依赖库：
 
   * UIKit.framework
@@ -27,19 +29,19 @@
   * libsqlite3.0.tbd
   * libxml2.tbd
 
-* 在 Build Settings -> Other Linker Flags 中添加 -ObjC 。
+* 在 Build Settings -> Other Linker Flags 中添加 **-ObjC** 。
 
-### CocoaPods集成
+#### 自动集成
 
-在 Podfile 文件中加入：
+使用 **CocoaPods** 集成，在 Podfile 文件中加入：
 
 ```objectivec
 pod    'QIYU_iOS_SDK',    '~> x.x.x'
 ```
-"x.x.x" 代表版本号，比如想要使用 3.0.0 版本，可加入如下代码：
+"x.x.x" 代表版本号，比如想要使用 5.0.0 版本，可加入如下代码：
 
 ```objectivec
-pod    'QIYU_iOS_SDK',    '~> 3.0.0'
+pod    'QIYU_iOS_SDK',    '~> 5.0.0'
 ```
 
 如果无法安装 SDK 最新版本，运行以下命令更新本地的 CocoaPods 仓库列表：
@@ -48,19 +50,60 @@ pod    'QIYU_iOS_SDK',    '~> 3.0.0'
 pod repo update
 ```
 
-### 解决符号重复的冲突
+使用 CocoaPods 过程中可能遇见的问题：
 
-从 v3.1.0 开始，没有 QIYU_iOS_SDK_Exclude_Libcrypto、QIYU_iOS_SDK_Exclude_NIM 版本了，统一使用 QIYU_iOS_SDK，此 SDK 中将各个第三方库独立出来了，总共3个.a：libQYSDK.a、libcrypto.a、libevent.a。
+1. 无法用 CocoaPods 下载到最新的 SDK
+
+   - 检查网络环境，若使用默认源及淘宝源均无法下载，可尝试使用 **Ruby China** 源：https://gems.ruby-china.com 。
+
+2. 使用 CocoaPods 更新 SDK 后编译报错
+
+   - 需检查下载的 SDK 中三个 .a 静态库文件大小，若明显偏小，则需安装 **Git LFS**（Large File Storage）服务来下载原始 SDK。
+
+   - 可使用 Homebrew 安装 Git LFS：
+
+     ```shell
+     brew install git-lfs
+     ```
+
+   - 启动 Git LFS：
+
+     ```shell
+     git lfs install
+     ```
+
+   - 安装后请重新 pod update，若仍报错，尝试清理缓存：pod cache clean --all 。
+
+#### 解决符号冲突
+
+从 V3.1.0 版本开始，不再提供 QIYU_iOS_SDK_Exclude_Libcrypto、QIYU_iOS_SDK_Exclude_NIM 版本，统一使用 **QIYU_iOS_SDK**，此 SDK 中独立第三方库，提供3个静态库文件：libQYSDK.a、libcrypto.a、libevent.a。请注意：
 
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
-2. 如果您同时使用了 OpenSSL 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
-   - 请注意，SDK 依赖的 OpenSSL 库版本为 1.0.2d，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇到版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.1.0.zip')">QIYU_iOS_SDK_SSL</a> ，依赖的 OpenSSL 库版本为 1.1.0c  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+2. 如果您同时使用了 **OpenSSL** 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
+   - 请注意，SDK 依赖的 OpenSSL 库版本为 **1.0.2d**，与 1.1.0 及以上版本存在兼容问题。
+   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.0.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
-### https相关
+#### 权限设置
 
-v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能存在链接，点击链接会用 UIWebView 打开，链接地址有可能是 http 的，为了能够正常打开，需要增加配置项。在 Info.plist 中加入以下内容：
+在 **Info.plist** 中加入以下内容：
+
+```objectivec
+<key>NSPhotoLibraryUsageDescription</key>
+<string>需要读取相册权限</string>
+<key>NSCameraUsageDescription</key>
+<string>需要相机权限</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>需要麦克风权限</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>需要写入相册权限</string>
+```
+
+如果不加，会引发 crash。请注意，iOS11 新增写入相册数据权限 `NSPhotoLibraryAddUsageDescription`。
+
+#### https相关
+
+V3.1.3 版本开始，SDK 已全面支持 https，但是聊天消息中可能存在链接，点击链接会用 `UIWebView` 打开，链接地址有可能是 http 的，为了能够正常打开，需要增加配置项。在 **Info.plist** 中加入以下内容：
 
 ```objectivec
 <key>NSAppTransportSecurity</key>
@@ -72,128 +115,126 @@ v3.1.3 版本开始，SDK 已经全面支持 https，但是聊天消息中可能
 </dict>
 ```
 
-加了这些配置项，在 iOS9 下，系统仅读取 NSAllowsArbitraryLoads，会放开所有 http 请求；在 iOS10 及以上系统，设置了 NSAllowsArbitraryLoadsInWebContent，就会忽略 NSAllowsArbitraryLoads，效果是只允许 WKWebView 中使用 http。SDK 消息流链接默认使用 UIWebView 打开，可通过截获链接点击事件使用自定义视图。
+加了这些配置项，在 iOS9 下，系统仅读取 `NSAllowsArbitraryLoads`，会放开所有 http 请求；在 iOS10 及以上系统，设置了 `NSAllowsArbitraryLoadsInWebContent`，就会忽略 `NSAllowsArbitraryLoads`，效果是只允许 `WKWebView` 中使用 http。SDK 消息流链接默认使用 `UIWebView` 打开，可通过截获链接点击事件使用自定义网页视图。
 
-### iOS10权限设置
+#### 类库说明
 
-在 Info.plist 中加入以下内容：
+SDK 主要提供以下类/协议/方法：
 
-```objectivec
-<key>NSPhotoLibraryUsageDescription</key>
-<string>需要照片权限</string>
-<key>NSCameraUsageDescription</key>
-<string>需要相机权限</string>
-<key>NSMicrophoneUsageDescription</key>
-<string>需要麦克风权限</string>
-```
+|         类/协议         |      描述      |                      说明                      |
+| :---------------------: | :------------: | :--------------------------------------------: |
+|        QYHeaders        |   头文件集合   |         集合了非平台企业客服功能头文件         |
+|          QYSDK          |   SDK 主入口   | 提供初始化/注册/注销/界面及配置对象获取等方法  |
+| QYSessionViewController | 聊天界面控制器 | 聊天主界面，同时提供各类参数设置及部分功能接口 |
+|    QYCustomUIConfig     |   UI 配置类    |                  样式相关设置                  |
+|  QYCustomActionConfig   |   事件配置类   |                  事件相关设置                  |
+|  QYConversationManager  |   会话管理类   |     负责获取会话列表及消息未读数并监听变化     |
+|        QYSource         |   窗口来源类   |    会话窗口来源，包含标题、URL 及自定义信息    |
+|       QYUserInfo        |   用户信息类   |           用户信息，包含ID及详细信息           |
+|       QYStaffInfo       |   客服信息类   |      人工客服信息，可替换人工客服部分信息      |
+|      QYMessageInfo      |     消息类     |          包含消息类型、时间及文本信息          |
+|      QYSessionInfo      |   会话详情类   | 会话列表中会话详情，包含会话状态、未读数等信息 |
+|     QYCommodityInfo     |   商品信息类   |            包含商品标题、描述等信息            |
+|      QYPushMessage      |   推送消息类   |            包含消息类型、头像等信息            |
+|        QYAction         |   通用事件类   |   定义部分通用事件回调，例如请求客服相关事件   |
+|      QYEvaluation       |   评价数据类   |       定义满意度评价数据、选项数据及结果       |
 
-如果不加，会 crash。
+自定义消息相关：
 
-### iOS11权限设置
+|            类/协议            |         描述         |             说明             |
+| :---------------------------: | :------------------: | :--------------------------: |
+|          QYCustomSDK          | 自定义消息头文件集合 |  集合了自定义消息功能头文件  |
+| QYCustomSessionViewController |  聊天界面控制器分类  | 提供自定义消息专用属性及接口 |
+|    QYCustomMessageProtocol    |    自定义消息协议    |    事件委托/视图点击协议     |
+|        QYCustomMessage        |    自定义消息基类    |  承载消息数据，可继承并扩展  |
+|         QYCustomModel         |      数据源基类      | 消息列表数据源，可继承并扩展 |
+|      QYCustomContentView      |     消息视图基类     |  消息对应视图，可继承并扩展  |
+|         QYCustomEvent         |      消息事件类      |        消息内点击事件        |
 
-在 Info.plist 中加入以下内容：
+平台企业相关：
 
-```objectivec
-<key>NSPhotoLibraryAddUsageDescription</key>
-<string>App需要您的同意,才能添加照片到相册</string>
-```
+|          类/协议           |        描述        |                说明                |
+| :------------------------: | :----------------: | :--------------------------------: |
+|          QYPOPSDK          | 平台企业头文件集合 |    集合了平台企业相关功能头文件    |
+| QYPOPSessionViewController | 聊天界面控制器分类 |     提供平台企业专用属性及接口     |
+|  QYPOPConversationManager  |   会话管理类分类   | 提供平台企业会话管理专用接口及协议 |
+|      QYPOPMessageInfo      |     消息类分类     |     提供平台企业专用属性及接口     |
+|      QYPOPSessionInfo      |   会话详情类分类   |     提供平台企业专用属性及接口     |
 
-如果不加，会 crash。请注意，iOS11 需要的是 NSPhotoLibraryAddUsageDescription，跟 iOS10 需要的 NSPhotoLibraryUsageDescription 不一样。
+#### 其它说明
 
-### iOS11兼容性
+* 为保证系统兼容性，请使用 V3.11.0 以上版本。
+* SDK 支持 Bitcode。
+* 由于 SDK 是静态库，且为了方便开发者使用，我们将 armv7、arm64、i386、x86_64 平台的静态库合并成一个 Fat Library，导致整个 SDK 比较大。但实际编译后大约只会增加 App **4-5M** 大小。
+* 在需要使用 SDK 的地方 `import "QYSDK.h"`。
 
-请使用 v3.11.0 以上的版本。
+### 初始化SDK
 
-### 其它说明
-
-* 在需要使用 SDK 的地方 import "QYSDK.h"。
-* 由于 SDK 是静态库，且为了方便开发者使用，我们将 armv7、arm64、i386、x86_64 平台的静态库合并成一个 Fat Library，导致整个 SDK 比较大。但实际编译后大约只会增加 App 4-5M 大小。
-
-### 可能遇到的问题1
-1. 无法用 CocoaPods 下载到最新的 SDK
-   - 有可能是使用了淘宝源，尝试使用默认源。
-
-2. 使用 CocoaPods 更新 SDK 后编译报错
-
-   - 需检查下载的 SDK 中三个 .a 静态库文件大小，若明显偏小，则需安装 Git LFS（Large File Storage）服务来下载原始 SDK。
-
-   - 可使用 Homebrew 安装 Git LFS：
-
-     ```objective-c
-     brew install git-lfs
-     ```
-
-   - 启动 Git LFS：
-
-     ```objective-c
-     git lfs install
-     ```
-
-   - 安装后请重新 pod update，若仍报错，尝试清理缓存：pod cache clean --all 。
-
-## 初始化SDK（必须）
+在使用 SDK 任何方法前，都应先调用初始化方法。正常业务情况下，初始化方法有且只应调用一次。推荐在 App 启动时进行初始化操作：
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ......
-    
+    ...
     [[QYSDK sharedSDK] registerAppId:AppKey appName:App名称];
-    
-    ......
-    
-    return YES;
+    ...
 }
 ```
-1. AppKey 可以在 管理后台 -> 设置 -> App接入 -> 2. App Key 找到。
-AppName 对应管理后台添加一个 App 时填写的 “App 名称”。如果管理后台还没有添加 App，请及时添加。如果 AppName 跟管理后台 App 的 “App 名称” 不一致，会导致无法正常收到苹果的消息推送。
-2. 一般在 “application: didFinishLaunchingWithOptions:” 这个方法里面调用 “registerAppId: appName:” 方法，如果在其他时刻调用，在调用之前，就等于没有在使用七鱼的服务。在整个软件运行期间必须只调用一次，如果调用多次，将会有严重的不可预测的问题。
+1. AppKey 可在 **管理端-应用-在线系统-设置-在线接入-APP-2.App Key** 找到，请确保填写完整及正确，无空格，否则可能导致功能异常。
+2. AppName 对应管理端添加 App 时填写的 App名称。如需使用访客分流等功能，请及时在管理端添加 App，并填写正确的 bundleID 用于区分不同 App；如需使用推送功能，请选择相应环境上传对应推送证书，请自行确保证书有效性。
+3. 一般在`application: didFinishLaunchingWithOptions:`方法中调用初始化方法，如需在其他地方调用，请确保时机在启动客服功能前，且应预留一段初始化时间；尽量保证在整个软件运行期间仅调用一次。
 
-## 集成聊天组件（必须）
+### 集成聊天组件
+
+通过`[QYSDK sharedSDK]`单例的`sessionViewController`方法可获取聊天界面控制器实例：
 
 ```objectivec
 [[QYSDK sharedSDK] sessionViewController];
 ```
 
-应用层获取此 sessionViewController 之后，必须嵌入到 UINavigationController 中，便可以获得聊天窗口的UI以及所有功能。 sessionViewController 只会使用到导航栏的 self.navigationItem.title 和 self.navigationItem.rightBarButtonItem。self.navigationItem.title 放置标题栏； self.navigationItem.rightBarButtonItem 放置"人工客服"、“评价”等入口。必须注意， 不能在 sessionViewController 外层套其他 viewController 之后再嵌入到 UINavigationcontroller。
+1. 获取界面实例后，必须嵌入至导航栏控制器`UINavigationController`中，便可获得完整聊天窗口及所有功能。
+2. `QYSessionViewController`会使用到导航栏`navigationItem`的标题文字属性`title`、标题视图属性`titleView`、右侧按钮属性`rightBarButtonItems`，若使用自定义导航栏，请确保以上属性能正常设置，否则会影响部分功能。
+3. 每次调用`[QYSDK sharedSDK]`单例的`sessionViewController`方法，都会新建一个聊天页面，请确保`QYSessionViewController`实例同一时刻全局唯一，且退出后该界面实例能够正常释放，尽量避免循环引用导致的内存泄漏，否则会引发一系列不可预知问题。
 
-### 集成方式一
+#### 方式一
 
-如果调用代码所在的 viewController 在 UINavigationController 中，可如下方式集成：
+如果调用代码所在的视图控制器在`UINavigationController`中，可 **push** 进入聊天界面：
 
 
 ```objectivec
 QYSource *source = [[QYSource alloc] init];
-source.title = @"七鱼金融";
-source.urlString = @"https://8.163.com/";
+source.title = @"七鱼客服";
+source.urlString = @"https://qiyukf.com/";
+
 QYSessionViewController *sessionViewController = [[QYSDK sharedSDK] sessionViewController];
-sessionViewController.sessionTitle = @"七鱼金融";
+sessionViewController.sessionTitle = @"七鱼客服";
 sessionViewController.source = source;
 sessionViewController.hidesBottomBarWhenPushed = YES;
 [self.navigationController pushViewController:sessionViewController animated:YES];
 ```
 
-### 集成方式二
+#### 方式二
 
-如果调用代码所在的 viewController 不在 UINavigationController 中，可如下方式集成：
+如果调用代码所在的视图控制器不在`UINavigationController`中，可 **present** 进入聊天界面：
 
 ```objectivec
 QYSource *source = [[QYSource alloc] init];
-source.title = @"七鱼金融";
-source.urlString = @"https://8.163.com/";
+source.title = @"七鱼客服";
+source.urlString = @"https://qiyukf.com/";
+
 QYSessionViewController *sessionViewController = [[QYSDK sharedSDK] sessionViewController];
-sessionViewController.sessionTitle = @"七鱼金融";
+sessionViewController.sessionTitle = @"七鱼客服";
 sessionViewController.source = source;
 UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sessionViewController];
 [self presentViewController:nav animated:YES completion:nil];
 ```
-一般来说，第二种方式需要在左上角加一个返回按钮，在 “initWithRootViewController:” 之前加上：
+一般来说，present 方式需要在左上角加返回按钮：
 
 ```objectivec
 UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
 sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 ```
 
-“onBack:” 的样例：
+`onBack:`的样例：
 
 ```objectivec
 - (void)onBack:(id)sender {
@@ -201,45 +242,38 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
 }
 ```
 
-如果您的代码要求所有 viewController 继承某个公共基类，并且公共基类对 UINavigationController 统一做了某些处理，或者对 UINavigationController 做了自己的扩展，这种情况可能会导致集成之后存在某些问题；或者其他原因导致使用第一种方式集成会有问题；这些情况下，建议您使用第二种方式集成。
+请根据情况选择合适的方式进入聊天界面。
 
-### 可能遇到的问题2
+#### 常见问题
 1. 进入访客聊天界面马上 crash
-   - 检查 App 工程配置－> Build Phases -> copy Bundle Resources 里面有没有 QYResource.bundle；如果没有，必须加上。
+   - 检查 App **工程配置-Build Phases-copy Bundle Resources** 里是否添加 QYResource.bundle；一般来讲，导入时会自动添加，如果没有，必须加上。
+
 2. 一直显示正在连接客服
    - 可能是 AppKey 填写错误，请确保完全正确，勿带空格。
-   - 可能是 App 引入或 App 使用的第三方 SDK 引入 OpenSSL 版本不兼容，导致底层数据加解密抛异常；关于 OpenSSL 版本问题需具体情况具体分析。
-3. 能否同时创建多个 sessionViewController
-   - 不能，需要保持全局唯一。每次调用 [[QYSDK sharedSDK] sessionViewController] 会得到一个全新的 QYSessionViewController 对象，开发者需要保证此对象全局唯一，尽量避免循环引用导致的内存泄漏问题。
-4. 怎么知道 sessionViewController 被 pop 了
+   - 可能是 App 引入或 App 使用的第三方 SDK 引入 OpenSSL 版本不兼容，导致底层数据加解密抛异常；关于 OpenSSL 版本问题请具体情况具体分析。
 
-   - 请参考 UINavigationControllerDelegate 中提供的转场函数：
+3. 导航栏可以自定义吗
+   - 部分自定义。聊天界面会占用导航栏`navigationItem`的标题文字属性`title`、标题视图属性`titleView`、右侧按钮属性`rightBarButtonItems`；`navigationItem`的其它部分，比如`leftBarButtonItems`等，可以根据需要做自定义。
 
-     ```objectivec
-     - (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC;
-     ```
-5. sessionViewController 的导航栏可以自定义吗
-   - 部分自定义。sessionViewController 会占用 self.navigationItem.title 和 self.navigationItem.rightBarButtonItem；navigationItem 的其它部分，比如 leftBarButtonItem 等，您可以根据需要做任何自定义。
-6. 聊天界面可以自定义吗
-   - 部分自定义。 具体可参考 QYCustomUIConfig 类，Demo 源码中也有相关样例代码。
-7. 评价按钮为什么不能点
-   - 请求到客服之后，评价按钮才能点。如果客服不在线或者排队中，是不能点的。
-8. 键盘出现异常
+4. 聊天界面可以自定义吗
+   - 部分样式及事件自定义。 具体可参考`QYCustomUIConfig`等配置类，Demo 源码中也有相关样例代码。
 
-   - 检查下 App 中是否用到了会影响全局的键盘处理，如果是这种情况，需要对 QYSessionViewController 做屏蔽。典型的比如第三方键盘库 IQKeyboardManager，如果用的是 IQKeyboardManager v4.0.4 以前的版本（不包括 v4.0.4 ），加入以下屏蔽代码：
+5. 键盘出现异常
+
+   - 检查 App 中是否用到了会影响全局的键盘处理，如果是这种情况，需要对`QYSessionViewController`做屏蔽。典型的比如第三方键盘库`IQKeyboardManager`，如果用的是 V4.0.4 以前的版本（不包括 V4.0.4 ），请添加以下屏蔽代码：
 
      ```objectivec
      [[IQKeyboardManager sharedManager] disableDistanceHandlingInViewControllerClass:[QYSessionViewController class]];
      ```
-
-   - 如果用的是 IQKeyboardManager v4.0.4 或以后的版本，加入以下屏蔽代码：
+     如果用的是 V4.0.4 或之后的版本，请添加以下屏蔽代码：
 
      ```objectivec
      [[IQKeyboardManager sharedManager].disabledDistanceHandlingClasses addObject:[QYSessionViewController class]];
      ```
-9. 如何强制竖屏
 
-   - 如果您的 App 是横屏的，但是希望聊天界面是竖屏的，可以在 sessionViewController 所在的 UINavigationController 中实现以下方法，返回 UIInterfaceOrientationMaskPortrait 即可：
+6. 如何强制竖屏
+
+   - 如果您的 App 是横屏的，但希望聊天界面竖屏，可以在`sessionViewController`所在的`UINavigationController`中实现以下方法，返回`UIInterfaceOrientationMaskPortrait`即可：
 
      ```objectivec
      - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -247,138 +281,88 @@ sessionViewController.navigationItem.leftBarButtonItem = leftItem;
      }
      ```
 
-## 注销（必须）
+7. 怎么知道聊天界面控制器被 pop 了
+
+   - 请参考`UINavigationControllerDelegate`中提供的转场函数：
+
+     ```objectivec
+     - (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC;
+     ```
+
+## CRM对接
+
+网易七鱼系统可在访客匿名状态下使用，同时提供对接企业 CRM 系统能力。轻量对接是指企业产品客户端（或网站）在获取到用户账号信息之后，将访客信息作为参数传递给网易七鱼系统，数据将展现在客服工作界面的当前会话和历史会话的 **用户资料** 标签下。
+
+### 上报用户信息
+
+`QYUserInfo`类用于承载用户信息，提供如下属性：
+
+| 属性   | 类型     | 必须 | 说明                                   |
+| ------ | -------- | ---- | -------------------------------------- |
+| userId | NSString | 是   | 用户唯一性标识                         |
+| data   | NSString | 是   | 数组 JSON 字符串形式，展示在客服端信息 |
+
+其中`data`属性采用数组的 JSON 字符串形式描述用户详细信息，数组中每个元素代表一个数据项，数据项以`<key, value>`对形式为基础，增加了额外字段以控制显示样式，具体可参考 [网易七鱼企业信息对接开发指南](../crm/qiyu_crm_interface.html) 。
+
+获取`[QYSDK sharedSDK]`单例后，调用如下接口上传用户信息：
+
+```objectivec
+/**
+ *  设置个人信息。用户帐号登录成功之后，调用此函数
+ *  注意：此方法尽量在账号登录成功后调用，而不应仅在进入客服界面时调用；否则可能会造成客服连接状态不稳定
+ *
+ *  @param userInfo 个人信息
+ */
+- (void)setUserInfo:(QYUserInfo *)userInfo;
+
+/**
+ *  设置个人信息，带authToken校验。用户帐号登录成功之后，调用此函数
+ *
+ *  @param userInfo 个人信息
+ *  @param block authToken校验结果的回调
+ */
+- (void)setUserInfo:(QYUserInfo *)userInfo authTokenVerificationResultBlock:(QYCompletionWithResultBlock)block;
+```
+
+其中`setUserInfo: authTokenVerificationResultBlock:` 方法回调 AuthToken 校验结果，AuthToken 可通过`[QYSDK sharedSDK]`单例的如下接口设置：
+
+```objectivec
+/**
+ *  设置authToken
+ */
+- (void)setAuthToken:(NSString *)authToken;
+```
+
+### 注销用户
+
+App 退出账号时须调用 SDK 的注销操作。由`[QYSDK sharedSDK]`单例提供接口：
 
 ```objectivec
 [[QYSDK sharedSDK] logout:^(BOOL success) {}];
 ```
 
-应用层退出自己的账号时必须调用 SDK 的注销操作。该接口仅在用户注销账号或是账号过期等情况下调用，应避免频繁调用造成反复创建账号。
+该接口仅在用户退出账号或是账号过期等情况下调用，应避免频繁调用造成反复创建账号。
 
-## 完成各项设置（可选）
+### 常见问题
 
-### 会话管理类
+1. 因`setUserInfo:`调用时机导致的客服连接状态不稳定
+   - `setUserInfo:`标准使用方法为 App 账号登录成功后，将拿到的账号信息构建成`QYUserInfo`对象进行上报。由于数据上报需要时间，加上不同的`userId`可能会导致通信底层账号切换，故当此方法调用时机与连接客服时机较近时，可能会导致无法连接客服问题，请及时调整接口调用时机。
 
-#### 获取会话管理类
+## 消息推送
 
-```objectivec
-[[QYSDK sharedSDK] conversationManager];
-```
+### APNs推送
 
-返回的是会话管理类 QYConversationManager，通过这个类获得消息未读数、清除未读数、获取会话列表、设置 delegate 委托，通过此 delegate 还可监听消息未读数变化、会话列表变化及消息接收事件。
+#### 配置证书
 
-#### 获取消息未读数
+详细的证书制作及上传请参考文档：[制作推送证书并在管理后台配置](./iOS_apns.html "target=_blank") 。
 
-```objectivec
-[[[QYSDK sharedSDK] conversationManager] allUnreadCount];
-```
+#### 注册推送服务
 
-此接口返回的消息未读数是总未读数，若想分别获取不同会话的消息未读数需获取会话列表。
-
-#### 获取会话列表
-
-```objectivec
-[[[QYSDK sharedSDK] conversationManager] getSessionList];
-```
-返回结果是 QYSessionInfo 数组，QYSessionInfo.h 内容如下：
-
-```objectivec
-/**
- *  会话状态类型
- */
-typedef NS_ENUM(NSInteger, QYSessionStatus) {
-    QYSessionStatusNone,        //无
-    QYSessionStatusWaiting,     //排队中
-    QYSessionStatusInSession    //会话中
-};
-
-/**
- *  会话列表中的会话详情信息
- */
-@interface QYSessionInfo : NSObject
-
-/**
- *  会话最后一条消息文本
- */
-@property (nonatomic, copy) NSString *lastMessageText;
-
-/**
- *  消息类型
- */
-@property (nonatomic, assign) QYMessageType lastMessageType;
-
-/**
- *  会话未读数
- */
-@property (nonatomic, assign) NSInteger unreadCount;
-
-/**
- *  会话状态
- */
-@property (nonatomic, assign) QYSessionStatus status;
-
-/**
- *  会话最后一条消息的时间
- */
-@property (nonatomic, assign) NSTimeInterval lastMessageTimeStamp;
-
-/**
- *  是否存在垃圾词汇
- */
-@property (nonatomic, assign) BOOL hasTrashWords;
-
-@end
-```
-
-#### 监听消息未读数变化
-
-需要遵循协议 QYConversationManagerDelegate，并设置会话管理类的 delegate 委托：
-
-```objectivec
-[[[QYSDK sharedSDK] conversationManager] setDelegate:self];
-```
-
-然后实现该 delegate 中的如下方法：
-
-```objectivec
-/**
- *  会话未读数变化
- *
- *  @param count 未读数
- */
-- (void)onUnreadCountChanged:(NSInteger)count;
-```
-
-#### 监听会话列表变化
-
-实现协议 QYConversationManagerDelegate 中的如下方法：
-
-```objectivec
-/**
- *  会话列表变化；非平台电商用户，只有一个会话项，平台电商用户，有多个会话项
- */
-- (void)onSessionListChanged:(NSArray<QYSessionInfo *> *)sessionList;
-```
-
-#### 监听消息接收
-
-实现协议 QYConversationManagerDelegate 中的如下方法：
-
-```objectivec
-/**
- *  接收消息
- */
-- (void)onReceiveMessage:(QYMessageInfo *)message;
-```
-
-### APNS推送
-* [制作推送证书并在管理后台配置](./iOS_apns.html "target=_blank")
-* 初始化，注册推送服务 APNS；注意 iOS10 及以上系统推送相关 API 变化较大，可分系统做注册处理。
+需在 App 启动时注册推送服务：
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ......
-    
+    ...
     //注册 APNS
     if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 10.0) {
         [UNUserNotificationCenter currentNotificationCenter].delegate = self;
@@ -394,383 +378,167 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
         UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge;
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
     }
-    
-    ......
-    
-    return YES;
+    ...
 }
 ```
 
-* 将获取到的 deviceToken 传给 SDK。
+注意 iOS10 及以上系统推送相关 API 变化较大，可分系统做注册处理。
+
+获取到设备的 DeviceToken 后，传给 SDK：
 
 ```objectivec
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    ......
-    
+    ...
     [[QYSDK sharedSDK] updateApnsToken:deviceToken];
-    
-    ......
+    ...
 }
 ```
-#### 可能遇到的问题3
+
+#### 常见问题
+
 1. 无法正常推送
 
-   - 检查管理后台 App接入 中是否配置过推送证书 p12 文件，此证书是否就是此 App bundle ID 关联的推送证书。
+   - 检查管理端 App接入 中是否配置过推送证书 p12 文件，此证书是否就是此 App bundleID 关联的推送证书。
 
-   - 检查初始化时填的 AppName 是否和管理后台 “添加一个App” 时填写的 “App名称” 一致。
+   - 检查初始化时填的 AppName 是否和管理端 添加一个App 时填写的 App名称 一致。
 
    - 检查证书的线上、测试环境是否跟管理后台配置的相同。请注意，若您想同时在 Debug 包和 Release 包中均接收推送消息，应添加两个 App，分别填入不同的名称并上传线上环境和测试环境的证书，同时在注册 AppKey 的地方这样写代码：
 
-    ```objectivec
-    #if DEBUG
-        [[QYSDK sharedSDK] registerAppId:Appkey appName:Debug包App名称];
-    #else
-        [[QYSDK sharedSDK] registerAppId:Appkey appName:Release包App名称];
-    #endif
-    ```
+     ```objectivec
+     #if DEBUG
+         [[QYSDK sharedSDK] registerAppId:Appkey appName:Debug包App名称];
+     #else
+         [[QYSDK sharedSDK] registerAppId:Appkey appName:Release包App名称];
+     #endif
+     ```
 
    - 检查 provision profile 是否包含了推送证书。
-
    - 检查推送证书中是否有 p12 文件。
+   - 检查代码调试是否可以获取到 DeviceToken。
+   - 使用第三方推送工具（例如 Pusher ）检查是否可以正常推送，如果不能，说明可能是证书本身的问题。
 
-   - 检查代码调试是否可以获取到 deviceToken。
-
-   - 使用第三方推送工具检查是否可以正常推送，如果不能，说明可能是证书本身的问题。
 2. 可以同时使用第三方推送工具吗
+
    - 可以同时使用第三方推送工具和 SDK 的消息推送，两者可以共存，不会有任何冲突。
+
 3. 能否区分出哪些推送消息是来自七鱼的
-   - 所有来自七鱼的推送消息中 payload 都带有 "nim:1"，通过这个可以判断出是七鱼的推送消息。
 
-### 自定义聊天组件UI效果
+   - 所有来自七鱼的推送消息中`payload`都带有`nim:1`，以此可判断是否为七鱼的推送消息。
 
-获取自定义 UI 类对象：
+### 七鱼系统推送
 
-```objectivec
-[[QYSDK sharedSDK] customUIConfig];
-```
-QYCustomUIConfig 是负责自定义 UI 的类，必须在集成聊天组件之前完成配置项设置。相关内容如下：
+七鱼系统推送与苹果的 APNs 推送无关。开发者可以主动要求服务器推送指定ID的消息，调用`[QYSDK sharedSDK]`单例接口：
 
 ```objectivec
 /**
- *  自定义UI配置类：QYCustomUIConfig，单例模式
+ *  获取推送消息
+ *
+ *  @param messageId 消息id
  */
-@interface QYCustomUIConfig : NSObject
-
-+ (instancetype)sharedInstance;
-
-/**
- *  恢复默认设置
- */
-- (void)restoreToDefault;
-
-//聊天背景设置
-
-/**
- *  消息tableview的背景图片
- */
-@property (nonatomic, strong) UIImageView *sessionBackground;
-
-
-//导航栏相关设置（人工/评价按钮可后台关闭显示）
-
-/**
- *  导航栏右侧按钮风格，默认灰色风格，NO为白色风格
- */
-@property (nonatomic, assign) BOOL rightItemStyleGrayOrWhite;
-
-/**
- *  导航栏右侧退出会话按钮是否显示，默认为NO
- */
-@property (nonatomic, assign) BOOL showCloseSessionEntry;
-
-/**
- *  是否显示消息流头像
- */
-@property (nonatomic, assign) BOOL showHeadImage;
-
-/**
- *  是否显示导航栏客服头像
- */
-@property (nonatomic, assign) BOOL showTopHeadImage;
-
-
-//访客相关设置
-
-/**
- *  访客头像
- */
-@property (nonatomic, strong) UIImage *customerHeadImage;
-@property (nonatomic, copy) NSString *customerHeadImageUrl;
-
-/**
- *  访客消息气泡normal图片
- */
-@property (nonatomic, strong) UIImage *customerMessageBubbleNormalImage;
-
-/**
- *  访客消息气泡pressed图片
- */
-@property (nonatomic, strong) UIImage *customerMessageBubblePressedImage;
-
-/**
- *  访客文本消息字体颜色
- */
-@property (nonatomic, strong) UIColor *customMessageTextColor;
-
-/**
- *  访客文本消息中的链接字体颜色
- */
-@property (nonatomic, strong) UIColor *customMessageHyperLinkColor;
-
-/**
- *  访客文本消息字体大小
- */
-@property (nonatomic, assign) CGFloat customMessageTextFontSize;
-
-
-//客服相关设置
-
-/**
- *  客服头像
- */
-@property (nonatomic, strong) UIImage *serviceHeadImage;
-@property (nonatomic, copy) NSString *serviceHeadImageUrl;
-
-/**
- *  客服消息气泡normal图片
- */
-@property (nonatomic, strong) UIImage *serviceMessageBubbleNormalImage;
-
-/**
- *  客服消息气泡pressed图片
- */
-@property (nonatomic, strong) UIImage *serviceMessageBubblePressedImage;
-
-/**
- *  客服文本消息字体颜色
- */
-@property (nonatomic, strong) UIColor *serviceMessageTextColor;
-
-/**
- *  客服文本消息中的链接字体颜色
- */
-@property (nonatomic, strong) UIColor *serviceMessageHyperLinkColor;
-
-/**
- *  客服文本消息字体大小
- */
-@property (nonatomic, assign) CGFloat serviceMessageTextFontSize;
-
-
-//提示消息相关设置（例：***为你服务）
-
-/**
- *  提示文本消息字体颜色；提示文本消息有很多种，比如“***为你服务”就是一种
- */
-@property (nonatomic, strong) UIColor *tipMessageTextColor;
-
-/**
- *  提示文本消息字体大小；提示文本消息有很多种，比如“***为你服务”就是一种
- */
-@property (nonatomic, assign) CGFloat tipMessageTextFontSize;
-
-
-//消息相关设置
-
-/**
- *  访客分流展示模式
- */
-@property (nonatomic, assign) QYBypassDisplayMode bypassDisplayMode;
-
-/**
- *  消息竖直方向间距
- */
-@property (nonatomic, assign) CGFloat sessionMessageSpacing;
-
-/**
- *  头像与消息气泡间距，默认为4pt
- */
-@property (nonatomic, assign) CGFloat headMessageSpacing;
-
-/**
- *  消息内强提示按钮文字颜色，例如"立即评价"按钮，默认白色
- */
-@property (nonatomic, strong) UIColor *messageButtonTextColor;
-
-/**
- *  消息内强提示按钮底色，例如"立即评价"按钮，默认蓝色
- */
-@property (nonatomic, strong) UIColor *messageButtonBackColor;
-
-
-//输入栏上方操作按钮设置
-
-/**
- *  输入框上方操作按钮文字颜色
- */
-@property (nonatomic, strong) UIColor *actionButtonTextColor;
-
-/**
- *  输入框上方操作按钮边框颜色
- */
-@property (nonatomic, strong) UIColor *actionButtonBorderColor;
-
-
-//输入栏设置
-
-/**
- *  输入框字体颜色
- */
-@property (nonatomic, strong) UIColor *inputTextColor;
-
-/**
- *  输入框字体大小
- */
-@property (nonatomic, assign) CGFloat inputTextFontSize;
-
-/**
- *  输入框占位文案
- */
-@property (nonatomic, copy) NSString *inputTextPlaceholder;
-
-/**
- *  输入栏语音按钮，人工模式下是否显示，默认为YES
- */
-@property (nonatomic, assign) BOOL showAudioEntry;
-
-/**
- *  输入栏语音按钮，机器人模式下是否显示，默认为YES
- */
-@property (nonatomic, assign) BOOL showAudioEntryInRobotMode;
-
-/**
- *  输入栏表情按钮是否显示，默认为YES
- */
-@property (nonatomic, assign) BOOL showEmoticonEntry;
-
-/**
- *  输入栏相机按钮是否显示，默认为YES
- */
-@property (nonatomic, assign) BOOL showImageEntry;
-
-/**
- * 照片/视频选择页面主题颜色，默认为蓝色
- */
-@property (nonatomic, strong) UIColor *imagePickerColor;
-
-/**
- *  进入聊天界面是否自动弹出键盘，默认为YES
- */
-@property (nonatomic, assign) BOOL autoShowKeyboard;
-
-/**
- *  表示聊天组件离界面底部的间距，默认是0；比较典型的是底部有tabbar，这时候设置为tabbar的高度即可
- */
-@property (nonatomic, assign) CGFloat bottomMargin;
-
-
-//平台电商相关设置
-
-/**
- *  导航栏右侧商铺入口按钮是否显示，默认为NO
- */
-@property (nonatomic, assign) BOOL showShopEntrance;
-
-/**
- *  聊天内容区域的按钮（对于平台电商来说，这里可以考虑放置“会话列表入口“）显示，默认不显示
- */
-@property (nonatomic, assign) BOOL showSessionListEntrance;
-
-/**
- *  会话列表入口icon
- */
-@property (nonatomic, strong) UIImage *sessionListEntranceImage;
-
-/**
- *  聊天内容区域的按钮（对于平台电商来说，这里可以考虑放置“会话列表入口“）在聊天页面的位置，YES代表在右上角，NO代表在左上角，默认在右上角
- */
-@property (nonatomic, assign) BOOL sessionListEntrancePosition;
-
-
-//会话窗口上方提示条相关设置
-
-/**
- *  会话窗口上方提示条中的文本字体颜色
- */
-@property (nonatomic, strong) UIColor *sessionTipTextColor;
-
-/**
- *  会话窗口上方提示条中的文本字体大小
- */
-@property (nonatomic, assign) CGFloat sessionTipTextFontSize;
-
-/**
- *  会话窗口上方提示条中的背景颜色
- */
-@property (nonatomic, strong) UIColor *sessionTipBackgroundColor;
-
-/**
- *  输入框下方“完全自定义”配置项
- */
-@property (nonatomic, strong) NSArray<QYCustomInputItem *> *customInputItems;
-
-/**
- *  消息下拉刷新loading图片设置，区分不同state状态
- */
-- (void)setMessagesLoadImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(QYMessagesLoadState)state;
-
-@end
+- (void)getPushMessage:(NSString *)messageId;
 ```
 
-#### 更换图片素材
-
-QYCustomUIConfig 只负责修改部分样式效果，不包含所有图片素材的替换。iOS SDK 支持所有图片素材替换，只需新建 QYCustomResource.bundle，在其中放置跟 QYResource.bundle 中同名的图片素材，即可替换 QYResource.bundle 中的对应素材。为了保持效果统一，应该放置同等尺寸的图片。
-
-#### 访客分流展示样式
-
-QYCustomUIConfig 中 bypassDisplayMode 用于指定访客分流展示样式，默认分流弹层从底部弹出，还可指定 None 或是从中间弹出：
+同时，需注册推送消息通知回调：
 
 ```objectivec
 /**
- *  访客分流展示模式
+ *  推送消息回调
  */
-typedef NS_ENUM(NSInteger, QYBypassDisplayMode) {
-    QYBypassDisplayModeNone,
-    QYBypassDisplayModeCenter,
-    QYBypassDisplayModeBottom,
-};
+typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
+
+/**
+ *  注册推送消息通知回调
+ *
+ *  @param block 收到消息的回调
+ */
+- (void)registerPushMessageNotification:(QYPushMessageBlock)block;
 ```
 
-#### “照相机”替换为“更多”按钮
+收到服务器返回的消息后，进行界面展示；无论是主动获取的消息还是管理后台主动推送的消息，均采用统一接口回调。
 
-在 v4.4.0 版本之后，聊天界面输入区域 “照相机” 按钮可替换成 “更多” 按钮，点击“更多”按钮展开显示配置的选项。需要设置 QYCustomUIConfig 的 customInputItems 属性，该属性为数组类型，每个元素均为  QYCustomInputItem 类型对象，代表一个选项。QYCustomInputItem 定义如下：
+## 自定义样式
+
+iOS SDK 提供聊天界面部分样式自定义，通过`[QYSDK sharedSDK]`单例的`customUIConfig`方法获取`QYCustomUIConfig`自定义UI配置类，该类为单例模式。
+
+### 属性列表
+
+提供如下属性：
+
+| 属性                              | 类型        | 默认       | 说明                       |
+| --------------------------------- | ----------- | ---------- | -------------------------- |
+| sessionBackground                 | UIImageView | nil-纯灰底 | 消息 tableview 的背景图片  |
+| themeColor                        | UIColor     | 七鱼蓝     | 聊天页面主题色             |
+| rightItemStyleGrayOrWhite         | BOOL        | YES-灰色   | 导航栏右侧按钮风格         |
+| showCloseSessionEntry             | BOOL        | NO-隐藏    | 导航栏右侧退出会话按钮     |
+| showHeadImage                     | BOOL        | YES-显示   | 消息流头像                 |
+| showTopHeadImage                  | BOOL        | NO-隐藏    | 导航栏客服头像             |
+| customerHeadImage                 | UIImage     | 默认头像   | 访客头像图片               |
+| customerHeadImageUrl              | NSString    | nil        | 访客头像URL                |
+| customerMessageBubbleNormalImage  | UIImage     | 默认气泡   | 访客消息气泡图片           |
+| customerMessageBubblePressedImage | UIImage     | 默认气泡   | 访客消息气泡图片-按下      |
+| customMessageTextColor            | UIColor     | 白色       | 访客文本消息字体颜色       |
+| customMessageHyperLinkColor       | UIColor     | 白色       | 访客文本消息链接字体颜色   |
+| customMessageTextFontSize         | CGFloat     | 16         | 访客文本消息字体大小       |
+| serviceHeadImage                  | UIImage     | 默认头像   | 客服头像图片               |
+| serviceHeadImageUrl               | NSString    | nil        | 客服头像URL                |
+| serviceMessageBubbleNormalImage   | UIImage     | 默认气泡   | 客服消息气泡图片           |
+| serviceMessageBubblePressedImage  | UIImage     | 默认气泡   | 客服消息气泡图片-按下      |
+| serviceMessageTextColor           | UIColor     | 深灰色     | 客服文本消息字体颜色       |
+| serviceMessageHyperLinkColor      | UIColor     | 七鱼蓝     | 客服文本消息链接字体颜色   |
+| serviceMessageTextFontSize        | CGFloat     | 16         | 客服文本消息字体大小       |
+| tipMessageTextColor               | UIColor     | 白色       | 提示文本消息字体颜色       |
+| tipMessageTextFontSize            | CGFloat     | 12         | 提示文本消息字体大小       |
+| bypassDisplayMode                 | NSInteger   | 底部       | 访客分流展示模式           |
+| sessionMessageSpacing             | CGFloat     | 0          | 消息竖直方向间距           |
+| headMessageSpacing                | CGFloat     | 4          | 头像与消息气泡间距         |
+| messageButtonTextColor            | UIColor     | 白色       | 消息内强提示按钮文字颜色   |
+| messageButtonBackColor            | UIColor     | 七鱼蓝     | 消息内强提示按钮底色       |
+| actionButtonTextColor             | UIColor     | 灰色       | 输入框上方操作按钮文字颜色 |
+| actionButtonBorderColor           | UIColor     | 灰色       | 输入框上方操作按钮边框颜色 |
+| inputTextColor                    | UIColor     | 深灰色     | 输入框字体颜色             |
+| inputTextFontSize                 | CGFloat     | 14         | 输入框字体大小             |
+| inputTextPlaceholder              | NSString    | 默认文案   | 输入框占位文案             |
+| showAudioEntry                    | BOOL        | YES-显示   | 输入栏语音按钮-人工        |
+| showAudioEntryInRobotMode         | BOOL        | YES-显示   | 输入栏语音按钮-机器人      |
+| showEmoticonEntry                 | BOOL        | YES-显示   | 输入栏表情按钮             |
+| showImageEntry                    | BOOL        | YES-显示   | 输入栏相机按钮             |
+| imagePickerColor                  | UIColor     | 七鱼蓝     | 照片/视频选择页面主题颜色  |
+| autoShowKeyboard                  | BOOL        | YES-弹出   | 自动弹出键盘               |
+| bottomMargin                      | CGFloat     | 0          | 聊天页面距离界面底部间距   |
+| showShopEntrance                  | BOOL        | NO-隐藏    | 导航栏右侧商铺入口按钮     |
+| showSessionListEntrance           | BOOL        | NO-隐藏    | 会话列表入口按钮           |
+| sessionListEntranceImage          | UIImage     | nil        | 会话列表入口图片           |
+| sessionListEntrancePosition       | BOOL        | YES-右上角 | 会话列表入口位置           |
+| sessionTipTextColor               | UIColor     | 橘色       | 会话窗口上方提示条字体颜色 |
+| sessionTipTextFontSize            | CGFloat     | 14         | 会话窗口上方提示条字体大小 |
+| sessionTipBackgroundColor         | UIColor     | 黄色       | 会话窗口上方提示条背景颜色 |
+| customInputItems                  | NSArray     | nil-无     | 输入栏更多按钮展开项       |
+
+### 接口列表
+
+提供如下接口：
+
+| 接口                                       | 说明                                           |
+| ------------------------------------------ | ---------------------------------------------- |
+| restoreToDefault                           | 恢复默认设置                                   |
+| setMessagesLoadImages: duration: forState: | 消息下拉刷新loading图片设置，区分不同state状态 |
+
+### 配置更多按钮
+
+V4.4.0 版本后，聊天界面输入栏 **相机** 按钮可替换为 **更多** 按钮，点击按钮显示半屏页面，放置自定义按钮；按钮数组通过`QYCustomUIConfig`的`customInputItems`属性配置，数组元素为`QYCustomInputItem`对象，该类提供如下配置项：
+
+| 属性          | 类型                   | 必须 | 说明                  |
+| ------------- | ---------------------- | ---- | --------------------- |
+| normalImage   | UIImage                | 否   | 按钮图片（64pt）      |
+| selectedImage | UIImage                | 否   | 按钮图片-按下（64pt） |
+| text          | NSString               | 否   | 按钮标题              |
+| block         | QYCustomInputItemBlock | 否   | 点击事件回调          |
+
+为达到最佳效果，建议按钮图片宽高均为64pt。目前SDK对外开放了发送**文本**、**图片**、**视频**、**商品**、**订单**等能力，可自由选择使用。配置`customInputItems`样例代码：
 
 ```objectivec
 /**
- *  输入框下方“更多”配置项点击回调
- */
-typedef void (^QYCustomInputItemBlock)();
-
-/**
- *  输入框下方“更多”配置项
- *  注：为达到最佳效果，配置项图片最佳尺寸为64ptx64pt
- */
-@interface QYCustomInputItem : NSObject
-
-@property (nonatomic, strong) UIImage *normalImage;
-@property (nonatomic, strong) UIImage *selectedImage;
-@property (nonatomic, copy) NSString *text;
-@property (nonatomic, copy) QYCustomInputItemBlock block;
-
-@end
-```
-
-配置 customInputItems 示例如下：
-
-```objectivec
-/**
- * 可自由配置customInputItems，目前SDK对外开放了发送图片、文本、商品、订单等能力
- * 针对相册或拍摄按钮，点击时可直接调用系统UIImagePickerController，也可调起自定义界面，选择照片后调用接口发送图片消息即可
+ * 相册/拍摄功能可直接调用UIImagePickerController，也可自定义界面，选择照片后调用接口发送图片消息即可
  */
 QYCustomInputItem *photoItem = [[QYCustomInputItem alloc] init];
 photoItem.normalImage = [UIImage imageNamed:@"icon_photo_normal"];
@@ -784,168 +552,680 @@ cameraItem.selectedImage = [UIImage imageNamed:@"icon_camera_pressed"];
 cameraItem.text = @"拍摄";
 cameraItem.block = ^{ };
 
-QYCustomInputItem *textItem = [[QYCustomInputItem alloc] init];
-textItem.normalImage = [UIImage imageNamed:@"icon_file_normal"];
-textItem.selectedImage = [UIImage imageNamed:@"icon_file_pressed"];
-textItem.text = @"发送文本";
-textItem.block = ^{ };
-
-QYCustomInputItem *productItem = [[QYCustomInputItem alloc] init];
-productItem.normalImage = [UIImage imageNamed:@"icon_card_normal"];
-productItem.selectedImage = [UIImage imageNamed:@"icon_card_pressed"];
-productItem.text = @"发送商品";
-productItem.block = ^{ };
-	    
-NSArray *items = @[photoItem, cameraItem, textItem, productItem];
-[[QYSDK sharedSDK] customUIConfig].customInputItems = items;
+[[QYSDK sharedSDK] customUIConfig].customInputItems = @[photoItem, cameraItem];
 ```
 
-### 自定义聊天组件事件处理
+### 配置消息加载动效
 
-获取自定义事件处理类对象：
-
-```objectivec
-[[QYSDK sharedSDK] customActionConfig];
-```
-QYCustomActionConfig 是负责自定义事件处理的类。相关内容如下：
+V5.0.0 版本后，SDK 支持自定义历史消息下拉加载动效，需提供不同状态下图片数组，目前下拉加载状态有三种：空闲/即将加载/加载中，可提供不同动效图片组来实现不同状态加载动效。
 
 ```objectivec
 /**
- *  本类提供了所有自定义行为的接口
- *  每个接口对应一个自定义行为的处理，如果设置了，则使用设置的处理，如果不设置，则采用默认处理
+ *  消息下拉加载状态
  */
+typedef NS_ENUM(NSInteger, QYMessagesLoadState) {
+    QYMessagesLoadStateIdle,
+    QYMessagesLoadStateWillLoad,
+    QYMessagesLoadStateLoading,
+};
+```
 
+使用样例：
+
+```objectivec
+[[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:@[idleImg]
+                                                 duration:0
+                                                 forState:QYMessagesLoadStateIdle];
+[[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:@[willImg]
+                                                 duration:0
+                                                 forState:QYMessagesLoadStateWillLoad];
+NSArray *loadingArray = @[loadingImg_1, loadingImg_2, loadingImg_3, loadingImg_4];
+[[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:loadingArray
+                                                 duration:0.2
+                                                 forState:QYMessagesLoadStateLoading];
+```
+
+### 更换图片素材
+
+七鱼 iOS SDK 支持所有图片素材的替换。开发者需要新建资源文件`QYCustomResource.bundle`，在其中放置与 `QYResource.bundle`同名的图片素材，即可实现替换。为保证最佳效果，应替换同等尺寸图片。
+
+## 功能配置
+
+七鱼客服系统主要功能配置由主页面控制器`QYSessionViewController`提供，可配置机器人客服、人工客服、消息加载等功能，同时对外开放了部分能力。
+
+### 会话来源
+
+针对不同的会话场景，可在进入聊天页面时设置不同的会话来源信息，与客服建立联系后，客服可在会话窗口右侧 **访问信息-会话页** 查看来源信息。样例如下：
+
+```objectivec
+QYSource *source = [[QYSource alloc] init];
+source.title = @"七鱼客服";
+source.urlString = @"https://qiyukf.com/";
+sessionViewController.source = source;
+```
+
+请注意，代码中的`sessionViewController`均指代由`[QYSDK sharedSDK]`单例的`sessionViewController`方法新建的聊天界面控制器实例。
+
+会话来源`QYSource`类提供了如下属性：
+
+| 属性       | 类型     | 必须 | 说明           |
+| ---------- | -------- | ---- | -------------- |
+| title      | NSString | 否   | 来源标题       |
+| urlString  | NSString | 否   | 来源链接       |
+| customInfo | NSString | 否   | 来源自定义信息 |
+
+### 机器人客服
+
+#### 指定机器人
+
+若企业开通了机器人，且不止一个，可在聊天页面入口匹配不同机器人，提高服务效率。通过配置`sessionViewController`的`robotId`属性指定机器人，样例如下：
+
+```objectivec
+sessionViewController.robotId = 123456;
+```
+
+指定ID后，进入聊天页面时，会直接以此ID去请求对应的机器人客服。
+
+机器人客服ID查询：**管理端-应用-机器人-在线机器人**
+
+#### 指定常见问题
+
+用户进入机器人会话时，可以收到设置的一组常见问题，不同聊天入口可配置不同常见问题模板，提高咨询效率。通过配置`sessionViewController`的`commonQuestionTemplateId`属性指定问题模板，样例如下：
+
+```objectivec
+sessionViewController.commonQuestionTemplateId = 123456;
+```
+
+指定ID后，进入聊天页面联系客服时会带上问题模板ID参数，服务端下发对应的常见问题消息。
+
+常见问题模板ID查询：**管理端-应用-机器人-在线机器人-设置-常见问题-设置常见问题模板**
+
+### 人工客服
+
+#### 指定客服
+
+若企业有多个咨询入口，为提高咨询效率，可在不同咨询入口设置对应的人工客服接待。通过配置`sessionViewController`的`staffId`属性指定人工客服，样例如下：
+
+```objectivec
+sessionViewController.staffId = 123456;
+```
+
+指定ID后，进入聊天页面时，会直接以此ID去请求对应的人工客服。
+
+人工客服ID查询：**管理端-应用-在线系统-设置-会话流程-会话分配-ID查询-客服及客服组ID查询**
+
+指定客服ID后，进入聊天页面时会默认跳过机器人客服直接连接人工客服；如果希望先连接机器人客服，转人工时再连接指定的人工客服，可通过配置如下属性：
+
+```objectivec
+sessionViewController.openRobotInShuntMode = YES;
+```
+
+默认为NO。
+
+#### 指定客服组
+
+若企业有多个咨询入口，为提高咨询效率，可在不同咨询入口设置对应的人工客服组接待。通过配置`sessionViewController`的`groupId`属性指定客服组，样例如下：
+
+```objectivec
+sessionViewController.groupId = 123456;
+```
+
+指定ID后，进入聊天页面时，会直接以此ID去请求对应的客服组，服务组会随机分配客服组中可用客服接待。
+
+客服组ID查询：**管理端-应用-在线系统-设置-会话流程-会话分配-ID查询-客服及客服组ID查询**
+
+指定客服组ID后，进入聊天页面时会默认跳过机器人客服直接连接客服组内人工客服；如果希望先连接机器人客服，转人工时再连接指定的客服组，可通过配置如下属性：
+
+```objectivec
+sessionViewController.openRobotInShuntMode = YES;
+```
+
+默认为NO。
+
+#### 指定客服信息
+
+V4.6.0 版本之后，新增自定义人工客服信息功能，配置完成后该入口人工客服的昵称、头像、接入语等均会被设置的信息替换。样例如下：
+
+```objectivec
+QYStaffInfo *staffInfo = [[QYStaffInfo alloc] init];
+staffInfo.staffId = @"123456";
+staffInfo.nickName = @"七鱼客服";
+staffInfo.iconURL = @"客服头像链接";
+staffInfo.accessTip = @"七鱼客服为您服务";
+staffInfo.infoDesc = @"系统提示：当前用户选择了七鱼客服";
+sessionViewController.staffInfo = staffInfo;
+```
+
+客服信息`QYStaffInfo`类提供了如下属性：
+
+| 属性      | 类型     | 必须 | 说明                 |
+| --------- | -------- | ---- | -------------------- |
+| staffId   | NSString | 是   | 客服ID，限制20字符   |
+| nickName  | NSString | 否   | 客服昵称，限制20字符 |
+| iconURL   | NSString | 否   | 客服头像URL          |
+| accessTip | NSString | 否   | 接入提示，限制50字符 |
+| infoDesc  | NSString | 否   | 客服信息描述         |
+
+请注意，必须配置`staffId`信息，且应保证标识唯一性，用以区分不同客服信息。昵称、头像、接入提示若没有配置则按原逻辑显示。客服信息描述字段`infoDesc`用于接入人工客服后隐式向客服发送消息的文本，访客端无感知。
+
+#### 主动请求客服
+
+V4.4.0 版本之后，新增主动请求人工客服接口：
+
+```objectivec
 /**
- *  action事件回调
+ *  请求人工客服
  */
-typedef void (^QYActionBlock)(QYAction *action);
+- (void)requestHumanStaff;
+```
 
-/**
- *  链接点击事件回调
- */
-typedef void (^QYLinkClickBlock)(NSString *linkAddress);
+该接口仅在当前无会话或机器人模式下才能主动请求人工客服，否则无效。 
 
-/**
- *  bot点击事件回调
- */
-typedef void (^QYBotClickBlock)(NSString *target, NSString *params);
+#### 主动切换客服
 
-/**
- *  退出排队回调
- */
-typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
+V4.6.0 版本之后，新增主动切换人工客服接口：
 
+```objectivec
 /**
- *  显示bot自定义信息回调
- */
-typedef void (^QYShowBotCustomInfoBlock)(NSArray *array);
-
-/**
- *  bot商品卡片按钮点击事件回调
- */
-typedef void (^QYSelectedCommodityActionBlock)(QYSelectedCommodityInfo *commodityInfo);
-
-/**
- *  扩展视图点击回调
+ *  切换人工客服
  *
- *  @param extInfo 附带信息
+ *  @param staffId 客服ID
+ *  @param groupId 分组ID
+ *  @param closetip 切换提示语
+ *  @param closeCompletion 退出旧会话完成的回调
+ *  @param requestCompletion 请求新会话完成的回调
  */
-typedef void (^QYExtraViewClickBlock)(NSString *extInfo);
+- (void)changeHumanStaffWithStaffId:(int64_t)staffId
+                            groupId:(int64_t)groupId
+                           closetip:(NSString *)closetip
+                    closeCompletion:(QYCompletion)closeCompletion
+                  requestCompletion:(QYCompletion)requestCompletion;
+```
 
+切换客服逻辑为自动结束当前会话，并使用设置的 `staffId`或`groupId`去请求新的人工客服；在结束当前会话时，消息流中会展示提示消息 **您退出了咨询**，此文案可通过设置接口中的`closetip`来替换。 
+
+#### 主动结束会话
+
+V5.2.0 版本之后，新增主动结束会话/退出排队接口：
+
+```objectivec
 /**
- *  系统消息点击回调
- *
- *  @param message 消息对象
+ *  退出会话/退出排队
  */
-typedef void (^QYSystemNotificationClickBlock)(id message);
+- (void)closeSession;
+```
 
+结束逻辑为判断当前会话状态，若处在会话中，则退出当前会话；若处在排队流程中，则效果相当于点击 **取消排队** 按钮，退出排队。结束会话前会二次确认。
+
+### 访客信息
+
+#### 访客等级
+
+`sessionViewController`提供访客 **VIP** 等级设置：
+
+```objectivec
+sessionViewController.vipLevel = 1;
+```
+
+默认为非VIP。 
+
+### 商品卡片
+
+#### 商品定义
+
+访客进入不同咨询入口可带入该入口对应的商品信息，以商品卡片消息的形式自动或主动发送，提供多个配置字段并支持点击跳转链接，方便客服直观了解访客咨询内容。商品信息类`QYCommodityInfo`提供如下属性：
+
+| 属性             | 类型     | 必须 | 说明                                      |
+| ---------------- | -------- | ---- | ----------------------------------------- |
+| show             | BOOL     | 否   | 是否在访客端隐藏，默认隐藏                |
+| isCustom         | BOOL     | 否   | 是否自定义-只显示图片，默认否             |
+| sendByUser       | BOOL     | 否   | 是否由访客手动发送，默认否                |
+| title            | NSString | 否   | 商品标题，限制100字符                     |
+| desc             | NSString | 否   | 商品描述，限制300字符                     |
+| pictureUrlString | NSString | 否   | 商品图片，限制1000字符                    |
+| urlString        | NSString | 否   | 跳转链接，限制1000字符                    |
+| note             | NSString | 否   | 备注信息-可用于价格/订单号等，限制100字符 |
+| tagsArray        | NSArray  | 否   | 商品卡片标签按钮，限制3个                 |
+| tagsString       | NSString | 否   | 商品卡片标签按钮，限制3个，二选一         |
+| actionText       | NSString | 否   | 访客手动发送按钮文案                      |
+| actionTextColor  | UIColor  | 否   | 访客手动发送按钮文案颜色                  |
+| ext              | NSString | 否   | 附加信息，透传数据                        |
+
+需要注意的是，默认访客端隐藏商品卡片；商品卡片展现形式分为两种，默认所有字段均展示，若isCustom设置为YES，则仅展示商品图片；卡片下方可携带标签按钮，但按钮仅在客服端显示，访客端无需显示。
+
+样例如下：
+
+```objectivec
+QYCommodityInfo *commodityInfo = [[QYCommodityInfo alloc] init];
+commodityInfo.show = YES;
+commodityInfo.title = @"网易七鱼";
+commodityInfo.desc = @"网易七鱼是网易旗下一款专注于解决企业与客户沟通的客服系统产品。";
+commodityInfo.pictureUrlString = @"http://qiyukf.com/main/res/img/index/barcode.png";
+commodityInfo.urlString = @"http://qiyukf.com/";
+commodityInfo.note = @"￥10000";
+
+sessionViewController.commodityInfo = commodityInfo;
+```
+
+商品卡片点击事件可自定义，具体请查阅文档 **自定义事件** 相关说明。
+
+#### 发送规则
+
+- 若入口设置了商品信息，进入后需等待人工客服连接，成功后自动发送商品卡片消息；若企业开启机器人，默认不发送给机器人客服，转人工客服后再发送，该逻辑可通过配置`sessionViewController`的`autoSendInRobot`属性修改为机器人可接收商品卡片消息。
+- 若设置了商品信息，同时开启了机器人客服及`autoSendInRobot`属性，则进入聊天页面连接上机器人客服后，自动发送商品卡片；之后转人工客服连接成功后，会再次发送商品卡片给人工。
+- 会话未结束退出咨询页面后再次进入，会判断商品卡片是否重复，若关键信息重复则不再继续发送，若信息有变化会再次发送。
+- 会话未结束，访客App重启，进入同一咨询入口会重复发送一次商品卡片。
+
+### 会话消息
+
+七鱼客服系统 iOS SDK 默认持久化所有账户的聊天消息至本地数据库，进入聊天页面时从数据库中读取历史消息并显示出来，并非网络拉取。
+
+#### 消息加载规则
+
+默认消息加载规则为**20条**，即进入聊天页面，从数据库中读取最近的20条历史消息进行展示，若不满20条，则全部显示。访客可手动下拉加载更多历史消息，每次加载20条数据。注意20条不仅是普通消息，系统类型消息也包含在内，例如时间消息、接入提示消息等。此加载规则可修改，由`sessionViewController`提供属性：
+
+```objectivec
 /**
- *  所有消息内事件点击回调
- *
- *  @param eventName 事件名称
- *  @param eventData 数据
- *  @param messageId 消息ID
+ *  每页消息加载的最大数量，默认为20条
  */
-typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString *messageId);
+@property (nonatomic, assign) NSInteger messagePageLimit; 
+```
 
+#### 历史消息收起
 
+进入聊天页面后，无论是重新连接客服还是继续上次会话，从数据库读取的历史消息默认全部展示。设置历史消息收起后，进入聊天页面若需重新连接客服，则不会读取和显示历史消息，访客主动下拉加载历史消息后，消息流中新增 **以上为历史消息** 用以区分新旧消息。通过配置`sessionViewController`属性可收起历史消息：
+
+```objectivec
 /**
- *  自定义行为配置类：QYCustomActionConfig，单例模式
+ *  是否收起历史消息，默认为NO；若设置为YES，进入会话界面时若需创建新会话，则收起历史消息
  */
-@interface QYCustomActionConfig : NSObject
+@property (nonatomic, assign) BOOL hideHistoryMessages;
+```
 
-+ (instancetype)sharedInstance;
+同时可自定义提示文案：
 
+```objectivec
 /**
- *  action事件
+ *  历史消息提示文案，默认为“——以上为历史消息——”；仅在hideHistoryMessages为YES，首次下拉历史消息时展示
  */
-@property (nonatomic, copy) QYActionBlock actionBlock;
+@property (nonatomic, copy) NSString *historyMessagesTip;
+```
 
-/**
- *  所有消息中的链接（自定义商品消息、文本消息、机器人答案消息）的回调处理
- */
-@property (nonatomic, copy) QYLinkClickBlock linkClickBlock;
+#### 漫游消息拉取
 
-/**
- *  bot相关点击
- */
-@property (nonatomic, copy) QYBotClickBlock botClick;
+七鱼客服系统支持账号信息打通，对于企业通过`setUserInfo:`接口传入的`userId`，服务端会合并不同访客端产生的消息记录。iOS SDK 默认不从服务端拉取漫游消息，仅读取本地数据库持久化数据。若开启漫游消息拉取功能，则在企业调用`setUserInfo:`时会联网请求该`userId`账户对应的漫游历史消息，并与本地数据库进行对比过滤重复数据。漫游功能独立于聊天页面，在`QYCustomActionConfig`单例中配置：
 
-/**
- *  推送消息相关点击
- */
-@property (nonatomic, copy) QYLinkClickBlock pushMessageClick;
-
-/**
- *  显示bot自定义信息
- */
-@property (nonatomic, copy) QYShowBotCustomInfoBlock showBotCustomInfoBlock;
-
-/**
- *  bot商品卡片按钮点击事件
- */
-@property (nonatomic, copy) QYSelectedCommodityActionBlock commodityActionBlock;
-
-/**
- *  扩展视图点击
- */
-@property (nonatomic, copy) QYExtraViewClickBlock extraClickBlock;
-
-/**
- *  系统消息点击
- */
-@property (nonatomic, copy) QYSystemNotificationClickBlock notificationClickBlock;
-
-/**
- *  消息内点击
- */
-@property (nonatomic, copy) QYEventBlock eventClickBlock;
-
+```objectivec
 /**
  *  账号登录后是否拉取漫游消息
  */
 @property (nonatomic, assign) BOOL pullRoamMessage;
-
-/**
- *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession
- *
- *  @param deactivate 是否deactivate，默认为YES
- */
-- (void)setDeactivateAudioSessionAfterComplete:(BOOL)deactivate;
-
-/**
- *  显示退出排队提示
- *
- *  @param quitWaitingBlock 选择结果回调
- */
-- (void)showQuitWaiting:(QYQuitWaitingBlock)quitWaitingBlock;
-
-@end
 ```
 
-#### 客服相关事件处理
+默认关闭。 
 
-在 v4.6.0 版本之后，修改了关于客服相关事件的对外接口，可以拦截所有请求客服前和请求客服后的事件，需要设置 QYCustomActionConfig 中的 actionBlock 属性，该 block 返回一个 QYAction 对象，此对象定义如下：
+#### 发送能力
+
+七鱼 iOS SDK 对外提供一些标准能力，针对消息发送开放了文本、图片、视频、商品、订单五种消息类型，企业可调用这些标准能力直接发送对应消息。
+
+##### 文本消息
+
+可直接调用接口发送文本消息，传入字符串：
+
+```objectivec
+/**
+ *  发送文本消息
+ */
+- (void)sendText:(NSString *)text; 
+```
+
+##### 图片消息
+
+可直接调用接口发送图片消息，传入`UIImage`对象：
+
+```objectivec
+/**
+ *  发送图片消息
+ */
+- (void)sendPicture:(UIImage *)picture; 
+```
+
+##### 视频消息
+
+V5.2.0 版本之后，可直接调用接口发送视频消息，传入视频存储地址：
+
+```objectivec
+/**
+ *  发送视频消息
+ */
+- (void)sendVideo:(NSString *)filePath;
+```
+
+同时，七鱼 iOS SDK 还提供拍摄视频功能，允许调用内部视频录制界面，注意该界面依赖于客服聊天界面，不可完全脱离此界面调用：
+
+```objectivec
+/**
+ *  拍摄视频完成回调
+ *  @param filePath 视频存储路径
+ */
+typedef void (^QYVideoCompletion)(NSString *filePath);
+
+/**
+ *  拍摄视频
+ */
+- (void)shootVideoWithCompletion:(QYVideoCompletion)completion;
+```
+
+接口提供视频拍摄完成回调，返回视频存储地址，可使用上述`sendVideo:`方法发送此视频给客服，或进行其他特殊化处理。
+
+##### 商品消息
+
+与上面进入聊天界面自动发送商品卡片不同，您也可以在任意时刻调用接口主动发送商品消息，传入`QYCommodityInfo`对象：
+
+```objectivec
+/**
+ *  发送商品信息展示
+ */
+- (void)sendCommodityInfo:(QYCommodityInfo *)commodityInfo; 
+```
+
+##### 订单消息
+
+订单对象`QYSelectedCommodityInfo`提供更多属性字段方便信息展示，包括订单状态`p_status`、价格`p_price`、数量`p_count`、库存`p_stock`等等，接口如下：
+
+```objectivec
+/**
+ *  发送订单列表中选中的商品信息
+ */
+- (void)sendSelectedCommodityInfo:(QYSelectedCommodityInfo *)commodityInfo; 
+```
+
+### 满意度评价
+
+#### 自定义评价界面
+
+V5.0.0 版本之后，七鱼 iOS SDK 对外提供自定义满意度评价界面，方便客户实现带有企业特色的评价界面。要完成自定义评价功能，首先需修改 **管理端-应用-在线系统-设置-会话流程-满意度评价-样式设置-评价样式** 选项为 **新页面**，此处填入的页面链接对移动端无效。
+
+修改完成后，SDK 会将满意度评价事件以 block 形式抛出，并提供相关满意度数据，随管理端配置更新：
+
+```objectivec
+/**
+ *  满意度评价事件回调
+ *
+ *  @param data 评价数据，包括评价模式、选项及标签、上次评价结果等数据，据此构建评价界面
+ */
+typedef void (^QYEvaluationBlock)(QYEvaluactionData *data);
+
+/**
+ *  满意度评价事件
+ */
+@property (nonatomic, copy) QYEvaluationBlock evaluationBlock;
+```
+
+满意度评价数据`QYEvaluactionData`类提供了如下属性：
+
+| 属性             | 类型                | 说明                                             |
+| ---------------- | ------------------- | ------------------------------------------------ |
+| sessionId        | long long           | 评价会话ID，提交评价结果时需透传                 |
+| mode             | NSUInteger          | 评价模式，支持二/三/四/五级模式，管理端配置      |
+| optionList       | NSArray             | 选项数据，数组元素为`QYEvaluationOptionData`对象 |
+| resolvedEnabled  | BOOL                | 是否向访客收集 “您的问题是否解决”                |
+| resolvedRequired | BOOL                | “您的问题是否解决”是否必填                       |
+| lastResult       | QYEvaluactionResult | 上次评价结果                                     |
+
+其中，满意度选项数据`QYEvaluationOptionData`类提供如下属性：
+
+| 属性           | 类型       | 说明                                           |
+| -------------- | ---------- | ---------------------------------------------- |
+| option         | NSUInteger | 选项类型，非常满意/满意/一般/不满意/非常不满意 |
+| name           | NSString   | 选项名称                                       |
+| score          | NSInteger  | 选项分值                                       |
+| tagList        | NSArray    | 标签，每个选项限制10个                         |
+| tagRequired    | BOOL       | 标签是否必填                                   |
+| remarkRequired | BOOL       | 备注是否必填                                   |
+
+同时提供上次评价结果`QYEvaluactionResult`对象，该对象提供如下属性：
+
+| 属性          | 类型                   | 说明                               |
+| ------------- | ---------------------- | ---------------------------------- |
+| sessionId     | long long              | 评价会话ID，不可为空               |
+| selectOption  | QYEvaluationOptionData | 选中的选项，不可为空               |
+| selectTags    | NSArray                | 选中的标签，若标签必填，则不可为空 |
+| remarkString  | NSString               | 评价备注，若备注必填，则不可为空   |
+| resolveStatus | NSInteger              | 问题是否解决，若必填，则不可为None |
+
+获取到评价数据后，可根据数据配置构建不同模式的评价界面，然后使用`sessionViewController`弹出。
+
+#### 发送评价结果
+
+当用户评价完成后，需将评价结果回传给 SDK，由 SDK 传递数据给后台并进行后续的评价反馈动作，发送结果接口如下：
+
+```objectivec
+/**
+ *  满意度评价结果返回值
+ */
+typedef NS_ENUM(NSInteger, QYEvaluationState) {
+    QYEvaluationStateSuccessFirst = 1,  //成功-首次评价
+    QYEvaluationStateSuccessRevise,     //成功-修改评价
+    QYEvaluationStateFailParamError,    //失败-发送参数错误
+    QYEvaluationStateFailNetError,      //失败-网络错误
+    QYEvaluationStateFailNetTimeout,    //失败-网络超时
+    QYEvaluationStateFailTimeout,       //失败-评价超时
+    QYEvaluationStateFailUnknown,       //失败-未知原因不可评价
+};
+
+/**
+ *  评价结果回调
+ *
+ *  @param state 结果
+ */
+typedef void (^QYEvaluationCompletion)(QYEvaluationState state);
+
+/**
+ *  发送满意度评价结果
+ */
+- (void)sendEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
+```
+
+接口提供评价成功/失败的结果回调，若评价成功，需收起评价界面，若评价失败，可提示用户失败原因。
+
+### 其他
+
+#### 输入栏快捷入口
+
+ 七鱼客服聊天界面提供输入栏上方快捷入口设置，区分机器人与人工两种模式。机器人模式下，快捷入口需在企业机器人相关配置页面进行按钮及事件的配置，不同节点可配置不同快捷入口，配置成功后快捷入口自动显示在输入栏上方，且根据配置自动更新，无需代码配置。
+
+人工模式下，快捷入口按钮有两种配置方案，一种通过 **管理端-应用-在线系统-设置-访客端-样式设置-App端-输入框上方快捷入口** 配置按钮，并设置相应事件，注意此功能在 V5.2.0 版本后提供；在后台样式设置关闭情况下，可通过代码配置人工快捷入口。
+
+快捷入口按钮`QYButtonInfo`类提供了如下属性：
+
+| 属性       | 类型                 | 必须 | 说明                                            |
+| ---------- | -------------------- | ---- | ----------------------------------------------- |
+| buttonId   | id                   | 是   | 快捷入口ID，未限制类型                          |
+| title      | NSString             | 否   | 快捷入口标题                                    |
+| userData   | id                   | 否   | 透传数据，未限制类型                            |
+| actionType | NSUInteger, Readonly | —    | 按钮响应事件传递信息，1-文本/2-链接或自定义行为 |
+| index      | NSUInteger, Readonly | —    | 响应按钮位置                                    |
+
+添加按钮的示例代码：
+
+```objectivec
+QYButtonInfo *button_1 = [[QYButtonInfo alloc] init];
+button_1.buttonId = [NSNumber numberWithLongLong:1001];
+button_1.title = @"按钮标题1";
+
+QYButtonInfo *button_2 = [[QYButtonInfo alloc] init];
+button_2.buttonId = [NSNumber numberWithLongLong:1002];
+button_2.title = @"按钮标题2";
+
+sessionViewController.buttonInfoArray = @[button_1, button_2];
+```
+
+#### 顶部悬停视图
+
+V4.7.0 版本中，获取到 `sessionViewController`后，可自定义聊天界面顶部区域，支持外部注册入视图，可配置视图高度和边距；此视图悬停在聊天界面导航栏下方、消息列表上方，不随消息流滚动。注册接口为：
+
+```objectivec
+/**
+ *  注册聊天界面顶部悬停视图
+ *
+ *  @param hoverView 顶部悬停视图
+ *  @param height 视图高度
+ *  @param insets 视图边距，默认UIEdgeInsetsZero；top表示视图与导航栏底部距离，bottom设置无效，left/right分别表示距离屏幕左右边距
+ */
+- (void)registerTopHoverView:(UIView *)hoverView height:(CGFloat)height marginInsets:(UIEdgeInsets)insets;
+```
+
+支持销毁此视图，支持设置是否有渐隐动画及动画时长，销毁接口如下：
+
+```objectivec
+/**
+ *  销毁聊天界面顶部悬停视图
+ */
+- (void)destroyTopHoverViewWithAnmation:(BOOL)animated duration:(NSTimeInterval)duration;
+```
+
+## 会话管理
+
+七鱼 iOS SDK 提供会话项相关信息，支持多会话，具体见 **平台电商** 相关说明。对于非平台企业，会话项一般只有一项，会话相关管理类`QYConversationManager`单例通过如下方法获取：
+
+```objectivec
+[[QYSDK sharedSDK] conversationManager];
+```
+
+可获取会话消息未读数、清除未读数、获取会话列表、监听会话项变化等。
+
+### 消息未读数
+
+可通过如下接口主动获取消息的未读数量，用于显示未读红点：
+
+```objectivec
+/**
+ *  所有的未读数
+ *
+ *  @return 未读数
+ */
+- (NSInteger)allUnreadCount;
+```
+
+如需收到未读消息数量变化通知，通过如下接口设置委托：
+
+```objectivec
+/**
+ *  设置会话委托
+ *
+ *  @param delegate 会话委托
+ */
+- (void)setDelegate:(id<QYConversationManagerDelegate>)delegate;
+```
+
+并实现该委托中如下方法即可监听数量变化：
+
+```objectivec
+/**
+ *  会话未读数变化
+ *
+ *  @param count 未读数
+ */
+- (void)onUnreadCountChanged:(NSInteger)count;
+```
+
+该未读数为所有会话项的总未读数，如需分开需获取会话列表。如需清空消息未读数量，请调用如下接口：
+
+```objectivec
+/**
+ *  清空未读数
+ *
+ */
+- (void)clearUnreadCount;
+```
+
+### 会话列表
+
+可通过如下接口主动获取会话列表，用于构建会话列表页面：
+
+```objectivec
+/**
+ *  获取所有会话的列表；非平台电商用户，只有一个会话项，平台电商用户，有多个会话项
+ *
+ *  @return 包含SessionInfo的数组
+ */
+- (NSArray<QYSessionInfo *> *)getSessionList;
+```
+
+如需收到会话列表变化通知，实现委托中如下方法即可：
+
+```objectivec
+/**
+ *  会话列表变化；非平台电商用户，只有一个会话项，平台电商用户，有多个会话项
+ */
+- (void)onSessionListChanged:(NSArray<QYSessionInfo *> *)sessionList;
+```
+
+会话列表数据以数组形式提供，每个数组元素为`QYSessionInfo`对象，提供如下属性：
+
+| 属性                 | 类型           | 说明                                 |
+| -------------------- | -------------- | ------------------------------------ |
+| lastMessageText      | NSString       | 会话最后一条消息文本                 |
+| lastMessageType      | NSInteger      | 消息类型：文本/图片/语音/视频/自定义 |
+| unreadCount          | NSInteger      | 会话未读数                           |
+| status               | NSInteger      | 会话状态：无/排队中/会话中           |
+| lastMessageTimeStamp | NSTimeInterval | 会话最后一条消息时间戳               |
+| hasTrashWords        | BOOL           | 是否存在垃圾词汇                     |
+
+### 监听消息接收
+
+如需实时监听消息接收情况，实现协议`QYConversationManagerDelegate`中的如下方法：
+
+```objectivec
+/**
+ *  接收消息
+ */
+- (void)onReceiveMessage:(QYMessageInfo *)message;
+```
+
+接口提供接收到的最新消息对象`QYMessageInfo`类，该类提供如下属性：
+
+| 属性      | 类型           | 说明                                 |
+| --------- | -------------- | ------------------------------------ |
+| text      | NSString       | 消息文本                             |
+| type      | NSInteger      | 消息类型：文本/图片/语音/视频/自定义 |
+| timeStamp | NSTimeInterval | 消息时间戳                           |
+
+## 自定义事件
+
+iOS SDK 提供部分功能事件自定义，通过`[QYSDK sharedSDK]`单例的`customActionConfig`方法获取`QYCustomActionConfig`自定义事件配置类，该类为单例模式。
+
+### 属性列表
+
+`QYCustomActionConfig`主要以回调形式实现事件自定义，提供较多block属性设置：
+
+| 属性                   | 类型                           | 说明                                   |
+| ---------------------- | ------------------------------ | -------------------------------------- |
+| actionBlock            | QYActionBlock                  | 部分通用动作事件，目前主要用于客服相关 |
+| linkClickBlock         | QYLinkClickBlock               | 所有消息中的链接回调                   |
+| botClick               | QYBotClickBlock                | 机器人部分模板消息点击事件             |
+| pushMessageClick       | QYLinkClickBlock               | 七鱼推送消息点击事件                   |
+| showBotCustomInfoBlock | QYShowBotCustomInfoBlock       | 机器人自定义信息回调                   |
+| commodityActionBlock   | QYSelectedCommodityActionBlock | 订单卡片按钮点击事件                   |
+| extraClickBlock        | QYExtraViewClickBlock          | 消息扩展视图点击事件                   |
+| notificationClickBlock | QYSystemNotificationClickBlock | 系统消息点击                           |
+| eventClickBlock        | QYEventBlock                   | 消息内部分点击事件数据透传             |
+| customButtonClickBlock | QYCustomButtonBlock            | 自定义事件按钮点击事件                 |
+| pullRoamMessage        | BOOL                           | 账号登录后是否拉取漫游消息             |
+
+### 接口列表
+
+提供如下接口：
+
+| 接口                                    | 说明                                           |
+| --------------------------------------- | ---------------------------------------------- |
+| setDeactivateAudioSessionAfterComplete: | 设置录制或者播放语音完成以后是否自动deactivate |
+| showQuitWaiting:                        | 显示退出排队提示                               |
+
+### 请求客服事件
+
+V4.6.0 版本后，SDK 完善了客服相关事件的对外接口，可以拦截所有请求客服前和请求客服后的事件，需要设置`QYCustomActionConfig`中的`actionBlock`属性，该`block`返回一个`QYAction`对象，此对象定义如下：
 
 ```objectivec
 /**
@@ -985,7 +1265,7 @@ typedef NS_ENUM(NSInteger, QYActionType) {
 };
 ```
 
-QYRequestStaffBeforeBlock 为请求客服前回调的 block，该事件给出了当前请求客服是何种场景，开发者可针对不同场景做定制化处理，其定义如下：
+`QYRequestStaffBeforeBlock`为请求客服前回调的`block`，该事件给出了当前请求客服是何种场景，开发者可针对不同场景做定制化处理，其定义如下：
 
 ```objectivec
 /**
@@ -1004,7 +1284,6 @@ typedef NS_ENUM(NSInteger, QYRequestStaffBeforeScene) {
     QYRequestStaffBeforeSceneNavHumanButton,     //机器人模式下，点击右上角人工按钮
     QYRequestStaffBeforeSceneActiveRequest,      //主动请求人工客服
     QYRequestStaffBeforeSceneChangeStaff,        //切换人工客服
-    QYRequestStaffBeforeSceneReconnect,          //重新连接客服
 };
 
 /**
@@ -1017,7 +1296,7 @@ typedef NS_ENUM(NSInteger, QYRequestStaffBeforeScene) {
 typedef void (^QYRequestStaffBeforeBlock)(QYRequestStaffBeforeScene scene, BOOL onlyHuman, QYCallback callback);
 ```
 
-QYRequestStaffAfterBlock 为请求客服后回调的 block，其中 info 为新会话的相关信息，包括客服ID、昵称、头像等，block 定义如下：
+`QYRequestStaffAfterBlock`为请求客服后回调的`block`，其中`info`为新会话的相关信息，包括客服ID、昵称、头像等，`block`定义如下：
 
 ```objectivec
 /**
@@ -1060,427 +1339,13 @@ QYActionBlock actionBlock = ^(QYAction *action) {
 [[QYSDK sharedSDK] customActionConfig].actionBlock = actionBlock;
 ```
 
-注：在 v4.4.0 版本中，仅可拦截请求客服前事件；若要拦截，请设置 QYCustomActionConfig 中的 requestStaffBlock，处理完成后，请主动调用该 block 中的 completion 回调，并设置 needed 参数，YES 表示继续请求客服，NO 表示中断请求客服。
+注：在 V4.4.0 版本中，仅可拦截请求客服前事件；若要拦截，请设置`QYCustomActionConfig`中的`requestStaffBlock`，处理完成后，请主动调用该`block`中的`completion`回调，并设置`needed`参数，YES 表示继续请求客服，NO 表示中断请求客服。
 
-### 自定义商品信息
+## 行为轨迹
 
-获取到 sessionViewController 之后，可以指定商品信息并主动发送给客服。带着商品信息进入聊天界面，分为两种情况：如果当前还没请求到人工客服， 则不会发送商品信息，等待请求人工客服成功后会主动发送；如果当前已经处于人工客服会话状态中了，会立即发送商品信息。示例如下：
+### 页面行为轨迹
 
-```objectivec
-QYCommodityInfo *commodityInfo = [[QYCommodityInfo alloc] init];
-commodityInfo.title = @"网易七鱼";
-commodityInfo.desc = @"网易七鱼是网易旗下一款专注于解决企业与客户沟通的客服系统产品。";
-commodityInfo.pictureUrlString = @"http://qiyukf.com/main/res/img/index/barcode.png";
-commodityInfo.urlString = @"http://qiyukf.com/";
-commodityInfo.note = @"￥10000";
-commodityInfo.show = YES;
-
-sessionViewController.commodityInfo = commodityInfo;
-```
-
-QYCommodityInfo.h 相关内容如下：
-
-```objectivec
-/**
- *  QYCommodityTag：自定义商品信息卡片按钮信息
- */
-@interface QYCommodityTag : NSObject
-
-@property (nonatomic, copy) NSString *label;
-@property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) NSString *focusIframe;
-@property (nonatomic, copy) NSString *data;
-
-@end
-
-
-/**
- *  商品信息类：QYCommodityInfo
- */
-@interface QYCommodityInfo : NSObject
-
-/**
- *  商品标题，字符数要求小于100
- */
-@property (nonatomic, copy) NSString *title;
-
-/**
- *  商品描述，字符数要求小于300
- */
-@property (nonatomic, copy) NSString *desc;
-
-/**
- *  商品图片url，字符数要求小于1000
- */
-@property (nonatomic, copy) NSString *pictureUrlString;
-
-/**
- *  跳转url，字符数要求小于1000
- */
-@property (nonatomic, copy) NSString *urlString;
-
-/**
- *  备注信息，可以显示价格，订单号等，字符数要求小于100
- */
-@property (nonatomic, copy) NSString *note;
-
-/**
- *  发送时是否要在用户端隐藏，YES为显示，NO为隐藏，默认为NO
- */
-@property (nonatomic, assign) BOOL show;
-
-/**
- *  自定义商品信息按钮数组，最多显示三个按钮;
- */
-@property (nonatomic, copy) NSArray<QYCommodityTag *> *tagsArray;
-
-/**
- *  自定义商品信息按钮数组，最多显示三个按钮;NSString *类型，跟上面的数组类型二选一
- */
-@property (nonatomic, copy) NSString *tagsString;
-
-/**
- *  是否自定义，YES代表是，NO代表否，默认NO。
- *  自定义的话，只有pictureUrlString、urlString有效，只显示一张图片 (v4.4.0)
- */
-@property (nonatomic, assign) BOOL isCustom;
-
-/**
- *  是否由访客手动发送，YES代表是，NO代表否，默认NO (v4.4.0)
- */
-@property (nonatomic, assign) BOOL sendByUser;
-
-/**
- *  发送按钮文案 (v4.4.0)
- */
-@property (nonatomic, copy) NSString *actionText;
-
-/**
- *  发送按钮文案颜色 (v4.4.0)
- */
-@property (nonatomic, strong) UIColor *actionTextColor;
-
-/**
- *  一般用户不需要填这个字段，这个字段仅供特定用户使用
- */
-@property (nonatomic, copy) NSString *ext;
-
-@end
-```
-
-以上的自动发送商品信息功能仅在人工客服下有效，在 v4.4.0 版本之后，获取到 sessionViewController 后，可设置机器人模式下是否开启自动发送商品卡片功能，默认不开启。若开启，则设置商品信息后，机器人模式下也可直接发送商品卡片：
-
-```objectivec
-sessionViewController.autoSendInRobot = YES;
-```
-
-#### 主动发送商品信息
-
-QYSessionViewController.h 中开放了发送商品信息接口，可以主动调用发送：
-
-```objectivec
-[sessionViewController sendCommodityInfo:commodityInfo];
-```
-
-#### 可能遇到的问题4
-
-1. 商品链接的点击处理可自定义，请参看此文档关于 QYCustomActionConfig 的相关说明。
-
-### 指定客服ID或客服组ID
-
-在获取 sessionViewController 之后，可以指定客服ID或客服组ID：
-
-```objectivec
-sessionViewController.groupId = groupId;
-sessionViewController.staffId = staffId;
-```
-
-指定之后，进入聊天界面时，会直接以此ID去请求对应的客服或者客服组。在 管理后台 -> 设置 -> 高级设置 -> 访客分配 -> ID查询 中可查询到客服ID或客服组ID。
-
-### 多机器人接入
-
-在获取 sessionViewController 之后，可以指定机器人ID：
-
-```objectivec
-sessionViewController.robotId = robotId;
-```
-
-指定之后，进入聊天界面时，会直接以此ID去请求对应的机器人。在 管理后台 -> 设置 -> 机器人 -> 机器人列表 -> 机器人ID 中可查询到机器人ID。
-
-### 指定常见问题模版ID
-
-在获取 sessionViewController 之后，可以指定常见问题模版ID：
-
-```objectivec
-sessionViewController.commonQuestionTemplateId = commonQuestionTemplateId;
-```
-
-指定之后，进入聊天界面时，会直接以此ID去请求对应的常见问题模版。在 管理后台 -> 设置 -> 机器人 -> 常见问题设置 中可查询到常见问题模版ID。
-
-### 访客分流是否开启机器人 
-
-在获取 sessionViewController 之后，可以指定访客分流是否开启机器人，默认不开启。如果开启机器人，则选择客服或者客服分组之后，先进入机器人模式：
-
-```objectivec
-sessionViewController.openRobotInShuntMode = YES;
-```
-
-### 自定义客服信息
-
-在 v4.6.0 版本之后，新增自定义人工客服信息功能，配置完成后人工客服的昵称、头像、接入语等均会被设置的信息替换。需要在 QYSessionViewController 中设置如下属性：
-
-```objectivec
-/**
- *  人工客服信息
- */
-@property (nonatomic, strong) QYStaffInfo *staffInfo;
-```
-
-QYStaffInfo 对象可配置人工客服的多项信息，注意必须配置 staffId，用以区分人工客服；其他的配置项若设置了则替换，未设置则使用默认，QYStaffInfo 定义如下：
-
-```objectivec
-/**
- *  人工客服信息
- */
-@interface QYStaffInfo : NSObject
-
-/**
- *  客服ID，限制20字符
- */
-@property (nonatomic, copy) NSString *staffId;
-
-/**
- *  客服昵称，限制20字符
- */
-@property (nonatomic, copy) NSString *nickName;
-
-/**
- *  客服头像URL
- */
-@property (nonatomic, copy) NSString *iconURL;
-
-/**
- *  接入提示，限制50字符
- */
-@property (nonatomic, copy) NSString *accessTip;
-
-/**
- *  客服信息描述
- */
-@property (nonatomic, copy) NSString *infoDesc;
-
-@end
-```
-
-### 请求人工客服
-
-在 v4.4.0 版本之后，获取到 sessionViewController 后，提供直接请求人工客服接口：
-
-```objectivec
-[sessionViewController requestHumanStaff];
-```
-
-该接口仅在当前无会话或机器人模式下才能主动请求人工客服。
-
-### 切换人工客服
-
-在 v4.6.0 版本之后，获取到 sessionViewController 后，提供切换人工客服接口：
-
-```objectivec
-/**
- *  切换人工客服
- *
- *  @param staffId 客服ID
- *  @param groupId 分组ID
- *  @param closetip 切换提示语
- *  @param closeCompletion 退出旧会话完成的回调
- *  @param requestCompletion 请求新会话完成的回调
- */
-- (void)changeHumanStaffWithStaffId:(int64_t)staffId
-                            groupId:(int64_t)groupId
-                           closetip:(NSString *)closetip
-                    closeCompletion:(QYCompletion)closeCompletion
-                  requestCompletion:(QYCompletion)requestCompletion;
-```
-
-切换客服逻辑为自动结束当前会话，并使用设置的 staffId 或 groupId 去请求新的人工客服；在结束当前会话时，消息流中会展示一条 “您退出了咨询”，此文案可通过设置接口中的 closetip 来替换。
-
-### 设置VIP等级 
-
-在获取 sessionViewController 之后，可以设置访客的 VIP 等级，默认是 非VIP 。VIP 等级分两种，一种是 非VIP 和 VIP1 ～ VIP10，VIP 对应的数值是1 ～ 10；另一种是 非VIP 和 VIP ，VIP 对应的数值是11。
-
-```objectivec
-sessionViewController.vipLevel = 1;
-```
-
-### CRM上报
-
-可以主动上报 CRM 信息，使用 QYSDK.h 中的 setUserInfo: 接口设置用户信息，QYUserInfo 定义如下：
-
-```objectivec
-/**
- *  个人信息
- */
-@interface QYUserInfo : NSObject
-
-/**
- *  个人账号Id
- */
-@property (nonatomic, copy) NSString *userId;
-
-/**
- *  用户详细信息json数据
- */
-@property (nonatomic, copy) NSString *data;
-
-@end
-```
-
-示例代码：
-
-```objectivec
-static NSString * const QYKey = @"key";
-static NSString * const QYValue = @"value";
-static NSString * const QYHidden = @"hidden";
-static NSString * const QYIndex = @"index";
-static NSString * const QYLabel = @"label";
-
-QYUserInfo *userInfo = [[QYUserInfo alloc] init];
-userInfo.userId = @"userId";
-NSDictionary *nameDict = @{
-                           QYKey : @"real_name",
-                           QYValue : @"边晨",
-                           };
-NSDictionary *phoneDict = @{
-                            QYKey : @"mobile_phone",
-                            QYValue : @"13805713536",
-                            QYHidden : @(NO),
-                            };
-NSDictionary *emailDict = @{
-                            QYKey : @"email",
-                            QYValue : @"bianchen@163.com",
-                            };
-NSDictionary *authDict = @{
-                           QYKey : @"authentication",
-                           QYValue : @"已认证",
-                           QYIndex : @"0",
-                           QYLabel : @"实名认证",
-                           };
-NSDictionary *cardDict = @{
-                           QYKey : @"bankcard",
-                           QYValue : @"622202******01116068",
-                           QYIndex : @"1",
-                           QYLabel : @"绑定银行卡",
-                           };
-NSArray *array = @[nameDict, phoneDict, emailDict, authDict, cardDict];
-NSData *data = [NSJSONSerialization dataWithJSONObject:array options:0 error:nil];
-if (data) {
-    userInfo.data = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-[[QYSDK sharedSDK] setUserInfo:userInfo];
-```
-[具体请看官网 CRM 相关文档](../crm/qiyu_crm_interface.html)
-
-#### 可能遇到的问题5
-
-1. 首次安装 App 无法连接客服，或客服连接状态不稳定
-   - 检查 setUserInfo: 接口调用时机，应在账号登录成功后立即调用该接口上报 CRM 信息，而不应仅在进入客服界面时刻调用；若 setUserInfo: 接口调用时机与连接客服时机太近，底层账号还未登录及初始化成功，会造成客服连接状态不稳定等问题。
-
-### 七鱼系统推送消息
-
-七鱼系统推送消息与苹果的 APNS 推送无关。可以主动要求服务器推送指定的消息：
-
-```objectivec
-/**
- *  获取推送消息
- *
- *  @param messageId 消息id
- */
-- (void)getPushMessage:(NSString *)messageId;
-```
-
-可以接收服务器返回的消息，进行界面展示；不管是主动获取的消息还是管理后台主动推送的消息，都通过此接口获取：
-
-```objectivec
-/**
- *  推送消息回调
- */
-typedef void(^QYPushMessageBlock)(QYPushMessage *pushMessage);
-
-/**
- *  注册推送消息通知回调
- *
- *  @param block 收到消息的回调
- */
-- (void)registerPushMessageNotification:(QYPushMessageBlock)block;
-```
-
-### 设置输入区域上方工具栏
-
-在 v3.13.0 版本之后，开放了输入区域上方工具栏按钮设置，设置 QYSessionViewController 中如下属性：
-
-```objectivec
-/**
- *  输入区域上方工具栏内的按钮信息
- */
-@property (nonatomic, copy) NSArray<QYButtonInfo *> *buttonInfoArray;
-```
-
-数组中元素为 QYButtonInfo 对象，定义如下：
-
-```objectivec
-/**
- *  输入区域上方工具栏内按钮信息类：QYButtonInfo
- *  注: actionType及index为button点击事件传递信息，仅可读
- *  actionType为1表示发送文本消息title，2表示openURL或是自定义行为；index表示该button位置
- */
-@interface QYButtonInfo : NSObject
-
-@property (nonatomic, strong) id buttonId;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) id userData;
-@property (nonatomic, assign, readonly) NSUInteger actionType;
-@property (nonatomic, assign, readonly) NSUInteger index;
-
-@end
-```
-
-添加按钮的示例代码：
-
-```objectivec
-QYButtonInfo *button_1 = [[QYButtonInfo alloc] init];
-button_1.buttonId = [NSNumber numberWithLongLong:1001];
-button_1.title = @"按钮标题1";
-
-QYButtonInfo *button_2 = [[QYButtonInfo alloc] init];
-button_2.buttonId = [NSNumber numberWithLongLong:1002];
-button_2.title = @"按钮标题2";
-
-sessionViewController.buttonInfoArray = @[button_1, button_2];
-```
-
-#### 按钮点击事件处理
-
-按钮点击事件回调定义在 QYSessionViewController 中，该 block 透传 QYButtonInfo 相关信息：
-
-```objectivec
-/**
- *  工具栏内按钮点击回调定义
- */
-typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
-
-/**
- *  输入区域上方工具栏内的按钮点击事件
- */
-@property (nonatomic, copy) QYButtonClickBlock buttonClickBlock;
-```
-
-### 访问轨迹与行为轨迹上报
-
-#### 访问轨迹
-
-在 v4.0.0 版本之后，SDK 支持记录用户在 App 内的访问轨迹并上报。使用该功能，需要企业开通 “访问轨迹” 功能。访问轨迹接口定义在 QYSDK.h 中：
+V4.0.0 版本后，SDK 支持记录用户在 App 内的访问轨迹并上报。使用该功能，需要企业开通 **访问轨迹** 功能。访问轨迹接口定义在 `QYSDK.h`中：
 
 ```objectivec
 /**
@@ -1511,11 +1376,11 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 }
 ```
 
-#### 行为轨迹
+### 自定义行为轨迹
 
-在 v4.4.0 版本之后，SDK 支持记录用户在 App 内的行为轨迹并上报。使用该功能，需要企业开通 “行为轨迹” 功能。行为轨迹是建立在访问轨迹之上的，如果需要使用行为轨迹，请先开启访问轨迹。
+V4.4.0 版本后，SDK 支持记录用户在 App 内的行为轨迹并上报。使用该功能，需要企业开通 **行为轨迹** 功能。自定义行为轨迹建立在页面行为轨迹之上。
 
-行为轨迹主要用于记录用户行为，例如购买了某件商品，可设置 title 参数为“购买xxx商品”，并在 description 参数中以 key-value 形式设置详细的商品信息，客服可查看此类信息，用于分析用户行为。行为轨迹接口定义在 QYSDK.h 中：
+自定义行为轨迹主要用于记录用户行为，例如购买了某件商品，可设置`title`参数为“购买xxx商品”，并在`description`参数中以`key-value`形式设置详细的商品信息，客服可查看此类信息，用于分析用户行为。行为轨迹接口定义在`QYSDK.h`中：
 
 ```objectivec
 /**
@@ -1526,159 +1391,303 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
 - (void)trackHistory:(NSString *)title description:(NSDictionary *)description key:(NSString *)key;
 ```
 
-### 历史消息收起
+## 高级功能
 
-在 v4.7.0 版本之后，获取到 sessionViewController 后，可配置每页消息加载最大数量，该设置项控制了初次进入聊天界面的消息数量以及历史消息每次下拉加载的数量，默认为20条：
+### 自定义消息
 
-```objectivec
-sessionViewController.messagePageLimit = 20;
-```
+七鱼 iOS SDK 的 **自定义消息** 功能主要用于在聊天列表中任意**追加**、**插入**、**更新**、**删除**自定义消息，支持自定义消息数据存储及更新，支持注入自定义视图并修改布局配置，以 **Message — Model — View** 形式形成消息到视图的对应关系，开发原则为数据驱动视图，所有视图的更新都依赖于数据的更新。
 
-可配置进入聊天界面时是否收起之前的历史消息，仅在创建新会话时收起，若为以下情况：上一次会话未结束、新会话创建失败、最后一条消息为可点击的访客分流消息、有未读消息，则仍显示历史会话，此配置项默认为NO：
+功能对外接口位于 **QIYU_iOS_SDK/ExportHeaders/Custom** 中，相关类库说明请参考 **接入说明-类库说明** 章节，这里不再赘述。
 
-```objectivec
-sessionViewController.hideHistoryMessages = NO;
-```
+#### 用法说明
 
-hideHistoryMessages = YES 情况下，首次下拉加载历史消息时会显示提示消息，提示文案可配置，默认为 “以上是历史消息” ：
+自定义消息模块针对`QYSessionViewController`扩展了分类`QYCustomSessionViewController`，主要用于扩展自定义消息相关接口，避免放在原来的头文件中太过混乱。提供以下接口：
 
-```objectivec
-sessionViewController.historyMessagesTip = @"以上是历史消息";
-```
-
-### 自定义顶部区域
-
-在 v4.7.0 版本之后，获取到 sessionViewController 后，可自定义聊天界面顶部区域，支持外部注册入视图，可配置视图高度和边距；此视图悬停在聊天界面导航栏下方、消息列表上方，不随消息流滚动。注册接口为：
+##### 注册映射关系（必须）
 
 ```objectivec
 /**
- *  注册聊天界面顶部悬停视图
+ *  注册message-model-contentView的映射关系（必须）
+ *  @discussion 若要使用自定义消息，必须调用此方法设置映射关系！
+ *  @param messageClass     消息类
+ *  @param modelClass       消息对应的数据模型类
+ *  @param contentViewClass 消息对应的视图
+ */
+- (void)registerCustomMessageClass:(Class)messageClass
+                        modelClass:(Class)modelClass
+                  contentViewClass:(Class)contentViewClass;
+```
+
+需要在创建`QYSessionViewController`对象时调用该接口注册 **自定义消息 Message-自定义数据源 Model-自定义视图 ContentView** 的映射关系，这样 SDK 才能在遇到自定义 Message 时取出其对应的 Model 和 ContentView 类去创建相应的对象。
+
+##### 设置/移除消息事件代理
+
+```objectivec
+/**
+ *  设置消息事件委托对象
+ *  @param delegate 被委托对象
+ */
+- (void)addCustomMessageDelegate:(id<QYCustomMessageDelegate>)delegate;
+
+/**
+ *  清除消息事件委托对象
+ *  @param delegate 被清除的委托对象
+ */
+- (void)removeCustomMessageDelegate:(id<QYCustomMessageDelegate>)delegate;
+```
+
+可将任意对象设置为消息事件代理，用来接收消息在追加、插入、更新、删除等操作时抛出的某些事件，目前有如下几类时机抛出：
+
+```objectivec
+@protocol QYCustomMessageDelegate <NSObject>
+
+@optional
+/**
+ *  追加消息的回调，此时消息已持久化（若需），还未刷新界面
+ */
+- (void)onAddMessageBeforeReload:(QYCustomMessage *)message;
+
+/**
+ *  插入消息的回调，此时消息已持久化（若需），还未刷新界面
+ */
+- (void)onInsertMessageBeforeReload:(QYCustomMessage *)message;
+
+/**
+ *  更新消息的回调，此时消息已持久化（若需），还未刷新界面
+ */
+- (void)onUpdateMessageBeforeReload:(QYCustomMessage *)message;
+
+/**
+ *  删除消息的回调，此时消息已持久化（若需），还未刷新界面
+ */
+- (void)onDeleteMessageBeforeReload:(QYCustomMessage *)message;
+
+@end
+```
+
+##### 设置/移除视图事件代理
+
+```objectivec
+/**
+ *  设置消息视图委托对象
+ *  @param delegate 被委托对象
+ */
+- (void)addCustomContentViewDelegate:(id<QYCustomContentViewDelegate>)delegate;
+
+/**
+ *  清除消息视图委托对象
+ *  @param delegate 被清除的委托对象
+ */
+- (void)removeCustomContentViewDelegate:(id<QYCustomContentViewDelegate>)delegate;
+```
+
+可将任意对象设置为消息视图事件代理，用来接收并处理点击头像事件、长按 cell 事件、contentView 上自定义控件抛出的各类事件：
+
+```objectivec
+@protocol QYCustomContentViewDelegate <NSObject>
+
+@optional
+/**
+ *  自定义事件，通过QYCustomContentView的delegate去调用onCatchEvent:事件
+ *  若事件涉及到更新消息及视图则尽量使用onCatchEvent:抛出，若未涉及消息及视图更新，可直接响应事件，无需使用该方法抛出
+ */
+- (void)onCatchEvent:(QYCustomEvent *)event;
+
+/**
+ *  头像点击事件
+ */
+- (void)onTapAvatar:(QYCustomEvent *)event;
+
+/**
+ *  消息体长按事件
+ */
+- (void)onLongPressCell:(QYCustomEvent *)event;
+
+@end
+```
+
+##### 追加自定义消息
+
+```objectivec
+/**
+ *  从尾部追加消息
+ *  @param message    消息对象
+ *  @param save       是否需要持久化消息数据
+ *  @param reload     是否需要刷新界面
+ *  @param completion 消息持久化结果回调
+ */
+- (void)addCustomMessage:(QYCustomMessage *)message
+            needSaveData:(BOOL)save
+          needReloadView:(BOOL)reload
+              completion:(QYCustomMessageCompletion)completion;
+```
+
+通过此接口追加一条自定义消息，传入`QYCustomMessage`或其子类对象，并告知是否需要将数据持久化至数据库、是否需要立即刷新界面，该接口会给出结果回调，并抛出部分错误信息：
+
+```objectivec
+/**
+ *  错误码
+ */
+typedef NS_ENUM(NSInteger, QYCustomMessageErrorCode) {
+    QYCustomMessageErrorCodeUnknown         = 0,    //未知错误
+    QYCustomMessageErrorCodeInvalidParam    = 1,    //错误参数
+    QYCustomMessageErrorCodeInvalidMessage  = 2,    //无效消息体
+    QYCustomMessageErrorCodeSQLFailed       = 3,    //SQL语句执行失败
+};
+
+/**
+ *  消息持久化结果block
+ *  @param error 错误信息
+ */
+typedef void(^QYCustomMessageCompletion)(NSError *error);
+```
+
+调用此接口时会自动调用`QYCustomMessageCoding`协议中的序列化/反序列化方法去 encode/decode 数据，自动调用`QYCustomModelLayoutDataSource`协议中的各个布局相关方法获得布局参数，最终自动调用`initCustomContentView`创建自定义视图，并通过`refreshData:`方法刷新视图。
+
+##### 插入消息
+
+```objectivec
+/**
+ *  从头部插入消息
+ *  @discussion 插入消息不支持持久化数据
+ *  @param message  消息对象
+ */
+- (void)insertCustomMessage:(QYCustomMessage *)message;
+
+/**
+ *  从中间插入消息
+ *  @discussion 插入消息不支持持久化数据
+ *  @param message  消息对象
+ *  @param index    插入位置
+ */
+- (void)insertCustomMessage:(QYCustomMessage *)message index:(NSInteger)index;
+```
+
+在消息列表的某个位置插入一条消息，需注意，因底层设计原因，目前不支持插入消息的数据持久化，故插入消息接口只能实现在 table 的数据源 DataSource 中临时插入消息并刷新界面，退出聊天界面再次进入后消息消失。
+
+##### 更新消息
+
+```objectivec
+/**
+ *  刷新消息
+ *  @param message  消息对象
+ *  @param save     是否需要持久化消息数据
+ *  @param reload   是否需要刷新界面
+ *  @param completion 消息持久化结果回调
+ */
+- (void)updateCustomMessage:(QYCustomMessage *)message
+               needSaveData:(BOOL)save
+             needReloadView:(BOOL)reload
+                 completion:(QYCustomMessageCompletion)completion;
+```
+
+更新数据库 Database 或是数据源 DataSource 中的某条消息，一般在调用该接口前，会先从数据库/数据源中取出该条消息（利用消息ID取出），更新部分消息属性，然后再调用接口更新，同样会自动触发 Model 和 ContentView 的部分方法，并给出回调结果。
+
+##### 删除消息
+
+```objectivec
+/**
+ *  删除消息
+ *  @param message  消息对象
+ *  @param save     删除记录是否同步至数据库
+ *  @param reload   是否需要刷新界面
+ */
+- (void)deleteCustomMessage:(QYCustomMessage *)message
+               needSaveData:(BOOL)save
+             needReloadView:(BOOL)reload;
+```
+
+删除数据库 Database 或是数据源 DataSource 中的某条消息。
+
+##### 获取消息
+
+```objectivec
+/**
+ *  从数据库中取出消息
+ *  @param messageId 消息的唯一ID
+ *  @return 取出的消息体
+ */
+- (QYCustomMessage *)fetchCustomMessageFromDatabaseForMessageId:(NSString *)messageId;
+
+/**
+ *  从当前table的dataSource中取出消息
+ *  @param messageId 消息的唯一ID
+ *  @return 取出的消息体
+ */
+- (QYCustomMessage *)fetchCustomMessageFromDataSourceForMessageId:(NSString *)messageId;
+```
+
+从数据库 Database 或是数据源 DataSource 中获取某条消息，获取消息传入的唯一参数为消息ID，消息ID的生成必须是自定义消息创建后，通过调用 “ 追加add/插入insert ” 接口后才可同步获取。
+
+#### 用法示例
+
+使用自定义消息功能可在任意时刻向消息流中追加自定义的文本、图片、卡片等任意类型消息，可配合拦截请求客服事件实现定制欢迎消息功能，如开发者有需求，具体用法示例可咨询相关技术支持。
+
+## 其他
+
+### 读取日志
+
+为方便追踪问题，七鱼 iOS SDK 会记录一些关键信息日志在本地文件，可通过调用`QYSDK.h`的如下接口获取日志文件路径：
+
+```objectivec
+/**
+ *  获取七鱼日志文件路径
  *
- *  @param hoverView 顶部悬停视图
- *  @param height 视图高度
- *  @param insets 视图边距，默认UIEdgeInsetsZero；top表示视图与导航栏底部距离，bottom设置无效，left/right分别表示距离屏幕左右边距
+ *  @return 日志文件路径
  */
-- (void)registerTopHoverView:(UIView *)hoverView height:(CGFloat)height marginInsets:(UIEdgeInsets)insets;
-```
-
-支持销毁此视图，支持设置是否有渐隐动画及动画时长，销毁接口如下：
-
-```objectivec
-/**
- *  销毁聊天界面顶部悬停视图
- */
-- (void)destroyTopHoverViewWithAnmation:(BOOL)animated duration:(NSTimeInterval)duration;
-```
-
-### 自定义评价界面
-
-在 v5.0.0 版本之后，获取到 sessionViewController 后，可自定义满意度评价界面。对外提供评价界面事件回调，并根据管理端满意度配置提供评价相关数据，便于构建界面：
-
-```objectivec
-/**
- *  满意度评价事件回调
- *
- *  @param data 评价数据，包括评价模式、选项及标签、上次评价结果等数据，据此构建评价界面
- */
-typedef void (^QYEvaluationBlock)(QYEvaluactionData *data);
-
-/**
- *  满意度评价事件
- */
-@property (nonatomic, copy) QYEvaluationBlock evaluationBlock;
-```
-
-评价完成后，需调用发送评价结果接口将数据回传，同时接口会反馈评价数据发送结果，请根据是否成功做相应的交互，以保证满意度流程完整性：
-
-```objectivec
-/**
- *  评价结果回调
- *
- *  @param state 结果
- */
-typedef void (^QYEvaluationCompletion)(QYEvaluationState state);
-
-/**
- *  发送满意度评价结果
- */
-- (void)sendEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
+- (NSString *)qiyuLogPath; 
 ```
 
 ### 清理文件缓存
 
-部分带附件的消息接收并下载后可以通过此接口清理已下载到本地的缓存文件：
+七鱼 iOS SDK 提供资源文件清理功能，主要包括接收及发送的图片、视频、文件等大体积缓存，通过调用`QYSDK.h`如下接口清理：
 
 ```objectivec
+/**
+ *  清理缓存回调
+ */
+typedef void(^QYCleanCacheCompletion)(NSError *error);
+
 /**
  *  清理接收文件缓存
- *  @param completeBlock 清理缓存完成block
+ *  @param completion 清理缓存完成回调
  */
-- (void)cleanResourceCacheWithBlock:(QYCleanResourceCacheCompleteBlock)completeBlock;
+- (void)cleanResourceCacheWithBlock:(QYCleanCacheCompletion)completion;
 ```
 
-## 平台电商版本
+### 清理账号信息
 
-平台电商版本相关头文件全部在 "QIYU_iOS_SDK/POP" 目录下。在需要使用的地方 import "QYPOPSDK.h"。平台电商版本针对 QYSessionViewController 扩展了分类 QYPOPSessionViewController，增加了两个配置项：
+V5.1.0 版本后，提供清理账号信息功能，可清理全部或者除当前账号以外的冗余账号信息，通过调用`QYSDK.h`如下接口清理：
 
 ```objectivec
 /**
- *  平台电商专用
+ *  清理账号信息
+ *  @discussion 清理全部账号信息会登出当前账号，并新建匿名账号，请在调用完成后使用setUserInfo:接口恢复为有名账号；请在合理时机调用本接口
+ *  @param cleanAll 是否清理当前所有账号信息，NO表示清理历史无用账号，YES表示清理全部
+ *  @param completion 清理缓存完成回调
  */
-@interface QYSessionViewController (POP)
-
-/**
- *  平台电商店铺ID，不是平台电商不用管
- */
-@property (nonatomic, copy) NSString *shopId;
-
-/**
- *  会话窗口回调
- */
-@property (nonatomic, weak) id<QYSessionViewDelegate> delegate;
-
-@end
+- (void)cleanAccountInfoForAll:(BOOL)cleanAll completion:(QYCleanCacheCompletion)completion;
 ```
 
-### 请求特定商家
+## 平台电商
 
-通过设置 shopId 可以在进入聊天窗口后请求对应的商家客服：
+七鱼 iOS SDK 支持平台电商功能，即可实现同时与主商户/多个子商户对话。相关头文件定义在 **QIYU_iOS_SDK/ExportHeaders/POP** 目录中，在需要使用的地方`import "QYPOPSDK.h"`。
+
+### 指定商家
+
+平台电商版本针对`QYSessionViewController`扩展了分类`QYPOPSessionViewController`，增加了`shopId`配置项，可通过设置连接指定商家的客服：
 
 ```objectivec
-sessionViewController.shopId = @"shopId";
+sessionViewController.shopId = 123456;
 ```
 
-### 监听聊天窗口事件
+### 会话列表
 
-通过设置 delegate 可以监听聊天窗口部分事件：
+平台电商版本会话列表未读数/会话项获取、监听变化等功能与非平台版本相同，主要有以下区别：
 
-```objectivec
-sessionViewController.delegate = self;
-```
+#### 删除会话项
 
-协议为 QYSessionViewDelegate，定义如下：
-
-```objectivec
-/**
- *  QYSessionViewDelegate：右上角入口以及聊天内容区域按钮点击回调
- */
-@protocol QYSessionViewDelegate <NSObject>
-
-/**
- *  点击右上角按钮回调（对于平台电商来说，这里可以考虑放“商铺入口”）
- */
-- (void)onTapShopEntrance;
-
-/**
- *  点击聊天内容区域的按钮回调（对于平台电商来说，这里可以考虑放置“会话列表入口“）
- */
-- (void)onTapSessionListEntrance;
-
-@end
-```
-
-### 删除会话项
-
-使用 QYPOPConversationManager 中如下接口删除会话列表中某一项：
+因平台电商可同时有多个会话项，故支持删除某一会话，使用`QYPOPConversationManager`中如下接口：
 
 ```objectivec
 /**
@@ -1690,11 +1699,42 @@ sessionViewController.delegate = self;
 - (void)deleteRecentSessionByShopId:(NSString *)shopId deleteMessages:(BOOL)isDelete;
 ```
 
-## 参考DEMO源码
+通过指定shopId删除对应商户会话项。
 
-如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git 。源码充分的展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
+#### 会话信息扩展
+
+平台电商版本针对`QYSessionInfo`扩展了分类`QYPOPSessionInfo`，增加了三个属性如下：
+
+| 属性                 | 类型     | 说明     |
+| -------------------- | -------- | -------- |
+| shopId               | NSString | 商户ID   |
+| avatarImageUrlString | NSString | 商户logo |
+| sessionName          | NSString | 会话名称 |
+
+#### 消息信息扩展
+
+平台电商版本针对`QYMessageInfo`扩展了分类`QYPOPMessageInfo`，增加了三个属性如下：
+
+| 属性                 | 类型     | 说明     |
+| -------------------- | -------- | -------- |
+| shopId               | NSString | 商户ID   |
+| avatarImageUrlString | NSString | 商户logo |
+| sender               | NSString | 发送者   |
+
+## Demo源码
+
+如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：[QIYU_iOS_SDK_Demo_Source](https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git)。源码充分展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.2.0（2019-08-22）
+
+1. 新增对外能力：结束会话/发送视频/拍摄视频
+2. 新增UI设置：主题色
+3. 支持管理端设置：部分样式/快捷入口/+扩展按钮
+4. 机器人模式支持访客自助提单
+5. 优化满意度评价功能体验
+6. 修复部分已知问题
 
 #### V5.1.0（2019-07-25）
 
@@ -1838,6 +1878,4 @@ sessionViewController.delegate = self;
 1. 新增富文本处理
 2. 新增对机器人答案进行评价
 3. SDK 新增依赖库：libxml2.tbd
-
-
 

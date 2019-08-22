@@ -76,6 +76,13 @@ typedef void (^QYSystemNotificationClickBlock)(id message);
  */
 typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString *messageId);
 
+/**
+ *  自定义事件按钮点击回调
+ *
+ *  @param dict 按钮信息
+ */
+typedef void (^QYCustomButtonBlock)(NSDictionary *dict);
+
 
 /**
  *  自定义行为配置类：QYCustomActionConfig，单例模式
@@ -130,9 +137,15 @@ typedef void (^QYEventBlock)(NSString *eventName, NSString *eventData, NSString 
 @property (nonatomic, copy) QYEventBlock eventClickBlock;
 
 /**
+ *  自定义事件按钮点击事件，仅用于“后台样式设置”的快捷入口按钮及+扩展按钮
+ */
+@property (nonatomic, copy) QYCustomButtonBlock customButtonClickBlock;
+
+/**
  *  账号登录后是否拉取漫游消息
  */
 @property (nonatomic, assign) BOOL pullRoamMessage;
+
 
 /**
  *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession
