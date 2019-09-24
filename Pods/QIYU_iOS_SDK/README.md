@@ -54,7 +54,7 @@ pod repo update
 
 1. 无法用 CocoaPods 下载到最新的 SDK
 
-   - 检查网络环境，若使用默认源及淘宝源均无法下载，可尝试使用 **Ruby China** 源：https://gems.ruby-china.com 。
+   - 检查网络环境，若使用默认源及淘宝源均无法下载，可尝试使用 **Ruby China** 源：[https://gems.ruby-china.com](https://gems.ruby-china.com)。
 
 2. 使用 CocoaPods 更新 SDK 后编译报错
 
@@ -81,7 +81,7 @@ pod repo update
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 **OpenSSL** 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
    - 请注意，SDK 依赖的 OpenSSL 库版本为 **1.0.2d**，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.0.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.3.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 #### 权限设置
@@ -751,11 +751,13 @@ V5.2.0 版本之后，新增主动结束会话/退出排队接口：
 ```objectivec
 /**
  *  退出会话/退出排队
+ *  @param popViewController 是否退出聊天界面，设置为YES，无论退出是否成功均退出聊天界面
+ *  @param completion 退出完成回调
  */
-- (void)closeSession;
+- (void)closeSession:(BOOL)popViewController completion:(QYCompletion)completion;
 ```
 
-结束逻辑为判断当前会话状态，若处在会话中，则退出当前会话；若处在排队流程中，则效果相当于点击 **取消排队** 按钮，退出排队。结束会话前会二次确认。
+结束逻辑为判断当前会话状态，若处在会话中，则退出当前会话；若处在排队流程中，则效果相当于点击 **取消排队** 按钮，退出排队。
 
 ### 访客信息
 
@@ -1726,6 +1728,20 @@ sessionViewController.shopId = 123456;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：[QIYU_iOS_SDK_Demo_Source](https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git)。源码充分展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.3.0（2019-09-23）
+
+1. 新增富文本视频功能
+
+2. 结束会话接口逻辑变更并增加回调
+
+3. 优化商品卡片发送逻辑
+
+4. iOS13 部分适配：
+
+   4.1 推送 DeviceToken 解析方法变更
+
+   4.2 页面 modalPresentationStyle 适配
 
 #### V5.2.0（2019-08-22）
 

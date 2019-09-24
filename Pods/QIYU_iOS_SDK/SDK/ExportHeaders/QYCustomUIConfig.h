@@ -13,7 +13,7 @@
 /**
  *  输入框下方“更多”配置项点击回调
  */
-typedef void (^QYCustomInputItemBlock)();
+typedef void (^QYCustomInputItemBlock)(void);
 
 /**
  *  输入框下方“更多”配置项

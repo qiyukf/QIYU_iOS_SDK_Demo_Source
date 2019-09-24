@@ -208,8 +208,10 @@ typedef void (^QYVideoCompletion)(NSString *filePath);
 
 /**
  *  退出会话/退出排队
+ *  @param popViewController 是否退出聊天界面，设置为YES，无论退出是否成功均退出聊天界面
+ *  @param completion 退出完成回调
  */
-- (void)closeSession;
+- (void)closeSession:(BOOL)popViewController completion:(QYCompletion)completion;
 
 /**
  *  拍摄视频
