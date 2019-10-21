@@ -1729,19 +1729,18 @@ sessionViewController.shopId = 123456;
 
 ## 更新说明
 
+#### V5.3.1（2019-10-21）
+
+1. 优化输入栏快捷入口样式
+2. 修复已知bug
+
 #### V5.3.0（2019-09-23）
 
 1. 新增富文本视频功能
-
 2. 结束会话接口逻辑变更并增加回调
-
 3. 优化商品卡片发送逻辑
-
-4. iOS13 部分适配：
-
-   4.1 推送 DeviceToken 解析方法变更
-
-   4.2 页面 modalPresentationStyle 适配
+4. iOS13 适配：推送 DeviceToken 解析方法变更
+5. iOS13 适配：页面 modalPresentationStyle 适配
 
 #### V5.2.0（2019-08-22）
 
