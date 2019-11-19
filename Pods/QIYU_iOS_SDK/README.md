@@ -81,7 +81,7 @@ pod repo update
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 **OpenSSL** 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
    - 请注意，SDK 依赖的 OpenSSL 库版本为 **1.0.2d**，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.3.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.4.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 #### 权限设置
@@ -164,6 +164,7 @@ SDK 主要提供以下类/协议/方法：
 #### 其它说明
 
 * 为保证系统兼容性，请使用 V3.11.0 以上版本。
+* 为保证 SDK 在 iOS13 上效果，请尽量使用 V5.3.0 以上版本；SDK 已针对暗黑模式下的部分显示问题、推送 DeviceToken 解析方式、页面 modalPresentationStyle 做了更新和适配。
 * SDK 支持 Bitcode。
 * 由于 SDK 是静态库，且为了方便开发者使用，我们将 armv7、arm64、i386、x86_64 平台的静态库合并成一个 Fat Library，导致整个 SDK 比较大。但实际编译后大约只会增加 App **4-5M** 大小。
 * 在需要使用 SDK 的地方 `import "QYSDK.h"`。
@@ -584,6 +585,14 @@ NSArray *loadingArray = @[loadingImg_1, loadingImg_2, loadingImg_3, loadingImg_4
                                                  duration:0.2
                                                  forState:QYMessagesLoadStateLoading];
 ```
+
+### 管理端样式设置
+
+V5.2.0 版本后，新增后台样式设置功能，位于 **管理端-应用-在线系统-设置-访客端-样式设置-APP端** ，可根据企业需要配置。如需使用该功能，应首先开启 **后台样式设置** 开关，注意此开关变更非实时生效，接口24小时请求一次。
+
+在可配置的样式中，**主题色**、**客服头像位置**、**输入框暗文**、**语音/表情按钮显示** 跟随总开关配置，24小时生效；其他的 **导航栏右侧按钮**、**企业客服头像**、**输入框快捷入口**、**+扩展按钮 **配置可跟随会话实时生效。
+
+开启 **后台样式设置** 后，应注意**后台设置优先级高于代码设置优先级**；即开启后，代码层面的属性`themeColor`、`customerHeadImage`、`customerMessageBubbleNormalImage`、`customerMessageBubblePressedImage`、`messageButtonBackColor`、`imagePickerColor`、`showHeadImage`、`showTopHeadImage`、`inputTextPlaceholder`、`showAudioEntry`、`showAudioEntryInRobotMode`、`showEmoticonEntry`、`actionButtonBorderColor`均设置无效，**导航栏右侧按钮**、**输入框快捷入口**、**+扩展按钮** 全部以管理端配置为准。
 
 ### 更换图片素材
 
@@ -1728,6 +1737,16 @@ sessionViewController.shopId = 123456;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：[QIYU_iOS_SDK_Demo_Source](https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git)。源码充分展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.4.0（2019-11-19）
+
+1. 导航栏右侧按钮支持管理端配置
+2. 会话/排队状态下入口参数变化增加弹窗提示
+3. 富文本支持呼叫及复制电话号码功能
+4. 跨会话禁用一触即达流程内按钮
+5. 输入栏快捷入口增加点击频率限制
+6. 优化部分警告信息
+7. 修复部分已知bug
 
 #### V5.3.1（2019-10-21）
 

@@ -16,11 +16,11 @@
 /**
  *  退出排队结果类型
  */
-typedef NS_ENUM(NSInteger, QuitWaitingType) {
-    QuitWaitingTypeNone,     //当前不是在排队状态
-    QuitWaitingTypeContinue, //继续排队
-    QuitWaitingTypeQuit,     //退出排队
-    QuitWaitingTypeCancel,   //取消操作
+typedef NS_ENUM(NSInteger, QYQuitWaitingType) {
+    QYQuitWaitingTypeNone,     //当前不是在排队状态
+    QYQuitWaitingTypeContinue, //继续排队
+    QYQuitWaitingTypeQuit,     //退出排队
+    QYQuitWaitingTypeCancel,   //取消操作
 };
 
 /**
@@ -41,7 +41,7 @@ typedef void (^QYBotClickBlock)(NSString *target, NSString *params);
 /**
  *  退出排队回调
  */
-typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
+typedef void (^QYQuitWaitingBlock)(QYQuitWaitingType quitType);
 
 /**
  *  显示bot自定义信息回调
@@ -159,7 +159,7 @@ typedef void (^QYCustomButtonBlock)(NSDictionary *dict);
  *
  *  @param quitWaitingBlock 选择结果回调
  */
-- (void)showQuitWaiting:(QYQuitWaitingBlock)quitWaitingBlock;
+- (void)showQuitWaitingAlert:(QYQuitWaitingBlock)quitWaitingBlock;
 
 @end
 
