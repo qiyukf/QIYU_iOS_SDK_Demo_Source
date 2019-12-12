@@ -2,7 +2,7 @@
 
 ## 概述
 
-网易七鱼 iOS SDK 是客服系统访客端的解决方案，既包含了客服聊天逻辑管理，也提供了聊天界面，开发者可方便的将客服功能集成到自己的 App 中。iOS SDK 支持 iOS7 以上版本，同时支持 iPhone、iPad，同时支持竖屏和横屏。
+网易七鱼 iOS SDK 是客服系统访客端的解决方案，既包含了客服聊天逻辑管理，也提供了聊天界面，开发者可方便的将客服功能集成到自己的 App 中。iOS SDK 支持 iOS8 以上版本，同时支持 iPhone、iPad，同时支持竖屏和横屏。
 
 ## 接入说明
 
@@ -81,7 +81,7 @@ pod repo update
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 **OpenSSL** 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
    - 请注意，SDK 依赖的 OpenSSL 库版本为 **1.0.2d**，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.4.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.5.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 #### 权限设置
@@ -590,7 +590,7 @@ NSArray *loadingArray = @[loadingImg_1, loadingImg_2, loadingImg_3, loadingImg_4
 
 V5.2.0 版本后，新增后台样式设置功能，位于 **管理端-应用-在线系统-设置-访客端-样式设置-APP端** ，可根据企业需要配置。如需使用该功能，应首先开启 **后台样式设置** 开关，注意此开关变更非实时生效，接口24小时请求一次。
 
-在可配置的样式中，**主题色**、**客服头像位置**、**输入框暗文**、**语音/表情按钮显示** 跟随总开关配置，24小时生效；其他的 **导航栏右侧按钮**、**企业客服头像**、**输入框快捷入口**、**+扩展按钮 **配置可跟随会话实时生效。
+在可配置的样式中，**主题色**、**客服头像位置**、**输入框暗文**、**语音/表情按钮显示** 跟随总开关配置，24小时生效；其他的 **导航栏右侧按钮**、**企业客服头像**、**输入框快捷入口**、**+扩展按钮** 配置可跟随会话实时生效。
 
 开启 **后台样式设置** 后，应注意**后台设置优先级高于代码设置优先级**；即开启后，代码层面的属性`themeColor`、`customerHeadImage`、`customerMessageBubbleNormalImage`、`customerMessageBubblePressedImage`、`messageButtonBackColor`、`imagePickerColor`、`showHeadImage`、`showTopHeadImage`、`inputTextPlaceholder`、`showAudioEntry`、`showAudioEntryInRobotMode`、`showEmoticonEntry`、`actionButtonBorderColor`均设置无效，**导航栏右侧按钮**、**输入框快捷入口**、**+扩展按钮** 全部以管理端配置为准。
 
@@ -648,6 +648,18 @@ sessionViewController.commonQuestionTemplateId = 123456;
 指定ID后，进入聊天页面联系客服时会带上问题模板ID参数，服务端下发对应的常见问题消息。
 
 常见问题模板ID查询：**管理端-应用-机器人-在线机器人-设置-常见问题-设置常见问题模板**
+
+#### 指定欢迎语
+
+用户进入机器人会话时，可收到欢迎语；V5.5.0 版本后，不同聊天入口可配置不同欢迎语模板，以适应更多场景。通过配置`sessionViewController`的`robotWelcomeTemplateId`属性指定欢迎语模板，样例如下：
+
+```objectivec
+sessionViewController.robotWelcomeTemplateId = 123456;
+```
+
+指定ID后，进入聊天页面联系客服时会带上欢迎语模板ID参数，服务端下发对应的欢迎语消息。
+
+机器人欢迎语模板ID查询：**管理端-应用-机器人-在线机器人-设置-基础设置-引导语设置-欢迎语-手机端-设置**
 
 ### 人工客服
 
@@ -826,6 +838,56 @@ sessionViewController.commodityInfo = commodityInfo;
 - 若设置了商品信息，同时开启了机器人客服及`autoSendInRobot`属性，则进入聊天页面连接上机器人客服后，自动发送商品卡片；之后转人工客服连接成功后，会再次发送商品卡片给人工。
 - 会话未结束退出咨询页面后再次进入，会判断商品卡片是否重复，若关键信息重复则不再继续发送，若信息有变化会再次发送。
 - 会话未结束，访客App重启，进入同一咨询入口会重复发送一次商品卡片。
+
+#### 自定义商品卡片
+
+客服端可使用 **iframe** 数据向访客端发送商品卡片，此数据为 JSON 格式，由一连串`key-value`组成。若开发者认为 SDK 提供的商品卡片样式不符合预期，则可使用自定义商品卡片功能；在 iframe 数据中新增如下两个字段即可： 
+
+| 属性                | 类型     | 说明                 |
+| ------------------- | -------- | -------------------- |
+| isOpenCustomProduct | BOOL     | 是否为自定义商品卡片 |
+| productCustomField  | NSString | 自定义商品卡片数据   |
+
+当`isOpenCustomProduct`字段配置为`true`时，访客端收到此 iframe 数据后，会通过 block 回调透传`productCustomField`字段内容即自定义卡片数据，该 block 定义在`QYSessionViewController`中：
+
+```objectivec
+/** 以下为自定义卡片消息相关接口 **/
+
+/**
+ *  自定义卡片消息回调
+ *
+ *  @param jsonString 自定义卡片消息数据
+ */
+typedef void (^QYCustomMessageDataBlock)(NSString *jsonString);
+
+/**
+ *  自定义卡片消息事件，回调时机为收到该类消息时刻
+ */
+@property (nonatomic, copy) QYCustomMessageDataBlock customMessageDataBlock;
+```
+
+SDK 会忽略此条消息并完全将数据交由外部进行处理，开发者可在收到回调后，使用 **高级功能-自定义消息** 来插入一条本地自定义消息，将提前定义好的 JSON 数据构建为消息对象`QYCustomMessage`子类，并构建对应的数据模型`QYCustomModel`子类、视图`QYCustomContentView`子类。样例如下：
+
+```objectivec
+__weak typeof(self) weakSelf = self;
+sessionViewController.customMessageDataBlock = ^(NSString *jsonString) {
+    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    if (data) {
+        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if ([object isKindOfClass:[NSDictionary class]]) {
+            QYCustomTicketMessage *message = [QYCustomTicketMessage objectByDict:object];
+            [weakSelf.sessionViewController addCustomMessage:message
+                                                needSaveData:YES
+                                              needReloadView:YES
+                                                  completion:^(NSError *error) {
+                if (error) {
+                    NSLog(@"addCustomMessage error !!!");
+                }
+            }];
+        }
+    }
+};
+```
 
 ### 会话消息
 
@@ -1737,6 +1799,15 @@ sessionViewController.shopId = 123456;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：[QIYU_iOS_SDK_Demo_Source](https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git)。源码充分展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.5.0（2019-12-12）
+
+1. 商品卡片消息支持自定义
+2. 留言模板按客服组展示
+3. 机器人欢迎语支持模板配置
+4. 新增商品卡片消息复制功能配置项
+5. 客服界面部分加载优化
+6. 修复部分已知bug
 
 #### V5.4.0（2019-11-19）
 

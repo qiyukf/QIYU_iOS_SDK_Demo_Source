@@ -67,9 +67,9 @@
 @property (nonatomic, assign) BOOL show;
 
 /**
- *  是否自定义，即仅显示商品图片，默认否。
+ *  是否仅显示商品图片，默认否 (V5.5.0, 为避免歧义由isCustom修改为isPictureLink)
  */
-@property (nonatomic, assign) BOOL isCustom;
+@property (nonatomic, assign) BOOL isPictureLink;
 
 /**
  *  是否由访客主动发送，默认否；设置为YES，消息下方新增发送按钮 (v4.4.0)

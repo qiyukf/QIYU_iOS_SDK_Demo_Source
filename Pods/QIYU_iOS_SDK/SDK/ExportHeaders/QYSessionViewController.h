@@ -103,9 +103,14 @@ typedef void (^QYVideoCompletion)(NSString *filePath);
 @property (nonatomic, assign) BOOL openRobotInShuntMode;
 
 /**
- *  常见问题 模版Id
+ *  常见问题 模板Id
  */
 @property (nonatomic, assign) int64_t commonQuestionTemplateId;
+
+/**
+ *  机器人欢迎语 模板Id
+ */
+@property (nonatomic, assign) int64_t robotWelcomeTemplateId;
 
 /**
  *  会话窗口来源
@@ -116,6 +121,11 @@ typedef void (^QYVideoCompletion)(NSString *filePath);
  *  商品信息展示
  */
 @property (nonatomic, strong) QYCommodityInfo *commodityInfo;
+
+/**
+ *  商品消息是否支持长按复制urlString信息，默认为YES
+ */
+@property (nonatomic, assign) BOOL canCopyCommodityInfo;
 
 /**
  *  人工客服信息
@@ -261,6 +271,21 @@ typedef void (^QYEvaluationCompletion)(QYEvaluationState state);
  *  发送满意度评价结果
  */
 - (void)sendEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
+
+
+/** 以下为自定义卡片消息相关接口 **/
+
+/**
+ *  自定义卡片消息回调
+ *
+ *  @param jsonString 自定义卡片消息数据
+ */
+typedef void (^QYCustomMessageDataBlock)(NSString *jsonString);
+
+/**
+ *  自定义卡片消息事件，回调时机为收到该类消息时刻
+ */
+@property (nonatomic, copy) QYCustomMessageDataBlock customMessageDataBlock;
 
 
 @end
