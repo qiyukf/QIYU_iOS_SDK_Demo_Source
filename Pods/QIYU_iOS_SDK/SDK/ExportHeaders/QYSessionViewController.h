@@ -65,6 +65,12 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
  */
 typedef void (^QYVideoCompletion)(NSString *filePath);
 
+/**
+ *  选择文件完成回调
+ *  @param filePath 文件存储路径
+ */
+typedef void (^QYFileCompletion)(NSString *fileName, NSString *filePath);
+
 
 /**
  *  会话类：QYSessionViewController
@@ -204,6 +210,11 @@ typedef void (^QYVideoCompletion)(NSString *filePath);
 - (void)sendVideo:(NSString *)filePath;
 
 /**
+ *  发送文件消息
+ */
+- (void)sendFileName:(NSString *)fileName filePath:(NSString *)filePath;
+
+/**
  *  发送商品信息展示
  */
 - (void)sendCommodityInfo:(QYCommodityInfo *)commodityInfo;
@@ -227,6 +238,13 @@ typedef void (^QYVideoCompletion)(NSString *filePath);
  *  拍摄视频
  */
 - (void)shootVideoWithCompletion:(QYVideoCompletion)completion;
+
+/**
+ *  选择系统文件，调用系统控件UIDocumentPickerViewController，注意文件功能目前仅支持iOS11以上系统
+ *  @param allowedUTIs 需增加支持的文件类型，已有部分默认类型，传nil时采用默认类型组；具体可参照UIDocumentPickerViewController的allowedUTIs参数
+ *  @param completion 选择完成回调
+ */
+- (void)selectFileWithDocumentTypes:(NSArray <NSString *>*)allowedUTIs completion:(QYFileCompletion)completion;
 
 
 /** 以下为自定义视图相关接口 **/

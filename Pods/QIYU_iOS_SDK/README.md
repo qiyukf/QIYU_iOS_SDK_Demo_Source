@@ -81,7 +81,7 @@ pod repo update
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 **OpenSSL** 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
    - 请注意，SDK 依赖的 OpenSSL 库版本为 **1.0.2d**，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.5.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.6.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 #### 权限设置
@@ -991,6 +991,38 @@ typedef void (^QYVideoCompletion)(NSString *filePath);
 
 接口提供视频拍摄完成回调，返回视频存储地址，可使用上述`sendVideo:`方法发送此视频给客服，或进行其他特殊化处理。
 
+##### 文件消息
+
+V5.6.0 版本之后，新增发送文件类型消息，需传入文件名称及本地存储路径：
+
+```objectivec
+/**
+ *  发送文件消息
+ */
+- (void)sendFileName:(NSString *)fileName filePath:(NSString *)filePath;
+```
+
+同时，七鱼 iOS SDK 提供选择系统文件功能，使用了`UIDocumentPickerViewController`控制器，并已指定部分常见文件类型，如仍未满足需求，可通过`allowedUTIs`参数补充文件类型：
+
+```objectivec
+/**
+ *  选择文件完成回调
+ *  @param filePath 文件存储路径
+ */
+typedef void (^QYFileCompletion)(NSString *fileName, NSString *filePath);
+
+/**
+ *  选择系统文件，调用系统控件UIDocumentPickerViewController，注意文件功能目前仅支持iOS11以上系统
+ *  @param allowedUTIs 需增加支持的文件类型，已有部分默认类型，传nil时采用默认类型组；具体可参照UIDocumentPickerViewController的allowedUTIs参数
+ *  @param completion 选择完成回调
+ */
+- (void)selectFileWithDocumentTypes:(NSArray <NSString *>*)allowedUTIs completion:(QYFileCompletion)completion;
+```
+
+调用接口会在客服界面调起系统文件选择页面，选择文件或点击取消后提供完成回调，返回文件名称`fileName`及拷贝至 Documents 目录下的文件路径`filePath`，可调用前面的`sendFileName: filePath:`方法发送文件消息给客服。
+
+请注意，系统文件选择功能目前只支持 **iOS11 及以上系统**，因 iOS11 以下系统只能访问 iCloud 文件，App 需开启 iCloud Documents 功能。
+
 ##### 商品消息
 
 与上面进入聊天界面自动发送商品卡片不同，您也可以在任意时刻调用接口主动发送商品消息，传入`QYCommodityInfo`对象：
@@ -1799,6 +1831,13 @@ sessionViewController.shopId = 123456;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：[QIYU_iOS_SDK_Demo_Source](https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git)。源码充分展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.6.0（2019-12-26）
+
+1. 新增选择并发送系统文件功能
+2. 机器人对话节点回复按钮样式优化
+3. 机器人答案引导转人工支持设置分流组
+4. 修复部分已知bug
 
 #### V5.5.0（2019-12-12）
 
