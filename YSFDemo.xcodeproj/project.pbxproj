@@ -1230,7 +1230,7 @@
 					"$(PROJECT_DIR)/YSFDemo/libs",
 					"$(PROJECT_DIR)/SDK",
 				);
-				MARKETING_VERSION = 5.6.0;
+				MARKETING_VERSION = 5.7.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1272,7 +1272,7 @@
 					"$(PROJECT_DIR)/YSFDemo/libs",
 					"$(PROJECT_DIR)/SDK",
 				);
-				MARKETING_VERSION = 5.6.0;
+				MARKETING_VERSION = 5.7.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

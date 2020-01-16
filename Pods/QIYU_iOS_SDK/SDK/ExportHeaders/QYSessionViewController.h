@@ -246,6 +246,12 @@ typedef void (^QYFileCompletion)(NSString *fileName, NSString *filePath);
  */
 - (void)selectFileWithDocumentTypes:(NSArray <NSString *>*)allowedUTIs completion:(QYFileCompletion)completion;
 
+/**
+ *  弹出工单页面自助提工单
+ *  @param templateID 工单模板ID
+ */
+- (void)presentWorkOrderViewControllerWithTemplateID:(long long)templateID;
+
 
 /** 以下为自定义视图相关接口 **/
 

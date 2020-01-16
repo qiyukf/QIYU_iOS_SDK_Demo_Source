@@ -81,7 +81,7 @@ pod repo update
 1. 如果您同时使用了网易云信 iOS SDK，请只导入 libQYSDK.a，不要导入其他两个 .a 文件。
 2. 如果您同时使用了 **OpenSSL** 库，或者您集成的其它静态库使用了 OpenSSL 库（比如支付宝 SDK ），请只导入 libQYSDK.a、libevent.a，不要导入 libcrypto.a。
    - 请注意，SDK 依赖的 OpenSSL 库版本为 **1.0.2d**，与 1.1.0 及以上版本存在兼容问题。
-   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.6.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
+   - 如遇版本兼容问题，我们提供升级版本 SDK ：<a :href="$withBase('/res/QIYU_iOS_SDK_SSL_v5.7.0.zip')">**QIYU_iOS_SDK_SSL**</a> ，依赖的 OpenSSL 库版本为 **1.1.0c**  ，请下载后不要导入 libcrypto.a。此 SDK 跟随每次版本发布更新。
 3. 如果是其他情况的冲突，请根据实际情况有选择的导入 libevent.a、libcrypto.a。
 
 #### 权限设置
@@ -939,7 +939,7 @@ sessionViewController.customMessageDataBlock = ^(NSString *jsonString) {
 
 #### 发送能力
 
-七鱼 iOS SDK 对外提供一些标准能力，针对消息发送开放了文本、图片、视频、商品、订单五种消息类型，企业可调用这些标准能力直接发送对应消息。
+七鱼 iOS SDK 对外提供一些标准能力，针对消息发送开放了文本、图片、视频、文件、商品、订单六种消息类型，企业可调用这些标准能力直接发送对应消息。
 
 ##### 文本消息
 
@@ -974,7 +974,7 @@ V5.2.0 版本之后，可直接调用接口发送视频消息，传入视频存�
 - (void)sendVideo:(NSString *)filePath;
 ```
 
-同时，七鱼 iOS SDK 还提供拍摄视频功能，允许调用内部视频录制界面，注意该界面依赖于客服聊天界面，不可完全脱离此界面调用：
+同时，七鱼 iOS SDK 还提供**拍摄视频**功能，允许调用内部视频录制界面，注意该界面依赖于客服聊天界面，不可完全脱离此界面调用：
 
 ```objectivec
 /**
@@ -1002,7 +1002,7 @@ V5.6.0 版本之后，新增发送文件类型消息，需传入文件名称及�
 - (void)sendFileName:(NSString *)fileName filePath:(NSString *)filePath;
 ```
 
-同时，七鱼 iOS SDK 提供选择系统文件功能，使用了`UIDocumentPickerViewController`控制器，并已指定部分常见文件类型，如仍未满足需求，可通过`allowedUTIs`参数补充文件类型：
+同时，七鱼 iOS SDK 提供**选择系统文件**功能，使用了`UIDocumentPickerViewController`控制器，并已指定部分常见文件类型，如仍未满足需求，可通过`allowedUTIs`参数补充文件类型：
 
 ```objectivec
 /**
@@ -1188,6 +1188,18 @@ V4.7.0 版本中，获取到 `sessionViewController`后，可自定义聊天界�
  *  销毁聊天界面顶部悬停视图
  */
 - (void)destroyTopHoverViewWithAnmation:(BOOL)animated duration:(NSTimeInterval)duration;
+```
+
+#### 自助提工单能力
+
+V5.7.0 版本之后，新增人工模式下自助提工单能力，调用此接口效果与后台样式设置中的**创建工单**按钮点击效果一致，根据传入的**工单模板ID**请求工单数据并弹出工单页面，访客填写完成后，点击提交按钮发送工单结果数据，同时消息流会新增一条访客消息：**信息已提交**。接口如下：
+
+```objectivec
+/**
+ *  弹出工单页面自助提工单
+ *  @param templateID 工单模板ID
+ */
+- (void)presentWorkOrderViewControllerWithTemplateID:(long long)templateID;
 ```
 
 ## 会话管理
@@ -1831,6 +1843,14 @@ sessionViewController.shopId = 123456;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：[QIYU_iOS_SDK_Demo_Source](https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git)。源码充分展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.7.0（2020-01-16）
+
+1. 人工模式支持访客自助提单
+2. 机器人气泡节点列表消息底部按钮支持跳转链接
+3. 机器人抽屉及气泡列表分组支持子标题展示
+4. 机器人转人工类型统计方案优化
+5. 修复部分已知bug
 
 #### V5.6.0（2019-12-26）
 
