@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## QIYU_iOS_SDK
 
-Copyright 2019 Netease 
+Copyright 2020 Netease 
 
 
 ## ZXingObjC

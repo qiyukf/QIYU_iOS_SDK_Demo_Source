@@ -37,6 +37,7 @@
 		2B0659511E683B9900D9CB59 /* QYDemoBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0659341E683B9900D9CB59 /* QYDemoBadgeView.m */; };
 		2BAAAD582079EC6D0008B4F8 /* YSFCommonTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD542079EC6D0008B4F8 /* YSFCommonTableData.m */; };
 		2BAAAD592079EC6D0008B4F8 /* YSFCommonTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD572079EC6D0008B4F8 /* YSFCommonTableDelegate.m */; };
+		D7E2DB44242B77680017E022 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E2DB42242B76EE0017E022 /* WebKit.framework */; };
 		E48973051B8C016E001C96EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973041B8C016E001C96EC /* main.m */; };
 		E48973081B8C016E001C96EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48973071B8C016E001C96EC /* AppDelegate.m */; };
 		E48973101B8C016E001C96EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E489730F1B8C016E001C96EC /* Images.xcassets */; };
@@ -235,6 +236,7 @@
 		2BAAAD562079EC6D0008B4F8 /* YSFCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableData.h; sourceTree = "<group>"; };
 		2BAAAD572079EC6D0008B4F8 /* YSFCommonTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFCommonTableDelegate.m; sourceTree = "<group>"; };
 		BD9556B2FAF23A8783095EC7 /* Pods-YSFDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSFDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YSFDemo/Pods-YSFDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D7E2DB42242B76EE0017E022 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E43BA2081BA27C9E0046F016 /* ysf_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ysf_debug.xcconfig; sourceTree = "<group>"; };
 		E48972FF1B8C016E001C96EC /* YSFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48973031B8C016E001C96EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E2DB44242B77680017E022 /* WebKit.framework in Frameworks */,
 				EDCEC8EFADBCAAD802C80918 /* libPods-YSFDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -901,6 +904,7 @@
 		C8B56D12702B1E3BD097043B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7E2DB42242B76EE0017E022 /* WebKit.framework */,
 				0BB1707CDF1C700141D16272 /* libPods-YSFDemo.a */,
 			);
 			name = Frameworks;
