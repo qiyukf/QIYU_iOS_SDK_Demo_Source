@@ -1,0 +1,49 @@
+{
+  "name": "QYSDK",
+  "version": "5.10.0",
+  "summary": "网易七鱼客服访客端 iOS SDK",
+  "homepage": "https://www.qiyukf.com",
+  "license": {
+    "type": "Copyright",
+    "text": " Copyright 2020 Netease \n"
+  },
+  "authors": {
+    "qiyukf": "yunshangfu@126.com"
+  },
+  "source": {
+    "git": "https://github.com/qiyukf/QIYU_iOS_SDK",
+    "tag": "5.7.2"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "vendored_frameworks": "QYSDK.framework",
+  "source_files": [
+    "Classes",
+    "Classes/**/*.{h,m}"
+  ],
+  "exclude_files": "Classes/Exclude",
+  "frameworks": [
+    "UIKit",
+    "SystemConfiguration",
+    "MobileCoreServices",
+    "CoreTelephony",
+    "CoreText",
+    "CoreMedia",
+    "AudioToolbox",
+    "AVFoundation",
+    "Photos",
+    "AssetsLibrary",
+    "CoreMotion",
+    "ImageIO",
+    "WebKit"
+  ],
+  "libraries": [
+    "z",
+    "sqlite3.0",
+    "xml2",
+    "c++",
+    "resolv"
+  ],
+  "resources": "Resources/*.*"
+}

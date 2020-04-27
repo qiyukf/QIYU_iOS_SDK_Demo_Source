@@ -1,22 +1,28 @@
 PODS:
-  - QIYU_iOS_SDK (5.7.2)
-  - ZXingObjC (3.1.0):
-    - ZXingObjC/All (= 3.1.0)
-  - ZXingObjC/All (3.1.0)
+  - IQKeyboardManager (6.5.5)
+  - NIMSDK (7.2.5)
+  - QYSDK (5.10.0)
 
 DEPENDENCIES:
-  - QIYU_iOS_SDK (~> 5.7.2)
-  - ZXingObjC (~> 3.1.0)
+  - IQKeyboardManager
+  - NIMSDK (from `./frameworks/NIMSDK`)
+  - QYSDK (from `./frameworks/QYSDK`)
 
 SPEC REPOS:
   trunk:
-    - QIYU_iOS_SDK
-    - ZXingObjC
+    - IQKeyboardManager
+
+EXTERNAL SOURCES:
+  NIMSDK:
+    :path: "./frameworks/NIMSDK"
+  QYSDK:
+    :path: "./frameworks/QYSDK"
 
 SPEC CHECKSUMS:
-  QIYU_iOS_SDK: 271c63fc41b2c1e8ff6aafbfe29a53cbb712ad57
-  ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  NIMSDK: c90cf4817219a505230dab92c31fd9d1c697684a
+  QYSDK: 209ccef19b974dad5865ef1c8f1d38afd997c08a
 
-PODFILE CHECKSUM: 76e47e261cab849312d8e2f11c9fc3abb633f54a
+PODFILE CHECKSUM: 7a89575fd70717df516332c975f42fccc6fe10fe
 
 COCOAPODS: 1.8.4

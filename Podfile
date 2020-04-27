@@ -1,8 +1,15 @@
-platform :ios, '8.0'
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
-target 'YSFDemo' do
-    
-    pod 'ZXingObjC',    '~> 3.1.0'
-    pod 'QIYU_iOS_SDK', '~> 5.7.2'
+target 'QYSDKDemo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for QYSDKDemo
+
+  pod 'IQKeyboardManager'
+  
+  pod 'NIMSDK', :path => './frameworks/NIMSDK'
+  pod 'QYSDK', :path => './frameworks/QYSDK'
 
 end

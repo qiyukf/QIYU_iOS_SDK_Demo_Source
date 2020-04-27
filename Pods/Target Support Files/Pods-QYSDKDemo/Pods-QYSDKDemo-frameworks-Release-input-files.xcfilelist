@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-QYSDKDemo/Pods-QYSDKDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${PODS_ROOT}/../frameworks/NIMSDK/NIMSDK.framework
+${PODS_ROOT}/../frameworks/QYSDK/QYSDK.framework
