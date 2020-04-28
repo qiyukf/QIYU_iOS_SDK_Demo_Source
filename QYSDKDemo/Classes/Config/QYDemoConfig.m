@@ -35,9 +35,6 @@
     return self;
 }
 
-- (void)setEnvironment:(NSInteger)isTest {
-    [[QYSDK sharedSDK] performSelector:@selector(readEnvironmentConfig:useHttps:) withObject:@(isTest) withObject:@(YES)];
-}
 
 @end
 

@@ -19,6 +19,5 @@ static NSString * const kQYInvalidAccountMessage = @"请在设置中登录\n成�
 @property (nonatomic, assign) BOOL isFusion;
 
 + (instancetype)sharedConfig;
-- (void)setEnvironment:(NSInteger)isTest;
 
 @end

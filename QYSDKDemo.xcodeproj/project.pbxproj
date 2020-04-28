@@ -66,11 +66,11 @@
 		D79AA66724573B33004DCFF6 /* NSData+QY.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66524573B33004DCFF6 /* NSData+QY.m */; };
 		D79AA66A24573BD9004DCFF6 /* UIView+YSF.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66824573BD9004DCFF6 /* UIView+YSF.m */; };
 		D79AA66D24573BFD004DCFF6 /* UIView+YSFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66B24573BFD004DCFF6 /* UIView+YSFToast.m */; };
-		D79AA67024573C37004DCFF6 /* YSFAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66F24573C36004DCFF6 /* YSFAlertController.m */; };
+		D79AA67024573C37004DCFF6 /* QYAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66F24573C36004DCFF6 /* QYAlertController.m */; };
 		D79AA67324573C9B004DCFF6 /* UIColor+YSF.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA67124573C9B004DCFF6 /* UIColor+YSF.m */; };
 		D79AA67524573E6B004DCFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79AA67424573E6B004DCFF6 /* Foundation.framework */; };
-		D7B3022F2457D32F00308DB2 /* UIControl+YSFBlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B3022D2457D32F00308DB2 /* UIControl+YSFBlocksKit.m */; };
-		D7B302322457D39D00308DB2 /* YSFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B302302457D39C00308DB2 /* YSFWebViewController.m */; };
+		D7B3022F2457D32F00308DB2 /* UIControl+QYBlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B3022D2457D32F00308DB2 /* UIControl+QYBlocksKit.m */; };
+		D7B302322457D39D00308DB2 /* QYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B302302457D39C00308DB2 /* QYWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -203,16 +203,16 @@
 		D79AA66924573BD9004DCFF6 /* UIView+YSF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSF.h"; sourceTree = "<group>"; };
 		D79AA66B24573BFD004DCFF6 /* UIView+YSFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSFToast.m"; sourceTree = "<group>"; };
 		D79AA66C24573BFD004DCFF6 /* UIView+YSFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSFToast.h"; sourceTree = "<group>"; };
-		D79AA66E24573C36004DCFF6 /* YSFAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFAlertController.h; sourceTree = "<group>"; };
-		D79AA66F24573C36004DCFF6 /* YSFAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFAlertController.m; sourceTree = "<group>"; };
+		D79AA66E24573C36004DCFF6 /* QYAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYAlertController.h; sourceTree = "<group>"; };
+		D79AA66F24573C36004DCFF6 /* QYAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYAlertController.m; sourceTree = "<group>"; };
 		D79AA67124573C9B004DCFF6 /* UIColor+YSF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YSF.m"; sourceTree = "<group>"; };
 		D79AA67224573C9B004DCFF6 /* UIColor+YSF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YSF.h"; sourceTree = "<group>"; };
 		D79AA67424573E6B004DCFF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D7B3022C2457D32F00308DB2 /* UIControl+YSFBlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+YSFBlocksKit.h"; sourceTree = "<group>"; };
-		D7B3022D2457D32F00308DB2 /* UIControl+YSFBlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+YSFBlocksKit.m"; sourceTree = "<group>"; };
+		D7B3022C2457D32F00308DB2 /* UIControl+QYBlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+QYBlocksKit.h"; sourceTree = "<group>"; };
+		D7B3022D2457D32F00308DB2 /* UIControl+QYBlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+QYBlocksKit.m"; sourceTree = "<group>"; };
 		D7B3022E2457D32F00308DB2 /* BKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKDefines.h; sourceTree = "<group>"; };
-		D7B302302457D39C00308DB2 /* YSFWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFWebViewController.m; sourceTree = "<group>"; };
-		D7B302312457D39D00308DB2 /* YSFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFWebViewController.h; sourceTree = "<group>"; };
+		D7B302302457D39C00308DB2 /* QYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYWebViewController.m; sourceTree = "<group>"; };
+		D7B302312457D39D00308DB2 /* QYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYWebViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,12 +291,11 @@
 		D79AA5AF245735C4004DCFF6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D79AA65E245738DE004DCFF6 /* Util */,
 				D79AA5F4245735C4004DCFF6 /* Config */,
 				D79AA5BB245735C4004DCFF6 /* Sections */,
 				D79AA609245735C4004DCFF6 /* Custom */,
-				D79AA5B0245735C4004DCFF6 /* UI */,
 				D79AA5FF245735C4004DCFF6 /* QRCode */,
+				D79AA65E245738DE004DCFF6 /* Util */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -309,6 +308,16 @@
 				D79AA5B7245735C4004DCFF6 /* QYDemoBadgeView.m */,
 				D7360E732457CB5F006D6988 /* QYAvatarImageView.h */,
 				D7360E742457CB5F006D6988 /* QYAvatarImageView.m */,
+				D79AA66924573BD9004DCFF6 /* UIView+YSF.h */,
+				D79AA66824573BD9004DCFF6 /* UIView+YSF.m */,
+				D79AA66C24573BFD004DCFF6 /* UIView+YSFToast.h */,
+				D79AA66B24573BFD004DCFF6 /* UIView+YSFToast.m */,
+				D79AA67224573C9B004DCFF6 /* UIColor+YSF.h */,
+				D79AA67124573C9B004DCFF6 /* UIColor+YSF.m */,
+				D79AA66E24573C36004DCFF6 /* QYAlertController.h */,
+				D79AA66F24573C36004DCFF6 /* QYAlertController.m */,
+				D7B302312457D39D00308DB2 /* QYWebViewController.h */,
+				D7B302302457D39C00308DB2 /* QYWebViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -429,8 +438,8 @@
 		D79AA5EE245735C4004DCFF6 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				D79AA5EF245735C4004DCFF6 /* QYUserTableViewController.m */,
 				D79AA5F1245735C4004DCFF6 /* QYUserTableViewController.h */,
+				D79AA5EF245735C4004DCFF6 /* QYUserTableViewController.m */,
 				D79AA5F2245735C4004DCFF6 /* QYReportUserInfoViewController.h */,
 				D79AA5F0245735C4004DCFF6 /* QYReportUserInfoViewController.m */,
 			);
@@ -522,35 +531,34 @@
 		D79AA65E245738DE004DCFF6 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				D7B302392458216100308DB2 /* Data */,
+				D79AA5B0245735C4004DCFF6 /* UI */,
+				D7B3022B2457D32F00308DB2 /* BlocksKit */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D7B3022B2457D32F00308DB2 /* BlocksKit */ = {
+			isa = PBXGroup;
+			children = (
+				D7B3022E2457D32F00308DB2 /* BKDefines.h */,
+				D7B3022C2457D32F00308DB2 /* UIControl+QYBlocksKit.h */,
+				D7B3022D2457D32F00308DB2 /* UIControl+QYBlocksKit.m */,
+			);
+			path = BlocksKit;
+			sourceTree = "<group>";
+		};
+		D7B302392458216100308DB2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
 				D79AA65F245738F4004DCFF6 /* NSDictionary+QYJson.h */,
 				D79AA660245738F4004DCFF6 /* NSDictionary+QYJson.m */,
 				D79AA66324573988004DCFF6 /* NSString+QY.h */,
 				D79AA66224573988004DCFF6 /* NSString+QY.m */,
 				D79AA66624573B33004DCFF6 /* NSData+QY.h */,
 				D79AA66524573B33004DCFF6 /* NSData+QY.m */,
-				D79AA66924573BD9004DCFF6 /* UIView+YSF.h */,
-				D79AA66824573BD9004DCFF6 /* UIView+YSF.m */,
-				D79AA66C24573BFD004DCFF6 /* UIView+YSFToast.h */,
-				D79AA66B24573BFD004DCFF6 /* UIView+YSFToast.m */,
-				D79AA67224573C9B004DCFF6 /* UIColor+YSF.h */,
-				D79AA67124573C9B004DCFF6 /* UIColor+YSF.m */,
-				D79AA66E24573C36004DCFF6 /* YSFAlertController.h */,
-				D79AA66F24573C36004DCFF6 /* YSFAlertController.m */,
-				D7B302312457D39D00308DB2 /* YSFWebViewController.h */,
-				D7B302302457D39C00308DB2 /* YSFWebViewController.m */,
-				D7B3022B2457D32F00308DB2 /* YSFBlocksKit */,
 			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		D7B3022B2457D32F00308DB2 /* YSFBlocksKit */ = {
-			isa = PBXGroup;
-			children = (
-				D7B3022E2457D32F00308DB2 /* BKDefines.h */,
-				D7B3022C2457D32F00308DB2 /* UIControl+YSFBlocksKit.h */,
-				D7B3022D2457D32F00308DB2 /* UIControl+YSFBlocksKit.m */,
-			);
-			path = YSFBlocksKit;
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -694,7 +702,7 @@
 				D79AA639245735C4004DCFF6 /* QYSessionListCell.m in Sources */,
 				D79AA649245735C4004DCFF6 /* QYDemoConfig.m in Sources */,
 				D79AA630245735C4004DCFF6 /* QYSessionListViewController.m in Sources */,
-				D7B302322457D39D00308DB2 /* YSFWebViewController.m in Sources */,
+				D7B302322457D39D00308DB2 /* QYWebViewController.m in Sources */,
 				D79AA626245735C4004DCFF6 /* YSFCommonTableDelegate.m in Sources */,
 				D79AA64B245735C4004DCFF6 /* YXCapture.m in Sources */,
 				D79AA654245735C4004DCFF6 /* QYCustomImageModel.m in Sources */,
@@ -733,10 +741,10 @@
 				D79AA651245735C4004DCFF6 /* QYCustomCardMessage.m in Sources */,
 				D79AA641245735C4004DCFF6 /* QYCustomStyleViewController.m in Sources */,
 				D79AA636245735C4004DCFF6 /* QYShopInfoViewController.m in Sources */,
-				D7B3022F2457D32F00308DB2 /* UIControl+YSFBlocksKit.m in Sources */,
+				D7B3022F2457D32F00308DB2 /* UIControl+QYBlocksKit.m in Sources */,
 				D79AA64A245735C4004DCFF6 /* QRcodeScanController.mm in Sources */,
 				D73603BA240CAF5700BDBF2C /* main.m in Sources */,
-				D79AA67024573C37004DCFF6 /* YSFAlertController.m in Sources */,
+				D79AA67024573C37004DCFF6 /* QYAlertController.m in Sources */,
 				D79AA64E245735C4004DCFF6 /* QYCustomTicketMessage.m in Sources */,
 				D79AA652245735C4004DCFF6 /* QYCustomTextModel.m in Sources */,
 				D79AA66724573B33004DCFF6 /* NSData+QY.m in Sources */,

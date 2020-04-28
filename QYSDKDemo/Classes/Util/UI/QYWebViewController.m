@@ -1,4 +1,4 @@
-#import "YSFWebViewController.h"
+#import "QYWebViewController.h"
 #import "NSString+QY.h"
 #import "QYMacro.h"
 #import "UIView+YSF.h"
@@ -9,7 +9,7 @@ static int const kWebViewAppStoreURLError = 102;
 static int const kWebViewVideoURLError = 204;
 
 
-@interface YSFWebViewController() <WKNavigationDelegate>
+@interface QYWebViewController() <WKNavigationDelegate>
 
 @property (nonatomic, copy) NSString *urlString;
 @property (nonatomic, strong) WKWebView *webView;
@@ -27,7 +27,7 @@ static int const kWebViewVideoURLError = 204;
 @end
 
 
-@implementation YSFWebViewController
+@implementation QYWebViewController
 - (void)dealloc {
     [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [_webView removeObserver:self forKeyPath:@"title"];
@@ -77,8 +77,8 @@ static int const kWebViewVideoURLError = 204;
                                  navigationBarBounds.size.width,
                                  progressBarHeight);
     self.progressView = [[UIProgressView alloc] initWithFrame:barFrame];
-    self.progressView.backgroundColor = YSFQYPlaceholderColor;
-    self.progressView.tintColor = _progressColor ?: YSFQYBlueColor;
+    self.progressView.backgroundColor = QYPlaceholderColor;
+    self.progressView.tintColor = _progressColor ?: QYBlueColor;
     [self.navigationController.navigationBar addSubview:self.progressView];
     //KVO
     [self.webView addObserver:self
@@ -114,10 +114,10 @@ static int const kWebViewVideoURLError = 204;
 
 - (UILabel *)errorLabel {
     if (!_errorLabel) {
-        CGFloat navHeight = self.needOffset ? YSFNavigationBarHeight : 0;
+        CGFloat navHeight = self.needOffset ? QYNavigationBarHeight : 0;
         _errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, navHeight + 20, 0, 0)];
         _errorLabel.font = [UIFont systemFontOfSize:16.f];
-        _errorLabel.textColor = YSFQYButtonTitleNormalColor;
+        _errorLabel.textColor = QYButtonTitleNormalColor;
         [self.view insertSubview:_errorLabel aboveSubview:self.tapView];
         //hide
         _errorLabel.hidden = YES;

@@ -1,16 +1,16 @@
 //
-//  UIControl+YSFBlocksKit.m
+//  UIControl+QYBlocksKit.m
 //  BlocksKit
 //
 
-#import "UIControl+YSFBlocksKit.h"
+#import "UIControl+QYBlocksKit.h"
 @import ObjectiveC.runtime;
 
 static const void *YSFControlHandlersKey = &YSFControlHandlersKey;
 
 #pragma mark Private
 
-@interface YSFControlWrapper : NSObject <NSCopying>
+@interface QYControlWrapper : NSObject <NSCopying>
 
 - (id)initWithHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
@@ -19,7 +19,7 @@ static const void *YSFControlHandlersKey = &YSFControlHandlersKey;
 
 @end
 
-@implementation YSFControlWrapper
+@implementation QYControlWrapper
 
 - (id)initWithHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents
 {
@@ -34,7 +34,7 @@ static const void *YSFControlHandlersKey = &YSFControlHandlersKey;
 
 - (id)copyWithZone:(NSZone *)zone
 {
-	return [[YSFControlWrapper alloc] initWithHandler:self.handler forControlEvents:self.controlEvents];
+	return [[QYControlWrapper alloc] initWithHandler:self.handler forControlEvents:self.controlEvents];
 }
 
 - (void)invoke:(id)sender
@@ -46,7 +46,7 @@ static const void *YSFControlHandlersKey = &YSFControlHandlersKey;
 
 #pragma mark Category
 
-@implementation UIControl (YSFBlocksKit)
+@implementation UIControl (QYBlocksKit)
 
 - (void)ysf_addEventHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents
 {
@@ -65,7 +65,7 @@ static const void *YSFControlHandlersKey = &YSFControlHandlersKey;
 		events[key] = handlers;
 	}
 	
-	YSFControlWrapper *target = [[YSFControlWrapper alloc] initWithHandler:handler forControlEvents:controlEvents];
+	QYControlWrapper *target = [[QYControlWrapper alloc] initWithHandler:handler forControlEvents:controlEvents];
 	[handlers addObject:target];
 	[self addTarget:target action:@selector(invoke:) forControlEvents:controlEvents];
 }

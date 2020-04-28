@@ -181,11 +181,9 @@ static NSString * const kQYAppKeyCellIdentifier = @"kQYAppKeyCellIdentifier";
     
     [QYDemoConfig sharedConfig].appKey = appkey;
     [QYDemoConfig sharedConfig].isFusion = self.isFusion;
-    [[QYDemoConfig sharedConfig] setEnvironment:isTesting];
     
     QYAppKeyConfig *saveData = [[QYAppKeyConfig alloc] init];
     saveData.appKey = appkey;
-    saveData.environment = isTesting;
     saveData.isFusion = self.isFusion;
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:saveData];
     BOOL result = [data writeToFile:[self configFilepath] atomically:YES];
@@ -194,11 +192,7 @@ static NSString * const kQYAppKeyCellIdentifier = @"kQYAppKeyCellIdentifier";
     NSString *message = nil;
     if (result) {
         title = @"绑定成功";
-#if YSFDemoEnvironmentDebug
-        message = @"需重启APP才可生效\n请点击确定后手动打开APP\n\n如有需要，请输入测试环境\n0-线上; 1-预发; 2-测试; 3-开发";
-#else
         message = @"需重启APP才可生效\n请点击确定后手动打开APP";
-#endif
     } else {
         title = @"绑定失败";
         message = @"请重新绑定";
@@ -208,48 +202,17 @@ static NSString * const kQYAppKeyCellIdentifier = @"kQYAppKeyCellIdentifier";
                                                     delegate:self
                                            cancelButtonTitle:nil
                                            otherButtonTitles:@"确定", nil];
-    
-#if YSFDemoEnvironmentDebug
-    dialog.alertViewStyle = UIAlertViewStylePlainTextInput;
-#else
     dialog.alertViewStyle = UIAlertViewStyleDefault;
-#endif
     [dialog show];
 }
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-#if YSFDemoEnvironmentDebug
-    if (UIAlertViewStylePlainTextInput == alertView.alertViewStyle) {
-        NSString *text = [alertView textFieldAtIndex:0].text;
-        NSInteger env = [text integerValue];
-        if (text.length == 0 || text.length > 1 || env < 0 || env > 3) {
-            env = self.isTesting;
-        }
-        [QYDemoConfig sharedConfig].appKey = self.appKey;
-        [QYDemoConfig sharedConfig].isFusion = self.isFusion;
-        [[QYDemoConfig sharedConfig] setEnvironment:env];
-        
-        QYAppKeyConfig *config = [[QYAppKeyConfig alloc] init];
-        config.appKey = self.appKey;
-        config.environment = env;
-        config.isFusion = self.isFusion;
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:config];
-        BOOL result = [data writeToFile:[self configFilepath] atomically:YES];
-        
-        if (result) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                exit(0);
-            });
-        }
-    }
-#else
     if (UIAlertViewStyleDefault == alertView.alertViewStyle) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             exit(0);
         });
     }
-#endif
 }
 
 @end

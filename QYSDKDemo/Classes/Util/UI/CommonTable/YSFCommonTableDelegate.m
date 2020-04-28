@@ -90,7 +90,7 @@ static NSString *YSFDefaultTableCell = @"UITableViewCell";
         if (actionName.length) {
             SEL sel = NSSelectorFromString(actionName);
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            YSFSuppressPerformSelectorLeakWarning([vc performSelector:sel withObject:cell]);
+            QYSuppressPerformSelectorLeakWarning([vc performSelector:sel withObject:cell]);
         }
     }
 }

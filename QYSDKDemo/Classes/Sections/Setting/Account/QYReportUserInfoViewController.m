@@ -191,7 +191,7 @@ NSString *const QYCustomUserInfoDataKey = @"QYCustomUserInfoDataKey";
     CGFloat field_w = (width - 2 * leftSpace_field);
     
     self.idLabel.ysf_frameLeft = leftSpace_label;
-    self.idLabel.ysf_frameTop = YSFNavigationBarHeight + topSpace;
+    self.idLabel.ysf_frameTop = QYNavigationBarHeight + topSpace;
     self.idLabel.ysf_frameWidth = label_w;
     [self.idLabel sizeToFit];
     self.idTextField.frame = CGRectMake(leftSpace_field, ceilf(CGRectGetMaxY(self.idLabel.frame) + bottomSpace_1), field_w, fieldHeight);

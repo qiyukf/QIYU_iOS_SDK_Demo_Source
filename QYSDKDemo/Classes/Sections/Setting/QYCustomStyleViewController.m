@@ -9,7 +9,7 @@
 #import "QYCustomStyleViewController.h"
 #import "UIView+YSF.h"
 #import "UIView+YSFToast.h"
-#import "YSFAlertController.h"
+#import "QYAlertController.h"
 #import "YSFCommonTableData.h"
 #import "QYCommonCell.h"
 #import "QYDataSourceConfig.h"
@@ -111,20 +111,20 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [self.tableView reloadData];
         [self showToast:@"已恢复默认设置"];
     } else if (rowData.type == QYCustomStyleTypeSessionBackground) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择聊天背景图片"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"无（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择聊天背景图片"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"无（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].sessionBackground = nil;
             rowData.result = @"无";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"图片1" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"图片1" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"session_bg_1"]];
             [[QYSDK sharedSDK] customUIConfig].sessionBackground = imageView;
             rowData.result = @"图片1";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"图片2" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"图片2" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"session_bg_2"]];
             [[QYSDK sharedSDK] customUIConfig].sessionBackground = imageView;
@@ -134,61 +134,61 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     }else if (rowData.type == QYCustomStyleTypeThemeColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择主题色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].themeColor = YSFQYBlueColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择主题色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].themeColor = QYBlueColor;
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"橙色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"橙色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].themeColor = [UIColor orangeColor];
             rowData.result = @"橙色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].themeColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].themeColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeSessionTipColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择提示条背景颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"黄色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].sessionTipBackgroundColor = YSFQYTipBackColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择提示条背景颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"黄色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].sessionTipBackgroundColor = QYTipBackColor;
             rowData.result = @"黄色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].sessionTipBackgroundColor = YSFRGBA2(0xff12b8fb);
+            [[QYSDK sharedSDK] customUIConfig].sessionTipBackgroundColor = QYRGBA2(0xff12b8fb);
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].sessionTipBackgroundColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].sessionTipBackgroundColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeSessionTipTextColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择提示条字体颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"黄色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].sessionTipTextColor = YSFQYTipTextColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择提示条字体颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"黄色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].sessionTipTextColor = QYTipTextColor;
             rowData.result = @"黄色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"白色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"白色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].sessionTipTextColor = [UIColor whiteColor];
             rowData.result = @"白色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"灰色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"灰色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].sessionTipTextColor = [UIColor grayColor];
             rowData.result = @"灰色";
@@ -197,13 +197,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeSessionTipTextSize) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入提示条字体大小" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入提示条字体大小" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：14";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat size = [alert.textField.text floatValue];
                 if (size > 0 && size <= 30) {
@@ -219,13 +219,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeCustomerHeadImage) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择访客头像"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"默认" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择访客头像"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"默认" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].customerHeadImage = [self getImageInBundle:@"icon_customer_avatar"];
             rowData.result = @"默认";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"头像1" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"头像1" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].customerHeadImage = [UIImage imageNamed:@"customer_head"];
             rowData.result = @"头像1";
@@ -234,14 +234,14 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeCustomerMsgBubble) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择访客消息气泡"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"气泡1（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择访客消息气泡"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"气泡1（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].customerMessageBubbleNormalImage = [[self getImageInBundle:@"bubble_sender_normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 8, 8, 14) resizingMode:UIImageResizingModeStretch];
             [[QYSDK sharedSDK] customUIConfig].customerMessageBubblePressedImage = [[self getImageInBundle:@"bubble_sender_press"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 8, 8, 14) resizingMode:UIImageResizingModeStretch];
             rowData.result = @"气泡1";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"气泡2" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"气泡2" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             UIImage *image = [[UIImage imageNamed:@"icon_sender_node"]
                               resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 30, 30)
@@ -254,13 +254,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeCustomerMsgTextColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择访客消息字体颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"白色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择访客消息字体颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"白色（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].customMessageTextColor = [UIColor whiteColor];
             rowData.result = @"白色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"黑色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"黑色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].customMessageTextColor = [UIColor blackColor];
             rowData.result = @"黑色";
@@ -269,34 +269,34 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeCustomerMsgLinkColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择访客消息链接字体颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"白色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择访客消息链接字体颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"白色（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].customMessageHyperLinkColor = [UIColor whiteColor];
             rowData.result = @"白色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].customMessageHyperLinkColor = YSFRGBA2(0xff12b8fb);
+            [[QYSDK sharedSDK] customUIConfig].customMessageHyperLinkColor = QYRGBA2(0xff12b8fb);
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].customMessageHyperLinkColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].customMessageHyperLinkColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeCustomerMsgTextSize) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入访客消息字体大小" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入访客消息字体大小" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：16";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat size = [alert.textField.text floatValue];
                 if (size > 0 && size <= 30) {
@@ -312,13 +312,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeServiceHeadImage) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择客服头像"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"默认" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择客服头像"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"默认" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].serviceHeadImage = [self getImageInBundle:@"icon_service_avatar"];
             rowData.result = @"默认";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"头像1" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"头像1" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].serviceHeadImage = [UIImage imageNamed:@"service_head"];
             rowData.result = @"头像1";
@@ -327,14 +327,14 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeServiceMsgBubble) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择客服消息气泡"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"气泡1（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择客服消息气泡"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"气泡1（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].serviceMessageBubbleNormalImage = [[self getImageInBundle:@"bubble_receiver_normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 14, 8, 8) resizingMode:UIImageResizingModeStretch];
             [[QYSDK sharedSDK] customUIConfig].serviceMessageBubblePressedImage = [[self getImageInBundle:@"bubble_receiver_press"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 14, 8, 8) resizingMode:UIImageResizingModeStretch];
             rowData.result = @"气泡1";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"气泡2" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"气泡2" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             UIImage *image = [[UIImage imageNamed:@"icon_receiver_node"]
                               resizableImageWithCapInsets:UIEdgeInsetsMake(15, 30, 30, 15)
@@ -347,13 +347,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeServiceMsgTextColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择客服消息字体颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"黑色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].serviceMessageTextColor = YSFQYTextGrayColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择客服消息字体颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"黑色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].serviceMessageTextColor = QYTextGrayColor;
             rowData.result = @"黑色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"白色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"白色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].serviceMessageTextColor = [UIColor whiteColor];
             rowData.result = @"白色";
@@ -362,34 +362,34 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeServiceMsgLinkColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择客服消息链接字体颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].serviceMessageHyperLinkColor = YSFQYBlueColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择客服消息链接字体颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].serviceMessageHyperLinkColor = QYBlueColor;
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"白色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"白色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].serviceMessageHyperLinkColor = [UIColor whiteColor];
             rowData.result = @"白色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].serviceMessageHyperLinkColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].serviceMessageHyperLinkColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeServiceMsgTextSize) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入客服消息字体大小" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入客服消息字体大小" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：16";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat size = [alert.textField.text floatValue];
                 if (size > 0 && size <= 30) {
@@ -405,34 +405,34 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeTipMsgTextColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择提示消息字体颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"白色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择提示消息字体颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"白色（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].tipMessageTextColor = [UIColor whiteColor];
             rowData.result = @"白色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].tipMessageTextColor = YSFQYBlueColor;
+            [[QYSDK sharedSDK] customUIConfig].tipMessageTextColor = QYBlueColor;
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].tipMessageTextColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].tipMessageTextColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeTipMsgTextSize) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入提示消息字体大小" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入提示消息字体大小" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：12";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat size = [alert.textField.text floatValue];
                 if (size > 0 && size <= 30) {
@@ -448,19 +448,19 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeMessageButtonTextColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择按钮文字颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"白色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择按钮文字颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"白色（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].messageButtonTextColor = [UIColor whiteColor];
             rowData.result = @"白色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].messageButtonTextColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].messageButtonTextColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"灰色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"灰色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].messageButtonTextColor = [UIColor grayColor];
             rowData.result = @"灰色";
@@ -469,19 +469,19 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeMessageButtonBorderColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择按钮底色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].messageButtonBackColor = YSFQYBlueColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择按钮底色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].messageButtonBackColor = QYBlueColor;
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].messageButtonBackColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].messageButtonBackColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"灰色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"灰色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].messageButtonBackColor = [UIColor grayColor];
             rowData.result = @"灰色";
@@ -490,19 +490,19 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeActionBarTextColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择按钮文字颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].actionButtonTextColor = YSFQYBlueColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择按钮文字颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].actionButtonTextColor = QYBlueColor;
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].actionButtonTextColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].actionButtonTextColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"灰色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"灰色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].actionButtonTextColor = [UIColor grayColor];
             rowData.result = @"灰色";
@@ -511,19 +511,19 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeActionBarBorderColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择按钮边框颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].actionButtonBorderColor = YSFQYBlueColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择按钮边框颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].actionButtonBorderColor = QYBlueColor;
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].actionButtonBorderColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].actionButtonBorderColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"灰色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"灰色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].actionButtonBorderColor = [UIColor grayColor];
             rowData.result = @"灰色";
@@ -532,28 +532,28 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeInputTextColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择输入字体颜色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"黑色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].inputTextColor = YSFQYTextGrayColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择输入字体颜色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"黑色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].inputTextColor = QYTextGrayColor;
             rowData.result = @"黑色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].inputTextColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].inputTextColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeInputTextSize) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入字体大小" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入字体大小" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：14";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat size = [alert.textField.text floatValue];
                 if (size > 0 && size <= 30) {
@@ -569,12 +569,12 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeInputTextPlaceholder) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入占位文案" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入占位文案" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：请输入您要咨询的问题";
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].inputTextPlaceholder = alert.textField.text;
             rowData.result = alert.textField.text;
             [weakSelf reloadCellForIndexPath:indexPath];
@@ -584,13 +584,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeBottomMargin) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入间距" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入间距" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：0";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat margin = [alert.textField.text floatValue];
                 if (margin >= 0 && margin <= 500) {
@@ -606,28 +606,28 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeImagePickerColor) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择页面主题色"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"蓝色（默认）" handler:^(YSFAlertAction * _Nonnull action) {
-            [[QYSDK sharedSDK] customUIConfig].imagePickerColor = YSFQYBlueColor;
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择页面主题色"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"蓝色（默认）" handler:^(QYAlertAction * _Nonnull action) {
+            [[QYSDK sharedSDK] customUIConfig].imagePickerColor = QYBlueColor;
             rowData.result = @"蓝色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"绿色" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"绿色" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
-            [[QYSDK sharedSDK] customUIConfig].imagePickerColor = YSFRGBA2(0xff02c17c);
+            [[QYSDK sharedSDK] customUIConfig].imagePickerColor = QYRGBA2(0xff02c17c);
             rowData.result = @"绿色";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeSessionListEntranceImage) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择会话列表入口图片"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"默认" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择会话列表入口图片"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"默认" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].sessionListEntranceImage = [self getImageInBundle:@"icon_service_avatar"];
             rowData.result = @"默认";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"图片1" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"图片1" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].sessionListEntranceImage = [UIImage imageNamed:@"apple_logo"];
             rowData.result = @"图片1";
@@ -636,13 +636,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         [alert addCancelActionWithHandler:nil];
         [alert showWithSender:nil arrowDirection:UIPopoverArrowDirectionAny controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeMsgVerticalSpacing) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入间距" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入间距" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：0";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat margin = [alert.textField.text floatValue];
                 if (margin >= 0 && margin <= 500) {
@@ -658,13 +658,13 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeHeadMsgHorizontalSpacing) {
-        YSFAlertController *alert = [YSFAlertController alertWithTitle:@"请输入间距" message:nil];
+        QYAlertController *alert = [QYAlertController alertWithTitle:@"请输入间距" message:nil];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"默认：4";
             textField.keyboardType = UIKeyboardTypeNumberPad;
         }];
         [alert addCancelActionWithHandler:nil];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"确定" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"确定" handler:^(QYAlertAction * _Nonnull action) {
             if (alert.textField.text.length) {
                 CGFloat margin = [alert.textField.text floatValue];
                 if (margin >= 0 && margin <= 200) {
@@ -680,19 +680,19 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         }]];
         [alert showWithSender:nil controller:self animated:YES completion:nil];
     } else if (rowData.type == QYCustomStyleTypeBypassDisplayMode) {
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"选择访客分流展示样式"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"底部（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"选择访客分流展示样式"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"底部（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[QYSDK sharedSDK] customUIConfig].bypassDisplayMode = QYBypassDisplayModeBottom;
             rowData.result = @"底部";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"中间" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"中间" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].bypassDisplayMode = QYBypassDisplayModeCenter;
             rowData.result = @"中间";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"无" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"无" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[QYSDK sharedSDK] customUIConfig].bypassDisplayMode = QYBypassDisplayModeNone;
             rowData.result = @"无";
@@ -709,15 +709,15 @@ static NSString * const kCustomStyleCellIdentifier = @"kCustomStyleCellIdentifie
         UIImage *loadingImg_3 = [UIImage imageNamed:@"message_loading_3"];
         UIImage *loadingImg_4 = [UIImage imageNamed:@"message_loading_4"];
         
-        YSFAlertController *alert = [YSFAlertController actionSheetWithTitle:@"消息下拉刷新loading样式"];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"系统样式（默认）" handler:^(YSFAlertAction * _Nonnull action) {
+        QYAlertController *alert = [QYAlertController actionSheetWithTitle:@"消息下拉刷新loading样式"];
+        [alert addAction:[QYAlertAction actionWithTitle:@"系统样式（默认）" handler:^(QYAlertAction * _Nonnull action) {
             [[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:nil duration:0 forState:QYMessagesLoadStateIdle];
             [[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:nil duration:0 forState:QYMessagesLoadStateWillLoad];
             [[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:nil duration:0 forState:QYMessagesLoadStateLoading];
             rowData.result = @"系统样式";
             [weakSelf reloadCellForIndexPath:indexPath];
         }]];
-        [alert addAction:[YSFAlertAction actionWithTitle:@"自定义样式1" handler:^(YSFAlertAction * _Nonnull action) {
+        [alert addAction:[QYAlertAction actionWithTitle:@"自定义样式1" handler:^(QYAlertAction * _Nonnull action) {
             [QYSettingData sharedData].isDefault = NO;
             [[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:@[idleImg] duration:0 forState:QYMessagesLoadStateIdle];
             [[[QYSDK sharedSDK] customUIConfig] setMessagesLoadImages:@[willImg] duration:0 forState:QYMessagesLoadStateWillLoad];

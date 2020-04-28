@@ -82,8 +82,8 @@
     self.badgeView = [QYBadgeView viewWithBadgeTip:@""];
     [self addSubview:_badgeView];
     
-    self.seperatorLine = [[UIView alloc] initWithFrame:CGRectMake(70, CGRectGetHeight(self.bounds), YSFUIScreenWidth - 70, 1.0/YSFUIScreenScale)];
-    _seperatorLine.backgroundColor = YSFColorFromRGB(0xdde3e5);
+    self.seperatorLine = [[UIView alloc] initWithFrame:CGRectMake(70, CGRectGetHeight(self.bounds), QYUIScreenWidth - 70, 1.0/QYUIScreenScale)];
+    _seperatorLine.backgroundColor = QYColorFromRGB(0xdde3e5);
     [self addSubview:_seperatorLine];
 }
 

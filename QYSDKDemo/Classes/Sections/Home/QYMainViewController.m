@@ -19,6 +19,7 @@
 #import "QYSettingData.h"
 #import "QYMacro.h"
 #import <NIMSDK/NIMSDK.h>
+#import <QYSDK/QYSDK.h>
 #import <QYSDK/QYPOPSDK.h>
 
 

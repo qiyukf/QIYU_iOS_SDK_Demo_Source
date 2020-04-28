@@ -9,7 +9,7 @@
 #import "QYEvaluationViewController.h"
 #import "UIView+YSF.h"
 #import "UIView+YSFToast.h"
-#import "UIControl+YSFBlocksKit.h"
+#import "UIControl+QYBlocksKit.h"
 #import "QYEvaluationResolveView.h"
 #import "QYMacro.h"
 #import <QYSDK/QYSessionViewController.h>
@@ -95,7 +95,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
     [self.view addGestureRecognizer:singleTap];
     
     __weak typeof(self) weakSelf = self;
-    self.view.backgroundColor = YSFColorFromRGBA(0x000000, 0.5);
+    self.view.backgroundColor = QYColorFromRGBA(0x000000, 0.5);
     CGFloat lineWidth = (1. / [UIScreen mainScreen].scale);
     //contentView
     _contentView = [[UIView alloc] init];
@@ -106,13 +106,13 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
     [self.view addSubview:_contentView];
     //topLineView1
     _topLineView1 = [[UIView alloc] init];
-    _topLineView1.backgroundColor = YSFColorFromRGB(0xdcdcdc);
+    _topLineView1.backgroundColor = QYColorFromRGB(0xdcdcdc);
     //titleLabel
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.backgroundColor = YSFColorFromRGB(0xf1f1f1);
+    _titleLabel.backgroundColor = QYColorFromRGB(0xf1f1f1);
     _titleLabel.text = @"自定义评价界面";
     _titleLabel.font = [UIFont systemFontOfSize:15];
-    _titleLabel.textColor = YSFRGB(0x222222);
+    _titleLabel.textColor = QYRGB(0x222222);
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     [_contentView addSubview:_titleLabel];
     //closeButton
@@ -122,7 +122,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
     [_contentView addSubview:_closeButton];
     //topLineView2
     _topLineView2 = [[UIView alloc] init];
-    _topLineView2.backgroundColor = YSFColorFromRGB(0xdcdcdc);
+    _topLineView2.backgroundColor = QYColorFromRGB(0xdcdcdc);
     //scrollView
     _scrollView = [[UIScrollView alloc] init];
     [_contentView addSubview:_scrollView];
@@ -160,7 +160,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
                 [tagButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
                 tagButton.layer.cornerRadius = 10.0;
                 tagButton.layer.borderWidth = lineWidth;
-                tagButton.layer.borderColor = YSFRGB(0xcccccc).CGColor;
+                tagButton.layer.borderColor = QYRGB(0xcccccc).CGColor;
                 tagButton.titleLabel.font = [UIFont systemFontOfSize:12];
                 tagButton.titleEdgeInsets = UIEdgeInsetsMake(0, kEvaluationTagButtonMargin, 0, kEvaluationTagButtonMargin);
                 tagButton.titleLabel.layer.masksToBounds = YES;
@@ -168,7 +168,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
                 [tagButton ysf_addEventHandler:^(id sender) {
                     weakTagButton.selected = !weakTagButton.selected;
                     if (weakTagButton.selected) {
-                        weakTagButton.backgroundColor = YSFColorFromRGB(0x999999);
+                        weakTagButton.backgroundColor = QYColorFromRGB(0x999999);
                     } else {
                         weakTagButton.backgroundColor = [UIColor clearColor];
                     }
@@ -189,7 +189,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
     _textView.delegate = self;
     _textView.textColor = [UIColor blackColor];
     _textView.font = [UIFont systemFontOfSize:13.0];
-    _textView.layer.borderColor = YSFColorFromRGB(0xdcdcdc).CGColor;
+    _textView.layer.borderColor = QYColorFromRGB(0xdcdcdc).CGColor;
     _textView.layer.borderWidth = lineWidth;
     _textView.layer.cornerRadius = 3.0;
     [_scrollView addSubview:_textView];
@@ -206,7 +206,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
     [_scrollView addSubview:_resolveView];
     //bottomLineView
     _bottomLineView = [[UIView alloc] init];
-    _bottomLineView.backgroundColor = YSFColorFromRGB(0xdcdcdc);
+    _bottomLineView.backgroundColor = QYColorFromRGB(0xdcdcdc);
     //submitButton
     _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _submitButton.titleLabel.font = [UIFont systemFontOfSize:16.0];
@@ -233,9 +233,9 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
     if (!CGRectEqualToRect(_kbFrame, CGRectZero) && _kbFrame.origin.y < CGRectGetHeight(self.view.bounds) && CGRectGetHeight(_kbFrame)) {
         CGRect contentFrame = _contentView.frame;
         contentFrame.origin.y = _kbFrame.origin.y - contentFrame.size.height;
-        if (contentFrame.origin.y < YSFStatusBarHeight) {
-            contentFrame.origin.y = YSFStatusBarHeight;
-            contentFrame.size.height = CGRectGetHeight([UIScreen mainScreen].bounds) - YSFStatusBarHeight - _kbFrame.size.height;
+        if (contentFrame.origin.y < QYStatusBarHeight) {
+            contentFrame.origin.y = QYStatusBarHeight;
+            contentFrame.size.height = CGRectGetHeight([UIScreen mainScreen].bounds) - QYStatusBarHeight - _kbFrame.size.height;
         }
         _contentView.frame = contentFrame;
     }
@@ -347,7 +347,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
     UIButton *button = (UIButton *)sender;
     _selectedButton = button;
     _selectedButton.selected = YES;
-    _selectedButton.titleLabel.backgroundColor = YSFColorFromRGB(0x999999);
+    _selectedButton.titleLabel.backgroundColor = QYColorFromRGB(0x999999);
     //selectedButton animation
     CGAffineTransform oldTransForm =  button.imageView.transform;
     CGAffineTransform transform = CGAffineTransformScale(oldTransForm, 1.2, 1.2);
@@ -447,17 +447,17 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
         self.view.userInteractionEnabled = YES;
         _submitButton.enabled = YES;
         [_submitButton setTitle:@"提 交" forState:UIControlStateNormal];
-        _submitButton.backgroundColor = YSFQYBlueColor;
+        _submitButton.backgroundColor = QYBlueColor;
     } else if (type == QYEvaluationSubmitTypeUnable) {
         self.view.userInteractionEnabled = YES;
         _submitButton.enabled = NO;
         [_submitButton setTitle:@"提 交" forState:UIControlStateNormal];
-        _submitButton.backgroundColor = [YSFQYBlueColor colorWithAlphaComponent:0.6];
+        _submitButton.backgroundColor = [QYBlueColor colorWithAlphaComponent:0.6];
     } else if (type == QYEvaluationSubmitTypeSubmitting) {
         self.view.userInteractionEnabled = NO;
         _submitButton.enabled = NO;
         [_submitButton setTitle:@"提交中..." forState:UIControlStateNormal];
-        _submitButton.backgroundColor = [YSFQYBlueColor colorWithAlphaComponent:0.6];
+        _submitButton.backgroundColor = [QYBlueColor colorWithAlphaComponent:0.6];
     }
 }
 
@@ -566,7 +566,7 @@ typedef NS_ENUM(NSInteger, QYEvaluationSubmitType) {
             for (UIButton *tagButton in _selectedTagView.subviews) {
                 if ([[tagButton titleForState:UIControlStateNormal] isEqualToString:selectTagString]) {
                     tagButton.selected = YES;
-                    tagButton.backgroundColor = YSFColorFromRGB(0x999999);
+                    tagButton.backgroundColor = QYColorFromRGB(0x999999);
                 }
             }
         }

@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface YSFWebViewController : UIViewController
+@interface QYWebViewController : UIViewController
 
 - (instancetype)initWithUrl:(NSString *)urlString
                  needOffset:(BOOL)needOffset

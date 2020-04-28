@@ -1,5 +1,5 @@
 //
-//  YSFAlertController.m
+//  QYAlertController.m
 //
 //  Copyright (c) 2014 PSPDFKit GmbH. All rights reserved.
 //
@@ -9,29 +9,29 @@
 //  This notice may not be removed from this file.
 //
 
-#import "YSFAlertController.h"
+#import "QYAlertController.h"
 #import <objc/runtime.h>
 
 #define PROPERTY(property) NSStringFromSelector(@selector(property))
 
-@interface YSFAlertAction ()
+@interface QYAlertAction ()
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) YSFAlertActionStyle style;
-@property (nonatomic, copy) void (^handler)(YSFAlertAction *action);
+@property (nonatomic, assign) QYAlertActionStyle style;
+@property (nonatomic, copy) void (^handler)(QYAlertAction *action);
 - (void)performAction;
 @end
 
-@implementation YSFAlertAction
+@implementation QYAlertAction
 
-+ (instancetype)actionWithTitle:(NSString *)title style:(YSFAlertActionStyle)style handler:(void (^)(YSFAlertAction *action))handler {
++ (instancetype)actionWithTitle:(NSString *)title style:(QYAlertActionStyle)style handler:(void (^)(QYAlertAction *action))handler {
     return [[self alloc] initWithTitle:title style:style handler:handler];
 }
 
-+ (instancetype)actionWithTitle:(NSString *)title handler:(void (^)(YSFAlertAction *action))handler {
-    return [[self alloc] initWithTitle:title style:YSFAlertActionStyleDefault handler:handler];
++ (instancetype)actionWithTitle:(NSString *)title handler:(void (^)(QYAlertAction *action))handler {
+    return [[self alloc] initWithTitle:title style:QYAlertActionStyleDefault handler:handler];
 }
 
-- (instancetype)initWithTitle:(NSString *)title style:(YSFAlertActionStyle)style handler:(void (^)(YSFAlertAction *action))handler {
+- (instancetype)initWithTitle:(NSString *)title style:(QYAlertActionStyle)style handler:(void (^)(QYAlertAction *action))handler {
     if ((self = [super init])) {
         _title = [title copy];
         _style = style;
@@ -72,12 +72,12 @@
 
 @end
 
-@interface YSFAlertController () <UIActionSheetDelegate, UIAlertViewDelegate> {
+@interface QYAlertController () <UIActionSheetDelegate, UIAlertViewDelegate> {
     struct {
         unsigned int isShowingAlert:1;
     } _flags;
 }
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(YSFAlertControllerStyle)preferredStyle NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(QYAlertControllerStyle)preferredStyle NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, copy) NSArray *willDismissBlocks;
 @property (nonatomic, copy) NSArray *didDismissBlocks;
@@ -86,7 +86,7 @@
 @property (nonatomic, strong) YSFPSTExtendedAlertController *alertController;
 
 // Universal
-@property (nonatomic, weak) YSFAlertAction *executedAlertAction;
+@property (nonatomic, weak) QYAlertAction *executedAlertAction;
 
 // iOS 7
 @property (nonatomic, copy) NSArray *actions;
@@ -99,7 +99,7 @@
 @property (nonatomic, weak) UIView *weakSheetStorage;
 @end
 
-@implementation YSFAlertController
+@implementation QYAlertController
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Initialization
@@ -108,7 +108,7 @@
     return [UIAlertController class] != nil; // iOS 8 and later.
 }
 
-+ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(YSFAlertControllerStyle)preferredStyle {
++ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(QYAlertControllerStyle)preferredStyle {
     return [[self alloc] initWithTitle:title message:message preferredStyle:preferredStyle];
 }
 
@@ -117,7 +117,7 @@
     return nil;
 }
 
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(YSFAlertControllerStyle)preferredStyle {
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(QYAlertControllerStyle)preferredStyle {
     if ((self = [super init])) {
         _title = [title copy];
         _message = [message copy];
@@ -127,7 +127,7 @@
             _alertController = [YSFPSTExtendedAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyle)preferredStyle];
         } else {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 80000
-            if (preferredStyle == YSFAlertControllerStyleActionSheet) {
+            if (preferredStyle == QYAlertControllerStyleActionSheet) {
                 NSString *titleAndMessage = title;
                 if (title && message) {
                     titleAndMessage = [NSString stringWithFormat:@"%@\n%@", title, message];
@@ -192,8 +192,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Adding Actions
 
-- (void)addAction:(YSFAlertAction *)action {
-    NSAssert([action isKindOfClass:YSFAlertAction.class], @"Must be of type YSFAlertAction");
+- (void)addAction:(QYAlertAction *)action {
+    NSAssert([action isKindOfClass:QYAlertAction.class], @"Must be of type QYAlertAction");
 
     action.alertController = self; // weakly connect
 
@@ -207,19 +207,19 @@
         }];
         [self.alertController addAction:alertAction];
     } else {
-        if (self.preferredStyle == YSFAlertControllerStyleActionSheet) {
+        if (self.preferredStyle == QYAlertControllerStyleActionSheet) {
             NSUInteger currentButtonIndex = [self.actionSheet addButtonWithTitle:action.title];
 
-            if (action.style == YSFAlertActionStyleDestructive) {
+            if (action.style == QYAlertActionStyleDestructive) {
                 self.actionSheet.destructiveButtonIndex = currentButtonIndex;
-            } else if (action.style == YSFAlertActionStyleCancel) {
+            } else if (action.style == QYAlertActionStyleCancel) {
                 self.actionSheet.cancelButtonIndex = currentButtonIndex;
             }
         } else {
             NSUInteger currentButtonIndex = [self.alertView addButtonWithTitle:action.title];
 
             // UIAlertView doesn't support destructive buttons.
-            if (action.style == YSFAlertActionStyleCancel) {
+            if (action.style == QYAlertActionStyleCancel) {
                 self.alertView.cancelButtonIndex = currentButtonIndex;
             }
         }
@@ -233,7 +233,7 @@
     if ([self alertControllerAvailable]) {
         [self.alertController addTextFieldWithConfigurationHandler:configurationHandler];
     } else {
-        NSAssert(self.preferredStyle == YSFAlertControllerStyleAlert, @"Text fields are only supported for alerts.");
+        NSAssert(self.preferredStyle == QYAlertControllerStyleAlert, @"Text fields are only supported for alerts.");
         self.textFieldHandlers = [[NSArray arrayWithArray:self.textFieldHandlers] arrayByAddingObject:configurationHandler ?: ^(UITextField *textField){}];
         self.alertView.alertViewStyle = self.textFieldHandlers.count > 1 ? UIAlertViewStyleLoginAndPasswordInput : UIAlertViewStylePlainTextInput;
     }
@@ -242,7 +242,7 @@
 - (NSArray *)textFields {
     if ([self alertControllerAvailable]) {
         return self.alertController.textFields;
-    } else if (self.preferredStyle == YSFAlertControllerStyleAlert) {
+    } else if (self.preferredStyle == QYAlertControllerStyleAlert) {
         switch (self.alertView.alertViewStyle) {
             case UIAlertViewStyleSecureTextInput:
             case UIAlertViewStylePlainTextInput:
@@ -273,7 +273,7 @@ static NSUInteger PSTVisibleAlertsCount = 0;
     if ([self alertControllerAvailable]) {
         return self.alertController.view.window != nil;
     } else {
-        if (self.preferredStyle == YSFAlertControllerStyleActionSheet) {
+        if (self.preferredStyle == QYAlertControllerStyleActionSheet) {
             return self.actionSheet.isVisible;
         } else {
             return self.alertView.isVisible;
@@ -288,7 +288,7 @@ static NSUInteger PSTVisibleAlertsCount = 0;
 - (void)showWithSender:(id)sender arrowDirection:(UIPopoverArrowDirection)arrowDirection controller:(UIViewController *)controller animated:(BOOL)animated completion:(void (^)(void))completion {
     if ([self alertControllerAvailable]) {
         // As a convenience, allow automatic root view controller fetching if we show an alert.
-        if (self.preferredStyle == YSFAlertControllerStyleAlert) {
+        if (self.preferredStyle == QYAlertControllerStyleAlert) {
             if (!controller) {
                 // sharedApplication is unavailable for extensions, but required for things like preferredContentSizeCategory.
                 UIApplication *sharedApplication = [UIApplication performSelector:NSSelectorFromString(PROPERTY(sharedApplication))];
@@ -368,7 +368,7 @@ static NSUInteger PSTVisibleAlertsCount = 0;
         }];
 
     } else {
-        if (self.preferredStyle == YSFAlertControllerStyleActionSheet) {
+        if (self.preferredStyle == QYAlertControllerStyleActionSheet) {
             [self showActionSheetWithSender:sender fallbackView:controller.view animated:animated];
             [self moveSheetToWeakStorage];
         } else {
@@ -424,9 +424,9 @@ static NSUInteger PSTVisibleAlertsCount = 0;
     } else {
         // Make sure the completion block is called.
         if (completion) {
-            [self addDidDismissBlock:^(YSFAlertAction *action) { completion(); }];
+            [self addDidDismissBlock:^(QYAlertAction *action) { completion(); }];
         }
-        if (self.preferredStyle == YSFAlertControllerStyleActionSheet) {
+        if (self.preferredStyle == QYAlertControllerStyleActionSheet) {
             [self.actionSheet dismissWithClickedButtonIndex:self.actionSheet.cancelButtonIndex animated:animated];
         } else {
             [self.alertView dismissWithClickedButtonIndex:self.alertView.cancelButtonIndex animated:animated];
@@ -438,7 +438,7 @@ static NSUInteger PSTVisibleAlertsCount = 0;
     if ([self alertControllerAvailable]) {
         return self.alertController;
     } else {
-        if (self.preferredStyle == YSFAlertControllerStyleActionSheet) {
+        if (self.preferredStyle == QYAlertControllerStyleActionSheet) {
             return self.actionSheet;
         } else {
             return self.alertView;
@@ -449,12 +449,12 @@ static NSUInteger PSTVisibleAlertsCount = 0;
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Will/Did Dismiss Observers
 
-- (void)addWillDismissBlock:(void (^)(YSFAlertAction *action))willDismissBlock {
+- (void)addWillDismissBlock:(void (^)(QYAlertAction *action))willDismissBlock {
     NSParameterAssert(willDismissBlock);
     self.willDismissBlocks = [[NSArray arrayWithArray:self.willDismissBlocks] arrayByAddingObject:willDismissBlock];
 }
 
-- (void)addDidDismissBlock:(void (^)(YSFAlertAction *action))didDismissBlock {
+- (void)addDidDismissBlock:(void (^)(QYAlertAction *action))didDismissBlock {
     NSParameterAssert(didDismissBlock);
     self.didDismissBlocks = [[NSArray arrayWithArray:self.didDismissBlocks] arrayByAddingObject:didDismissBlock];
 }
@@ -473,22 +473,22 @@ static NSUInteger PSTVisibleAlertsCount = 0;
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Execute Actions
 
-- (YSFAlertAction *)actionForButtonIndex:(NSInteger)index {
+- (QYAlertAction *)actionForButtonIndex:(NSInteger)index {
     return index >= 0 ? self.actions[index] : nil;
 }
 
-- (void)performBlocks:(NSString *)blocksStorageName withAction:(YSFAlertAction *)alertAction {
+- (void)performBlocks:(NSString *)blocksStorageName withAction:(QYAlertAction *)alertAction {
     // Load variable and nil out.
     NSArray *blocks = [self valueForKey:blocksStorageName];
     [self setValue:nil forKey:blocksStorageName];
 
-    for (void (^block)(YSFAlertAction *action) in blocks) {
+    for (void (^block)(QYAlertAction *action) in blocks) {
         block(alertAction);
     }
 }
 
 - (void)viewWillDismissWithButtonIndex:(NSInteger)buttonIndex {
-    YSFAlertAction *action = [self actionForButtonIndex:buttonIndex];
+    QYAlertAction *action = [self actionForButtonIndex:buttonIndex];
     self.executedAlertAction = action;
 
     [self performBlocks:PROPERTY(willDismissBlocks) withAction:action];
@@ -498,7 +498,7 @@ static NSUInteger PSTVisibleAlertsCount = 0;
 }
 
 - (void)viewDidDismissWithButtonIndex:(NSInteger)buttonIndex {
-    YSFAlertAction *action = [self actionForButtonIndex:buttonIndex];
+    QYAlertAction *action = [self actionForButtonIndex:buttonIndex];
     [action performAction];
 
     [self performBlocks:PROPERTY(didDismissBlocks) withAction:action];
@@ -529,23 +529,23 @@ static NSUInteger PSTVisibleAlertsCount = 0;
 
 @end
 
-@implementation YSFAlertController (Convenience)
+@implementation QYAlertController (Convenience)
 
-+ (instancetype)actionWithTitle:(NSString *)title handler:(void (^)(YSFAlertAction *action))handler {
-    return [[self alloc] initWithTitle:title style:YSFAlertActionStyleDefault handler:handler];
++ (instancetype)actionWithTitle:(NSString *)title handler:(void (^)(QYAlertAction *action))handler {
+    return [[self alloc] initWithTitle:title style:QYAlertActionStyleDefault handler:handler];
 }
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message {
-    return [[self alloc] initWithTitle:title message:message preferredStyle:YSFAlertControllerStyleAlert];
+    return [[self alloc] initWithTitle:title message:message preferredStyle:QYAlertControllerStyleAlert];
 }
 
 + (instancetype)actionSheetWithTitle:(NSString *)title {
-    return [[self alloc] initWithTitle:title message:nil preferredStyle:YSFAlertControllerStyleActionSheet];
+    return [[self alloc] initWithTitle:title message:nil preferredStyle:QYAlertControllerStyleActionSheet];
 }
 
 + (instancetype)presentDismissableAlertWithTitle:(NSString *)title message:(NSString *)message controller:(UIViewController *)controller {
-    YSFAlertController *alertController = [self alertWithTitle:title message:message];
-    [alertController addAction:[YSFAlertAction actionWithTitle:NSLocalizedString(@"取消", @"") style:YSFAlertActionStyleCancel handler:NULL]];
+    QYAlertController *alertController = [self alertWithTitle:title message:message];
+    [alertController addAction:[QYAlertAction actionWithTitle:NSLocalizedString(@"取消", @"") style:QYAlertActionStyleCancel handler:NULL]];
     [alertController showWithSender:nil controller:controller animated:YES completion:NULL];
     return alertController;
 }
@@ -559,8 +559,8 @@ static NSUInteger PSTVisibleAlertsCount = 0;
     return [self presentDismissableAlertWithTitle:title message:message controller:controller];
 }
 
-- (void)addCancelActionWithHandler:(void (^)(YSFAlertAction *action))handler {
-    [self addAction:[YSFAlertAction actionWithTitle:NSLocalizedString(@"取消", @"") style:YSFAlertActionStyleCancel handler:handler]];
+- (void)addCancelActionWithHandler:(void (^)(QYAlertAction *action))handler {
+    [self addAction:[QYAlertAction actionWithTitle:NSLocalizedString(@"取消", @"") style:QYAlertActionStyleCancel handler:handler]];
 }
 
 @end

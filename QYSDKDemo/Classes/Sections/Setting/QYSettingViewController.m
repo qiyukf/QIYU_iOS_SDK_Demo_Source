@@ -17,7 +17,7 @@
 #import "QYCustomStyleViewController.h"
 #import "QYMoreOptionViewController.h"
 #import "QYEvaluationViewController.h"
-#import "YSFWebViewController.h"
+#import "QYWebViewController.h"
 #import "QYCommonCell.h"
 #import "QYDataSourceConfig.h"
 #import "NSDictionary+QYJson.h"
@@ -210,8 +210,6 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
         [self onChangeUserInfo];
     } else if (rowData.type == QYSettingTypeAppKey) {
         [self onBindAppkey];
-    } else if (rowData.type == QYSettingTypePrivatization) {
-        [self onPrivatization];
     } else if (rowData.type == QYSettingTypeAccountLogin) {
         __weak typeof(self) weakSelf = self;
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入云信帐号及密码"
@@ -363,25 +361,6 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
 - (void)nimLoginWithAccount:(NSString *)account password:(NSString *)password {
     if (account.length && password.length) {
         NSString *loginToken = password;
-        /**
-         * 私有化配置
-         */
-        BOOL isPrivate = NO;
-        id setting = nil;
-        setting = [[NSUserDefaults standardUserDefaults] valueForKey:@"privatization_enabled"];
-        if(setting) {
-            isPrivate = [setting boolValue];
-        }
-        if(isPrivate) {
-            setting = [[NSUserDefaults standardUserDefaults] valueForKey:@"privatization_password_md5_enabled"];
-            BOOL md5Enable = NO;
-            if(setting) {
-                md5Enable = [setting boolValue];
-            }
-            if(md5Enable) {
-                loginToken = [password qy_md5];
-            }
-        }
         
         [self.view ysf_makeActivityToast:@"登录中" shadow:NO];
         if ([account isEqualToString:self.account]
@@ -523,13 +502,6 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
                                            otherButtonTitles:nil, nil];
     [[dialog textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
     [dialog show];
-}
-
-//私有化配置
-- (void)onPrivatization {
-//    QYPrivatizationViewController *vc = [[QYPrivatizationViewController alloc] init];
-//    vc.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 联系客服
@@ -1055,7 +1027,7 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
     CGFloat width = [UIScreen mainScreen].bounds.size.width - insets.left - insets.right;
     
     UIView *hoverView = [[UIView alloc] init];
-    hoverView.backgroundColor = YSFColorFromRGB(0x12b8fb);
+    hoverView.backgroundColor = QYColorFromRGB(0x12b8fb);
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     closeButton.tintColor = [UIColor whiteColor];
@@ -1250,7 +1222,7 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
 
 - (void)openUrl:(NSString *)urlString {
     if (self.sessionViewController) {
-        YSFWebViewController *webViewController = [[YSFWebViewController alloc] initWithUrl:urlString
+        QYWebViewController *webViewController = [[QYWebViewController alloc] initWithUrl:urlString
                                                                                  needOffset:YES
                                                                                  errorImage:nil];
         [self.sessionViewController.navigationController pushViewController:webViewController animated:YES];

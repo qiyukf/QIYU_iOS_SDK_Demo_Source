@@ -70,11 +70,6 @@
                     YSFTitle : @"用户信息",
                     YSFType : @(QYSettingTypeUserInfo),
                 },
-                @{
-                    YSFStyle : @(YSFCommonCellStyleIndicator),
-                    YSFTitle : @"私有化配置",
-                    YSFType : @(QYSettingTypePrivatization),
-                },
         ],
         YSFFooterTitle : @"",
     }];
@@ -638,11 +633,6 @@
 
 - (void)reloadSettingDataSource {
     [self makeSettingData];
-}
-
-- (NSString *)configFilepath {
-    NSString *dir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    return [dir stringByAppendingPathComponent:@"qy_appkey.plist"];
 }
 
 @end

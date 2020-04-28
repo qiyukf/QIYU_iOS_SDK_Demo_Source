@@ -12,7 +12,6 @@
 @interface QYAppKeyConfig : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *appKey;
-@property (nonatomic, assign) NSInteger environment;
 @property (nonatomic, assign) BOOL isFusion;
 
 @end

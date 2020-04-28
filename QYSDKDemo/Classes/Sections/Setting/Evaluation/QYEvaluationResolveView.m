@@ -26,7 +26,7 @@
         
         _label = [[UILabel alloc] init];
         _label.font = [UIFont systemFontOfSize:14.0f];
-        _label.textColor = YSFQYTextGrayColor;
+        _label.textColor = QYTextGrayColor;
         _label.text = @"您的问题";
         [self addSubview:_label];
         
@@ -61,13 +61,13 @@
 - (void)updateButtonStatus:(BOOL)selected button:(UIButton *)button {
     button.selected = selected;
     if (button.selected) {
-        button.backgroundColor = [YSFQYBlueColor colorWithAlphaComponent:0.05];
-        button.layer.borderColor = YSFQYBlueColor.CGColor;
-        [button setTitleColor:YSFQYBlueColor forState:UIControlStateNormal];
+        button.backgroundColor = [QYBlueColor colorWithAlphaComponent:0.05];
+        button.layer.borderColor = QYBlueColor.CGColor;
+        [button setTitleColor:QYBlueColor forState:UIControlStateNormal];
     } else {
-        button.backgroundColor = YSFColorFromRGB(0xf2f3f5);
+        button.backgroundColor = QYColorFromRGB(0xf2f3f5);
         button.layer.borderColor = button.backgroundColor.CGColor;
-        [button setTitleColor:YSFQYButtonTitleDisableColor forState:UIControlStateNormal];
+        [button setTitleColor:QYButtonTitleDisableColor forState:UIControlStateNormal];
     }
 }
 

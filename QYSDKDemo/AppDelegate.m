@@ -37,21 +37,22 @@
     [[IQKeyboardManager sharedManager].enabledDistanceHandlingClasses addObject:NSClassFromString(@"YSFMessageFormViewController")];
     //点击页面非输入区域时收起键盘
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-
-    /**
-     * 注册SDK
-     */
-    [self registerSDK];
     
     return YES;
 }
 
-- (void)registerSDK {
-    QYSDKOption *option = [QYSDKOption optionWithAppKey:@"b24e1ecd4594b9cc6cfcc27edc12b936"];
-    option.appName = @"appName";
-    option.pkCerName = @"pkCerName";
-    option.isFusion = NO;
-    [[QYSDK sharedSDK] registerWithOption:option];
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    NSInteger count = [[[QYSDK sharedSDK] conversationManager] allUnreadCount];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:count];
+}
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSLog(@"register remote notification success %@", [NSString stringWithFormat:@"%@",deviceToken]);
+    [[QYSDK sharedSDK] updateApnsToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"register remote notification failed %@", error);
 }
 
 

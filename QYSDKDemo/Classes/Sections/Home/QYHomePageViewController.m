@@ -25,22 +25,11 @@
 
 @end
 
-/**
- * 七鱼默认四套环境：
- * YSFServerEnvironmentOnline  0：线上环境  qiyukf.com
- * YSFServerEnvironmentTest    1：测试环境  qytest.netease.com
- * YSFServerEnvironmentPre     2：预发环境  qiyukf.netease.com
- * YSFServerEnvironmentDev     3：开发环境  qydev.netease.com
- * 私有化配置优先级：七鱼私有化配置 > 云信私有化配置 > 七鱼默认环境配置
- */
 
 @implementation QYHomePageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //设置NIMSDK根目录
-    //[self resetNIMSDKDir];
     
     //读取本地存储的AppKey信息
     [self readAppkey];
@@ -89,20 +78,12 @@
     return item;
 }
 
-- (void)resetNIMSDKDir {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDir = [paths firstObject];
-    NSString *newPath = [docDir stringByAppendingPathComponent:@"test_NIMSDK"];
-    [[NIMSDKConfig sharedConfig] setupSDKDir:newPath];
-}
-
 - (void)readAppkey {
     id data = [NSKeyedUnarchiver unarchiveObjectWithFile:[self configFilepath]];
     if (data && [data isKindOfClass:[QYAppKeyConfig class]]) {
         QYAppKeyConfig *appData = (QYAppKeyConfig *)data;
         [[QYDemoConfig sharedConfig] setAppKey:appData.appKey];
         [[QYDemoConfig sharedConfig] setIsFusion:appData.isFusion];
-        [[QYDemoConfig sharedConfig] setEnvironment:appData.environment];
     }
 }
 

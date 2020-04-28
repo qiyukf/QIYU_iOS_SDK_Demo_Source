@@ -243,10 +243,4 @@ typedef NS_ENUM(NSInteger, QYTestModeType) {
 }
 
 
-
-
-
-
-
-
 @end

@@ -47,13 +47,13 @@
     [self.view addSubview:_captureLayer];
     
     UIImageView *top = [[UIImageView alloc] init];
-    top.backgroundColor = YSFRGBA(0x000000, 0.5);
+    top.backgroundColor = QYRGBA(0x000000, 0.5);
     top.ysf_frameWidth = self.view.ysf_frameWidth;
     top.ysf_frameHeight = (self.view.ysf_frameHeight - 300)/2;
     [self.view addSubview:top];
     
     UIImageView *bottom = [[UIImageView alloc] init];
-    bottom.backgroundColor = YSFRGBA(0x000000, 0.5);
+    bottom.backgroundColor = QYRGBA(0x000000, 0.5);
     bottom.ysf_frameWidth = self.view.ysf_frameWidth;
     bottom.ysf_frameTop = (self.view.ysf_frameHeight - 300)/2 + 300;
     bottom.ysf_frameHeight = (self.view.ysf_frameHeight - 300)/2;
@@ -68,14 +68,14 @@
     [bottom addSubview:tip];
     
     UIImageView *left = [[UIImageView alloc] init];
-    left.backgroundColor = YSFRGBA(0x000000, 0.5);
+    left.backgroundColor = QYRGBA(0x000000, 0.5);
     left.ysf_frameWidth = (self.view.ysf_frameWidth - 300)/2;
     left.ysf_frameTop = top.ysf_frameHeight;
     left.ysf_frameHeight = 300;
     [self.view addSubview:left];
     
     UIImageView *right = [[UIImageView alloc] init];
-    right.backgroundColor = YSFRGBA(0x000000, 0.5);
+    right.backgroundColor = QYRGBA(0x000000, 0.5);
     right.ysf_frameWidth = (self.view.ysf_frameWidth - 300)/2;
     right.ysf_frameRight = self.view.ysf_frameWidth;
     right.ysf_frameTop = top.ysf_frameHeight;

@@ -18,10 +18,6 @@ static NSString * const kAddAppKeyCellIdentifier = @"kAddAppKeyCellIdentifier";
 typedef NS_ENUM(NSInteger, QYAddAppKeyType) {
     QYAddAppKeyTypeNone = 0,
     QYAddAppKeyTypeInput,
-    QYAddAppKeyTypeOnline,
-    QYAddAppKeyTypePre,
-    QYAddAppKeyTypeTest,
-    QYAddAppKeyTypeDev,
 };
 
 
@@ -84,36 +80,6 @@ typedef NS_ENUM(NSInteger, QYAddAppKeyType) {
                     YSFTitle : @"输入AppKey",
                     YSFDetailTitle : QYStrParam(self.appKey),
                     YSFType : @(QYAddAppKeyTypeInput),
-                },
-        ],
-        YSFFooterTitle : @"",
-    }];
-    [data addObject:@{
-        YSFHeaderTitle : @"环境选择",
-        YSFRowContent : @[
-                @{
-                    YSFStyle : @(YSFCommonCellStyleSwitch),
-                    YSFTitle : @"正式环境",
-                    YSFType : @(QYAddAppKeyTypeOnline),
-                    YSFSwitchOn : @(self.isOnline),
-                },
-                @{
-                    YSFStyle : @(YSFCommonCellStyleSwitch),
-                    YSFTitle : @"预发环境",
-                    YSFType : @(QYAddAppKeyTypePre),
-                    YSFSwitchOn : @(self.isPre),
-                },
-                @{
-                    YSFStyle : @(YSFCommonCellStyleSwitch),
-                    YSFTitle : @"测试环境",
-                    YSFType : @(QYAddAppKeyTypeTest),
-                    YSFSwitchOn : @(self.isTest),
-                },
-                @{
-                    YSFStyle : @(YSFCommonCellStyleSwitch),
-                    YSFTitle : @"开发环境",
-                    YSFType : @(QYAddAppKeyTypeDev),
-                    YSFSwitchOn : @(self.isDev),
                 },
         ],
         YSFFooterTitle : @"",
@@ -234,37 +200,7 @@ typedef NS_ENUM(NSInteger, QYAddAppKeyType) {
 
 #pragma mark - QYCommonCellActionDelegate
 - (void)onTapSwitch:(YSFCommonTableRow *)cellData {
-    if (cellData.type == QYAddAppKeyTypeOnline) {
-        _isOnline = cellData.switchOn;
-        if (_isOnline) {
-            _isPre = NO;
-            _isTest = NO;
-            _isDev = NO;
-        }
-    } else if (cellData.type == QYAddAppKeyTypePre) {
-        _isPre = cellData.switchOn;
-        if (_isPre) {
-            _isOnline = NO;
-            _isTest = NO;
-            _isDev = NO;
-        }
-    } else if (cellData.type == QYAddAppKeyTypeTest) {
-        _isTest = cellData.switchOn;
-        if (_isTest) {
-            _isOnline = NO;
-            _isPre = NO;
-            _isDev = NO;
-        }
-    } else if (cellData.type == QYAddAppKeyTypeDev) {
-        _isDev = cellData.switchOn;
-        if (_isDev) {
-            _isOnline = NO;
-            _isPre = NO;
-            _isTest = NO;
-        }
-    }
-    [self makeData];
-    [self.tableView reloadData];
+    
 }
 
 - (void)showToast:(NSString *)toast {

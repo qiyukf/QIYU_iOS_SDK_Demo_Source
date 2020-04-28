@@ -1,5 +1,5 @@
 //
-//  YSFAlertController.h
+//  QYAlertController.h
 //
 //  Licensed under the MIT license.
 //  Copyright (c) 2014 Peter Steinberger, PSPDFKit GmbH.
@@ -28,47 +28,47 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, YSFAlertControllerStyle) {
-    YSFAlertControllerStyleActionSheet = 0,
-    YSFAlertControllerStyleAlert
+typedef NS_ENUM(NSInteger, QYAlertControllerStyle) {
+    QYAlertControllerStyleActionSheet = 0,
+    QYAlertControllerStyleAlert
 };
 
-typedef NS_ENUM(NSInteger, YSFAlertActionStyle) {
-    YSFAlertActionStyleDefault = 0,
-    YSFAlertActionStyleCancel,
-    YSFAlertActionStyleDestructive
+typedef NS_ENUM(NSInteger, QYAlertActionStyle) {
+    QYAlertActionStyleDefault = 0,
+    QYAlertActionStyleCancel,
+    QYAlertActionStyleDestructive
 };
 
-@class YSFAlertController;
+@class QYAlertController;
 
 // Defines a single button/action.
-@interface YSFAlertAction : NSObject
-+ (instancetype)actionWithTitle:(NSString *)title style:(YSFAlertActionStyle)style handler:(void (^ __nullable)(YSFAlertAction *action))handler;
-+ (instancetype)actionWithTitle:(NSString *)title handler:(void (^ __nullable)(YSFAlertAction *action))handler;
-@property (nonatomic, readonly) YSFAlertActionStyle style;
+@interface QYAlertAction : NSObject
++ (instancetype)actionWithTitle:(NSString *)title style:(QYAlertActionStyle)style handler:(void (^ __nullable)(QYAlertAction *action))handler;
++ (instancetype)actionWithTitle:(NSString *)title handler:(void (^ __nullable)(QYAlertAction *action))handler;
+@property (nonatomic, readonly) QYAlertActionStyle style;
 
-@property (nonatomic, weak) YSFAlertController *alertController; // weak connection
+@property (nonatomic, weak) QYAlertController *alertController; // weak connection
 
 @end
 
 // Mashup of UIAlertController with fallback methods for iOS 7.
 // @note Blocks are generally executed after the dismiss animation is completed.
-@interface YSFAlertController : NSObject
+@interface QYAlertController : NSObject
 
 // Generic initializer
-+ (instancetype)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(YSFAlertControllerStyle)preferredStyle;
++ (instancetype)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(QYAlertControllerStyle)preferredStyle;
 - (instancetype)init NS_UNAVAILABLE;
 
 // Add action.
-- (void)addAction:(YSFAlertAction *)action;
+- (void)addAction:(QYAlertAction *)action;
 
 // Add block that is called after the alert controller will be dismissed (before animation).
-- (void)addWillDismissBlock:(void (^)(YSFAlertAction *action))willDismissBlock;
+- (void)addWillDismissBlock:(void (^)(QYAlertAction *action))willDismissBlock;
 
 // Add block that is called after the alert view has been dismissed (after animation).
-- (void)addDidDismissBlock:(void (^)(YSFAlertAction *action))didDismissBlock;
+- (void)addDidDismissBlock:(void (^)(QYAlertAction *action))didDismissBlock;
 
-@property (nullable, nonatomic, copy, readonly) NSArray<YSFAlertAction *> *actions;
+@property (nullable, nonatomic, copy, readonly) NSArray<QYAlertAction *> *actions;
 
 // Text field support
 - (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(UITextField *textField))configurationHandler;
@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, YSFAlertActionStyle) {
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *message;
 
-@property (nonatomic, readonly) YSFAlertControllerStyle preferredStyle;
+@property (nonatomic, readonly) QYAlertControllerStyle preferredStyle;
 
 // Presentation and dismissal
 - (void)showWithSender:(nullable id)sender controller:(nullable UIViewController *)controller animated:(BOOL)animated completion:(void (^ __nullable)(void))completion;
@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, YSFAlertActionStyle) {
 
 @end
 
-@interface YSFAlertController (Convenience)
+@interface QYAlertController (Convenience)
 
 // Convenience initializers
 + (instancetype)actionSheetWithTitle:(nullable NSString *)title;
@@ -105,14 +105,14 @@ typedef NS_ENUM(NSInteger, YSFAlertActionStyle) {
 // From Apple's HIG:
 // In a two-button alert that proposes a potentially risky action, the button that cancels the action should be on the right (and light-colored).
 // In a two-button alert that proposes a benign action that people are likely to want, the button that cancels the action should be on the left (and dark-colored).
-- (void)addCancelActionWithHandler:(void (^ __nullable)(YSFAlertAction *action))handler; // convenience
+- (void)addCancelActionWithHandler:(void (^ __nullable)(QYAlertAction *action))handler; // convenience
 
 @property (nullable, nonatomic, readonly) UITextField *textField;
 
 @end
 
 
-@interface YSFAlertController (Internal)
+@interface QYAlertController (Internal)
 
 @property (nullable, nonatomic, strong, readonly) UIAlertController *alertController;
 
