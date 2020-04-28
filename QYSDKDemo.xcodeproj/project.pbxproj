@@ -9,13 +9,68 @@
 /* Begin PBXBuildFile section */
 		BE0E711A3AA6B258F7EF34D5 /* Pods_QYSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE4FF5C9A3BC2CF72BA04F3 /* Pods_QYSDKDemo.framework */; };
 		D73603A9240CAF5600BDBF2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D73603A8240CAF5600BDBF2C /* AppDelegate.m */; };
-		D73603B4240CAF5700BDBF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73603B3240CAF5700BDBF2C /* Assets.xcassets */; };
-		D73603B7240CAF5700BDBF2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73603B5240CAF5700BDBF2C /* LaunchScreen.storyboard */; };
 		D73603BA240CAF5700BDBF2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D73603B9240CAF5700BDBF2C /* main.m */; };
-		D7532EC2240CFE74006CA4A9 /* QYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7532EC1240CFE74006CA4A9 /* QYHomePageViewController.m */; };
-		D7532EC6240CFED0006CA4A9 /* QYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7532EC5240CFED0006CA4A9 /* QYSettingViewController.m */; };
-		D7532EC9240D0106006CA4A9 /* QYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7532EC8240D0106006CA4A9 /* QYMainViewController.m */; };
-		D7532ECD240D0BC7006CA4A9 /* QYCommonTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = D7532ECC240D0BC7006CA4A9 /* QYCommonTableData.m */; };
+		D7360E752457CB5F006D6988 /* QYAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7360E742457CB5F006D6988 /* QYAvatarImageView.m */; };
+		D79AA626245735C4004DCFF6 /* YSFCommonTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5B2245735C4004DCFF6 /* YSFCommonTableDelegate.m */; };
+		D79AA627245735C4004DCFF6 /* YSFCommonTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5B3245735C4004DCFF6 /* YSFCommonTableData.m */; };
+		D79AA628245735C4004DCFF6 /* QYDemoBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5B7245735C4004DCFF6 /* QYDemoBadgeView.m */; };
+		D79AA62A245735C4004DCFF6 /* QYMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79AA5BE245735C4004DCFF6 /* QYMainViewController.xib */; };
+		D79AA62B245735C4004DCFF6 /* QYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5BF245735C4004DCFF6 /* QYDetailViewController.m */; };
+		D79AA62C245735C4004DCFF6 /* QYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5C0245735C4004DCFF6 /* QYHomePageViewController.m */; };
+		D79AA62D245735C4004DCFF6 /* QYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5C1245735C4004DCFF6 /* QYMainViewController.m */; };
+		D79AA62E245735C4004DCFF6 /* QYDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79AA5C4245735C4004DCFF6 /* QYDetailViewController.xib */; };
+		D79AA62F245735C4004DCFF6 /* QYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5C7245735C4004DCFF6 /* QYSettingViewController.m */; };
+		D79AA630245735C4004DCFF6 /* QYSessionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5C8245735C4004DCFF6 /* QYSessionListViewController.m */; };
+		D79AA631245735C4004DCFF6 /* QYMoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5C9245735C4004DCFF6 /* QYMoreOptionViewController.m */; };
+		D79AA632245735C4004DCFF6 /* QYShopInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79AA5CB245735C4004DCFF6 /* QYShopInfoViewController.xib */; };
+		D79AA633245735C4004DCFF6 /* QYCommodityInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5CC245735C4004DCFF6 /* QYCommodityInfoViewController.m */; };
+		D79AA634245735C4004DCFF6 /* QYTestModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5CD245735C4004DCFF6 /* QYTestModeViewController.m */; };
+		D79AA635245735C4004DCFF6 /* QYCommodityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79AA5D0245735C4004DCFF6 /* QYCommodityInfoViewController.xib */; };
+		D79AA636245735C4004DCFF6 /* QYShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5D2245735C4004DCFF6 /* QYShopInfoViewController.m */; };
+		D79AA637245735C4004DCFF6 /* QYTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5D4245735C4004DCFF6 /* QYTrackViewController.m */; };
+		D79AA638245735C4004DCFF6 /* QYCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5D9245735C4004DCFF6 /* QYCommonCell.m */; };
+		D79AA639245735C4004DCFF6 /* QYSessionListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5DD245735C4004DCFF6 /* QYSessionListCell.m */; };
+		D79AA63A245735C4004DCFF6 /* QYBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5DE245735C4004DCFF6 /* QYBadgeView.m */; };
+		D79AA63B245735C4004DCFF6 /* QYLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5E0245735C4004DCFF6 /* QYLogViewController.m */; };
+		D79AA63C245735C4004DCFF6 /* QYLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79AA5E2245735C4004DCFF6 /* QYLogViewController.xib */; };
+		D79AA63D245735C4004DCFF6 /* QYBindAppkeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5E4245735C4004DCFF6 /* QYBindAppkeyViewController.m */; };
+		D79AA63E245735C4004DCFF6 /* QYAddAppKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5E5245735C4004DCFF6 /* QYAddAppKeyViewController.m */; };
+		D79AA63F245735C4004DCFF6 /* QYEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5E9245735C4004DCFF6 /* QYEvaluationViewController.m */; };
+		D79AA640245735C4004DCFF6 /* QYEvaluationResolveView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5EC245735C4004DCFF6 /* QYEvaluationResolveView.m */; };
+		D79AA641245735C4004DCFF6 /* QYCustomStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5ED245735C4004DCFF6 /* QYCustomStyleViewController.m */; };
+		D79AA642245735C4004DCFF6 /* QYUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5EF245735C4004DCFF6 /* QYUserTableViewController.m */; };
+		D79AA643245735C4004DCFF6 /* QYReportUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5F0245735C4004DCFF6 /* QYReportUserInfoViewController.m */; };
+		D79AA644245735C4004DCFF6 /* QYUniqueStaffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5F3245735C4004DCFF6 /* QYUniqueStaffViewController.m */; };
+		D79AA646245735C4004DCFF6 /* QYDataSourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5F6245735C4004DCFF6 /* QYDataSourceConfig.m */; };
+		D79AA647245735C4004DCFF6 /* QYAppKeyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5FC245735C4004DCFF6 /* QYAppKeyConfig.m */; };
+		D79AA648245735C4004DCFF6 /* QYSettingData.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5FD245735C4004DCFF6 /* QYSettingData.m */; };
+		D79AA649245735C4004DCFF6 /* QYDemoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5FE245735C4004DCFF6 /* QYDemoConfig.m */; };
+		D79AA64A245735C4004DCFF6 /* QRcodeScanController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79AA602245735C4004DCFF6 /* QRcodeScanController.mm */; };
+		D79AA64B245735C4004DCFF6 /* YXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA603245735C4004DCFF6 /* YXCapture.m */; };
+		D79AA64E245735C4004DCFF6 /* QYCustomTicketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA60D245735C4004DCFF6 /* QYCustomTicketMessage.m */; };
+		D79AA64F245735C4004DCFF6 /* QYCustomTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA60E245735C4004DCFF6 /* QYCustomTextMessage.m */; };
+		D79AA650245735C4004DCFF6 /* QYCustomImageMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA611245735C4004DCFF6 /* QYCustomImageMessage.m */; };
+		D79AA651245735C4004DCFF6 /* QYCustomCardMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA613245735C4004DCFF6 /* QYCustomCardMessage.m */; };
+		D79AA652245735C4004DCFF6 /* QYCustomTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA616245735C4004DCFF6 /* QYCustomTextModel.m */; };
+		D79AA653245735C4004DCFF6 /* QYCustomCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA617245735C4004DCFF6 /* QYCustomCardModel.m */; };
+		D79AA654245735C4004DCFF6 /* QYCustomImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA618245735C4004DCFF6 /* QYCustomImageModel.m */; };
+		D79AA655245735C4004DCFF6 /* QYCustomTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA61A245735C4004DCFF6 /* QYCustomTicketModel.m */; };
+		D79AA656245735C4004DCFF6 /* QYCustomTextContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA61E245735C4004DCFF6 /* QYCustomTextContentView.m */; };
+		D79AA657245735C4004DCFF6 /* QYCustomCardContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA621245735C4004DCFF6 /* QYCustomCardContentView.m */; };
+		D79AA658245735C4004DCFF6 /* QYCustomTicketContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA623245735C4004DCFF6 /* QYCustomTicketContentView.m */; };
+		D79AA659245735C4004DCFF6 /* QYCustomImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA625245735C4004DCFF6 /* QYCustomImageContentView.m */; };
+		D79AA65B245737AC004DCFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79AA65A245737AC004DCFF6 /* Assets.xcassets */; };
+		D79AA65D2457385E004DCFF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79AA65C2457385E004DCFF6 /* UIKit.framework */; };
+		D79AA661245738F4004DCFF6 /* NSDictionary+QYJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA660245738F4004DCFF6 /* NSDictionary+QYJson.m */; };
+		D79AA66424573988004DCFF6 /* NSString+QY.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66224573988004DCFF6 /* NSString+QY.m */; };
+		D79AA66724573B33004DCFF6 /* NSData+QY.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66524573B33004DCFF6 /* NSData+QY.m */; };
+		D79AA66A24573BD9004DCFF6 /* UIView+YSF.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66824573BD9004DCFF6 /* UIView+YSF.m */; };
+		D79AA66D24573BFD004DCFF6 /* UIView+YSFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66B24573BFD004DCFF6 /* UIView+YSFToast.m */; };
+		D79AA67024573C37004DCFF6 /* YSFAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA66F24573C36004DCFF6 /* YSFAlertController.m */; };
+		D79AA67324573C9B004DCFF6 /* UIColor+YSF.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA67124573C9B004DCFF6 /* UIColor+YSF.m */; };
+		D79AA67524573E6B004DCFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79AA67424573E6B004DCFF6 /* Foundation.framework */; };
+		D7B3022F2457D32F00308DB2 /* UIControl+YSFBlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B3022D2457D32F00308DB2 /* UIControl+YSFBlocksKit.m */; };
+		D7B302322457D39D00308DB2 /* YSFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B302302457D39C00308DB2 /* YSFWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,19 +93,126 @@
 		D73603A4240CAF5600BDBF2C /* QYSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QYSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73603A7240CAF5600BDBF2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D73603A8240CAF5600BDBF2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D73603B3240CAF5700BDBF2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D73603B6240CAF5700BDBF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D73603B8240CAF5700BDBF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D73603B9240CAF5700BDBF2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D7532EC0240CFE74006CA4A9 /* QYHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QYHomePageViewController.h; sourceTree = "<group>"; };
-		D7532EC1240CFE74006CA4A9 /* QYHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QYHomePageViewController.m; sourceTree = "<group>"; };
-		D7532EC4240CFED0006CA4A9 /* QYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QYSettingViewController.h; sourceTree = "<group>"; };
-		D7532EC5240CFED0006CA4A9 /* QYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QYSettingViewController.m; sourceTree = "<group>"; };
-		D7532EC7240D0106006CA4A9 /* QYMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QYMainViewController.h; sourceTree = "<group>"; };
-		D7532EC8240D0106006CA4A9 /* QYMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QYMainViewController.m; sourceTree = "<group>"; };
+		D7360E732457CB5F006D6988 /* QYAvatarImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYAvatarImageView.h; sourceTree = "<group>"; };
+		D7360E742457CB5F006D6988 /* QYAvatarImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYAvatarImageView.m; sourceTree = "<group>"; };
 		D7532ECA240D0A8E006CA4A9 /* QYMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QYMacro.h; sourceTree = "<group>"; };
-		D7532ECB240D0BC7006CA4A9 /* QYCommonTableData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QYCommonTableData.h; sourceTree = "<group>"; };
-		D7532ECC240D0BC7006CA4A9 /* QYCommonTableData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QYCommonTableData.m; sourceTree = "<group>"; };
+		D79AA5B2245735C4004DCFF6 /* YSFCommonTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFCommonTableDelegate.m; sourceTree = "<group>"; };
+		D79AA5B3245735C4004DCFF6 /* YSFCommonTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFCommonTableData.m; sourceTree = "<group>"; };
+		D79AA5B4245735C4004DCFF6 /* YSFCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableViewCell.h; sourceTree = "<group>"; };
+		D79AA5B5245735C4004DCFF6 /* YSFCommonTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableDelegate.h; sourceTree = "<group>"; };
+		D79AA5B6245735C4004DCFF6 /* YSFCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFCommonTableData.h; sourceTree = "<group>"; };
+		D79AA5B7245735C4004DCFF6 /* QYDemoBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDemoBadgeView.m; sourceTree = "<group>"; };
+		D79AA5B9245735C4004DCFF6 /* QYDemoBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDemoBadgeView.h; sourceTree = "<group>"; };
+		D79AA5BD245735C4004DCFF6 /* QYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYMainViewController.h; sourceTree = "<group>"; };
+		D79AA5BE245735C4004DCFF6 /* QYMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYMainViewController.xib; sourceTree = "<group>"; };
+		D79AA5BF245735C4004DCFF6 /* QYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDetailViewController.m; sourceTree = "<group>"; };
+		D79AA5C0245735C4004DCFF6 /* QYHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHomePageViewController.m; sourceTree = "<group>"; };
+		D79AA5C1245735C4004DCFF6 /* QYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYMainViewController.m; sourceTree = "<group>"; };
+		D79AA5C2245735C4004DCFF6 /* QYHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHomePageViewController.h; sourceTree = "<group>"; };
+		D79AA5C3245735C4004DCFF6 /* QYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDetailViewController.h; sourceTree = "<group>"; };
+		D79AA5C4245735C4004DCFF6 /* QYDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYDetailViewController.xib; sourceTree = "<group>"; };
+		D79AA5C6245735C4004DCFF6 /* QYLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYLogViewController.h; sourceTree = "<group>"; };
+		D79AA5C7245735C4004DCFF6 /* QYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYSettingViewController.m; sourceTree = "<group>"; };
+		D79AA5C8245735C4004DCFF6 /* QYSessionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYSessionListViewController.m; sourceTree = "<group>"; };
+		D79AA5C9245735C4004DCFF6 /* QYMoreOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYMoreOptionViewController.m; sourceTree = "<group>"; };
+		D79AA5CB245735C4004DCFF6 /* QYShopInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYShopInfoViewController.xib; sourceTree = "<group>"; };
+		D79AA5CC245735C4004DCFF6 /* QYCommodityInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCommodityInfoViewController.m; sourceTree = "<group>"; };
+		D79AA5CD245735C4004DCFF6 /* QYTestModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYTestModeViewController.m; sourceTree = "<group>"; };
+		D79AA5CE245735C4004DCFF6 /* QYShopInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYShopInfoViewController.h; sourceTree = "<group>"; };
+		D79AA5CF245735C4004DCFF6 /* QYTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTrackViewController.h; sourceTree = "<group>"; };
+		D79AA5D0245735C4004DCFF6 /* QYCommodityInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYCommodityInfoViewController.xib; sourceTree = "<group>"; };
+		D79AA5D1245735C4004DCFF6 /* QYCommodityInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCommodityInfoViewController.h; sourceTree = "<group>"; };
+		D79AA5D2245735C4004DCFF6 /* QYShopInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYShopInfoViewController.m; sourceTree = "<group>"; };
+		D79AA5D3245735C4004DCFF6 /* QYTestModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTestModeViewController.h; sourceTree = "<group>"; };
+		D79AA5D4245735C4004DCFF6 /* QYTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYTrackViewController.m; sourceTree = "<group>"; };
+		D79AA5D5245735C4004DCFF6 /* QYUniqueStaffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYUniqueStaffViewController.h; sourceTree = "<group>"; };
+		D79AA5D6245735C4004DCFF6 /* QYCustomStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomStyleViewController.h; sourceTree = "<group>"; };
+		D79AA5D7245735C4004DCFF6 /* QYMoreOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYMoreOptionViewController.h; sourceTree = "<group>"; };
+		D79AA5D9245735C4004DCFF6 /* QYCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCommonCell.m; sourceTree = "<group>"; };
+		D79AA5DA245735C4004DCFF6 /* QYSessionListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYSessionListCell.h; sourceTree = "<group>"; };
+		D79AA5DB245735C4004DCFF6 /* QYBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBadgeView.h; sourceTree = "<group>"; };
+		D79AA5DC245735C4004DCFF6 /* QYCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCommonCell.h; sourceTree = "<group>"; };
+		D79AA5DD245735C4004DCFF6 /* QYSessionListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYSessionListCell.m; sourceTree = "<group>"; };
+		D79AA5DE245735C4004DCFF6 /* QYBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBadgeView.m; sourceTree = "<group>"; };
+		D79AA5DF245735C4004DCFF6 /* QYSessionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYSessionListViewController.h; sourceTree = "<group>"; };
+		D79AA5E0245735C4004DCFF6 /* QYLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYLogViewController.m; sourceTree = "<group>"; };
+		D79AA5E1245735C4004DCFF6 /* QYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYSettingViewController.h; sourceTree = "<group>"; };
+		D79AA5E2245735C4004DCFF6 /* QYLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYLogViewController.xib; sourceTree = "<group>"; };
+		D79AA5E4245735C4004DCFF6 /* QYBindAppkeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBindAppkeyViewController.m; sourceTree = "<group>"; };
+		D79AA5E5245735C4004DCFF6 /* QYAddAppKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYAddAppKeyViewController.m; sourceTree = "<group>"; };
+		D79AA5E6245735C4004DCFF6 /* QYBindAppkeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBindAppkeyViewController.h; sourceTree = "<group>"; };
+		D79AA5E7245735C4004DCFF6 /* QYAddAppKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYAddAppKeyViewController.h; sourceTree = "<group>"; };
+		D79AA5E9245735C4004DCFF6 /* QYEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYEvaluationViewController.m; sourceTree = "<group>"; };
+		D79AA5EA245735C4004DCFF6 /* QYEvaluationResolveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYEvaluationResolveView.h; sourceTree = "<group>"; };
+		D79AA5EB245735C4004DCFF6 /* QYEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYEvaluationViewController.h; sourceTree = "<group>"; };
+		D79AA5EC245735C4004DCFF6 /* QYEvaluationResolveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYEvaluationResolveView.m; sourceTree = "<group>"; };
+		D79AA5ED245735C4004DCFF6 /* QYCustomStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomStyleViewController.m; sourceTree = "<group>"; };
+		D79AA5EF245735C4004DCFF6 /* QYUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYUserTableViewController.m; sourceTree = "<group>"; };
+		D79AA5F0245735C4004DCFF6 /* QYReportUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYReportUserInfoViewController.m; sourceTree = "<group>"; };
+		D79AA5F1245735C4004DCFF6 /* QYUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYUserTableViewController.h; sourceTree = "<group>"; };
+		D79AA5F2245735C4004DCFF6 /* QYReportUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYReportUserInfoViewController.h; sourceTree = "<group>"; };
+		D79AA5F3245735C4004DCFF6 /* QYUniqueStaffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYUniqueStaffViewController.m; sourceTree = "<group>"; };
+		D79AA5F6245735C4004DCFF6 /* QYDataSourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDataSourceConfig.m; sourceTree = "<group>"; };
+		D79AA5F7245735C4004DCFF6 /* QYAppKeyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYAppKeyConfig.h; sourceTree = "<group>"; };
+		D79AA5F8245735C4004DCFF6 /* QYDemoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDemoConfig.h; sourceTree = "<group>"; };
+		D79AA5F9245735C4004DCFF6 /* QYSettingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYSettingData.h; sourceTree = "<group>"; };
+		D79AA5FB245735C4004DCFF6 /* QYDataSourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYDataSourceConfig.h; sourceTree = "<group>"; };
+		D79AA5FC245735C4004DCFF6 /* QYAppKeyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYAppKeyConfig.m; sourceTree = "<group>"; };
+		D79AA5FD245735C4004DCFF6 /* QYSettingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYSettingData.m; sourceTree = "<group>"; };
+		D79AA5FE245735C4004DCFF6 /* QYDemoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYDemoConfig.m; sourceTree = "<group>"; };
+		D79AA600245735C4004DCFF6 /* YXCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCapture.h; sourceTree = "<group>"; };
+		D79AA601245735C4004DCFF6 /* QRcodeScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRcodeScanController.h; sourceTree = "<group>"; };
+		D79AA602245735C4004DCFF6 /* QRcodeScanController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QRcodeScanController.mm; sourceTree = "<group>"; };
+		D79AA603245735C4004DCFF6 /* YXCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCapture.m; sourceTree = "<group>"; };
+		D79AA60A245735C4004DCFF6 /* QYCustomKeyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomKeyDefine.h; sourceTree = "<group>"; };
+		D79AA60C245735C4004DCFF6 /* QYCustomImageMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomImageMessage.h; sourceTree = "<group>"; };
+		D79AA60D245735C4004DCFF6 /* QYCustomTicketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTicketMessage.m; sourceTree = "<group>"; };
+		D79AA60E245735C4004DCFF6 /* QYCustomTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTextMessage.m; sourceTree = "<group>"; };
+		D79AA60F245735C4004DCFF6 /* QYCustomCardMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCardMessage.h; sourceTree = "<group>"; };
+		D79AA610245735C4004DCFF6 /* QYCustomTicketMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTicketMessage.h; sourceTree = "<group>"; };
+		D79AA611245735C4004DCFF6 /* QYCustomImageMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomImageMessage.m; sourceTree = "<group>"; };
+		D79AA612245735C4004DCFF6 /* QYCustomTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTextMessage.h; sourceTree = "<group>"; };
+		D79AA613245735C4004DCFF6 /* QYCustomCardMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCardMessage.m; sourceTree = "<group>"; };
+		D79AA615245735C4004DCFF6 /* QYCustomTicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTicketModel.h; sourceTree = "<group>"; };
+		D79AA616245735C4004DCFF6 /* QYCustomTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTextModel.m; sourceTree = "<group>"; };
+		D79AA617245735C4004DCFF6 /* QYCustomCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCardModel.m; sourceTree = "<group>"; };
+		D79AA618245735C4004DCFF6 /* QYCustomImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomImageModel.m; sourceTree = "<group>"; };
+		D79AA619245735C4004DCFF6 /* QYCustomTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTextModel.h; sourceTree = "<group>"; };
+		D79AA61A245735C4004DCFF6 /* QYCustomTicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTicketModel.m; sourceTree = "<group>"; };
+		D79AA61B245735C4004DCFF6 /* QYCustomCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCardModel.h; sourceTree = "<group>"; };
+		D79AA61C245735C4004DCFF6 /* QYCustomImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomImageModel.h; sourceTree = "<group>"; };
+		D79AA61E245735C4004DCFF6 /* QYCustomTextContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTextContentView.m; sourceTree = "<group>"; };
+		D79AA61F245735C4004DCFF6 /* QYCustomTicketContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTicketContentView.h; sourceTree = "<group>"; };
+		D79AA620245735C4004DCFF6 /* QYCustomImageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomImageContentView.h; sourceTree = "<group>"; };
+		D79AA621245735C4004DCFF6 /* QYCustomCardContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCardContentView.m; sourceTree = "<group>"; };
+		D79AA622245735C4004DCFF6 /* QYCustomTextContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTextContentView.h; sourceTree = "<group>"; };
+		D79AA623245735C4004DCFF6 /* QYCustomTicketContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTicketContentView.m; sourceTree = "<group>"; };
+		D79AA624245735C4004DCFF6 /* QYCustomCardContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCardContentView.h; sourceTree = "<group>"; };
+		D79AA625245735C4004DCFF6 /* QYCustomImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomImageContentView.m; sourceTree = "<group>"; };
+		D79AA65A245737AC004DCFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D79AA65C2457385E004DCFF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D79AA65F245738F4004DCFF6 /* NSDictionary+QYJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QYJson.h"; sourceTree = "<group>"; };
+		D79AA660245738F4004DCFF6 /* NSDictionary+QYJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QYJson.m"; sourceTree = "<group>"; };
+		D79AA66224573988004DCFF6 /* NSString+QY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QY.m"; sourceTree = "<group>"; };
+		D79AA66324573988004DCFF6 /* NSString+QY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QY.h"; sourceTree = "<group>"; };
+		D79AA66524573B33004DCFF6 /* NSData+QY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+QY.m"; sourceTree = "<group>"; };
+		D79AA66624573B33004DCFF6 /* NSData+QY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+QY.h"; sourceTree = "<group>"; };
+		D79AA66824573BD9004DCFF6 /* UIView+YSF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSF.m"; sourceTree = "<group>"; };
+		D79AA66924573BD9004DCFF6 /* UIView+YSF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSF.h"; sourceTree = "<group>"; };
+		D79AA66B24573BFD004DCFF6 /* UIView+YSFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSFToast.m"; sourceTree = "<group>"; };
+		D79AA66C24573BFD004DCFF6 /* UIView+YSFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSFToast.h"; sourceTree = "<group>"; };
+		D79AA66E24573C36004DCFF6 /* YSFAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFAlertController.h; sourceTree = "<group>"; };
+		D79AA66F24573C36004DCFF6 /* YSFAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFAlertController.m; sourceTree = "<group>"; };
+		D79AA67124573C9B004DCFF6 /* UIColor+YSF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YSF.m"; sourceTree = "<group>"; };
+		D79AA67224573C9B004DCFF6 /* UIColor+YSF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YSF.h"; sourceTree = "<group>"; };
+		D79AA67424573E6B004DCFF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D7B3022C2457D32F00308DB2 /* UIControl+YSFBlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+YSFBlocksKit.h"; sourceTree = "<group>"; };
+		D7B3022D2457D32F00308DB2 /* UIControl+YSFBlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+YSFBlocksKit.m"; sourceTree = "<group>"; };
+		D7B3022E2457D32F00308DB2 /* BKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKDefines.h; sourceTree = "<group>"; };
+		D7B302302457D39C00308DB2 /* YSFWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFWebViewController.m; sourceTree = "<group>"; };
+		D7B302312457D39D00308DB2 /* YSFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFWebViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0E711A3AA6B258F7EF34D5 /* Pods_QYSDKDemo.framework in Frameworks */,
+				D79AA67524573E6B004DCFF6 /* Foundation.framework in Frameworks */,
+				D79AA65D2457385E004DCFF6 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +241,8 @@
 		BFEE59BA8F04F779DEEE0CCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D79AA67424573E6B004DCFF6 /* Foundation.framework */,
+				D79AA65C2457385E004DCFF6 /* UIKit.framework */,
 				8BE4FF5C9A3BC2CF72BA04F3 /* Pods_QYSDKDemo.framework */,
 			);
 			name = Frameworks;
@@ -106,14 +272,7 @@
 				D7532ECA240D0A8E006CA4A9 /* QYMacro.h */,
 				D73603A7240CAF5600BDBF2C /* AppDelegate.h */,
 				D73603A8240CAF5600BDBF2C /* AppDelegate.m */,
-				D7532EC0240CFE74006CA4A9 /* QYHomePageViewController.h */,
-				D7532EC1240CFE74006CA4A9 /* QYHomePageViewController.m */,
-				D7532EC7240D0106006CA4A9 /* QYMainViewController.h */,
-				D7532EC8240D0106006CA4A9 /* QYMainViewController.m */,
-				D7532EC4240CFED0006CA4A9 /* QYSettingViewController.h */,
-				D7532EC5240CFED0006CA4A9 /* QYSettingViewController.m */,
-				D7532ECB240D0BC7006CA4A9 /* QYCommonTableData.h */,
-				D7532ECC240D0BC7006CA4A9 /* QYCommonTableData.m */,
+				D79AA5AF245735C4004DCFF6 /* Classes */,
 				D7532EC3240CFE9A006CA4A9 /* Resources */,
 			);
 			path = QYSDKDemo;
@@ -122,12 +281,276 @@
 		D7532EC3240CFE9A006CA4A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D73603B3240CAF5700BDBF2C /* Assets.xcassets */,
-				D73603B5240CAF5700BDBF2C /* LaunchScreen.storyboard */,
+				D79AA65A245737AC004DCFF6 /* Assets.xcassets */,
 				D73603B8240CAF5700BDBF2C /* Info.plist */,
 				D73603B9240CAF5700BDBF2C /* main.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D79AA5AF245735C4004DCFF6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA65E245738DE004DCFF6 /* Util */,
+				D79AA5F4245735C4004DCFF6 /* Config */,
+				D79AA5BB245735C4004DCFF6 /* Sections */,
+				D79AA609245735C4004DCFF6 /* Custom */,
+				D79AA5B0245735C4004DCFF6 /* UI */,
+				D79AA5FF245735C4004DCFF6 /* QRCode */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D79AA5B0245735C4004DCFF6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5B1245735C4004DCFF6 /* CommonTable */,
+				D79AA5B9245735C4004DCFF6 /* QYDemoBadgeView.h */,
+				D79AA5B7245735C4004DCFF6 /* QYDemoBadgeView.m */,
+				D7360E732457CB5F006D6988 /* QYAvatarImageView.h */,
+				D7360E742457CB5F006D6988 /* QYAvatarImageView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D79AA5B1245735C4004DCFF6 /* CommonTable */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5B6245735C4004DCFF6 /* YSFCommonTableData.h */,
+				D79AA5B3245735C4004DCFF6 /* YSFCommonTableData.m */,
+				D79AA5B5245735C4004DCFF6 /* YSFCommonTableDelegate.h */,
+				D79AA5B2245735C4004DCFF6 /* YSFCommonTableDelegate.m */,
+				D79AA5B4245735C4004DCFF6 /* YSFCommonTableViewCell.h */,
+			);
+			path = CommonTable;
+			sourceTree = "<group>";
+		};
+		D79AA5BB245735C4004DCFF6 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5BC245735C4004DCFF6 /* Home */,
+				D79AA5C5245735C4004DCFF6 /* Setting */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		D79AA5BC245735C4004DCFF6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5C2245735C4004DCFF6 /* QYHomePageViewController.h */,
+				D79AA5C0245735C4004DCFF6 /* QYHomePageViewController.m */,
+				D79AA5BD245735C4004DCFF6 /* QYMainViewController.h */,
+				D79AA5C1245735C4004DCFF6 /* QYMainViewController.m */,
+				D79AA5BE245735C4004DCFF6 /* QYMainViewController.xib */,
+				D79AA5C3245735C4004DCFF6 /* QYDetailViewController.h */,
+				D79AA5BF245735C4004DCFF6 /* QYDetailViewController.m */,
+				D79AA5C4245735C4004DCFF6 /* QYDetailViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D79AA5C5245735C4004DCFF6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5E1245735C4004DCFF6 /* QYSettingViewController.h */,
+				D79AA5C7245735C4004DCFF6 /* QYSettingViewController.m */,
+				D79AA5EE245735C4004DCFF6 /* Account */,
+				D79AA5E3245735C4004DCFF6 /* AppKey */,
+				D79AA5CA245735C4004DCFF6 /* Test */,
+				D79AA5E8245735C4004DCFF6 /* Evaluation */,
+				D79AA5D5245735C4004DCFF6 /* QYUniqueStaffViewController.h */,
+				D79AA5F3245735C4004DCFF6 /* QYUniqueStaffViewController.m */,
+				D79AA5DF245735C4004DCFF6 /* QYSessionListViewController.h */,
+				D79AA5C8245735C4004DCFF6 /* QYSessionListViewController.m */,
+				D79AA5D6245735C4004DCFF6 /* QYCustomStyleViewController.h */,
+				D79AA5ED245735C4004DCFF6 /* QYCustomStyleViewController.m */,
+				D79AA5D7245735C4004DCFF6 /* QYMoreOptionViewController.h */,
+				D79AA5C9245735C4004DCFF6 /* QYMoreOptionViewController.m */,
+				D79AA5C6245735C4004DCFF6 /* QYLogViewController.h */,
+				D79AA5E0245735C4004DCFF6 /* QYLogViewController.m */,
+				D79AA5E2245735C4004DCFF6 /* QYLogViewController.xib */,
+				D79AA5D8245735C4004DCFF6 /* Common */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		D79AA5CA245735C4004DCFF6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5D3245735C4004DCFF6 /* QYTestModeViewController.h */,
+				D79AA5CD245735C4004DCFF6 /* QYTestModeViewController.m */,
+				D79AA5D1245735C4004DCFF6 /* QYCommodityInfoViewController.h */,
+				D79AA5CC245735C4004DCFF6 /* QYCommodityInfoViewController.m */,
+				D79AA5D0245735C4004DCFF6 /* QYCommodityInfoViewController.xib */,
+				D79AA5CE245735C4004DCFF6 /* QYShopInfoViewController.h */,
+				D79AA5D2245735C4004DCFF6 /* QYShopInfoViewController.m */,
+				D79AA5CB245735C4004DCFF6 /* QYShopInfoViewController.xib */,
+				D79AA5CF245735C4004DCFF6 /* QYTrackViewController.h */,
+				D79AA5D4245735C4004DCFF6 /* QYTrackViewController.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		D79AA5D8245735C4004DCFF6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5DB245735C4004DCFF6 /* QYBadgeView.h */,
+				D79AA5DE245735C4004DCFF6 /* QYBadgeView.m */,
+				D79AA5DA245735C4004DCFF6 /* QYSessionListCell.h */,
+				D79AA5DD245735C4004DCFF6 /* QYSessionListCell.m */,
+				D79AA5DC245735C4004DCFF6 /* QYCommonCell.h */,
+				D79AA5D9245735C4004DCFF6 /* QYCommonCell.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D79AA5E3245735C4004DCFF6 /* AppKey */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5E6245735C4004DCFF6 /* QYBindAppkeyViewController.h */,
+				D79AA5E4245735C4004DCFF6 /* QYBindAppkeyViewController.m */,
+				D79AA5E7245735C4004DCFF6 /* QYAddAppKeyViewController.h */,
+				D79AA5E5245735C4004DCFF6 /* QYAddAppKeyViewController.m */,
+			);
+			path = AppKey;
+			sourceTree = "<group>";
+		};
+		D79AA5E8245735C4004DCFF6 /* Evaluation */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5EB245735C4004DCFF6 /* QYEvaluationViewController.h */,
+				D79AA5E9245735C4004DCFF6 /* QYEvaluationViewController.m */,
+				D79AA5EA245735C4004DCFF6 /* QYEvaluationResolveView.h */,
+				D79AA5EC245735C4004DCFF6 /* QYEvaluationResolveView.m */,
+			);
+			path = Evaluation;
+			sourceTree = "<group>";
+		};
+		D79AA5EE245735C4004DCFF6 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5EF245735C4004DCFF6 /* QYUserTableViewController.m */,
+				D79AA5F1245735C4004DCFF6 /* QYUserTableViewController.h */,
+				D79AA5F2245735C4004DCFF6 /* QYReportUserInfoViewController.h */,
+				D79AA5F0245735C4004DCFF6 /* QYReportUserInfoViewController.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		D79AA5F4245735C4004DCFF6 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA5FB245735C4004DCFF6 /* QYDataSourceConfig.h */,
+				D79AA5F6245735C4004DCFF6 /* QYDataSourceConfig.m */,
+				D79AA5F8245735C4004DCFF6 /* QYDemoConfig.h */,
+				D79AA5FE245735C4004DCFF6 /* QYDemoConfig.m */,
+				D79AA5F7245735C4004DCFF6 /* QYAppKeyConfig.h */,
+				D79AA5FC245735C4004DCFF6 /* QYAppKeyConfig.m */,
+				D79AA5F9245735C4004DCFF6 /* QYSettingData.h */,
+				D79AA5FD245735C4004DCFF6 /* QYSettingData.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		D79AA5FF245735C4004DCFF6 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA600245735C4004DCFF6 /* YXCapture.h */,
+				D79AA603245735C4004DCFF6 /* YXCapture.m */,
+				D79AA601245735C4004DCFF6 /* QRcodeScanController.h */,
+				D79AA602245735C4004DCFF6 /* QRcodeScanController.mm */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		D79AA609245735C4004DCFF6 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA60A245735C4004DCFF6 /* QYCustomKeyDefine.h */,
+				D79AA60B245735C4004DCFF6 /* Message */,
+				D79AA614245735C4004DCFF6 /* Model */,
+				D79AA61D245735C4004DCFF6 /* View */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		D79AA60B245735C4004DCFF6 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA612245735C4004DCFF6 /* QYCustomTextMessage.h */,
+				D79AA60E245735C4004DCFF6 /* QYCustomTextMessage.m */,
+				D79AA60C245735C4004DCFF6 /* QYCustomImageMessage.h */,
+				D79AA611245735C4004DCFF6 /* QYCustomImageMessage.m */,
+				D79AA60F245735C4004DCFF6 /* QYCustomCardMessage.h */,
+				D79AA613245735C4004DCFF6 /* QYCustomCardMessage.m */,
+				D79AA610245735C4004DCFF6 /* QYCustomTicketMessage.h */,
+				D79AA60D245735C4004DCFF6 /* QYCustomTicketMessage.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		D79AA614245735C4004DCFF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA619245735C4004DCFF6 /* QYCustomTextModel.h */,
+				D79AA616245735C4004DCFF6 /* QYCustomTextModel.m */,
+				D79AA61C245735C4004DCFF6 /* QYCustomImageModel.h */,
+				D79AA618245735C4004DCFF6 /* QYCustomImageModel.m */,
+				D79AA61B245735C4004DCFF6 /* QYCustomCardModel.h */,
+				D79AA617245735C4004DCFF6 /* QYCustomCardModel.m */,
+				D79AA615245735C4004DCFF6 /* QYCustomTicketModel.h */,
+				D79AA61A245735C4004DCFF6 /* QYCustomTicketModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D79AA61D245735C4004DCFF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA622245735C4004DCFF6 /* QYCustomTextContentView.h */,
+				D79AA61E245735C4004DCFF6 /* QYCustomTextContentView.m */,
+				D79AA620245735C4004DCFF6 /* QYCustomImageContentView.h */,
+				D79AA625245735C4004DCFF6 /* QYCustomImageContentView.m */,
+				D79AA624245735C4004DCFF6 /* QYCustomCardContentView.h */,
+				D79AA621245735C4004DCFF6 /* QYCustomCardContentView.m */,
+				D79AA61F245735C4004DCFF6 /* QYCustomTicketContentView.h */,
+				D79AA623245735C4004DCFF6 /* QYCustomTicketContentView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D79AA65E245738DE004DCFF6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D79AA65F245738F4004DCFF6 /* NSDictionary+QYJson.h */,
+				D79AA660245738F4004DCFF6 /* NSDictionary+QYJson.m */,
+				D79AA66324573988004DCFF6 /* NSString+QY.h */,
+				D79AA66224573988004DCFF6 /* NSString+QY.m */,
+				D79AA66624573B33004DCFF6 /* NSData+QY.h */,
+				D79AA66524573B33004DCFF6 /* NSData+QY.m */,
+				D79AA66924573BD9004DCFF6 /* UIView+YSF.h */,
+				D79AA66824573BD9004DCFF6 /* UIView+YSF.m */,
+				D79AA66C24573BFD004DCFF6 /* UIView+YSFToast.h */,
+				D79AA66B24573BFD004DCFF6 /* UIView+YSFToast.m */,
+				D79AA67224573C9B004DCFF6 /* UIColor+YSF.h */,
+				D79AA67124573C9B004DCFF6 /* UIColor+YSF.m */,
+				D79AA66E24573C36004DCFF6 /* YSFAlertController.h */,
+				D79AA66F24573C36004DCFF6 /* YSFAlertController.m */,
+				D7B302312457D39D00308DB2 /* YSFWebViewController.h */,
+				D7B302302457D39C00308DB2 /* YSFWebViewController.m */,
+				D7B3022B2457D32F00308DB2 /* YSFBlocksKit */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D7B3022B2457D32F00308DB2 /* YSFBlocksKit */ = {
+			isa = PBXGroup;
+			children = (
+				D7B3022E2457D32F00308DB2 /* BKDefines.h */,
+				D7B3022C2457D32F00308DB2 /* UIControl+YSFBlocksKit.h */,
+				D7B3022D2457D32F00308DB2 /* UIControl+YSFBlocksKit.m */,
+			);
+			path = YSFBlocksKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +614,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D73603B7240CAF5700BDBF2C /* LaunchScreen.storyboard in Resources */,
-				D73603B4240CAF5700BDBF2C /* Assets.xcassets in Resources */,
+				D79AA635245735C4004DCFF6 /* QYCommodityInfoViewController.xib in Resources */,
+				D79AA63C245735C4004DCFF6 /* QYLogViewController.xib in Resources */,
+				D79AA62A245735C4004DCFF6 /* QYMainViewController.xib in Resources */,
+				D79AA65B245737AC004DCFF6 /* Assets.xcassets in Resources */,
+				D79AA62E245735C4004DCFF6 /* QYDetailViewController.xib in Resources */,
+				D79AA632245735C4004DCFF6 /* QYShopInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,27 +689,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7532EC2240CFE74006CA4A9 /* QYHomePageViewController.m in Sources */,
-				D7532ECD240D0BC7006CA4A9 /* QYCommonTableData.m in Sources */,
-				D7532EC6240CFED0006CA4A9 /* QYSettingViewController.m in Sources */,
-				D7532EC9240D0106006CA4A9 /* QYMainViewController.m in Sources */,
+				D7360E752457CB5F006D6988 /* QYAvatarImageView.m in Sources */,
+				D79AA638245735C4004DCFF6 /* QYCommonCell.m in Sources */,
+				D79AA639245735C4004DCFF6 /* QYSessionListCell.m in Sources */,
+				D79AA649245735C4004DCFF6 /* QYDemoConfig.m in Sources */,
+				D79AA630245735C4004DCFF6 /* QYSessionListViewController.m in Sources */,
+				D7B302322457D39D00308DB2 /* YSFWebViewController.m in Sources */,
+				D79AA626245735C4004DCFF6 /* YSFCommonTableDelegate.m in Sources */,
+				D79AA64B245735C4004DCFF6 /* YXCapture.m in Sources */,
+				D79AA654245735C4004DCFF6 /* QYCustomImageModel.m in Sources */,
+				D79AA637245735C4004DCFF6 /* QYTrackViewController.m in Sources */,
+				D79AA655245735C4004DCFF6 /* QYCustomTicketModel.m in Sources */,
+				D79AA657245735C4004DCFF6 /* QYCustomCardContentView.m in Sources */,
+				D79AA634245735C4004DCFF6 /* QYTestModeViewController.m in Sources */,
+				D79AA66D24573BFD004DCFF6 /* UIView+YSFToast.m in Sources */,
+				D79AA66A24573BD9004DCFF6 /* UIView+YSF.m in Sources */,
+				D79AA647245735C4004DCFF6 /* QYAppKeyConfig.m in Sources */,
+				D79AA628245735C4004DCFF6 /* QYDemoBadgeView.m in Sources */,
+				D79AA653245735C4004DCFF6 /* QYCustomCardModel.m in Sources */,
+				D79AA63B245735C4004DCFF6 /* QYLogViewController.m in Sources */,
+				D79AA644245735C4004DCFF6 /* QYUniqueStaffViewController.m in Sources */,
+				D79AA642245735C4004DCFF6 /* QYUserTableViewController.m in Sources */,
+				D79AA62D245735C4004DCFF6 /* QYMainViewController.m in Sources */,
+				D79AA648245735C4004DCFF6 /* QYSettingData.m in Sources */,
+				D79AA627245735C4004DCFF6 /* YSFCommonTableData.m in Sources */,
+				D79AA63D245735C4004DCFF6 /* QYBindAppkeyViewController.m in Sources */,
+				D79AA62C245735C4004DCFF6 /* QYHomePageViewController.m in Sources */,
+				D79AA63A245735C4004DCFF6 /* QYBadgeView.m in Sources */,
 				D73603A9240CAF5600BDBF2C /* AppDelegate.m in Sources */,
+				D79AA659245735C4004DCFF6 /* QYCustomImageContentView.m in Sources */,
+				D79AA631245735C4004DCFF6 /* QYMoreOptionViewController.m in Sources */,
+				D79AA646245735C4004DCFF6 /* QYDataSourceConfig.m in Sources */,
+				D79AA656245735C4004DCFF6 /* QYCustomTextContentView.m in Sources */,
+				D79AA63F245735C4004DCFF6 /* QYEvaluationViewController.m in Sources */,
+				D79AA640245735C4004DCFF6 /* QYEvaluationResolveView.m in Sources */,
+				D79AA633245735C4004DCFF6 /* QYCommodityInfoViewController.m in Sources */,
+				D79AA643245735C4004DCFF6 /* QYReportUserInfoViewController.m in Sources */,
+				D79AA62F245735C4004DCFF6 /* QYSettingViewController.m in Sources */,
+				D79AA63E245735C4004DCFF6 /* QYAddAppKeyViewController.m in Sources */,
+				D79AA64F245735C4004DCFF6 /* QYCustomTextMessage.m in Sources */,
+				D79AA658245735C4004DCFF6 /* QYCustomTicketContentView.m in Sources */,
+				D79AA661245738F4004DCFF6 /* NSDictionary+QYJson.m in Sources */,
+				D79AA651245735C4004DCFF6 /* QYCustomCardMessage.m in Sources */,
+				D79AA641245735C4004DCFF6 /* QYCustomStyleViewController.m in Sources */,
+				D79AA636245735C4004DCFF6 /* QYShopInfoViewController.m in Sources */,
+				D7B3022F2457D32F00308DB2 /* UIControl+YSFBlocksKit.m in Sources */,
+				D79AA64A245735C4004DCFF6 /* QRcodeScanController.mm in Sources */,
 				D73603BA240CAF5700BDBF2C /* main.m in Sources */,
+				D79AA67024573C37004DCFF6 /* YSFAlertController.m in Sources */,
+				D79AA64E245735C4004DCFF6 /* QYCustomTicketMessage.m in Sources */,
+				D79AA652245735C4004DCFF6 /* QYCustomTextModel.m in Sources */,
+				D79AA66724573B33004DCFF6 /* NSData+QY.m in Sources */,
+				D79AA67324573C9B004DCFF6 /* UIColor+YSF.m in Sources */,
+				D79AA650245735C4004DCFF6 /* QYCustomImageMessage.m in Sources */,
+				D79AA66424573988004DCFF6 /* NSString+QY.m in Sources */,
+				D79AA62B245735C4004DCFF6 /* QYDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D73603B5240CAF5700BDBF2C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D73603B6240CAF5700BDBF2C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D73603BB240CAF5700BDBF2C /* Debug */ = {
@@ -335,7 +800,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -387,7 +852,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
