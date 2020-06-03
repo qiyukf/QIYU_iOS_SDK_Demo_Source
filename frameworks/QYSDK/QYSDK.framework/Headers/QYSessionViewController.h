@@ -287,14 +287,24 @@ typedef void (^QYEvaluationBlock)(QYEvaluactionData *data);
 typedef void (^QYEvaluationCompletion)(QYEvaluationState state);
 
 /**
- *  满意度评价事件
+ *  人工满意度评价事件
  */
 @property (nonatomic, copy) QYEvaluationBlock evaluationBlock;
 
 /**
- *  发送满意度评价结果
+ *  机器人满意度评价事件
+ */
+@property (nonatomic, copy) QYEvaluationBlock robotEvaluationBlock;
+
+/**
+ *  发送人工满意度评价结果
  */
 - (void)sendEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
+
+/**
+ *  发送机器人满意度评价结果
+ */
+- (void)sendRobotEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
 
 
 /** 以下为自定义卡片消息相关接口 **/

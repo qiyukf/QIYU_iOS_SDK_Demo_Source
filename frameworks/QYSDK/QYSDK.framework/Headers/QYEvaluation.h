@@ -13,10 +13,10 @@
  *  满意度评价模式
  */
 typedef NS_ENUM(NSUInteger, QYEvaluationMode) {
-    QYEvaluationModeTwoLevel = 1,   //模式一（二级满意度）：满意/不满意
-    QYEvaluationModeThreeLevel,     //模式二（三级满意度）：满意/一般/不满意
-    QYEvaluationModeFourLevel,      //模式三（四级满意度）：非常满意/满意/不满意/非常不满意
-    QYEvaluationModeFiveLevel,      //模式四（五级满意度）：非常满意/满意/一般/不满意/非常不满意
+    QYEvaluationModeTwoLevel = 2,       //模式一（二级满意度）：满意/不满意
+    QYEvaluationModeThreeLevel = 3,     //模式二（三级满意度）：满意/一般/不满意
+    QYEvaluationModeFourLevel = 4,      //模式三（四级满意度）：非常满意/满意/不满意/非常不满意
+    QYEvaluationModeFiveLevel = 5,      //模式四（五级满意度）：非常满意/满意/一般/不满意/非常不满意
 };
 
 /**
@@ -102,6 +102,11 @@ typedef NS_ENUM(NSInteger, QYEvaluationResolveStatus) {
 @property (nonatomic, assign) long long sessionId;
 
 /**
+ *  评价模式，透传 QYEvaluactionData.mode（提交机器人评价结果时此项必须）
+ */
+@property (nonatomic, assign) QYEvaluationMode mode;
+
+/**
  *  选中的选项，不可为空
  */
 @property (nonatomic, strong) QYEvaluationOptionData *selectOption;
@@ -128,6 +133,11 @@ typedef NS_ENUM(NSInteger, QYEvaluationResolveStatus) {
  *  满意度评价数据
  */
 @interface QYEvaluactionData : NSObject
+
+/**
+ *  评价页面URL，对应“管理后台-评价样式-新页面”填写的字符串
+ */
+@property (nonatomic, copy) NSString *urlString;
 
 /**
  *  评价会话ID，提交评价结果时需透传
