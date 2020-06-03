@@ -24,6 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+typedef NS_ENUM(NSUInteger, NIMRSAPaddingMode) {
+    NIMRSAPaddingModePKCS1,
+    NIMRSAPaddingModeOAEPWithSHA_1AndMGF1,
+    NIMRSAPaddingModeOAEPWithSHA_256AndMGF1
+};
+
 /// RSA加密配置类
 @interface NIMRSAOption : NSObject
 
@@ -36,6 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// RSA exp
 @property (nonatomic, assign) NSUInteger exp;
+
+/// RSA padding
+@property (nonatomic, assign) NIMRSAPaddingMode paddingMode;
 
 @end
 

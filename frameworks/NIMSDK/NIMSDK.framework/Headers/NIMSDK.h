@@ -28,6 +28,7 @@
 #import "NIMSession.h"
 #import "NIMRecentSession.h"
 #import "NIMMessageSearchOption.h"
+#import "NIMIncompleteSessionInfo.h"
 
 
 /**
@@ -134,6 +135,7 @@
 #import "NIMAntispamManagerProtocol.h"
 #import "NIMSignalManagerProtocol.h"
 #import "NIMPassThroughManagerProtocol.h"
+#import "NIMChatExtendManagerProtocol.h"
 
 /**
  *  SDK业务类
@@ -156,3 +158,33 @@
  */
 #import "NIMPassThroughOption.h"
 
+
+/**
+ *  Thread Talk & 快捷回复
+ */
+#import "NIMThreadTalkFetchOption.h"
+#import "NIMChatExtendBasicInfo.h"
+#import "NIMQuickComment.h"
+#import "NIMThreadTalkFetchResult.h"
+
+/**
+ * 收藏
+ */
+#import "NIMCollectInfo.h"
+#import "NIMCollectQueryOptions.h"
+#import "NIMAddCollectParams.h"
+
+/**
+ * 置顶会话
+ */
+#import "NIMStickTopSessionInfo.h"
+#import "NIMAddStickTopSessionParams.h"
+#import "NIMSyncStickTopSessionResponse.h"
+#import "NIMLoadRecentSessionsOptions.h"
+
+/**
+ * PIN
+ */
+#import "NIMMessagePinItem.h"
+#import "NIMSyncMessagePinRequest.h"
+#import "NIMSyncMessagePinResponse.h"

@@ -316,7 +316,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  群成员禁言
  *
  *  @param mute        是否禁言
- *  @param userId      用户ID
+ *  @param userIds     用户ID
  *  @param teamId      群组ID
  *  @param completion  经验操作完成后的回调
  *  @discussion   操作成功后，云信服务器会下发禁言的群通知消息

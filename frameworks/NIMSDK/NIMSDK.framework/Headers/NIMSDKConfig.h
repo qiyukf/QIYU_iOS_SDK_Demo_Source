@@ -170,9 +170,18 @@ NS_ASSUME_NONNULL_BEGIN
 *  是否开启异步读取最近会话，默认NO，不开启
 *  @discussion 对于最近会话比较多的用户，初始读取数据库时，可能影响到启动速度，用户可以选择开启该选项，开启异步读取最近会话，
 *  allRecentSessions会优先返回一部分最近会话，等到全部读取完成时，通过回调通知用户刷新UI。
-* 。
 */
 @property (nonatomic, assign) BOOL asyncLoadRecentSessionEnabled;
+
+/**
+ *  日志上传大小上限，默认 0，不限制，单位(byte)
+ */
+@property (nonatomic, assign)  unsigned long long maxUploadLogSize;
+
+/**
+ * 是否同步置顶会话记录，默认NO
+ */
+@property (nonatomic,assign) BOOL shouldSyncStickTopSessionInfos;
 
 /**
  *  设置 SDK 根目录

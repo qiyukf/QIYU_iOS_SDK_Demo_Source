@@ -114,10 +114,16 @@ typedef NS_ENUM(NSInteger,NIMMessageSearchOrder) {
 
 
 /**
- *  检索消息的当前参考消息,返回的消息结果集里不会包含这条消息,此参数对聊天室会话无效。
+ *  检索消息的当前参考消息,返回的消息结果集里不会包含这条消息,此参数对聊天室会话无效。优先级低于下面的serverId
  *  @discussion 传入最早时间,没有则传入nil。
  */
 @property (nullable,nonatomic,strong)      NIMMessage      *currentMessage;
+
+/**
+ *  检索消息的当前参考消息,返回的消息结果集里不会包含这条serverId对应的消息,此参数对聊天室会话无效。优先级高于 上面currentMessage的serverId
+ *  @discussion 传入最早时间,没有则传入nil。
+ */
+@property (nullable,nonatomic,copy)      NSString      *serverId;
 
 
 /**

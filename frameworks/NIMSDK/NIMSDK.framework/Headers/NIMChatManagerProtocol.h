@@ -48,6 +48,14 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
 
 
 /**
+ *  操作完成回调
+ *
+ *  @param error      错误,如果成功则error为nil
+ */
+typedef void(^NIMChatManagerBlock)(NSError * __nullable error);
+
+
+/**
  *  聊天委托
  */
 @protocol NIMChatManagerDelegate <NSObject>
@@ -165,7 +173,7 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
  */
 - (void)sendMessage:(NIMMessage *)message
           toSession:(NIMSession *)session
-         completion:(nullable void(^)(NSError * __nullable error))completion;
+         completion:(__nullable NIMChatManagerBlock)completion;
 
 
 /**
@@ -249,12 +257,28 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
 
 
 /**
- *  撤回消息
+ *  撤回消息,不含推送信息
  *
  *  @param message    需要被撤回的消息
  *  @param completion 完成回调
+ *  @discussion 消息计入未读数
  */
 - (void)revokeMessage:(NIMMessage *)message
+           completion:(nullable NIMRevokeMessageBlock)completion;
+
+/**
+ *  撤回消息
+ *
+ *  @param message        需要被撤回的消息
+ *  @param apnsContent    云信推送内容,长度限制500字
+ *  @param apnsPayload    云信推送payload信息,长度限制 2K
+ *  @param should         是否计入未读数
+ *  @param completion     完成回调
+ */
+- (void)revokeMessage:(NIMMessage *)message
+          apnsContent:(nullable NSString *)apnsContent
+          apnsPayload:(nullable NSDictionary *)apnsPayload
+      shouldBeCounted:(BOOL)should
            completion:(nullable NIMRevokeMessageBlock)completion;
 
 

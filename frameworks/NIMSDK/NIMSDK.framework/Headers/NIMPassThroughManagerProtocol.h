@@ -31,7 +31,6 @@ typedef void(^NIMPassThroughCompletedBlock)(NIMPassThroughHttpData* __nullable r
 *  收到透传消息
 *
 *  @param recvData   收到的透传消息数据
-*  @discussion
 */
 - (void)didReceivedPassThroughMsg:(NIMPassThroughMsgData* __nullable)recvData;
 

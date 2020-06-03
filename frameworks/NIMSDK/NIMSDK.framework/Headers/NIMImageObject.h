@@ -104,6 +104,22 @@ typedef NS_ENUM(NSInteger, NIMImageFormat)
 
 
 /**
+ *  图片实例对象初始化方法, 可用于发送Webp图片
+ *
+ *  @param filepath 要发送的图片路径
+ *  @param scene 场景类别
+ *  @param size 图片宽高,当发送文件为Webp时须需要传入该图片尺寸大小
+ *
+ *  @discussion 使用此方法上传是不做压缩转换的原图上传。iOS 11 苹果采用了新的图片格式 HEIC ，如果采用原图会导致其他设备的兼容问题，请开发者在上层做好格式的兼容转换。
+ *
+ *  @return 图片实例对象
+ */
+- (instancetype)initWithFilepath:(NSString *)filepath
+                           scene:(NSString *)scene
+                            size:(CGSize)size;
+
+
+/**
  *  图片实例对象初始化方法
  *
  *  @param data 图片数据
@@ -115,6 +131,22 @@ typedef NS_ENUM(NSInteger, NIMImageFormat)
 - (instancetype)initWithData:(NSData *)data
                    extension:(NSString *)extension
                        scene:(NSString *)scene;
+
+
+/**
+ *  图片实例对象初始化方法, 可用于发送Webp图片
+ *
+ *  @param data 图片数据
+ *  @param extension 推荐使用的图片数据后缀名
+ *  @param scene 场景类别
+ *  @param size 图片宽高,当发送文件为Webp时须需要传入该图片尺寸大小
+ *
+ *  @return 图片实例对象
+ */
+- (instancetype)initWithData:(NSData *)data
+                   extension:(NSString *)extension
+                       scene:(NSString *)scene
+                        size:(CGSize)size;
 
 
 /**

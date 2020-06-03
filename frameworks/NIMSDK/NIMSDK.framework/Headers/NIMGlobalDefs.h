@@ -242,6 +242,10 @@ typedef NS_ENUM(NSInteger, NIMRemoteErrorCode) {
      */
     NIMRemoteErrorCodeExist               = 417,
     /**
+     *  数量超限
+     */
+    NIMRemoteErrorCodeBeyondLimit         = 419,
+    /**
      *  账号被禁用
      */
     NIMRemoteErrorAccountBlock            = 422,

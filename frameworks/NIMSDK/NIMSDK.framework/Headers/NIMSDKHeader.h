@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 typedef void(^NIMArchiveLogsHandler)(NSError *error, NSString *path);
 
+typedef void(^NIMUploadLogsHandler)(NSError *error, NSString *path);
+
+
 /**
  *  NIMSDK
  */
@@ -76,16 +79,18 @@ typedef void(^NIMArchiveLogsHandler)(NSError *error, NSString *path);
  *  更新APNS Token
  *
  *  @param token APNS Token
+ *  @return 格式化后的APNS Token
  */
-- (void)updateApnsToken:(NSData *)token;
+- (NSString *)updateApnsToken:(NSData *)token;
 
 /**
  *  更新APNS Token
  *
  *  @param token APNS Token
  *  @param key 自定义本端推送内容, 设置key可对应业务服务器自定义推送文案; 传@"" 清空配置, nil 则不更改
+ *  @return 格式化后的APNS Token
  */
-- (void)updateApnsToken:(NSData *)token
+- (NSString *)updateApnsToken:(NSData *)token
        customContentKey:(nullable NSString *)key;
 
 /**
@@ -113,6 +118,28 @@ typedef void(^NIMArchiveLogsHandler)(NSError *error, NSString *path);
  *  @discussion 这个接口会压缩当前所有的日志为 Zip 文件，并输出 Zip 路径，上层可以根据这个文件进行上传反馈
  */
 - (void)archiveLogs:(NIMArchiveLogsHandler)completion;
+
+/**
+ *  打包并上传当前的日志集合
+ *
+ *  @param completion 打包后的压缩包路径
+ *
+ *  @discussion 这个接口会压缩当前所有的日志为 Zip 文件，并输出 Zip 路径，上层可以根据这个文件进行上传反馈
+ */
+- (void)uploadLogs:(NIMUploadLogsHandler _Nullable)completion;
+
+/**
+ *  打包并上传当前的日志集合
+ *
+ *  @param attach     附言，可为空
+ *  @param roomId     聊天室ID，可为空
+ *  @param completion 打包后的压缩包路径
+ *
+ *  @discussion 这个接口会压缩当前所有的日志为 Zip 文件，并输出 Zip 路径，上层可以根据这个文件进行上传反馈
+ */
+- (void)uploadLogsWithAttach:(nullable NSString *)attach
+                      roomId:(nullable NSString *)roomId
+                  completion:(NIMUploadLogsHandler _Nullable)completion;
 
 
 /**
@@ -231,6 +258,11 @@ typedef void(^NIMArchiveLogsHandler)(NSError *error, NSString *path);
  */
 @property (nonatomic,strong,readonly)   id<NIMPassThroughManager> passThroughManager;
 
+
+/**
+ *   Thread Talk管理类
+ */
+@property (nonatomic,strong,readonly)   id<NIMChatExtendManager> chatExtendManager;
 
 @end
 

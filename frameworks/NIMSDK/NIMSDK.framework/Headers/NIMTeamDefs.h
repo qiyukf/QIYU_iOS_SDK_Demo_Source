@@ -228,4 +228,12 @@ typedef void(^NIMTeamApplyHandler)(NSError * __nullable error, NIMTeamApplyStatu
  */
 typedef void(^NIMTeamFetchInviterAccidsHandler)(NSError * __nullable error, NSDictionary<NSString *, NSString *> * __nullable inviters);
 
+/**
+ *  拉取所有群信息Block
+ *
+ *  @param error 错误,如果成功则error为nil
+ *  @param teams  群信息
+ */
+typedef void(^NIMTeamFetchTeamsHandler)(NSError * __nullable error, NSArray<NIMTeam *> * __nullable teams);
+
 #endif

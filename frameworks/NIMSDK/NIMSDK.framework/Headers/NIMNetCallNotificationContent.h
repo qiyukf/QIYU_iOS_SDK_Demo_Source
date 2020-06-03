@@ -17,10 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 typedef NS_ENUM(NSInteger, NIMNetCallEventType){
     /**
-     *  对方拒接电话
-     */
-    NIMNetCallEventTypeReject = -1,
-    /**
      *  对方无人接听
      */
     NIMNetCallEventTypeNoResponse = -2,
@@ -32,6 +28,10 @@ typedef NS_ENUM(NSInteger, NIMNetCallEventType){
      *  电话回单
      */
     NIMNetCallEventTypeBill = 102,
+    /**
+     *  对方拒接电话
+     */
+    NIMNetCallEventTypeReject = 103,
 };
 
 
@@ -63,6 +63,12 @@ typedef NS_ENUM(NSInteger, NIMNetCallEventType){
  *  时长
  */
 @property (nonatomic,assign)   NSTimeInterval duration;
+
+/**
+ *  参与通话成员
+ */
+@property (nonatomic,strong)   NSArray *members;
+
 /**
  *  扩展字段
  */

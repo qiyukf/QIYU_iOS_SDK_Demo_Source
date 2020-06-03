@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NIMBatchDeleteMessagesOption;
 @class NIMFetchServerSessionOption;
 @class NIMMessageServerRetrieveOption;
+@class NIMIncompleteSessionInfo;
 /**
  *  读取服务器消息记录block
  *
@@ -62,6 +63,13 @@ typedef void(^NIMUpdateMessageBlock)(NSError * __nullable error);
  */
 typedef void(^NIMImportRecentSessionsBlock)(NSError * __nullable error, NSArray<NIMImportedRecentSession *> * __nullable failedImportedRecentSessions);
 
+
+/**
+ *  标记远端会话Block
+ *
+ *  @param error  错误,如果成功则error为nil
+ */
+typedef void(^NIMRemoveRemoteMessageBlock)(NSError * __nullable error);
 
 /**
  *  标记远端会话Block
@@ -139,7 +147,7 @@ typedef void(^NIMFetchMigrateMessageCompletion)(NSError * __nullable error, NSSt
  *
  *  @param error  错误,如果成功则error为nil
  *  @param recentSessions 读取的消息列表
- *  @param minTimestamp 最小时间戳只有请求第一页时会返回这个参数，表示下一次增量同步时带在请求参数里
+ *  @param hasMore 最小时间戳只有请求第一页时会返回这个参数，表示下一次增量同步时带在请求参数里
  */
 typedef void(^NIMFetchRecentSessionsHistoryBlock)(NSError * __nullable error,
                                                  NSArray<NIMRecentSession *> * __nullable recentSessions,
@@ -162,6 +170,23 @@ typedef void(^NIMFetchRecentSessionHistoryBlock)(NSError * __nullable error,
 typedef void(^NIMRemoteRecentSessionBlock)(NSError * __nullable error);
 
 
+
+/**
+ *  批量更新未完整会话列表
+ *
+ *  @param error  错误,如果成功则error为nil
+ *  @param faileds  更新失败的会话
+ */
+typedef void(^NIMUpdateIncompleteSessionsBlock)(NSError * __nullable error, NSArray<NIMImportedRecentSession *> * __nullable faileds);
+
+/**
+ *  未完整会话信息
+ *
+ *  @param error  错误,如果成功则error为nil
+ *  @param result  更新失败的会话
+ */
+typedef void(^NIMIncompleteSessionsBlock)(NSError * __nullable error, NSArray<NIMIncompleteSessionInfo *> * __nullable result);
+
 /**
  清空会话消息完成时状态回调
  */
@@ -183,7 +208,7 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
 /**
 *  最近会话数据库读取完成
 *
-*  @discussion 所有最近会话读取完成。设置NIMSDKConfig中的asyncLoadRecentSessionEnabled属性为YES时，此回调会执行。
+*  @discussion 所有最近会话读取完成。设置NIMSDKConfig中的asyncLoadRecentSessionEnabled属性为YES时，且本地数目大于1000条时，此回调会执行。
 *              该回调执行表示最近会话全部加载完毕可以通过allRecentSessions来取全部对话。
 */
 - (void)didLoadAllRecentSessionCompletion;
@@ -248,11 +273,23 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
 /**
  *  会话服务，会话更新
  *
- *  @param 会话
+ *  @param recentSession 最近会话
  */
 - (void)didServerSessionUpdated:(nullable NIMRecentSession *)recentSession;
 
+/**
+ *  消息单向删除通知
+ *
+ *  @param message 被删除消息
+ *  @param ext     扩展消息
+ */
+- (void)onRecvMessageDeleted:(NIMMessage *)message ext:(nullable NSString *)ext;
 
+/**
+ *  未漫游完整会话列表回调
+ *  @param infos 未漫游完整的会话信息
+ */
+- (void)onRecvIncompleteSessionInfos:(nullable NSArray<NIMIncompleteSessionInfo *> *)infos;
 @end
 
 /**
@@ -314,6 +351,17 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  *  @param message 待删除的聊天消息
  */
 - (void)deleteMessage:(NIMMessage *)message;
+
+/**
+ *  删除本地某条消息，同时删除服务端历史、漫游
+ *
+ *  @param message  待删除的聊天消息
+ *  @param ext      扩展字段
+ *  @param block    完成回调
+ */
+- (void)deleteMessageFromServer:(NIMMessage *)message
+                            ext:(nullable NSString *)ext
+                     completion:(nullable NIMRemoveRemoteMessageBlock)block;
 
 /**
  *  删除某个会话的所有消息
@@ -441,6 +489,7 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  */
 - (nullable NSArray<NIMMessage *> *)messagesInSession:(NIMSession *)session
                                            messageIds:(NSArray<NSString *> *)messageIds;
+
 
 /**
  *  获取所有未读数
@@ -685,6 +734,46 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  @discussion  此接口用于序列化消息，请与decodeMessageFromData配套使用，用于实现消息本地序列化
 */
 - (NSData *)encodeMessageToData:(NIMMessage *)message;
+
+
+#pragma mark - 漫游消息未完整会话接口
+
+/**
+ 查询漫游消息未完整会话信息
+
+ @param session 目标会话
+ @param completion 结果完成回调
+*/
+- (void)incompleteSessionInfoBySession:(NIMSession *)session
+                            completion:(nullable NIMIncompleteSessionsBlock)completion;
+/**
+ 查询所有漫游消息未漫游完整会话信息
+
+ @param completion 结果完成回调
+*/
+- (void)allIncompleteSessionInfos:(NIMIncompleteSessionsBlock)completion;
+
+/**
+ 更新未漫游完整会话列表
+
+ @param messages 消息对象，使用NIMMessage的会话、severId、timestamp、from等去更新b
+ @param completion 结果完成回调
+*/
+- (void)updateIncompleteSessions:(NSArray<NIMMessage *> *)messages
+                      completion:(nullable NIMUpdateIncompleteSessionsBlock)completion;
+
+/**
+ 根据会话移除未漫游完整会话信息
+ 
+ @param session 目标会话
+ */
+- (void)removeIncompleteSessionInfoBySession:(NIMSession *)session;
+
+/**
+ 移除所有未完整会话信息
+ */
+- (void)removeAllIncompleteSessionInfos;
+
 
 /**
  *  添加通知对象

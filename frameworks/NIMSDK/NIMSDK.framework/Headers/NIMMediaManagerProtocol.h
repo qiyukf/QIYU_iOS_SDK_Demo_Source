@@ -92,6 +92,22 @@ typedef void(^NIMAudioToTextBlock)(NSError * __nullable error,NSString * __nulla
 - (void)playAudio:(NSString *)filePath didCompletedWithError:(nullable NSError *)error;
 
 /**
+ *  播放完音频的进度回调
+ *
+ *  @param filePath 音频文件路径
+ *  @param value    播放进度 0.0 - 1.0
+ */
+- (void)playAudio:(NSString *)filePath progress:(float)value;
+
+/**
+ *  停止播放音频的回调
+ *
+ *  @param filePath 音频文件路径
+ *  @param error    错误信息
+ */
+- (void)stopPlayAudio:(NSString *)filePath didCompletedWithError:(nullable NSError *)error;
+
+/**
  *  播放音频开始被打断回调
  */
 - (void)playAudioInterruptionBegin;
