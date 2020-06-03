@@ -32,11 +32,14 @@
     [IQKeyboardManager sharedManager].enable = NO;
     //关闭IQ在键盘上加的toolbar
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    /**
+     * V5.11.0 修复了留言表单及工单页面键盘适配问题，项目中IQKeyboardManager可去掉或是关闭功能
+     */
     //部分页面启用键盘管理：工单页面-YSFWorkOrderViewController、留言表单页面-YSFMessageFormViewController
-    [[IQKeyboardManager sharedManager].enabledDistanceHandlingClasses addObject:NSClassFromString(@"YSFWorkOrderViewController")];
-    [[IQKeyboardManager sharedManager].enabledDistanceHandlingClasses addObject:NSClassFromString(@"YSFMessageFormViewController")];
+//    [[IQKeyboardManager sharedManager].enabledDistanceHandlingClasses addObject:NSClassFromString(@"YSFWorkOrderViewController")];
+//    [[IQKeyboardManager sharedManager].enabledDistanceHandlingClasses addObject:NSClassFromString(@"YSFMessageFormViewController")];
     //点击页面非输入区域时收起键盘
-    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+//    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
     return YES;
 }

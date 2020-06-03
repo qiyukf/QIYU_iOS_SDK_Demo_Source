@@ -1,6 +1,6 @@
 {
   "name": "QYSDK",
-  "version": "5.10.0",
+  "version": "5.11.0",
   "summary": "网易七鱼客服访客端 iOS SDK",
   "homepage": "https://www.qiyukf.com",
   "license": {
@@ -11,8 +11,8 @@
     "qiyukf": "yunshangfu@126.com"
   },
   "source": {
-    "git": "https://github.com/qiyukf/QIYU_iOS_SDK",
-    "tag": "5.7.2"
+    "git": "https://github.com/qiyukf/QY_iOS_SDK",
+    "tag": "5.11.0"
   },
   "platforms": {
     "ios": "8.0"

@@ -1,7 +1,7 @@
 PODS:
   - IQKeyboardManager (6.5.5)
-  - NIMSDK (7.2.5)
-  - QYSDK (5.10.0)
+  - NIMSDK (7.6.0)
+  - QYSDK (5.11.0)
   - SDWebImage (5.7.3):
     - SDWebImage/Core (= 5.7.3)
   - SDWebImage/Core (5.7.3)
@@ -30,8 +30,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
-  NIMSDK: c90cf4817219a505230dab92c31fd9d1c697684a
-  QYSDK: 209ccef19b974dad5865ef1c8f1d38afd997c08a
+  NIMSDK: f35fbbe042e8034782891eee887e29045ea3f4e2
+  QYSDK: 0ddd3d538ac4d906f4e121bcd2fd17fca9161fd1
   SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
