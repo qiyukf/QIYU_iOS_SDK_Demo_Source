@@ -331,6 +331,14 @@ typedef NS_ENUM(NSInteger, QYMessagesLoadState) {
  */
 - (void)setMessagesLoadImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(QYMessagesLoadState)state;
 
+/**
+ *  注册自定义商品卡片消息的model及contentView，配置其UI显示
+ *  @discussion 若要使用自定义商品卡片功能，需调用此方法设置映射关系，注意应在卡片消息渲染前设置
+ *  @param modelClass       QYCustomCommodityInfo类型消息对应的数据模型类，QYCustomModel子类
+ *  @param contentViewClass QYCustomCommodityInfo类型消息对应的视图，QYCustomContentView子类
+ */
+- (void)registerCustomCommodityInfoModelClass:(Class)modelClass contentViewClass:(Class)contentViewClass;
+
 
 //因访客端体验升级，以下属性在v5.1.0版本废弃
 /**

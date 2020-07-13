@@ -18,6 +18,8 @@
 #import "QYDemoConfig.h"
 #import "QYSettingData.h"
 #import "QYMacro.h"
+#import "QYCustomCommodityModel.h"
+#import "QYCustomCommodityContentView.h"
 #import <NIMSDK/NIMSDK.h>
 #import <QYSDK/QYSDK.h>
 #import <QYSDK/QYPOPSDK.h>
@@ -142,6 +144,11 @@
         }
         [weakSelf showToast:toast];
     };
+    /**
+     * 注册自定义卡片消息
+     */
+    [[QYSDK sharedSDK].customUIConfig registerCustomCommodityInfoModelClass:[QYCustomCommodityModel class]
+                                                           contentViewClass:[QYCustomCommodityContentView class]];
     /**
      * push/present
      */

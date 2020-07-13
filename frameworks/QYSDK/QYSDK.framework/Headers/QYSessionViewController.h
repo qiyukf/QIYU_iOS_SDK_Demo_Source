@@ -177,10 +177,10 @@ typedef void (^QYFileCompletion)(NSString *fileName, NSString *filePath);
 - (void)requestHumanStaff;
 
 /**
- *  切换人工客服
+ *  切换人工客服，客服ID、客服分组ID二者选择一种即可
  *
  *  @param staffId 客服ID
- *  @param groupId 分组ID
+ *  @param groupId 客服分组ID
  *  @param closetip 切换提示语
  *  @param closeCompletion 退出旧会话完成的回调
  *  @param requestCompletion 请求新会话完成的回调
@@ -305,21 +305,6 @@ typedef void (^QYEvaluationCompletion)(QYEvaluationState state);
  *  发送机器人满意度评价结果
  */
 - (void)sendRobotEvaluationResult:(QYEvaluactionResult *)result completion:(QYEvaluationCompletion)completion;
-
-
-/** 以下为自定义卡片消息相关接口 **/
-
-/**
- *  自定义卡片消息回调
- *
- *  @param jsonString 自定义卡片消息数据
- */
-typedef void (^QYCustomMessageDataBlock)(NSString *jsonString);
-
-/**
- *  自定义卡片消息事件，回调时机为收到该类消息时刻
- */
-@property (nonatomic, copy) QYCustomMessageDataBlock customMessageDataBlock;
 
 
 @end

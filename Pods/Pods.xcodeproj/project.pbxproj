@@ -3326,22 +3326,6 @@
 			};
 			name = Release;
 		};
-		43B0CAD691327B9CE3E0EC1EE1920298 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3A4E1C0E57C510A47594AD10B71F190 /* QYSDK.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3436,13 +3420,13 @@
 			};
 			name = Debug;
 		};
-		5E5F381414CAC738DF84E213B01658DD /* Release */ = {
+		64AC472AC17733714626031F07B7EBA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A3A4E1C0E57C510A47594AD10B71F190 /* QYSDK.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3622,6 +3606,22 @@
 			};
 			name = Release;
 		};
+		CC4C7AFF6E1D4F3D426A556757591E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3A4E1C0E57C510A47594AD10B71F190 /* QYSDK.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		CD68C74523283E72D31A7466886D0559 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2134EBC6076B47883FC3BF96DBE6981 /* Pods-QYSDKDemo.debug.xcconfig */;
@@ -3699,8 +3699,8 @@
 		3010F2FE2C519C74AFAAFB9DBC800748 /* Build configuration list for PBXAggregateTarget "QYSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43B0CAD691327B9CE3E0EC1EE1920298 /* Debug */,
-				5E5F381414CAC738DF84E213B01658DD /* Release */,
+				CC4C7AFF6E1D4F3D426A556757591E8A /* Debug */,
+				64AC472AC17733714626031F07B7EBA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

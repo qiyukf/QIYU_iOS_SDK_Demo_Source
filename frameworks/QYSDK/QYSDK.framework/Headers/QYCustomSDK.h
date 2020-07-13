@@ -16,3 +16,4 @@
 #import "QYCustomSessionViewController.h"
 #import "QYCustomMessageProtocol.h"
 #import "QYCustomEvent.h"
+#import "QYCustomCommodityInfo.h"

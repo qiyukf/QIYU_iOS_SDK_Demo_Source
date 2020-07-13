@@ -38,9 +38,7 @@
 #import "QYCustomCardMessage.h"
 #import "QYCustomCardModel.h"
 #import "QYCustomCardContentView.h"
-#import "QYCustomTicketMessage.h"
-#import "QYCustomTicketModel.h"
-#import "QYCustomTicketContentView.h"
+#import "QYCustomCommodityContentView.h"
 
 
 static NSString * const kQYSettingCellIdentifier = @"kQYSettingCellIdentifier";
@@ -597,26 +595,6 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
         [weakSelf showToast:toast];
     };
     /**
-     * 自定义卡片消息
-     */
-    sessionViewController.customMessageDataBlock = ^(NSString *jsonString) {
-        NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        if (data) {
-            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            if ([object isKindOfClass:[NSDictionary class]]) {
-                QYCustomTicketMessage *message = [QYCustomTicketMessage objectByDict:object];
-                [weakSelf.sessionViewController addCustomMessage:message
-                                                    needSaveData:YES
-                                                  needReloadView:YES
-                                                      completion:^(NSError *error) {
-                    if (error) {
-                        [weakSelf showToast:@"addCustomMessage error !!!"];
-                    }
-                }];
-            }
-        }
-    };
-    /**
      * 自定义消息
      */
     [sessionViewController registerCustomMessageClass:[QYCustomTextMessage class]
@@ -628,9 +606,6 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
     [sessionViewController registerCustomMessageClass:[QYCustomCardMessage class]
                                            modelClass:[QYCustomCardModel class]
                                      contentViewClass:[QYCustomCardContentView class]];
-    [sessionViewController registerCustomMessageClass:[QYCustomTicketMessage class]
-                                           modelClass:[QYCustomTicketModel class]
-                                     contentViewClass:[QYCustomTicketContentView class]];
     [sessionViewController addCustomMessageDelegate:self];
     [sessionViewController addCustomContentViewDelegate:self];
     /**
@@ -1182,7 +1157,7 @@ static NSString *const kQYNIMIsEverLoginedKey = @"kQYNIMIsEverLoginedKey";
             [self.sessionViewController deleteCustomMessage:cardMsg needSaveData:YES needReloadView:YES];
         }
     } else if ([eventName isEqualToString:QYCustomEventTapTicketButton]) {
-        if ([message isKindOfClass:[QYCustomTicketMessage class]]) {
+        if ([message isKindOfClass:[QYCustomCommodityInfo class]]) {
             [self showToast:@"点击了立即预定按钮"];
         }
     }

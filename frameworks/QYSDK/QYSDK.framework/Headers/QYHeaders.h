@@ -24,5 +24,6 @@
 #import "QYPushMessage.h"
 #import "QYAction.h"
 #import "QYEvaluation.h"
+#import "QYWorkOrderListViewController.h"
 
 #endif

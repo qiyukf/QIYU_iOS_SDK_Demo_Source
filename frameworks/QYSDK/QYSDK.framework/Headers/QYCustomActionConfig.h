@@ -161,6 +161,7 @@ typedef void (^QYCustomButtonBlock)(NSDictionary *dict);
  */
 - (void)showQuitWaitingAlert:(QYQuitWaitingBlock)quitWaitingBlock;
 
+
 @end
 
 

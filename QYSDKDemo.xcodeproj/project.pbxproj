@@ -47,17 +47,16 @@
 		D79AA649245735C4004DCFF6 /* QYDemoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA5FE245735C4004DCFF6 /* QYDemoConfig.m */; };
 		D79AA64A245735C4004DCFF6 /* QRcodeScanController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79AA602245735C4004DCFF6 /* QRcodeScanController.mm */; };
 		D79AA64B245735C4004DCFF6 /* YXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA603245735C4004DCFF6 /* YXCapture.m */; };
-		D79AA64E245735C4004DCFF6 /* QYCustomTicketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA60D245735C4004DCFF6 /* QYCustomTicketMessage.m */; };
 		D79AA64F245735C4004DCFF6 /* QYCustomTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA60E245735C4004DCFF6 /* QYCustomTextMessage.m */; };
 		D79AA650245735C4004DCFF6 /* QYCustomImageMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA611245735C4004DCFF6 /* QYCustomImageMessage.m */; };
 		D79AA651245735C4004DCFF6 /* QYCustomCardMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA613245735C4004DCFF6 /* QYCustomCardMessage.m */; };
 		D79AA652245735C4004DCFF6 /* QYCustomTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA616245735C4004DCFF6 /* QYCustomTextModel.m */; };
 		D79AA653245735C4004DCFF6 /* QYCustomCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA617245735C4004DCFF6 /* QYCustomCardModel.m */; };
 		D79AA654245735C4004DCFF6 /* QYCustomImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA618245735C4004DCFF6 /* QYCustomImageModel.m */; };
-		D79AA655245735C4004DCFF6 /* QYCustomTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA61A245735C4004DCFF6 /* QYCustomTicketModel.m */; };
+		D79AA655245735C4004DCFF6 /* QYCustomCommodityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA61A245735C4004DCFF6 /* QYCustomCommodityModel.m */; };
 		D79AA656245735C4004DCFF6 /* QYCustomTextContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA61E245735C4004DCFF6 /* QYCustomTextContentView.m */; };
 		D79AA657245735C4004DCFF6 /* QYCustomCardContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA621245735C4004DCFF6 /* QYCustomCardContentView.m */; };
-		D79AA658245735C4004DCFF6 /* QYCustomTicketContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA623245735C4004DCFF6 /* QYCustomTicketContentView.m */; };
+		D79AA658245735C4004DCFF6 /* QYCustomCommodityContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA623245735C4004DCFF6 /* QYCustomCommodityContentView.m */; };
 		D79AA659245735C4004DCFF6 /* QYCustomImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79AA625245735C4004DCFF6 /* QYCustomImageContentView.m */; };
 		D79AA65B245737AC004DCFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79AA65A245737AC004DCFF6 /* Assets.xcassets */; };
 		D79AA65D2457385E004DCFF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79AA65C2457385E004DCFF6 /* UIKit.framework */; };
@@ -168,27 +167,25 @@
 		D79AA603245735C4004DCFF6 /* YXCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCapture.m; sourceTree = "<group>"; };
 		D79AA60A245735C4004DCFF6 /* QYCustomKeyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomKeyDefine.h; sourceTree = "<group>"; };
 		D79AA60C245735C4004DCFF6 /* QYCustomImageMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomImageMessage.h; sourceTree = "<group>"; };
-		D79AA60D245735C4004DCFF6 /* QYCustomTicketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTicketMessage.m; sourceTree = "<group>"; };
 		D79AA60E245735C4004DCFF6 /* QYCustomTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTextMessage.m; sourceTree = "<group>"; };
 		D79AA60F245735C4004DCFF6 /* QYCustomCardMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCardMessage.h; sourceTree = "<group>"; };
-		D79AA610245735C4004DCFF6 /* QYCustomTicketMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTicketMessage.h; sourceTree = "<group>"; };
 		D79AA611245735C4004DCFF6 /* QYCustomImageMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomImageMessage.m; sourceTree = "<group>"; };
 		D79AA612245735C4004DCFF6 /* QYCustomTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTextMessage.h; sourceTree = "<group>"; };
 		D79AA613245735C4004DCFF6 /* QYCustomCardMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCardMessage.m; sourceTree = "<group>"; };
-		D79AA615245735C4004DCFF6 /* QYCustomTicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTicketModel.h; sourceTree = "<group>"; };
+		D79AA615245735C4004DCFF6 /* QYCustomCommodityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCommodityModel.h; sourceTree = "<group>"; };
 		D79AA616245735C4004DCFF6 /* QYCustomTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTextModel.m; sourceTree = "<group>"; };
 		D79AA617245735C4004DCFF6 /* QYCustomCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCardModel.m; sourceTree = "<group>"; };
 		D79AA618245735C4004DCFF6 /* QYCustomImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomImageModel.m; sourceTree = "<group>"; };
 		D79AA619245735C4004DCFF6 /* QYCustomTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTextModel.h; sourceTree = "<group>"; };
-		D79AA61A245735C4004DCFF6 /* QYCustomTicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTicketModel.m; sourceTree = "<group>"; };
+		D79AA61A245735C4004DCFF6 /* QYCustomCommodityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCommodityModel.m; sourceTree = "<group>"; };
 		D79AA61B245735C4004DCFF6 /* QYCustomCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCardModel.h; sourceTree = "<group>"; };
 		D79AA61C245735C4004DCFF6 /* QYCustomImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomImageModel.h; sourceTree = "<group>"; };
 		D79AA61E245735C4004DCFF6 /* QYCustomTextContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTextContentView.m; sourceTree = "<group>"; };
-		D79AA61F245735C4004DCFF6 /* QYCustomTicketContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTicketContentView.h; sourceTree = "<group>"; };
+		D79AA61F245735C4004DCFF6 /* QYCustomCommodityContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCommodityContentView.h; sourceTree = "<group>"; };
 		D79AA620245735C4004DCFF6 /* QYCustomImageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomImageContentView.h; sourceTree = "<group>"; };
 		D79AA621245735C4004DCFF6 /* QYCustomCardContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCardContentView.m; sourceTree = "<group>"; };
 		D79AA622245735C4004DCFF6 /* QYCustomTextContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomTextContentView.h; sourceTree = "<group>"; };
-		D79AA623245735C4004DCFF6 /* QYCustomTicketContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomTicketContentView.m; sourceTree = "<group>"; };
+		D79AA623245735C4004DCFF6 /* QYCustomCommodityContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomCommodityContentView.m; sourceTree = "<group>"; };
 		D79AA624245735C4004DCFF6 /* QYCustomCardContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYCustomCardContentView.h; sourceTree = "<group>"; };
 		D79AA625245735C4004DCFF6 /* QYCustomImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYCustomImageContentView.m; sourceTree = "<group>"; };
 		D79AA65A245737AC004DCFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -492,8 +489,6 @@
 				D79AA611245735C4004DCFF6 /* QYCustomImageMessage.m */,
 				D79AA60F245735C4004DCFF6 /* QYCustomCardMessage.h */,
 				D79AA613245735C4004DCFF6 /* QYCustomCardMessage.m */,
-				D79AA610245735C4004DCFF6 /* QYCustomTicketMessage.h */,
-				D79AA60D245735C4004DCFF6 /* QYCustomTicketMessage.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -507,8 +502,8 @@
 				D79AA618245735C4004DCFF6 /* QYCustomImageModel.m */,
 				D79AA61B245735C4004DCFF6 /* QYCustomCardModel.h */,
 				D79AA617245735C4004DCFF6 /* QYCustomCardModel.m */,
-				D79AA615245735C4004DCFF6 /* QYCustomTicketModel.h */,
-				D79AA61A245735C4004DCFF6 /* QYCustomTicketModel.m */,
+				D79AA615245735C4004DCFF6 /* QYCustomCommodityModel.h */,
+				D79AA61A245735C4004DCFF6 /* QYCustomCommodityModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -522,8 +517,8 @@
 				D79AA625245735C4004DCFF6 /* QYCustomImageContentView.m */,
 				D79AA624245735C4004DCFF6 /* QYCustomCardContentView.h */,
 				D79AA621245735C4004DCFF6 /* QYCustomCardContentView.m */,
-				D79AA61F245735C4004DCFF6 /* QYCustomTicketContentView.h */,
-				D79AA623245735C4004DCFF6 /* QYCustomTicketContentView.m */,
+				D79AA61F245735C4004DCFF6 /* QYCustomCommodityContentView.h */,
+				D79AA623245735C4004DCFF6 /* QYCustomCommodityContentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -707,7 +702,7 @@
 				D79AA64B245735C4004DCFF6 /* YXCapture.m in Sources */,
 				D79AA654245735C4004DCFF6 /* QYCustomImageModel.m in Sources */,
 				D79AA637245735C4004DCFF6 /* QYTrackViewController.m in Sources */,
-				D79AA655245735C4004DCFF6 /* QYCustomTicketModel.m in Sources */,
+				D79AA655245735C4004DCFF6 /* QYCustomCommodityModel.m in Sources */,
 				D79AA657245735C4004DCFF6 /* QYCustomCardContentView.m in Sources */,
 				D79AA634245735C4004DCFF6 /* QYTestModeViewController.m in Sources */,
 				D79AA66D24573BFD004DCFF6 /* UIView+YSFToast.m in Sources */,
@@ -736,7 +731,7 @@
 				D79AA62F245735C4004DCFF6 /* QYSettingViewController.m in Sources */,
 				D79AA63E245735C4004DCFF6 /* QYAddAppKeyViewController.m in Sources */,
 				D79AA64F245735C4004DCFF6 /* QYCustomTextMessage.m in Sources */,
-				D79AA658245735C4004DCFF6 /* QYCustomTicketContentView.m in Sources */,
+				D79AA658245735C4004DCFF6 /* QYCustomCommodityContentView.m in Sources */,
 				D79AA661245738F4004DCFF6 /* NSDictionary+QYJson.m in Sources */,
 				D79AA651245735C4004DCFF6 /* QYCustomCardMessage.m in Sources */,
 				D79AA641245735C4004DCFF6 /* QYCustomStyleViewController.m in Sources */,
@@ -745,7 +740,6 @@
 				D79AA64A245735C4004DCFF6 /* QRcodeScanController.mm in Sources */,
 				D73603BA240CAF5700BDBF2C /* main.m in Sources */,
 				D79AA67024573C37004DCFF6 /* QYAlertController.m in Sources */,
-				D79AA64E245735C4004DCFF6 /* QYCustomTicketMessage.m in Sources */,
 				D79AA652245735C4004DCFF6 /* QYCustomTextModel.m in Sources */,
 				D79AA66724573B33004DCFF6 /* NSData+QY.m in Sources */,
 				D79AA67324573C9B004DCFF6 /* UIColor+YSF.m in Sources */,
