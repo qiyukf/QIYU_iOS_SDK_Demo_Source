@@ -26,11 +26,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## NIMSDK
+## NIMSDK_LITE
 
-Copyright 2020 Netease 
+Copyright 2019 Netease 
 
-## QYSDK
+## QY_iOS_SDK
 
 Copyright 2020 Netease 
 

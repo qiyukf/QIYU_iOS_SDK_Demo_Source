@@ -11,7 +11,7 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>NIMSDK.xcscheme</key>
+		<key>NIMSDK_LITE.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -25,7 +25,7 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>QYSDK.xcscheme</key>
+		<key>QY_iOS_SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

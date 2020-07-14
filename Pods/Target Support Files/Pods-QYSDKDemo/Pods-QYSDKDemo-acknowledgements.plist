@@ -45,11 +45,11 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright 2020 Netease </string>
+			<string>Copyright 2019 Netease </string>
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
-			<string>NIMSDK</string>
+			<string>NIMSDK_LITE</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
@@ -60,7 +60,7 @@ SOFTWARE.
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
-			<string>QYSDK</string>
+			<string>QY_iOS_SDK</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

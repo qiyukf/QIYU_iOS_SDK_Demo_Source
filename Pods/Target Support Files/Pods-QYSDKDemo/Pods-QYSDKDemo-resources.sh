@@ -97,12 +97,10 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/../frameworks/QYSDK/Resources/QYCustomResource.bundle"
-  install_resource "${PODS_ROOT}/../frameworks/QYSDK/Resources/QYResource.bundle"
+  install_resource "${PODS_ROOT}/QY_iOS_SDK/SDK/Resources/QYResource.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/../frameworks/QYSDK/Resources/QYCustomResource.bundle"
-  install_resource "${PODS_ROOT}/../frameworks/QYSDK/Resources/QYResource.bundle"
+  install_resource "${PODS_ROOT}/QY_iOS_SDK/SDK/Resources/QYResource.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -162,15 +162,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${PODS_ROOT}/../frameworks/NIMSDK/NIMSDK.framework"
-  install_framework "${PODS_ROOT}/../frameworks/QYSDK/QYSDK.framework"
+  install_framework "${PODS_ROOT}/NIMSDK_LITE/NIMSDK/NIMSDK.framework"
+  install_framework "${PODS_ROOT}/QY_iOS_SDK/SDK/QYSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZXingObjC/ZXingObjC.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${PODS_ROOT}/../frameworks/NIMSDK/NIMSDK.framework"
-  install_framework "${PODS_ROOT}/../frameworks/QYSDK/QYSDK.framework"
+  install_framework "${PODS_ROOT}/NIMSDK_LITE/NIMSDK/NIMSDK.framework"
+  install_framework "${PODS_ROOT}/QY_iOS_SDK/SDK/QYSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZXingObjC/ZXingObjC.framework"
 fi

@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-QYSDKDemo/Pods-QYSDKDemo-resources.sh
-${PODS_ROOT}/../frameworks/QYSDK/Resources/QYCustomResource.bundle
-${PODS_ROOT}/../frameworks/QYSDK/Resources/QYResource.bundle
+${PODS_ROOT}/QY_iOS_SDK/SDK/Resources/QYResource.bundle
