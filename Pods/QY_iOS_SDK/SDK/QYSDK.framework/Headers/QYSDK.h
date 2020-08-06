@@ -2,7 +2,7 @@
 //  QYSDK.h
 //  QYSDK
 //
-//  version 5.12.0
+//  version 5.13.0
 //
 //  Created by Netease on 12/21/15.
 //  Copyright (c) 2017 Netease. All rights reserved.
@@ -46,8 +46,9 @@ typedef NS_ENUM(NSInteger, QYLocalErrorCode) {
     QYLocalErrorCodeUnknown         = 0,    //未知错误
     QYLocalErrorCodeInvalidParam    = 1,    //错误参数
     QYLocalErrorCodeFusionNeeded    = 2,    //必须为融合SDK
-    QYLocalErrorCodeAccountNeeded   = 3,    //帐号错误-未登录
+    QYLocalErrorCodeAccountNeeded   = 3,    //帐号错误-底层通信IM帐号未登录
     QYLocalErrorCodeInvalidUserId   = 4,    //userId错误，应与帐号相同
+    QYLocalErrorCodeNeedLogout      = 5,    //userId变化，应走帐号切换逻辑，先调用logout
 };
 
 
@@ -136,28 +137,54 @@ typedef NS_ENUM(NSInteger, QYLocalErrorCode) {
 - (QYConversationManager *)conversationManager;
 
 /**
- *  更新推送token
+ *  获取当前设置的用户信息ID
  *
- *  @param token 推送token
- *  @discussion 传入DeviceToken原始数据，NSData类型
+ *  @return 返回当前已设置的用户信息ID
  */
-- (void)updateApnsToken:(NSData *)token;
+- (NSString *)currentUserID;
 
 /**
- *  设置用户信息，用户帐号登录成功后上传
+ *  获取当前登录的底层IM通信帐号ID，可据此判断当前是否已登录IM帐号
+ *
+ *  @return 返回当前登录的accountID
+ *  @discussion 此帐号与外部设置的userId不同，是底层长连接通信帐号，七鱼内部会自动创建并登录；与外部传入的userId形成映射关系
+ */
+- (NSString *)currentIMAccountID;
+
+/**
+ *  设置用户信息，App帐号登录成功后上传
  *
  *  @param userInfo 用户信息
- *  @discussion 此方法尽量在帐号登录成功后调用，而不应仅在进入客服界面时调用；否则可能会造成客服连接状态不稳定
+ *  @discussion 此方法尽量在App帐号登录成功后调用，不应仅在进入客服界面时调用；否则可能会造成客服连接状态不稳定
+ *  @discussion 若设置的userId与上次设置不同，即需要实现帐号切换，应先调用logout还原为匿名帐号再进行设置
  */
 - (void)setUserInfo:(QYUserInfo *)userInfo;
 
 /**
- *  设置authToken
+ *  设置用户信息，App帐号登录成功后上传，带结果回调
+ *
+ *  @param userInfo 用户信息
+ *  @param userInfoBlock userInfo上报结果回调
+ *  @discussion 此方法尽量在App帐号登录成功后调用，不应仅在进入客服界面时调用；否则可能会造成客服连接状态不稳定
+ *  @discussion 若设置的userId与上次设置不同，即需要实现帐号切换，应先调用logout还原为匿名帐号再进行设置
+ */
+- (void)setUserInfo:(QYUserInfo *)userInfo userInfoResultBlock:(QYResultCompletionBlock)userInfoBlock;
+
+/**
+ *  注销当前帐号，App帐号注销时调用
+ *
+ *  @param completion 完成回调
+ *  @discussion 切换帐号包含注销和登录过程，在注销阶段也要调用此函数
+ */
+- (void)logout:(QYCompletionBlock)completion;
+
+/**
+ *  设置待校验的authToken
  */
 - (void)setAuthToken:(NSString *)authToken;
 
 /**
- *  设置用户信息，带authToken校验，用户帐号登录成功后上传
+ *  设置用户信息，App帐号登录成功后上传，带authToken校验
  *
  *  @param userInfo 用户信息
  *  @param block authToken校验结果回调
@@ -165,12 +192,15 @@ typedef NS_ENUM(NSInteger, QYLocalErrorCode) {
 - (void)setUserInfo:(QYUserInfo *)userInfo authTokenVerificationResultBlock:(QYCompletionWithResultBlock)block;
 
 /**
- *  注销当前帐号。用户帐号注销时需要调用此函数
+ *  设置用户信息，App帐号登录成功后上传，带authToken校验，带结果回调
  *
- *  @param completion 完成回调
- *  @discussion 切换帐号包含注销和登录过程，在注销阶段也要调用此函数
+ *  @param userInfo 用户信息
+ *  @param userInfoBlock userInfo上报结果回调
+ *  @param authTokenBlock authToken校验结果回调
+ *  @discussion 此方法尽量在App帐号登录成功后调用，不应仅在进入客服界面时调用；否则可能会造成客服连接状态不稳定
+ *  @discussion 若设置的userId与上次设置不同，即需要实现帐号切换，应先调用logout还原为匿名帐号再进行设置
  */
-- (void)logout:(QYCompletionBlock)completion;
+- (void)setUserInfo:(QYUserInfo *)userInfo userInfoResultBlock:(QYResultCompletionBlock)userInfoBlock authTokenResultBlock:(QYCompletionBlock)authTokenBlock;
 
 /**
  *  访问轨迹
@@ -185,6 +215,14 @@ typedef NS_ENUM(NSInteger, QYLocalErrorCode) {
  *  @param description 具体信息，以key-value表示信息对，例如key为“商品价格”，value为“999”
  */
 - (void)trackHistory:(NSString *)title description:(NSDictionary *)description key:(NSString *)key;
+
+/**
+ *  更新推送token
+ *
+ *  @param token 推送token
+ *  @discussion 传入DeviceToken原始数据，NSData类型
+ */
+- (void)updateApnsToken:(NSData *)token;
 
 /**
  *  获取七鱼推送消息，非APNs推送
@@ -225,12 +263,12 @@ typedef NS_ENUM(NSInteger, QYLocalErrorCode) {
 #pragma mark - Fusion
 
 /**
- *  设置个人信息，带authToken校验，仅融合SDK使用
+ *  设置用户信息，带authToken校验，仅融合SDK使用
  *
- *  @param userInfo 个人信息，注意userId应与当前登录的云信帐号相同，否则userInfoBlock返回error
+ *  @param userInfo 用户信息，注意userId应与当前登录的云信帐号相同，否则userInfoBlock返回error
  *  @param userInfoBlock userInfo上报结果回调
  *  @param authTokenBlock authToken校验结果回调
- *  @discussion 企业帐号登录成功后，调用此函数上报。若非融合SDK调用，则userInfoBlock返回error
+ *  @discussion App帐号登录成功后，调用此函数上报。若非融合SDK调用，则userInfoBlock返回error
  */
 - (void)setUserInfoForFusion:(QYUserInfo *)userInfo
          userInfoResultBlock:(QYResultCompletionBlock)userInfoBlock

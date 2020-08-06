@@ -105,6 +105,7 @@ typedef void (^QYFileCompletion)(NSString *fileName, NSString *filePath);
 
 /**
  *  访客分流 是否开启机器人
+ *  @discussion 仅设置staffId/groupId时生效
  */
 @property (nonatomic, assign) BOOL openRobotInShuntMode;
 
@@ -117,6 +118,11 @@ typedef void (^QYFileCompletion)(NSString *fileName, NSString *filePath);
  *  机器人欢迎语 模板Id
  */
 @property (nonatomic, assign) int64_t robotWelcomeTemplateId;
+
+/**
+ *  多入口分流 模板Id
+ */
+@property (nonatomic, assign) int64_t shuntTemplateId;
 
 /**
  *  会话窗口来源
