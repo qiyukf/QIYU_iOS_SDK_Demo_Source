@@ -12,6 +12,8 @@
 #import <NIMSDK/NIMSDK.h>
 #import <QYSDK/QYSDK.h>
 
+#import <UserNotifications/UserNotifications.h>
+
 
 @interface AppDelegate ()
 
@@ -25,6 +27,10 @@
     QYHomePageViewController *vc = [[QYHomePageViewController alloc] init];
     _window.rootViewController = vc;
     [_window makeKeyAndVisible];
+    
+    //APNs
+    [self registerAPNs];
+    
     /**
      * IQKeyboardManager
      */
@@ -49,6 +55,27 @@
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:count];
 }
 
+#pragma mark - APNs
+//注册通知，区分iOS10以上、iOS8-iOS10，iOS8以下三种方式注册
+- (void)registerAPNs {
+    if (@available(iOS 10.0, *)) {
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (granted) {
+                NSLog(@"UNUserNotificationCenter request authorization success");
+            } else {
+                NSLog(@"UNUserNotificationCenter request authorization failed %@", error);
+            }
+        }];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else {
+        //若为iOS10以下系统，使用UIUserNotification
+        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+}
+
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"register remote notification success %@", [NSString stringWithFormat:@"%@",deviceToken]);
     [[QYSDK sharedSDK] updateApnsToken:deviceToken];
@@ -56,6 +83,10 @@
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"register remote notification failed %@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
 }
 
 
