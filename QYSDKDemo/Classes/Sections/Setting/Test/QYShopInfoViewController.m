@@ -33,7 +33,13 @@
     // Do any additional setup after loading the view from its nib.
 
     [self initData];
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+    [self.view addGestureRecognizer:gesture];
+}
 
+- (void)onTap {
+    [self.view endEditing:YES];
 }
 
 - (void)initData

@@ -1517,6 +1517,7 @@ iOS SDK 提供部分功能事件自定义，通过`[QYSDK sharedSDK]`单例的`c
 | notificationClickBlock | QYSystemNotificationClickBlock | 系统消息点击                           |
 | eventClickBlock        | QYEventBlock                   | 消息内部分点击事件数据透传             |
 | customButtonClickBlock | QYCustomButtonBlock            | 自定义事件按钮点击事件                 |
+| avatarClickBlock       | QYAvatarClickBlock             | 消息头像点击事件                       |
 | pullRoamMessage        | BOOL                           | 账号登录后是否拉取漫游消息             |
 
 ### 接口列表
@@ -2031,6 +2032,12 @@ sessionViewController.shopId = 123456;
 如果您看完此文档后，还有任何集成方面的疑问，可以参考 iOS SDK Demo 源码：[QIYU_iOS_SDK_Demo_Source](https://github.com/qiyukf/QIYU_iOS_SDK_Demo_Source.git)。源码充分展示了 iOS SDK 的能力，并且为集成 iOS SDK 提供了样例代码。
 
 ## 更新说明
+
+#### V5.14.0（2020-09-09）
+
+1. 新增头像点击事件
+2. 完善平台商户消息漫游功能
+3. 修复部分已知问题
 
 #### V5.13.0（2020-08-06）
 
