@@ -167,6 +167,11 @@ typedef void (^QYAvatarClickBlock)(QYAvatarType type, NSString *accountID);
  */
 @property (nonatomic, assign) BOOL pullRoamMessage;
 
+/**
+ *  拉取漫游消息条数，默认20条，最大100条
+ */
+@property (nonatomic, assign) NSUInteger roamMessageLimit;
+
 
 /**
  *  设置录制或者播放语音完成以后是否自动deactivate AVAudioSession
