@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "NIMLoginClient.h"
 
+#ifndef NIMDeprecated
+#define NIMDeprecated(msg) __attribute__((deprecated(msg)))
+#endif
+
+@class NIMLoginKickoutResult;
+
 NS_ASSUME_NONNULL_BEGIN
 /**
  *  登录服务相关Block
@@ -140,10 +146,19 @@ typedef NS_ENUM(NSInteger, NIMMultiLoginType){
 /**
  *  被踢(服务器/其他端)回调
  *
+ * @deprecated 请使用- (void)onKickout:(NIMLoginKickoutResult *)result;
+ *
  *  @param code        被踢原因
  *  @param clientType  发起踢出的客户端类型
  */
-- (void)onKick:(NIMKickReason)code clientType:(NIMLoginClientType)clientType;
+- (void)onKick:(NIMKickReason)code clientType:(NIMLoginClientType)clientType NIMDeprecated("Use -onKickout: instead");
+
+/**
+ *  被踢(服务器/其他端)回调
+*
+ *  @param result        被踢原因
+ */
+- (void)onKickout:(NIMLoginKickoutResult *)result;
 
 /**
  *  登录回调

@@ -13,6 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NIMMessage;
 
+/**
+*  云端消息自定义过滤回调
+*
+*  @param message 待过滤的消息
+*  @discussion 返回YES表示该消息被过滤，不入库不会在历史消息结果中返回；返回NO，表示正常处理该消息。
+*/
+typedef BOOL(^NIMHistoryMessageFilterBlock)(NIMMessage *message);
+
 
 /**
  *  搜索顺序
@@ -64,6 +72,12 @@ typedef NS_ENUM(NSInteger,NIMMessageSearchOrder) {
  *  @discusssion 消息类型组合，默认只搜索文本类型, 只有在 allMessageTypes 为 NO 时有效，取值范围为: NIMMessageType 枚举类型
  */
 @property (nonatomic,copy)    NSArray<NSNumber *> *messageTypes;
+
+/**
+*  查询的消息子类型
+*  @discusssion 消息子类型组合
+*/
+@property (nonatomic,strong)  NSArray<NSNumber *> *messageSubTypes;
 
 /**
  *  全部消息类型
@@ -154,6 +168,17 @@ typedef NS_ENUM(NSInteger,NIMMessageSearchOrder) {
 */
 @property (nonatomic,assign)      BOOL             syncMessageTypes;
 
+/**
+*  自定义消息过滤
+*  @discusssion 自定义外部过滤回调方法。返回YES表示消息被过滤，不入库不回调，返回NO，表示消息正常入库和回调
+*  回调在内部工作线程，注意不要再该回调中执行阻塞或者耗时操作，防止影响内部的消息处理流程。
+*/
+@property (nullable,nonatomic,strong)  NIMHistoryMessageFilterBlock customFilter;
+
+/**
+ * 同步云端消息到到本地时，如果消息所在的最近会话不存在，是否自动创建。默认为NO。
+ */
+@property (nonatomic,assign) BOOL createRecentSessionIfNotExists;
 
 @end
 

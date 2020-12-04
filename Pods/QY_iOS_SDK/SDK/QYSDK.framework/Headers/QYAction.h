@@ -36,6 +36,7 @@ typedef NS_ENUM(NSInteger, QYRequestStaffBeforeScene) {
     QYRequestStaffBeforeSceneActiveRequest,      //主动请求人工客服
     QYRequestStaffBeforeSceneChangeStaff,        //切换人工客服
     QYRequestStaffBeforeSceneReconnect,          //重新连接客服
+    QYRequestStaffBeforeSceneRobotTransfer,      //机器人会话中转接至另一个机器人
 };
 
 /**

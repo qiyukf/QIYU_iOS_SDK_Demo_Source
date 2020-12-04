@@ -28,6 +28,10 @@ typedef NS_ENUM(NSInteger, NIMChatroomFetchMemberType){
      *  聊天室在线的固定成员
      */
     NIMChatroomFetchMemberTypeRegularOnline,
+    /**
+     *  聊天室非固定成员(反向查询)
+     */
+    NIMChatroomFetchMemberTypeUnRegularReversedOrder,
 };
 
 

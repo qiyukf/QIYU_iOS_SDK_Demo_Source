@@ -65,7 +65,7 @@ typedef NS_ENUM(NSInteger, NIMSessionType){
  */
 + (instancetype)session:(NSString *)sessionId
                    type:(NIMSessionType)sessionType;
-+ (instancetype)sessionFromString:(NSString *)sessionString;
++ (nullable instancetype)sessionFromString:(NSString *)sessionString;
 @end
 
 NS_ASSUME_NONNULL_END

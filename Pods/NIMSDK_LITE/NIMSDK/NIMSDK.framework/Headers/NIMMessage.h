@@ -21,6 +21,7 @@
 #import "NIMRobotObject.h"
 #import "NIMMessageSetting.h"
 #import "NIMMessageReceipt.h"
+#import "NIMRtcCallRecordObject.h"
 #import "NIMTeamMessageReceiptDetail.h"
 #import "NIMAntiSpamOption.h"
 #import "NIMMessageApnsMemberOption.h"
@@ -81,6 +82,11 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
  *  消息类型
  */
 @property (nonatomic,assign,readonly)       NIMMessageType messageType;
+
+/**
+*  消息子类型.(默认0。设置值需要大于0)
+*/
+@property (nonatomic,assign) NSInteger messageSubType;
 
 /**
  *  消息来源
@@ -168,6 +174,18 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
  *  @discussion 本地存储消息可以通过修改时间戳来调整其在会话列表中的位置，发完服务器的消息时间戳将被服务器自动修正
  */
 @property (nonatomic,assign)                NSTimeInterval timestamp;
+
+/**
+*  易盾反垃圾增强反作弊专属字段
+*  @discussion 透传易盾反垃圾增强反作弊专属字段
+*/
+@property (nullable,nonatomic,copy) NSDictionary *yidunAntiCheating;
+
+/**
+*  环境变量
+*  @discussion 环境变量，用于指向不同的抄送、第三方回调等配置
+*/
+@property (nullable,nonatomic,copy) NSString *env;
 
 /**
  *  消息投递状态 仅针对发送的消息
@@ -308,6 +326,11 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
  *  @discussion 如果未回复其他消息则为0（单位：秒）
  */
 @property (nonatomic,assign,readonly) NSTimeInterval threadMessageTime;
+
+/**
+ *  第三方回调回来的自定义扩展字段
+ */
+@property (nonatomic,copy,readonly) NSString *callbackExt;
 
 @end
 

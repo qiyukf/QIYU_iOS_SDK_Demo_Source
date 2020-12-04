@@ -52,6 +52,10 @@ typedef NS_ENUM(NSInteger, NIMMessageType){
      */
     NIMMessageTypeRobot         = 11,
     /**
+     *  Rtc通话单
+     */
+    NIMMessageTypeRtcCallRecord = 12,
+    /**
      *  自定义类型消息
      */
     NIMMessageTypeCustom        = 100

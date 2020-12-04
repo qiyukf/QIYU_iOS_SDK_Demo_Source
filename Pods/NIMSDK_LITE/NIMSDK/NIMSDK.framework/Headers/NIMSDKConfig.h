@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NIMNotificationObject;
 @class NIMMessage;
+@class NIMChatroomCdnTrackInfo;
 
 /**
  *  SDK 配置委托
@@ -37,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return 是否忽略
  */
 - (BOOL)shouldIgnoreMessage:(NIMMessage *)message;
+
+/**
+ * 聊天室cdn统计回调，回调时间间隔为NIMSDKConfig.cdnTrackInterval
+ */
+- (void)onChatroomCdnTrack:(NIMChatroomCdnTrackInfo *)trackInfo forRoom:(NSString *)roomID;
 
 @end
 
@@ -182,6 +188,16 @@ NS_ASSUME_NONNULL_BEGIN
  * 是否同步置顶会话记录，默认NO
  */
 @property (nonatomic,assign) BOOL shouldSyncStickTopSessionInfos;
+
+/**
+ 客户端自定义登录端类型，默认 0，需要设置大于0的值。
+ */
+@property (nonatomic,assign)  NSInteger customClientType;
+
+/**
+ * cdn统计回调触发间隔。触发cdn拉流前设置，触发拉流后改动将不生效。0s代表不统计。默认30s。
+ */
+@property (nonatomic, assign) NSTimeInterval cdnTrackInterval;
 
 /**
  *  设置 SDK 根目录

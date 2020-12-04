@@ -22,6 +22,11 @@ typedef NS_ENUM (NSInteger, NIMLinkAddressType){
     NIMLinkAddressTypeAuto,      //自动选择
 };
 
+typedef NS_ENUM (NSInteger, NIMServerEnv){
+    NIMServerEnvProd = 0,       // 线上环境
+    NIMServerEnvDev,            // 测试环境
+};
+
 /**
  *  云信服务器配置
  */
@@ -33,6 +38,10 @@ typedef NS_ENUM (NSInteger, NIMLinkAddressType){
 */
 @property (nonatomic,assign)            NIMHandshakeType handshakeType;
 
+/**
+ 服务器环境(默认线上环境)
+ */
+@property (nonatomic,assign)            NIMServerEnv    env;
 
 /**
  * module
@@ -97,6 +106,10 @@ typedef NS_ENUM (NSInteger, NIMLinkAddressType){
  */
 @property (nonatomic,copy,nullable)     NSString    *nosAccelerateHost;
 /**
+* NOS加速需要被替换的域名列表 不包含bucket部分
+*/
+@property(strong,nonatomic,nullable)    NSArray     <NSString *> *nosAccelerateHosts;
+/**
  * NOS 加速替换地址
  */
 @property (nonatomic,copy,nullable)     NSString    *nosAccelerateAddress;
@@ -117,6 +130,12 @@ typedef NS_ENUM (NSInteger, NIMLinkAddressType){
 * lbs返回的link地址的类型, 在初始化前设置
 */
 @property (nonatomic, assign) NIMLinkAddressType lbsLinkAddressType;
+
+/**
+* 在端测加速域名（nosAccelerateAddress）和后台CDN域名都配置的情况下，选择后台CDN域名下发优先，默认为 YES
+*/
+@property (nonatomic, assign) BOOL cdnEnable;
+
 
 /**
 * 从配置数据更新

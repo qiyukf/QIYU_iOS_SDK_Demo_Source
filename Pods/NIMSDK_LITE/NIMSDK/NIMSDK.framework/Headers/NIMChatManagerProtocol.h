@@ -13,6 +13,7 @@
 @class NIMMessageReceipt;
 @class NIMRevokeMessageNotification;
 @class NIMTeamMessageReceiptDetail;
+@class NIMRevokeMessageOption;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -279,6 +280,18 @@ typedef void(^NIMChatManagerBlock)(NSError * __nullable error);
           apnsContent:(nullable NSString *)apnsContent
           apnsPayload:(nullable NSDictionary *)apnsPayload
       shouldBeCounted:(BOOL)should
+           completion:(nullable NIMRevokeMessageBlock)completion;
+
+/**
+*  撤回消息
+*
+*  @param message    需要被撤回的消息
+*  @param option     撤回的配置选项
+*  @param completion 完成回调
+*  @discussion 消息计入未读数
+*/
+- (void)revokeMessage:(NIMMessage *)message
+               option:(NIMRevokeMessageOption *)option
            completion:(nullable NIMRevokeMessageBlock)completion;
 
 

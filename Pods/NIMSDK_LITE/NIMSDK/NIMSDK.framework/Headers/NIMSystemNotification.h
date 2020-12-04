@@ -216,6 +216,10 @@ typedef NS_ENUM(NSInteger, NIMSystemNotificationType){
  */
 @property (nullable,nonatomic,strong)                NIMAntiSpamOption *antiSpamOption;
 
+/**
+*  环境变量，用于指向不同的抄送、第三方回调等配置
+*/
+@property (nullable,nonatomic,copy)                  NSString *env;
 
 /**
  *  自定义系统通知初始化方法

@@ -81,12 +81,12 @@ typedef NS_ENUM(NSInteger, NIMRevokeMessageNotificationType) {
 /**
  * 撤回操作是否属于漫游消息
  */
-@property (nonatomic, readonly, getter=isRoaming) BOOL roaming;
+@property (nonatomic, readonly) BOOL roaming;
 
 /**
  * 撤回的附言
  */
-@property(nullable, nonatomic, copy) NSString *postscript;
+@property(nullable, nonatomic, readonly) NSString *postscript;
 
 @end
 

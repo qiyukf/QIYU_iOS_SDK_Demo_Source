@@ -12,6 +12,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NIMMessage;
 @class NIMSession;
+@class NIMRevokeMessageNotification;
+
+/**
+*  最后一条消息的类型。
+*/
+typedef NS_ENUM(NSInteger, NIMLastMsgType){
+    /*
+     * 常规Message，NIMMessage类型，lastMessage字段
+     */
+    NIMLastMsgTypeNormalMessage,
+    /*
+     * 撤回通知，NIMRevokeMessageNotification类型，lastNotification字段
+     */
+    NIMLastMsgTypeRevokeNotication
+};
+
+
 
 /**
  *  最近会话
@@ -49,6 +66,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,copy) NSString *serverExt;
 
+/**
+*  最后一条消息的类型(本地会话该字段无效)
+*/
+@property (nonatomic, readonly, assign) NIMLastMsgType lastMessageType;
+
+/**
+*  最后一条撤回通知(本地会话该字段无效)
+*  lastMessageType为NIMLastMsgTypeNormalMessage时，最后一条为普通消息，请使用lastMessage获取，本字段为nil
+*  lastMessageType为NIMLastMsgTypeRevokeNotication时，lastMessage字段为nil，最后一条为撤回通知，请使用本字段获取
+*/
+@property (nullable, nonatomic, readonly, strong) NIMRevokeMessageNotification *lastRevokeNotification;
 
 @end
 

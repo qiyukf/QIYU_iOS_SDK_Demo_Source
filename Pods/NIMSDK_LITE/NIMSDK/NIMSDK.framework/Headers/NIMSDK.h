@@ -59,6 +59,7 @@
 #import "NIMChatroomUpdateRequest.h"
 #import "NIMChatroomQueueRequest.h"
 #import "NIMChatroomBeKickedResult.h"
+#import "NIMChatroomCdnTrackInfo.h"
 
 /**
  *  消息定义
@@ -67,10 +68,14 @@
 #import "NIMSystemNotification.h"
 #import "NIMRevokeMessageNotification.h"
 #import "NIMDeleteMessagesOption.h"
+#import "NIMDeleteMessageOption.h"
 #import "NIMBroadcastMessage.h"
 #import "NIMImportedRecentSession.h"
 #import "NIMClearMessagesOption.h"
 #import "NIMBatchDeleteMessagesOption.h"
+#import "NIMRevokeMessageOption.h"
+#import "NIMSessionDeleteAllRemoteMessagesOptions.h"
+#import "NIMSessionDeleteAllRemoteMessagesInfo.h"
 
 /**
  *  推送定义
@@ -81,6 +86,7 @@
  *  登录定义
  */
 #import "NIMLoginClient.h"
+#import "NIMLoginKickoutResult.h"
 
 /**
  *  文档转码信息
@@ -188,3 +194,4 @@
 #import "NIMMessagePinItem.h"
 #import "NIMSyncMessagePinRequest.h"
 #import "NIMSyncMessagePinResponse.h"
+

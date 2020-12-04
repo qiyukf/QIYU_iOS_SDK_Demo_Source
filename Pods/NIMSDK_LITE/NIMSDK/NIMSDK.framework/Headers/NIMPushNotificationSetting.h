@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, NIMPushNotificationDisplayType){
 
 
 /**
- *  自定义消息推送配置项
+ *  自定义消息多端推送策略配置项
  */
 @interface NIMPushNotificationMultiportConfig : NSObject
 

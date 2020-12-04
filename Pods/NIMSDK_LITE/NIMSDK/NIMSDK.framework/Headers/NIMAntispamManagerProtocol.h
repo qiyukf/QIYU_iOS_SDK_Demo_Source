@@ -26,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return              本地反垃圾检查结果，本地反垃圾列表会在每次登录后同步更新
  *                       因为网络问题，或者没有登录，都会导致本地反垃圾列表无效的情况，error 中会包含具体出错原因
  */
-- (NIMLocalAntiSpamCheckResult *)checkLocalAntispam:(NIMLocalAntiSpamCheckOption *)option
-                                              error:(NSError **)error;
+- (nullable NIMLocalAntiSpamCheckResult *)checkLocalAntispam:(NIMLocalAntiSpamCheckOption *)option
+                                                       error:(NSError **)error;
 
 @end
 

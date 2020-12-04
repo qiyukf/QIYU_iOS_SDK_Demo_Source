@@ -63,7 +63,7 @@ typedef NSUInteger(^NIMBadgeHandler)(void);
 
 
 /**
- *  获取当前推送自定义配置信息
+ *  获取当前多端推送策略配置
  *
  *  @return  推送自定义配置
  */
@@ -71,9 +71,9 @@ typedef NSUInteger(^NIMBadgeHandler)(void);
 
 
 /**
- *  更推送自定义配置信息
+ *  更推送自定义多端推送策略配置
  *
- *  @param config     推送自定义配置
+ *  @param config     多端推送策略配置
  *  @param completion 完成的回调
  */
 - (void)updateApnsMultiportConfig:(NIMPushNotificationMultiportConfig *)config
