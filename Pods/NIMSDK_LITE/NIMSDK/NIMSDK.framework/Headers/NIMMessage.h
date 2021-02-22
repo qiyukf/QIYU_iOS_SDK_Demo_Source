@@ -71,6 +71,15 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
     NIMMessageAttachmentDownloadStateDownloaded
 };
 
+/**
+ *  消息处理状态
+ */
+typedef NS_ENUM(NSInteger, NIMMessageStatus) {
+    NIMMessageStatusNone        =   0,      //消息初始状态
+    NIMMessageStatusRead        =   1,      //已读
+    NIMMessageStatusDeleted     =   2       //已删除 (必须是 message status 最大值)
+};
+
 
 
 /**
@@ -331,6 +340,12 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
  *  第三方回调回来的自定义扩展字段
  */
 @property (nonatomic,copy,readonly) NSString *callbackExt;
+
+
+/**
+ *  消息处理状态
+ */
+@property (nonatomic, assign) NIMMessageStatus status;
 
 @end
 

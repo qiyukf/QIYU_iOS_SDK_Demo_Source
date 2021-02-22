@@ -318,6 +318,10 @@ typedef NS_ENUM(NSInteger, NIMRemoteErrorCode) {
      */
     NIMRemoteErrorCodeTeamBlackList       = 812,
     /**
+     *  请求群信息列表部分成功
+     */
+    NIMRemoteErrorCodeTeamsPartialSuccess = 816,
+    /**
      *  解包错误
      */
     NIMRemoteErrorCodeEUnpacket           = 998,

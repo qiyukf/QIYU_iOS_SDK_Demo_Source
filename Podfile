@@ -11,6 +11,6 @@ target 'QYSDKDemo' do
   pod 'ZXingObjC'
   pod 'SDWebImage'
   
-  pod 'QY_iOS_SDK', '~> 5.16.0'
+  pod 'QY_iOS_SDK', '~> 6.1.0'
 
 end

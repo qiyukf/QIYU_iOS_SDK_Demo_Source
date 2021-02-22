@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, NIMLastMsgType){
 /**
  *  最后一条消息
  */
-@property (nullable,nonatomic,readonly,strong)   NIMMessage  *lastMessage;
+@property (nullable,nonatomic,strong)   NIMMessage  *lastMessage;
 
 /**
  *  未读消息数

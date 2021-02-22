@@ -30,13 +30,23 @@ typedef NS_ENUM(NSInteger, QYAvatarType) {
     QYAvatarTypeCustomer,       //访客
 };
 
+typedef NS_ENUM(NSInteger, QYLinkClickActionPolicy) {
+    QYLinkClickActionPolicyCancel,    //不使用七鱼默认WebView打开链接
+    QYLinkClickActionPolicyOpen,      //使用七鱼默认WebView打开链接
+};
+
 /**
  *  action事件回调
  */
 typedef void (^QYActionBlock)(QYAction *action);
 
 /**
- *  链接点击事件回调
+ *  客服会话链接点击事件回调
+ */
+typedef QYLinkClickActionPolicy (^QYSessionLinkClickBlock)(NSString *linkAddress);
+
+/**
+ *  push链接点击事件回调
  */
 typedef void (^QYLinkClickBlock)(NSString *linkAddress);
 
@@ -114,7 +124,7 @@ typedef void (^QYAvatarClickBlock)(QYAvatarType type, NSString *accountID);
 /**
  *  所有消息中的链接（自定义商品消息、文本消息、机器人答案消息）的回调处理
  */
-@property (nonatomic, copy) QYLinkClickBlock linkClickBlock;
+@property (nonatomic, copy) QYSessionLinkClickBlock linkClickBlock;
 
 /**
  *  bot相关点击

@@ -502,7 +502,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  @discussion 从服务端全量拉取群信息，并做本地持久化
  */
 - (void)fetchTeamsWithTimestamp:(NSTimeInterval)timestamp completion:(nullable NIMTeamFetchTeamsHandler)block;
-
+/**
+*  获取指定群ID的群信息
+*
+*  @param teamIds      群ID列表,数组元素超过10个会取前10个
+*  @param block        完成后的回调
+*  @discussion 从服务端全量拉取群信息，不做本地持久化
+*/
+- (void)fetchTeamInfoList:(NSArray <NSString *>*)teamIds completion:(NIMTeamFetchTeamInfoListHandler)block;
 /**
  *  添加群组委托
  *

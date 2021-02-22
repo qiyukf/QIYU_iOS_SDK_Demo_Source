@@ -9,11 +9,11 @@
 /* Begin PBXAggregateTarget section */
 		0AE94A3413E9F0EE9F99F5767DF03C6B /* QY_iOS_SDK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3B545D2A8A3BFF36E697BA2351307858 /* Build configuration list for PBXAggregateTarget "QY_iOS_SDK" */;
+			buildConfigurationList = D4AB70FD631BE38A88D88697569193CE /* Build configuration list for PBXAggregateTarget "QY_iOS_SDK" */;
 			buildPhases = (
 			);
 			dependencies = (
-				C2C66D1458BC22BA9E80EE55F02F3F76 /* PBXTargetDependency */,
+				5897406048C9A996D9E8AD37DA4B09E7 /* PBXTargetDependency */,
 			);
 			name = QY_iOS_SDK;
 		};
@@ -151,7 +151,6 @@
 		2AB9131D5BD28092C8F5B4750C94E907 /* ZXPDF417DecodedBitStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 20898CEFE1A9C3671E8D2FC3FC3B96D6 /* ZXPDF417DecodedBitStreamParser.m */; };
 		2ACAD043C8989D6EC620BE68951B378F /* ZXAbstractExpandedDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E7EDD2762DA7267B64E3D90D2B3F5D /* ZXAbstractExpandedDecoder.m */; };
 		2B3C65EB96B8237408B8CFC1586F406E /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 10EAE580452E23B509DFAA487DE57EF9 /* IQKeyboardManagerConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B49B99B7CE3CC3E0E87DBE65E5ABEF1 /* Pods-QYSDKDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A91EA37C2C522EEC38BA5698C4322C3 /* Pods-QYSDKDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B62FB85B7C074090975416729A03F8D /* ZXProductParsedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6C27458686C300BF97B9D0DFEB8F28 /* ZXProductParsedResult.m */; };
 		2CA47D52073DC382731B7922260A466B /* ZXDataMatrixBase256Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AF0BD10821D6EC50F67E4A4FA06587 /* ZXDataMatrixBase256Encoder.m */; };
 		2D2CC59B68743AD21491249AA16B3978 /* ZXUPCAWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E532058146AED17B562A1A70464AECB5 /* ZXUPCAWriter.m */; };
@@ -289,6 +288,7 @@
 		5F73911EE1E21051A73B9B25A1F9AD79 /* ZXDataMatrixASCIIEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F26AA8F3B3531FA424EA45999FF4D /* ZXDataMatrixASCIIEncoder.m */; };
 		6004AF2B6D5942DBF1D22646B5061E57 /* UIImage+Metadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A70A587EB752937BEB2866702A439A /* UIImage+Metadata.m */; };
 		600983DEB7205EC72FAB41DD91F1D605 /* SDMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AADE72DE23487C57F727D8CF89442D0A /* SDMemoryCache.m */; };
+		601983E7C4897C6CDDFAA23FADEF7A2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5BF959B16CB8653B03106DA638FE81 /* Foundation.framework */; };
 		603100E4F0123ED7B0BEC9FAE3B386D3 /* ZXCalendarParsedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F325E361AE64AEAED4E0A2C078B607E /* ZXCalendarParsedResult.m */; };
 		606CF4C030B87CD04100E49A3B962C2B /* SDWebImageDownloaderRequestModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6241965979172FD4992E8F0A61731 /* SDWebImageDownloaderRequestModifier.m */; };
 		62ABAF2A0D29F2B4E5116B15EB87E7AA /* ZXCGImageLuminanceSourceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6B4A26BA2310822057745075D5C05 /* ZXCGImageLuminanceSourceInfo.m */; };
@@ -330,6 +330,7 @@
 		6ED7A4D41DBF8459B0BC06E00C0B7A4D /* ZXAI013103decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B5CDAD4F76D4E5C2DF53ED95D8E5CE9E /* ZXAI013103decoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F27684AC57716BA63A3C106BF1C6A5D /* SDWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D019495F5FDCC98BCE59CB3BE63D3C62 /* SDWeakProxy.m */; };
 		6F3B1690F53D8DD5B00A062BE5FAE923 /* UIImage+ForceDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE51B3870BDE8A94C68690CC6F036B /* UIImage+ForceDecode.m */; };
+		6F9F4ED5B1174B8A11221830510972CF /* Pods-QYSDKDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E2011805D8507B74671D845F32CED /* Pods-QYSDKDemo-dummy.m */; };
 		6FAF6C7E05AF51BF1929B6EBD9DBD34A /* ZXDataMatrixVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 10161E64B38C60A08B2A717C2B0ED619 /* ZXDataMatrixVersion.m */; };
 		6FB36BC492D11F00A30C0EFA4D98DAC9 /* ZXPDF417.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB1197E109DA08C951804CEDAD2C4A1 /* ZXPDF417.m */; };
 		710B099BD183D22DC6138DEF0D82F478 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A65772CAB32FB63CAF5ABE72BCABEF /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -544,6 +545,7 @@
 		C3CF0F2888494C5A915ABE1D7E1F7268 /* ZXPDF417BarcodeMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A5E2AA52B96E37AF51F64F64A5C3CF /* ZXPDF417BarcodeMetadata.m */; };
 		C3D34ABD00738A0C4D02136A51D5A407 /* ZXBitArray.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF9D5E4298C37FAF7314498E568CB54 /* ZXBitArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C410032C789AC32F612AAFDE45BCE1B4 /* ZXPDF417DetectorResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FACABE286EB2A7B924E94990C290380 /* ZXPDF417DetectorResult.m */; };
+		C4992D78CF7CB3113A86FAADAF154A0E /* Pods-QYSDKDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A91EA37C2C522EEC38BA5698C4322C3 /* Pods-QYSDKDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5E75553E150D75C05DDFF6A1F937B2D /* SDImageIOAnimatedCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BD96705C75B3BEB711378818890066DF /* SDImageIOAnimatedCoder.m */; };
 		C6B3B0CF9A00D07E7A877ACE8AD65409 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC0B75D4086824BC175BE49BF712255 /* IQUIView+IQKeyboardToolbar.m */; };
 		C6FF07461DB95FD96B47723C123B36BB /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 361799FF658F610C905BAA4CB65A0AA1 /* NSData+ImageContentType.m */; };
@@ -591,7 +593,6 @@
 		DC1263CF7B32A744B37C99A1D967DFD2 /* ZXSMTPResultParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 52F52F8AE3A27D12706ED87D80AAD7E7 /* ZXSMTPResultParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCDA7B8382A7975CC4A5F4A4D6BD6411 /* ZXResultPointCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DE340BB5E9966E750A67A24987DE98E2 /* ZXResultPointCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD43F15E0E3139EBE77C6AA4310054EB /* ZXBarcodeFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = A71150DB4EA02FF600CC6143B0B0D5B7 /* ZXBarcodeFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD512D0000BE5F8FED1A41DCF63E6BB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5BF959B16CB8653B03106DA638FE81 /* Foundation.framework */; };
 		DD79C67E82777A4BBD0A104ABF2549BD /* ZXURLTOResultParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A886E78F3A097400F6EC188C401550 /* ZXURLTOResultParser.m */; };
 		DDABCEDA1455A7213CC6411BEE294CCB /* SDAnimatedImagePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B330CF810B00514BE69831CEE39DB8 /* SDAnimatedImagePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDFAA0D35AB46218FA41A5B7A18579B6 /* ZXRSSPair.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF53D3D9F5E19B2D5BB78DFAFC0322E /* ZXRSSPair.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -620,7 +621,6 @@
 		E55536757FC7CA692796E63106A909F6 /* ZXUPCEANReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7239890A3994A9AB68A15CD957F159D6 /* ZXUPCEANReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E57482DCBAB73E4AC9A8EB0816998D8F /* SDAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF20BCB728BBA7690E96D2CBBA65C0A9 /* SDAnimatedImageView.m */; };
 		E5769991D854DF0A3EE5F407313A7643 /* ZXITFWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 291B0B45ACA5B4F11B878A3336D011C1 /* ZXITFWriter.m */; };
-		E5B18B1AF296983EEA33198974260CB9 /* Pods-QYSDKDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E2011805D8507B74671D845F32CED /* Pods-QYSDKDemo-dummy.m */; };
 		E6DC22ED01E10FC74B514A8A1B424CE7 /* ZXProductResultParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54F245EA554EA013BEA336D240AEFD79 /* ZXProductResultParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6F083DF0F184D82779FF22DAC72EDA8 /* ZXRSSExpandedReader.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1C7878FEF78F8AC2D933C2BE927D5 /* ZXRSSExpandedReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6FBB7940824477357CEE901C7699C5D /* ZXAztecReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F02640DD5FE9E10BBC532B5B6925572 /* ZXAztecReader.m */; };
@@ -689,47 +689,47 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1F194BA8849FA84E3A4039695820E2A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 30950EABCD5EFA0462FC017837EB16BE;
-			remoteInfo = ZXingObjC;
-		};
-		245CB6E96E4104E5A957CDBD7937B322 /* PBXContainerItemProxy */ = {
+		2118CD09272A0A8223251EBC0D7FF638 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0AE94A3413E9F0EE9F99F5767DF03C6B;
 			remoteInfo = QY_iOS_SDK;
 		};
-		6D49DCC53F776A59F89354670A17BB82 /* PBXContainerItemProxy */ = {
+		696301B7294217FC62F402526B71EA0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3847153A6E5EEFB86565BA840768F429;
 			remoteInfo = SDWebImage;
 		};
-		B358F903286C2136F0395429EC78422D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B55FE563084BF0B9075BB021711E7555;
-			remoteInfo = NIMSDK_LITE;
-		};
-		B51DBB4C9021AE09CD8E19AA263C27EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B55FE563084BF0B9075BB021711E7555;
-			remoteInfo = NIMSDK_LITE;
-		};
-		DC1419207860AA02287C67E91E9C35E3 /* PBXContainerItemProxy */ = {
+		84CA9D368233D2861054E192A220FB74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FBA456CB50E371584C11231929A0971E;
 			remoteInfo = IQKeyboardManager;
+		};
+		87F23A8A9C985CECE61B949E060E568E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B55FE563084BF0B9075BB021711E7555;
+			remoteInfo = NIMSDK_LITE;
+		};
+		A241ACC20A7E43FA74102D08817E2C86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B55FE563084BF0B9075BB021711E7555;
+			remoteInfo = NIMSDK_LITE;
+		};
+		B09543B5C59D53856590E5E7602B6F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30950EABCD5EFA0462FC017837EB16BE;
+			remoteInfo = ZXingObjC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -941,7 +941,6 @@
 		48902C8CC93CDBB82FA2DFFE276C6D7C /* SDAssociatedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAssociatedObject.h; path = SDWebImage/Private/SDAssociatedObject.h; sourceTree = "<group>"; };
 		48F7193D166F38F9C984B1A20B81D661 /* ZXErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXErrors.h; path = ZXingObjC/core/ZXErrors.h; sourceTree = "<group>"; };
 		49E3447D2C15A06F4E396F224E83C6D6 /* SDWebImageDownloaderConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderConfig.m; path = SDWebImage/Core/SDWebImageDownloaderConfig.m; sourceTree = "<group>"; };
-		49F55AE7C8F7DF9DBBA1A5FE1223C338 /* QY_iOS_SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QY_iOS_SDK.debug.xcconfig; sourceTree = "<group>"; };
 		4A64D41BCFD0F7550F5559BF03B1D6FE /* ZXByteArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXByteArray.m; path = ZXingObjC/common/ZXByteArray.m; sourceTree = "<group>"; };
 		4ABC786EA799EEA7793CDD42402239E2 /* Pods-QYSDKDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QYSDKDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4AED2337026A20E63B3ACE6B026FA8C3 /* ZXAbstractDoCoMoResultParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXAbstractDoCoMoResultParser.h; path = ZXingObjC/client/result/ZXAbstractDoCoMoResultParser.h; sourceTree = "<group>"; };
@@ -1030,6 +1029,8 @@
 		64F63EFBBBBE232DEE7C9ED8835E4A66 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
 		65627C65007ECDF9219A08DEE4694A78 /* ZXAztecDetector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXAztecDetector.m; path = ZXingObjC/aztec/detector/ZXAztecDetector.m; sourceTree = "<group>"; };
 		65B15ABACD9363D77FCF002C66145BAD /* ZXEAN8Writer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXEAN8Writer.h; path = ZXingObjC/oned/ZXEAN8Writer.h; sourceTree = "<group>"; };
+		66A836706484EE87969E62E30A2DD32B /* QYSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QYSDK.framework; path = SDK/QYSDK.framework; sourceTree = "<group>"; };
+		66FDC15AAE493444B99787EBFD094692 /* QYCustomResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYCustomResource.bundle; path = SDK/Resources/QYCustomResource.bundle; sourceTree = "<group>"; };
 		67426BB4178A3994153505B0113F447B /* SDDeviceHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDeviceHelper.m; path = SDWebImage/Private/SDDeviceHelper.m; sourceTree = "<group>"; };
 		6825482DA5E9523A4AFBD52EA1096686 /* ZXUPCAReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXUPCAReader.h; path = ZXingObjC/oned/ZXUPCAReader.h; sourceTree = "<group>"; };
 		68386A96ECF452DED93005410DC25DA9 /* SDGraphicsImageRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDGraphicsImageRenderer.h; path = SDWebImage/Core/SDGraphicsImageRenderer.h; sourceTree = "<group>"; };
@@ -1085,12 +1086,14 @@
 		7B720D9533D2E714C9E77F8C7E05EEC4 /* SDInternalMacros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDInternalMacros.m; path = SDWebImage/Private/SDInternalMacros.m; sourceTree = "<group>"; };
 		7BBAC81905F6E175B2AB0DDBFF3E2AB1 /* SDImageCoderHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCoderHelper.m; path = SDWebImage/Core/SDImageCoderHelper.m; sourceTree = "<group>"; };
 		7CCEA26C77CEC123DC6872532DA20F84 /* ZXModulusPoly.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXModulusPoly.h; path = ZXingObjC/pdf417/decoder/ec/ZXModulusPoly.h; sourceTree = "<group>"; };
+		7CD5F360EA7B3BE5805C03202A02824F /* QYResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYResource.bundle; path = SDK/Resources/QYResource.bundle; sourceTree = "<group>"; };
 		7CE9EF9BE6B3D24BB8B0226190D71F43 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/Core/SDImageCache.h; sourceTree = "<group>"; };
 		7D2EBE603159615D7B421A3FCEDF7422 /* ZXQRCodeReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXQRCodeReader.m; path = ZXingObjC/qrcode/ZXQRCodeReader.m; sourceTree = "<group>"; };
 		7D3B34E77C5ABAEDAC9A484A5C54DEEC /* ZXResultMetadataType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXResultMetadataType.h; path = ZXingObjC/core/ZXResultMetadataType.h; sourceTree = "<group>"; };
 		7D710F87CB09791A3F08E654ACAE2857 /* ZXTextParsedResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXTextParsedResult.h; path = ZXingObjC/client/result/ZXTextParsedResult.h; sourceTree = "<group>"; };
 		7D998A68C7E490260753F9133B08019D /* ZXQRCodeMatrixUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXQRCodeMatrixUtil.h; path = ZXingObjC/qrcode/encoder/ZXQRCodeMatrixUtil.h; sourceTree = "<group>"; };
 		7DD26374DC42BA994D371AA40A5CC6BB /* ZXWifiParsedResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXWifiParsedResult.m; path = ZXingObjC/client/result/ZXWifiParsedResult.m; sourceTree = "<group>"; };
+		7DF86FCB9CE7BB487456AD1F2CE3FEBE /* QY_iOS_SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QY_iOS_SDK.release.xcconfig; sourceTree = "<group>"; };
 		7E1A98CE489D3586633530DEAB3A98BA /* ZXRGBLuminanceSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXRGBLuminanceSource.m; path = ZXingObjC/core/ZXRGBLuminanceSource.m; sourceTree = "<group>"; };
 		7E306022FC07DC17376EE74EF3C6D527 /* ZXPDF417DetectionResultColumn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXPDF417DetectionResultColumn.m; path = ZXingObjC/pdf417/decoder/ZXPDF417DetectionResultColumn.m; sourceTree = "<group>"; };
 		7E8C18D673FF7430DA84219F87CD543D /* ZXAztecReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXAztecReader.h; path = ZXingObjC/aztec/ZXAztecReader.h; sourceTree = "<group>"; };
@@ -1155,7 +1158,6 @@
 		928438EBEF39D49D68F35316D2587473 /* ZXURLTOResultParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXURLTOResultParser.h; path = ZXingObjC/client/result/ZXURLTOResultParser.h; sourceTree = "<group>"; };
 		932ECB55793C3B33BD696CC29B21AF5F /* ZXRSSExpandedDecodedChar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXRSSExpandedDecodedChar.m; path = ZXingObjC/oned/rss/expanded/decoders/ZXRSSExpandedDecodedChar.m; sourceTree = "<group>"; };
 		938179C1E7AE0A0DBE37D70664BC0C9D /* ZXDetectorResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXDetectorResult.h; path = ZXingObjC/common/ZXDetectorResult.h; sourceTree = "<group>"; };
-		93FFC182C3BEC06696C3B34C2D6F8054 /* QYResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYResource.bundle; path = SDK/Resources/QYResource.bundle; sourceTree = "<group>"; };
 		9473742D3C1315213FA41787BC392FE5 /* ZXUPCEANExtension5Support.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXUPCEANExtension5Support.h; path = ZXingObjC/oned/ZXUPCEANExtension5Support.h; sourceTree = "<group>"; };
 		94F5A39E7ECA01E96C8AE70C14A0DC15 /* ZXDataMatrixDetector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXDataMatrixDetector.m; path = ZXingObjC/datamatrix/detector/ZXDataMatrixDetector.m; sourceTree = "<group>"; };
 		950C94EC068D89CBF9599B6F0561F664 /* ZXDataMatrixASCIIEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXDataMatrixASCIIEncoder.h; path = ZXingObjC/datamatrix/encoder/ZXDataMatrixASCIIEncoder.h; sourceTree = "<group>"; };
@@ -1223,6 +1225,7 @@
 		B0B4FED85B39445FADEE14065B041A58 /* NSBezierPath+SDRoundedCorners.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+SDRoundedCorners.m"; path = "SDWebImage/Private/NSBezierPath+SDRoundedCorners.m"; sourceTree = "<group>"; };
 		B0D1C08508C6E0D31A7E2987E145CF9D /* ZXQRCodeVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXQRCodeVersion.m; path = ZXingObjC/qrcode/decoder/ZXQRCodeVersion.m; sourceTree = "<group>"; };
 		B1C3284D4423F863D4CD832EBD8073DC /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstantsInternal.h; path = IQKeyboardManager/Constants/IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		B1ECA5503AC44C279188143A9E73E802 /* QYLanguage.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = QYLanguage.bundle; path = SDK/Resources/QYLanguage.bundle; sourceTree = "<group>"; };
 		B252246FC736F33A0AABA044C471D7EF /* ZXCode128Writer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXCode128Writer.h; path = ZXingObjC/oned/ZXCode128Writer.h; sourceTree = "<group>"; };
 		B2C41B30990F70CD74F29D9F6F6241CB /* ZXAI01AndOtherAIs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXAI01AndOtherAIs.h; path = ZXingObjC/oned/rss/expanded/decoders/ZXAI01AndOtherAIs.h; sourceTree = "<group>"; };
 		B2EBB4718BE0B8D77A68E1B8EA1E5194 /* ZXPDF417ECErrorCorrection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXPDF417ECErrorCorrection.m; path = ZXingObjC/pdf417/decoder/ec/ZXPDF417ECErrorCorrection.m; sourceTree = "<group>"; };
@@ -1338,7 +1341,6 @@
 		DFD57F04647A3CAE2685F2121162FE02 /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = IQKeyboardManager/IQTextView/IQTextView.m; sourceTree = "<group>"; };
 		E0BC36BA5E0509779E06ECCC3EA3E70A /* ZXEAN13Reader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXEAN13Reader.h; path = ZXingObjC/oned/ZXEAN13Reader.h; sourceTree = "<group>"; };
 		E0CBE405AA6C85DFFF2A0F88BFB650FB /* ZXRSSFinderPattern.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXRSSFinderPattern.m; path = ZXingObjC/oned/rss/ZXRSSFinderPattern.m; sourceTree = "<group>"; };
-		E1196FF527B1A706C158E0C562A4157D /* QYSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QYSDK.framework; path = SDK/QYSDK.framework; sourceTree = "<group>"; };
 		E12555568BC7B4A7E675488BB9F68CDF /* ZXRSSExpandedDecodedInformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXRSSExpandedDecodedInformation.m; path = ZXingObjC/oned/rss/expanded/decoders/ZXRSSExpandedDecodedInformation.m; sourceTree = "<group>"; };
 		E13059876E16C07C4AA9A8D31C2AF38C /* ZXDefaultGridSampler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXDefaultGridSampler.m; path = ZXingObjC/common/ZXDefaultGridSampler.m; sourceTree = "<group>"; };
 		E1A4BB1C75BE9BFE80BF6D8999252A15 /* SDAnimatedImagePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImagePlayer.m; path = SDWebImage/Core/SDAnimatedImagePlayer.m; sourceTree = "<group>"; };
@@ -1372,11 +1374,11 @@
 		E990DB7E522E736BA989954140C6A7AD /* ZXVCardResultParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXVCardResultParser.m; path = ZXingObjC/client/result/ZXVCardResultParser.m; sourceTree = "<group>"; };
 		E9D6E510781E65E1E2CC9D36FAD825E3 /* ZXAztecSimpleToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZXAztecSimpleToken.m; path = ZXingObjC/aztec/encoder/ZXAztecSimpleToken.m; sourceTree = "<group>"; };
 		EAE5553710865DF86F017EB0408A8BA4 /* ZXPDF417DetectorResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXPDF417DetectorResult.h; path = ZXingObjC/pdf417/detector/ZXPDF417DetectorResult.h; sourceTree = "<group>"; };
+		EB37E82A13F42279BD976EEA6112EC61 /* QY_iOS_SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QY_iOS_SDK.debug.xcconfig; sourceTree = "<group>"; };
 		EB665E85CDA29DB3A366E6B3E7341CC2 /* ZXMultiDetector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXMultiDetector.h; path = ZXingObjC/qrcode/multi/detector/ZXMultiDetector.h; sourceTree = "<group>"; };
 		EB6E6D15657E05A5CE5D801F49101647 /* ZXPDF417Writer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXPDF417Writer.h; path = ZXingObjC/pdf417/ZXPDF417Writer.h; sourceTree = "<group>"; };
 		ECC9035BD33A663BF236A58619235761 /* ZXMaxiCodeDecodedBitStreamParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXMaxiCodeDecodedBitStreamParser.h; path = ZXingObjC/maxicode/decoder/ZXMaxiCodeDecodedBitStreamParser.h; sourceTree = "<group>"; };
 		EDA337360A6D1D1F3F67D0778EA5EAAF /* NSButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSButton+WebCache.h"; path = "SDWebImage/Core/NSButton+WebCache.h"; sourceTree = "<group>"; };
-		EDF5DD7F820AE2799F61A991AEF0ACF6 /* QY_iOS_SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QY_iOS_SDK.release.xcconfig; sourceTree = "<group>"; };
 		EE19AFDF9009BB7DCC30CCB0D1D5F884 /* IQBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.h; sourceTree = "<group>"; };
 		EF700BA90DDB9EB32313F44BD7395032 /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUITextFieldView+Additions.h"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
 		EF792A3C5F34A476204313F229367EBA /* ZXURIParsedResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZXURIParsedResult.h; path = ZXingObjC/client/result/ZXURIParsedResult.h; sourceTree = "<group>"; };
@@ -1423,14 +1425,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		29DD38C5F74162EC2BDF70A636522C1F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DD512D0000BE5F8FED1A41DCF63E6BB3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2B81D36864111405952DE674DFB6A43D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1448,6 +1442,14 @@
 			files = (
 				22AFEAD54CBCA6FD16CBCF9D8D3F4649 /* Foundation.framework in Frameworks */,
 				0E16E2A6B9E0F76674A8910A534A2EFF /* ImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		795AEAB5F176A053FC4E8B2E184B38B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				601983E7C4897C6CDDFAA23FADEF7A2E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1502,25 +1504,6 @@
 			path = "../Target Support Files/IQKeyboardManager";
 			sourceTree = "<group>";
 		};
-		42A8FF490B1797A2E3D907D4DF8B13ED /* QY_iOS_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				4426892BE4A66C13C71C2F6CA6BD6E46 /* Frameworks */,
-				EDE3540604D6E3E6C0B6FBC845459953 /* Resources */,
-				882DAA747D731574854E13CC738CD4D4 /* Support Files */,
-			);
-			name = QY_iOS_SDK;
-			path = QY_iOS_SDK;
-			sourceTree = "<group>";
-		};
-		4426892BE4A66C13C71C2F6CA6BD6E46 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E1196FF527B1A706C158E0C562A4157D /* QYSDK.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		448C4B5A8D68C754335DC340F6335C27 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1544,7 +1527,7 @@
 			children = (
 				821B42993CE834D93D6583C5244EB975 /* IQKeyboardManager */,
 				83AF40EBAC1598E0750A1244731AF55D /* NIMSDK_LITE */,
-				42A8FF490B1797A2E3D907D4DF8B13ED /* QY_iOS_SDK */,
+				D7299EB72D47739525CDB3AEF1A2CB96 /* QY_iOS_SDK */,
 				BE6F14CF447F027860AE9ADC7C2BE05D /* SDWebImage */,
 				8804CB06456D9A0ED2CB2051E7A65C2C /* ZXingObjC */,
 			);
@@ -1626,14 +1609,14 @@
 			path = ZXingObjC;
 			sourceTree = "<group>";
 		};
-		882DAA747D731574854E13CC738CD4D4 /* Support Files */ = {
+		914D4D93912FC490A3A7D848A9CDE5CC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				49F55AE7C8F7DF9DBBA1A5FE1223C338 /* QY_iOS_SDK.debug.xcconfig */,
-				EDF5DD7F820AE2799F61A991AEF0ACF6 /* QY_iOS_SDK.release.xcconfig */,
+				66FDC15AAE493444B99787EBFD094692 /* QYCustomResource.bundle */,
+				B1ECA5503AC44C279188143A9E73E802 /* QYLanguage.bundle */,
+				7CD5F360EA7B3BE5805C03202A02824F /* QYResource.bundle */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/QY_iOS_SDK";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		936EBA68EE35E82526BF9FBE964DAB36 /* All */ = {
@@ -2278,6 +2261,25 @@
 			);
 			sourceTree = "<group>";
 		};
+		D0FDEE11DFED7224CE9AAD8A5417A47D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66A836706484EE87969E62E30A2DD32B /* QYSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7299EB72D47739525CDB3AEF1A2CB96 /* QY_iOS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				D0FDEE11DFED7224CE9AAD8A5417A47D /* Frameworks */,
+				914D4D93912FC490A3A7D848A9CDE5CC /* Resources */,
+				F18FE90039DD6A6DC9E2AC8687C589D8 /* Support Files */,
+			);
+			name = QY_iOS_SDK;
+			path = QY_iOS_SDK;
+			sourceTree = "<group>";
+		};
 		E6D3DAD2A824F49EF72408B3D7C1E2BE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2291,14 +2293,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ZXingObjC";
-			sourceTree = "<group>";
-		};
-		EDE3540604D6E3E6C0B6FBC845459953 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				93FFC182C3BEC06696C3B34C2D6F8054 /* QYResource.bundle */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		F0711CE3B1008AAC17CB5591A1F265E1 /* Support Files */ = {
@@ -2324,6 +2318,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F18FE90039DD6A6DC9E2AC8687C589D8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB37E82A13F42279BD976EEA6112EC61 /* QY_iOS_SDK.debug.xcconfig */,
+				7DF86FCB9CE7BB487456AD1F2CE3FEBE /* QY_iOS_SDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/QY_iOS_SDK";
+			sourceTree = "<group>";
+		};
 		F9A38C1F8B71D2516EC468AFBFCBB076 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -2342,14 +2346,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1734DB0B5B81E22840153A5F2CB6187E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2B49B99B7CE3CC3E0E87DBE65E5ABEF1 /* Pods-QYSDKDemo-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1CEDC824B1E552545F40676076BD20E0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2370,6 +2366,14 @@
 				7266EFAF956AEA659AF4D5A589CA4D97 /* IQUIView+Hierarchy.h in Headers */,
 				3B2A13FD720BF70389C731D834C1117B /* IQUIView+IQKeyboardToolbar.h in Headers */,
 				104E7B3F596C88BFC1933E78ED3ACAC3 /* IQUIViewController+Additions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2058265B0240F73E7BD5403C0139BA79 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4992D78CF7CB3113A86FAADAF154A0E /* Pods-QYSDKDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2744,21 +2748,21 @@
 		};
 		8C6A91CF7B6BDCD4D7D87F0BA09EB7F2 /* Pods-QYSDKDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38F0474F4D50AB292D839345033F7B05 /* Build configuration list for PBXNativeTarget "Pods-QYSDKDemo" */;
+			buildConfigurationList = 736D6134902A67E445E837271C1BCAC6 /* Build configuration list for PBXNativeTarget "Pods-QYSDKDemo" */;
 			buildPhases = (
-				1734DB0B5B81E22840153A5F2CB6187E /* Headers */,
-				55426323FBFCB1EC18BF98E8048290AF /* Sources */,
-				29DD38C5F74162EC2BDF70A636522C1F /* Frameworks */,
-				3D1C20CE8BE98684767EB4B10A4904F4 /* Resources */,
+				2058265B0240F73E7BD5403C0139BA79 /* Headers */,
+				B7454924A3F61D3317E29F1BE94DC514 /* Sources */,
+				795AEAB5F176A053FC4E8B2E184B38B6 /* Frameworks */,
+				DF1ECF672866E6609F0E0B5848A51D37 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9DC314B4D8CBF77F42328C06A5C44302 /* PBXTargetDependency */,
-				4B00044DEDCB3B5F3FE11E0A78DBAB39 /* PBXTargetDependency */,
-				E60D394356E378E1BBADDB461068DFFF /* PBXTargetDependency */,
-				A34A975AC048354F440FE970E30B057D /* PBXTargetDependency */,
-				E189DD6980DA92AB270575DBD3E1A47D /* PBXTargetDependency */,
+				5E9BE660698975BEBF7449F322BBFE4F /* PBXTargetDependency */,
+				F1A2E42F817F90AE45CAC0997056412D /* PBXTargetDependency */,
+				D442C9F98407C06B58761B068BE74D32 /* PBXTargetDependency */,
+				E97D22057E2D42D6492CD038EAD0B51B /* PBXTargetDependency */,
+				BAACA9288DD61B64EF60EBE92B974EE4 /* PBXTargetDependency */,
 			);
 			name = "Pods-QYSDKDemo";
 			productName = "Pods-QYSDKDemo";
@@ -2823,13 +2827,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D1C20CE8BE98684767EB4B10A4904F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		728FF2A4CDAFD0B0CDAA210105C25BF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2838,6 +2835,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		93243F2933AD87DBFFDEF846FB110FDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF1ECF672866E6609F0E0B5848A51D37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3079,14 +3083,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55426323FBFCB1EC18BF98E8048290AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E5B18B1AF296983EEA33198974260CB9 /* Pods-QYSDKDemo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5B348A58F743D86566FF6223B24C8A97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3185,86 +3181,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7454924A3F61D3317E29F1BE94DC514 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F9F4ED5B1174B8A11221830510972CF /* Pods-QYSDKDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4B00044DEDCB3B5F3FE11E0A78DBAB39 /* PBXTargetDependency */ = {
+		5897406048C9A996D9E8AD37DA4B09E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NIMSDK_LITE;
 			target = B55FE563084BF0B9075BB021711E7555 /* NIMSDK_LITE */;
-			targetProxy = B51DBB4C9021AE09CD8E19AA263C27EA /* PBXContainerItemProxy */;
+			targetProxy = 87F23A8A9C985CECE61B949E060E568E /* PBXContainerItemProxy */;
 		};
-		9DC314B4D8CBF77F42328C06A5C44302 /* PBXTargetDependency */ = {
+		5E9BE660698975BEBF7449F322BBFE4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = IQKeyboardManager;
 			target = FBA456CB50E371584C11231929A0971E /* IQKeyboardManager */;
-			targetProxy = DC1419207860AA02287C67E91E9C35E3 /* PBXContainerItemProxy */;
+			targetProxy = 84CA9D368233D2861054E192A220FB74 /* PBXContainerItemProxy */;
 		};
-		A34A975AC048354F440FE970E30B057D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SDWebImage;
-			target = 3847153A6E5EEFB86565BA840768F429 /* SDWebImage */;
-			targetProxy = 6D49DCC53F776A59F89354670A17BB82 /* PBXContainerItemProxy */;
-		};
-		C2C66D1458BC22BA9E80EE55F02F3F76 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NIMSDK_LITE;
-			target = B55FE563084BF0B9075BB021711E7555 /* NIMSDK_LITE */;
-			targetProxy = B358F903286C2136F0395429EC78422D /* PBXContainerItemProxy */;
-		};
-		E189DD6980DA92AB270575DBD3E1A47D /* PBXTargetDependency */ = {
+		BAACA9288DD61B64EF60EBE92B974EE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ZXingObjC;
 			target = 30950EABCD5EFA0462FC017837EB16BE /* ZXingObjC */;
-			targetProxy = 1F194BA8849FA84E3A4039695820E2A4 /* PBXContainerItemProxy */;
+			targetProxy = B09543B5C59D53856590E5E7602B6F31 /* PBXContainerItemProxy */;
 		};
-		E60D394356E378E1BBADDB461068DFFF /* PBXTargetDependency */ = {
+		D442C9F98407C06B58761B068BE74D32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = QY_iOS_SDK;
 			target = 0AE94A3413E9F0EE9F99F5767DF03C6B /* QY_iOS_SDK */;
-			targetProxy = 245CB6E96E4104E5A957CDBD7937B322 /* PBXContainerItemProxy */;
+			targetProxy = 2118CD09272A0A8223251EBC0D7FF638 /* PBXContainerItemProxy */;
+		};
+		E97D22057E2D42D6492CD038EAD0B51B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SDWebImage;
+			target = 3847153A6E5EEFB86565BA840768F429 /* SDWebImage */;
+			targetProxy = 696301B7294217FC62F402526B71EA0B /* PBXContainerItemProxy */;
+		};
+		F1A2E42F817F90AE45CAC0997056412D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NIMSDK_LITE;
+			target = B55FE563084BF0B9075BB021711E7555 /* NIMSDK_LITE */;
+			targetProxy = A241ACC20A7E43FA74102D08817E2C86 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		16398692280E86B1DE924A36B0B3718F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F5A8421A42C58CEED039D6421691954 /* Pods-QYSDKDemo.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-QYSDKDemo/Pods-QYSDKDemo-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-QYSDKDemo/Pods-QYSDKDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		24841A53A09BB7F70F7EB38418D34BBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABFB0EE4C1FF26BE670428A1F85823A6 /* IQKeyboardManager.release.xcconfig */;
@@ -3299,6 +3265,60 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		29CF2CA84312CCD608C8AE0D92AFB52D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DF86FCB9CE7BB487456AD1F2CE3FEBE /* QY_iOS_SDK.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39D8CEA435C33782D3F89377C824ABDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2134EBC6076B47883FC3BF96DBE6981 /* Pods-QYSDKDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QYSDKDemo/Pods-QYSDKDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QYSDKDemo/Pods-QYSDKDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		505B068F330CD8E31D885F0179292B35 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3559,23 +3579,6 @@
 			};
 			name = Release;
 		};
-		C07C3DEB2950D2F66C3797BC3BE1EA7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDF5DD7F820AE2799F61A991AEF0ACF6 /* QY_iOS_SDK.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		C73E17DD356F66D74B2A023858198A20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61D829F920178E00CED629A0229A9DE1 /* ZXingObjC.release.xcconfig */;
@@ -3610,22 +3613,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		C89A31116EDA9312FA5E169B7AAF1D86 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49F55AE7C8F7DF9DBBA1A5FE1223C338 /* QY_iOS_SDK.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		C9FED3CD72F9D1F10CC114E208AC2647 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3662,9 +3649,25 @@
 			};
 			name = Release;
 		};
-		E3C2A8B7F8B77B88CAAE40A22403EBCF /* Debug */ = {
+		CBC8452DB62E939365E9D1F7ADCB67A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2134EBC6076B47883FC3BF96DBE6981 /* Pods-QYSDKDemo.debug.xcconfig */;
+			baseConfigurationReference = EB37E82A13F42279BD976EEA6112EC61 /* QY_iOS_SDK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1AEBD021A4B632438EBBAF484136EEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F5A8421A42C58CEED039D6421691954 /* Pods-QYSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -3694,37 +3697,29 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		38F0474F4D50AB292D839345033F7B05 /* Build configuration list for PBXNativeTarget "Pods-QYSDKDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E3C2A8B7F8B77B88CAAE40A22403EBCF /* Debug */,
-				16398692280E86B1DE924A36B0B3718F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3B545D2A8A3BFF36E697BA2351307858 /* Build configuration list for PBXAggregateTarget "QY_iOS_SDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C89A31116EDA9312FA5E169B7AAF1D86 /* Debug */,
-				C07C3DEB2950D2F66C3797BC3BE1EA7D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				916E0404255105F480DC4950B7625F7A /* Debug */,
 				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		736D6134902A67E445E837271C1BCAC6 /* Build configuration list for PBXNativeTarget "Pods-QYSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39D8CEA435C33782D3F89377C824ABDD /* Debug */,
+				F1AEBD021A4B632438EBBAF484136EEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3743,6 +3738,15 @@
 			buildConfigurations = (
 				505B068F330CD8E31D885F0179292B35 /* Debug */,
 				24841A53A09BB7F70F7EB38418D34BBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4AB70FD631BE38A88D88697569193CE /* Build configuration list for PBXAggregateTarget "QY_iOS_SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBC8452DB62E939365E9D1F7ADCB67A0 /* Debug */,
+				29CF2CA84312CCD608C8AE0D92AFB52D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

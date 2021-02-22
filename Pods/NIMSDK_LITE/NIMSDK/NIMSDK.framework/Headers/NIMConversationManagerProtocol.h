@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NIMMessageReceipt;
 @class NIMTeamMessageReceiptDetail;
 @class NIMClearMessagesOption;
+@class NIMDeleteRecentSessionOption;
 @class NIMBatchDeleteMessagesOption;
 @class NIMFetchServerSessionOption;
 @class NIMMessageServerRetrieveOption;
@@ -201,6 +202,14 @@ typedef void(^NIMUpdateIncompleteSessionsBlock)(NSError * __nullable error, NSAr
  *  @param result  更新失败的会话
  */
 typedef void(^NIMIncompleteSessionsBlock)(NSError * __nullable error, NSArray<NIMIncompleteSessionInfo *> * __nullable result);
+
+/**
+ *  批量发送会话已读回调
+ *
+ *  @param error  错误,如果成功则error为nil
+ *  @param result  发送失败的会话
+ */
+typedef void(^NIMBatchSendACKSessionsBlock)(NSError * __nullable error, NSArray <NIMSession * > * _Nullable sessions);
 
 /**
  清空会话消息完成时状态回调
@@ -483,6 +492,15 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  */
 - (void)deleteRecentSession:(NIMRecentSession *)recentSession;
 
+/**
+*  删除某个最近会话
+*
+*  @param recentSession 待删除的最近会话
+*  @param option 是否删除漫游选项，isDeleteRoamMessage默认为NO
+*  @param completion 结果回调，不会回调代理方法didRemoveRecentSession:totalUnreadCount:
+*  @discussion 异步方法，删除最近会话，但保留会话内消息
+*/
+- (void)deleteRecentSession:(NIMRecentSession *)recentSession option:(NIMDeleteRecentSessionOption *)option completion:(NIMRemoveRemoteSessionBlock)completion;
 /**
  *  设置所有会话消息为已读
  *

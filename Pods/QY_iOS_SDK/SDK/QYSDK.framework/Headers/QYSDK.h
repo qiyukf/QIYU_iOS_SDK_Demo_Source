@@ -51,6 +51,15 @@ typedef NS_ENUM(NSInteger, QYLocalErrorCode) {
     QYLocalErrorCodeNeedLogout      = 5,    //userId变化，应走帐号切换逻辑，先调用logout
 };
 
+/**
+ *  语言
+ */
+typedef NS_ENUM(NSInteger, QYLanguage) {
+    QYLanguageChineseSimplified     = 0,    //简体中文
+    QYLanguageChineseTraditional    = 1,    //繁体中文
+    QYLanguageEnglish               = 2,    //英语
+};
+
 
 /**
  *  QYSDK：单例模式
@@ -83,6 +92,19 @@ typedef NS_ENUM(NSInteger, QYLocalErrorCode) {
  * @discussion 私有化需进行自定义配置；必须在注册SDK前配置
  */
 @property (nonatomic, strong) QYServerSetting *serverSetting;
+
+/**
+ * 语言设置，默认简体中文
+ * @discussion 目前仅支持简体中文、繁体中文、英语
+ * @discussion 因部分设置项文案需在App启动时刻配置，故修改语言后会影响此部分配置项自定义，即可能会恢复默认设置；因此推荐调用顺序为SDK注册后，即刻设置语言，之后再配置一些自定义属性
+ */
+@property (nonatomic, assign) QYLanguage language;
+
+/**
+ * 是否跟随系统语言自动变化，默认YES
+ * @discussion 开启时设置language无效，仅跟随系统变化
+ */
+@property (nonatomic, assign) BOOL followSystemLanguage;
 
 /**
  *  注册SDK

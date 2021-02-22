@@ -28,11 +28,11 @@ SOFTWARE.
 
 ## NIMSDK_LITE
 
-Copyright 2019 Netease 
+Copyright 2021 Netease 
 
 ## QY_iOS_SDK
 
-Copyright 2020 Netease 
+Copyright 2021 Netease 
 
 
 ## SDWebImage

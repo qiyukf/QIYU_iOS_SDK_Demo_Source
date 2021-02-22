@@ -32,6 +32,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nullable, nonatomic, copy) NSString *postscript;
 
+
+/**
+ * 撤回消息的扩展,撤回方填充
+ */
+@property(nullable, nonatomic, copy) NSString *attach;
+
 @end
 
 NS_ASSUME_NONNULL_END

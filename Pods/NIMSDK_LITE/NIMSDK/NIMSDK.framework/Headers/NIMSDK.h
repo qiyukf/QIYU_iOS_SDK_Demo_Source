@@ -72,6 +72,7 @@
 #import "NIMBroadcastMessage.h"
 #import "NIMImportedRecentSession.h"
 #import "NIMClearMessagesOption.h"
+#import "NIMDeleteRecentSessionOption.h"
 #import "NIMBatchDeleteMessagesOption.h"
 #import "NIMRevokeMessageOption.h"
 #import "NIMSessionDeleteAllRemoteMessagesOptions.h"
