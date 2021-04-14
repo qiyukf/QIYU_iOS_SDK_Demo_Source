@@ -101,6 +101,17 @@ typedef NS_ENUM(NSInteger, NIMSDKAuthMode)
 };
 
 /**
+ *  SDK 认证类型
+ *  0表示最初的loginToken的校验方式，1表示基于appSecret计算的token鉴权方式，2表示基于第三方回调的token鉴权方式，默认0
+ */
+typedef NS_ENUM(NSInteger, NIMSDKAuthType)
+{
+    NIMSDKAuthTypeDefault = 0,
+    NIMSDKAuthTypeDynamicToken = 1,
+    NIMSDKAuthTypeThirdParty = 2,
+};
+
+/**
  *  被踢下线的原因
  */
 typedef NS_ENUM(NSInteger, NIMKickReason)
@@ -199,6 +210,11 @@ typedef NS_ENUM(NSInteger, NIMMultiLoginType){
  */
 - (void)onSuperTeamUsersSyncFinished:(BOOL)success;
 
+/**
+ *  提供动态登陆Token
+ */
+- (NSString *)provideDynamicTokenForAccount:(NSString *)account;
+
 @end
 
 /**
@@ -217,6 +233,11 @@ typedef NS_ENUM(NSInteger, NIMMultiLoginType){
         token:(NSString *)token
    completion:(NIMLoginHandler)completion;
 
+- (void)login:(NSString *)account
+        token:(NSString *)token
+     authType:(int)authType
+     loginExt:(NSString *)loginExt
+   completion:(NIMLoginHandler)completion;
 
 /**
  *  自动登录

@@ -58,6 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)sharedConfig;
 
+/**
+ *  设置禁用NIMSDK tracroute 能力
+ *  @discussion 默认为NO,SDK会在请求失败时,进行 traceroute ,探测网路中各节点,以判断在哪个节点失去连接
+ */
+@property (nonatomic,assign)    BOOL    disableTraceroute;
+
 
 /**
  *  是否在收到消息后自动下载附件 (群和个人)

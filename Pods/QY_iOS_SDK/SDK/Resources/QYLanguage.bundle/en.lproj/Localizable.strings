@@ -313,3 +313,4 @@
 "QYStringOrderType" = "Ticket's type";
 "QYStringTellReasonTip" = "Please tell us the specific reason";
 "QYStringLeaveMsg" = "Message";
+"QYToastStringSessionHasEnded" = "session has ended";

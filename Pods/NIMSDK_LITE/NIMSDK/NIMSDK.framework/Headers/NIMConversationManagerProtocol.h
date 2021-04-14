@@ -212,6 +212,13 @@ typedef void(^NIMIncompleteSessionsBlock)(NSError * __nullable error, NSArray<NI
 typedef void(^NIMBatchSendACKSessionsBlock)(NSError * __nullable error, NSArray <NIMSession * > * _Nullable sessions);
 
 /**
+ *  发送会话已读回调
+ *
+ *  @param error  错误,如果成功则error为nil
+ */
+typedef void(^NIMSendACKSessionsBlock)(NSError * __nullable error);
+
+/**
  清空会话消息完成时状态回调
  */
 typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
@@ -516,12 +523,29 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
 - (void)batchMarkMessagesReadInSessions:(NSArray<NIMSession *> *)sessions;
 
 /**
+ *  批量设置多个会话消息已读
+ *
+ *  @param completion 结果回调。部分成功时，可以从NIMBatchSendACKSessionsBlock的sessions参数得到失败的会话
+ *  @discussion 异步方法。不会触发单条 recentSession 更新的回调，但会触发回调 - onBatchMarkMessagesReadInSessions:
+*/
+- (void)batchMarkMessagesReadInSessions:(NSArray<NIMSession *> *)sessions completion:(NIMBatchSendACKSessionsBlock)completion;
+
+/**
  *  设置一个会话里所有消息置为已读
  *
  *  @param session 需设置的会话
  *  @discussion 异步方法，消息会标记为设置的状态
  */
 - (void)markAllMessagesReadInSession:(NIMSession *)session;
+
+/**
+ *  设置一个会话里所有消息置为已读
+ *
+ *  @param session 需设置的会话
+ *  @param session 结果回调
+ *  @discussion 异步方法，消息会标记为设置的状态
+ */
+- (void)markAllMessagesReadInSession:(NIMSession *)session completion:(NIMSendACKSessionsBlock)completion;
 
 
 

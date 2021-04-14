@@ -95,6 +95,11 @@ typedef NS_ENUM(NSInteger, NIMLoginClientType) {
  */
 @property (nonatomic,copy)      NSString    *token;
 
+
+@property (nonatomic)       int authType;
+
+@property (nonatomic,copy)  NSString *loginExtension;
+
 /**
  *  强制模式
  *  @discussion 默认为 NO.

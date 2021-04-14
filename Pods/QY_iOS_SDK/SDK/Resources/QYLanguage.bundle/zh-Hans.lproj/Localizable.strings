@@ -313,3 +313,4 @@
 "QYStringOrderType" = "工单类型";
 "QYStringTellReasonTip" = "请告知我们具体原因";
 "QYStringLeaveMsg" = "留言";
+"QYToastStringSessionHasEnded" = "会话已结束";
