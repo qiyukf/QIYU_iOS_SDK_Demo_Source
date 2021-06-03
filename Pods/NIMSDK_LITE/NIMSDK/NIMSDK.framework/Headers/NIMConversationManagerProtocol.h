@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NIMIncompleteSessionInfo;
 @class NIMSessionDeleteAllRemoteMessagesOptions;
 @class NIMSessionDeleteAllRemoteMessagesInfo;
+@class NIMAddEmptyRecentSessionBySessionOption;
 
 /**
  *  读取服务器消息记录block
@@ -490,6 +491,16 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  *  @discussion 异步方法
  */
 - (void)addEmptyRecentSessionBySession:(NIMSession *)session;
+
+/**
+ *  增加某个最近会话
+ *
+ *  @param session 待增加的最近会话
+ *  @param withLastMsg 是否包含最后一条消息
+ *  @discussion 异步方法
+ */
+- (void)addEmptyRecentSessionBySession:(NIMSession *)session
+                                option:(NIMAddEmptyRecentSessionBySessionOption *) option;
 
 /**
  *  删除某个最近会话

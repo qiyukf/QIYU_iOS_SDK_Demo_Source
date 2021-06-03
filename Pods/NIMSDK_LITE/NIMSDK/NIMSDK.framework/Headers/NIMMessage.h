@@ -191,6 +191,11 @@ typedef NS_ENUM(NSInteger, NIMMessageStatus) {
 @property (nullable,nonatomic,copy) NSDictionary *yidunAntiCheating;
 
 /**
+*  消息的目标标签表达式
+*/
+@property (nullable,nonatomic,copy) NSString *notifyTargetTags;
+
+/**
 *  环境变量
 *  @discussion 环境变量，用于指向不同的抄送、第三方回调等配置
 */

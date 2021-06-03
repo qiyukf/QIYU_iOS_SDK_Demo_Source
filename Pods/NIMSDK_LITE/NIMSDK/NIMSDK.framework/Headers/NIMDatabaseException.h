@@ -23,6 +23,11 @@ typedef NS_ENUM(NSInteger, NIMDatabaseExceptionType)
      *  损坏的DB
      */
     NIMDatabaseExceptionTypeBadDb,
+
+    /**
+     *  磁盘空间已满
+     */
+    NIMDatabaseExceptionTypeFull,
 };
 
 /**

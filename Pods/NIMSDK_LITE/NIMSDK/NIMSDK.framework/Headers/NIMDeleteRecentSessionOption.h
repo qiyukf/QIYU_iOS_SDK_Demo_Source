@@ -17,6 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property   (nonatomic,assign)  BOOL    isDeleteRoamMessage;
 
+/**
+ *  是否标记会话中所有消息已读
+ *  @discussion ，默认为为 NO，仅删除本地会话；为YES，将同时标记会话中所有消息为已读
+ */
+@property   (nonatomic,assign)  BOOL    shouldMarkAllMessagesReadInSessions;
+
 @end
 
 NS_ASSUME_NONNULL_END

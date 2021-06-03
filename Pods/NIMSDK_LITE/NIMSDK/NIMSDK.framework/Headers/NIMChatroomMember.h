@@ -108,6 +108,16 @@ typedef NS_ENUM(NSInteger, NIMChatroomMemberType) {
  */
 @property (nonatomic,assign) NSTimeInterval enterTimeInterval;
 
+/**
+ *  聊天室成员的tags
+ */
+@property (nullable,nonatomic,copy)   NSString *tags;
+
+/**
+ *  聊天室成员的notifyTargetTags
+ */
+@property (nullable,nonatomic,copy)   NSString *notifyTargetTags;
+
 @end
 
 NS_ASSUME_NONNULL_END

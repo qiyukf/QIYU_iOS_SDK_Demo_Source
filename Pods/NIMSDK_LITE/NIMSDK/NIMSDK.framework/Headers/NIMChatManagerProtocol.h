@@ -256,6 +256,14 @@ typedef void(^NIMChatManagerBlock)(NSError * __nullable error);
 - (void)queryMessageReceiptDetail:(NIMMessage *)message
                        completion:(NIMQueryReceiptDetailBlock)completion;
 
+/**
+* 从本地数据库查询单条群组消息已读、未读账号列表
+* 注意！！！：这里获取的数据通常比离线前的列表信息更陈旧
+*
+* @param message 待查询的消息
+* @return 该消息的已读、未读账号列表
+*/
+- (nullable NIMTeamMessageReceiptDetail *)localMessageReceiptDetail:(NIMMessage *)message;
 
 /**
  *  撤回消息,不含推送信息

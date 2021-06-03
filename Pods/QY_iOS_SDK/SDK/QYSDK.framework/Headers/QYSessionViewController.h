@@ -242,6 +242,7 @@ typedef void (^QYFileCompletion)(NSString *fileName, NSString *filePath);
 
 /**
  *  拍摄视频
+ *  自动发送
  */
 - (void)shootVideoWithCompletion:(QYVideoCompletion)completion;
 

@@ -102,6 +102,15 @@ typedef void(^NIMRequestChatroomAddressesHandler)(NSString *roomId,NIMRequestCha
  *  聊天室事件通知拓展字段
  */
 @property (nullable,nonatomic,copy)  NSString    *roomNotifyExt;
+/**
+ *  登录标签，可以设置多个，json_array格式，例子：["tag1", "tag2"]
+ */
+@property (nullable,nonatomic,copy)  NSString    *tags;
+/**
+ *  登录登出通知的目标标签，是一个标签表达式，见TagCalculator和TagPattern
+ */
+@property (nullable,nonatomic,copy)  NSString    *notifyTargetTags;
+
 
 /**
  *  聊天室重连次数,默认为三次

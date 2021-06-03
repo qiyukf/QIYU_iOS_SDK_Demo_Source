@@ -56,6 +56,7 @@
 #import "NIMMessageChatroomExtension.h"
 #import "NIMChatroomMember.h"
 #import "NIMChatroomMemberRequest.h"
+#import "NIMChatroomTagRequest.h"
 #import "NIMChatroomUpdateRequest.h"
 #import "NIMChatroomQueueRequest.h"
 #import "NIMChatroomBeKickedResult.h"
@@ -65,6 +66,7 @@
  *  消息定义
  */
 #import "NIMMessage.h"
+#import "NIMAddEmptyRecentSessionBySessionOption.h"
 #import "NIMSystemNotification.h"
 #import "NIMRevokeMessageNotification.h"
 #import "NIMDeleteMessagesOption.h"
@@ -77,6 +79,7 @@
 #import "NIMRevokeMessageOption.h"
 #import "NIMSessionDeleteAllRemoteMessagesOptions.h"
 #import "NIMSessionDeleteAllRemoteMessagesInfo.h"
+
 
 /**
  *  推送定义

@@ -43,6 +43,24 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)onTeamMemberChanged:(NIMTeam *)team;
 
+/**
+ *  群组成员变动回调,包含有更新的群成员ID
+ *
+ *  @param team 变动的群组
+ *  @param memberIDs 变动的成员ID
+ */
+- (void)onTeamMemberUpdated:(NIMTeam *)team
+                withMembers:(nullable NSArray<NSString *> *)memberIDs;
+
+/**
+ *  群组成员变动回调,包含被移除的群成员ID
+ *
+ *  @param team 变动的群组
+ *  @param memberIDs 变动的成员ID
+ */
+- (void)onTeamMemberRemoved:(NIMTeam *)team
+                withMembers:(nullable NSArray<NSString *> *)memberIDs;
+
 @end
 
 NS_ASSUME_NONNULL_END

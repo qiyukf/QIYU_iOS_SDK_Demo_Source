@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 @class NIMChatroomQueueBatchUpdateRequest;
 @class NIMHistoryMessageSearchOption;
 @class NIMChatroomBeKickedResult;
+@class NIMChatroomTempMuteTagRequest;
+@class NIMChatroomFetchMembersByTagRequest;
+@class NIMChatroomQueryMembersCountByTagRequest;
 
 
 /**
@@ -66,6 +69,13 @@ typedef void(^NIMChatroomInfoHandler)(NSError * __nullable error,NIMChatroom * _
  *  @param error 错误信息
  */
 typedef void(^NIMChatroomMembersHandler)(NSError * __nullable error, NSArray<NIMChatroomMember *> * __nullable members);
+
+/**
+ *  聊天室成员数量数量回调
+ *
+ *  @param error 错误信息
+ */
+typedef void(^NIMChatroomMembersCountHandler)(NSError * __nullable error, uint64_t count);
 
 
 /**
@@ -276,6 +286,25 @@ typedef NS_ENUM(NSInteger, NIMChatroomKickReason) {
 
 
 /**
+ *  根据标签获取聊天室内该标签下的成员
+ *
+ *  @param request    获取标签成员请求
+ *  @param completion 请求完成回调
+ */
+- (void)fetchChatroomMembersByTag:(NIMChatroomFetchMembersByTagRequest *)request
+                       completion:(nullable NIMChatroomMembersHandler)completion;
+
+
+/**
+ *  根据标签查询聊天室内该标签下的在线成员数量
+ *
+ *  @param request    获取标签成员数量请求
+ *  @param completion 请求完成回调
+ */
+- (void)queryChatroomMembersCountByTag:(NIMChatroomQueryMembersCountByTagRequest *)request
+                       completion:(nullable NIMChatroomMembersCountHandler)completion;
+
+/**
  *  标记为聊天室管理员
  *
  *  @param request    更新请求
@@ -324,6 +353,17 @@ typedef NS_ENUM(NSInteger, NIMChatroomKickReason) {
 - (void)updateMemberTempMute:(NIMChatroomMemberUpdateRequest *)request
                     duration:(unsigned long long)duration
                   completion:(nullable NIMChatroomHandler)completion;
+
+
+/**
+ *  针对标签更新聊天室临时禁言状态
+ *
+ *  @param request    更新请求
+ *  @param duration   临时禁言时长，单位为秒
+ *  @param completion 请求回调
+ */
+- (void)tempMuteTag:(NIMChatroomTempMuteTagRequest *)request completion:(NIMChatroomHandler)completion;
+
 /**
  *  将特定成员踢出聊天室
  *

@@ -3247,7 +3247,7 @@
 			};
 			name = Debug;
 		};
-		21E975B794CAC0C7BDE2F77F532E5DEC /* Debug */ = {
+		0F28AE9D37F250C7374D1D7E61100F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B89582777E903FE8AE73A1D4556E447 /* SDWebImage.debug.xcconfig */;
 			buildSettings = {
@@ -3262,7 +3262,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3483,7 +3483,7 @@
 			};
 			name = Release;
 		};
-		9467F5FD6B249087335608FBC39D039F /* Release */ = {
+		8E5946E32E072A69F1964AF40712FF8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 09B1AAA46D7534E9416C825FA023E3A4 /* SDWebImage.release.xcconfig */;
 			buildSettings = {
@@ -3498,7 +3498,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3750,8 +3750,8 @@
 		F7647E2BDF8B9DF44AD8E949386796A7 /* Build configuration list for PBXNativeTarget "SDWebImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				21E975B794CAC0C7BDE2F77F532E5DEC /* Debug */,
-				9467F5FD6B249087335608FBC39D039F /* Release */,
+				0F28AE9D37F250C7374D1D7E61100F1C /* Debug */,
+				8E5946E32E072A69F1964AF40712FF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

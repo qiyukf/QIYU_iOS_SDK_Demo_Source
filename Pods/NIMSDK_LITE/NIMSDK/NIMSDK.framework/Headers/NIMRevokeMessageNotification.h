@@ -83,6 +83,12 @@ typedef NS_ENUM(NSInteger, NIMRevokeMessageNotificationType) {
  */
 @property (nonatomic,assign,readonly) BOOL roaming;
 
+
+/**
+ * 撤回操作是否属于离线消息
+ */
+@property (nonatomic,assign,readonly) BOOL offline;
+
 /**
  * 撤回的附言
  */

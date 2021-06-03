@@ -118,6 +118,10 @@ typedef NS_ENUM (NSInteger, NIMServerEnv){
  */
 @property (nonatomic,copy,nullable)     NSString    *ntServerAddress;
 /**
+ * 异常上报地址: 408、415、500等
+ */
+@property (nonatomic,copy)              NSString    *exceptionUploadAddress;
+/**
 * IPv4 连通性检测地址
 */
 @property (nonatomic,copy,nullable)     NSString    *lbsIpv4DetectAddress;
