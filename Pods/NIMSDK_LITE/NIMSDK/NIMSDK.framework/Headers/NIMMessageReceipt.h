@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NIMSession;
 @class NIMMessage;
+@class NIMTeamMessageReceipt;
 
 /**
  *  已读回执
@@ -37,6 +38,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  @discussion 只有 Team 会话有效，表示已读的这条消息的 Id
  */
 @property (nonatomic,copy,readonly)      NSString    *messageId;
+
+/**
+ * 群已读回执相关信息
+ */
+@property (nonatomic,strong,readonly)    NIMTeamMessageReceipt    *teamReceiptInfo;
+
 
 
 /**

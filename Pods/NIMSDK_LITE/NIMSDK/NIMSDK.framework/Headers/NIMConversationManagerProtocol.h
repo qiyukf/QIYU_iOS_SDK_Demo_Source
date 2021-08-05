@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NIMSessionDeleteAllRemoteMessagesOptions;
 @class NIMSessionDeleteAllRemoteMessagesInfo;
 @class NIMAddEmptyRecentSessionBySessionOption;
+@class NIMMessageFullKeywordSearchOption;
 
 /**
  *  读取服务器消息记录block
@@ -496,7 +497,7 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  *  增加某个最近会话
  *
  *  @param session 待增加的最近会话
- *  @param withLastMsg 是否包含最后一条消息
+ *  @param option 配置项
  *  @discussion 异步方法
  */
 - (void)addEmptyRecentSessionBySession:(NIMSession *)session
@@ -515,7 +516,7 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
 *
 *  @param recentSession 待删除的最近会话
 *  @param option 是否删除漫游选项，isDeleteRoamMessage默认为NO
-*  @param completion 结果回调，不会回调代理方法didRemoveRecentSession:totalUnreadCount:
+*  @param completion 结果回调
 *  @discussion 异步方法，删除最近会话，但保留会话内消息
 */
 - (void)deleteRecentSession:(NIMRecentSession *)recentSession option:(NIMDeleteRecentSessionOption *)option completion:(NIMRemoveRemoteSessionBlock)completion;
@@ -744,6 +745,21 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  */
 - (void)retrieveServerMessages:(NIMSession *)session
                         option:(NIMMessageServerRetrieveOption *)option
+                        result:(nullable NIMRetrieveServerMessagesBlock)result;
+
+
+
+
+/**
+ *  根据关键字从服务器上全量检索消息
+ *
+ *  @param session 消息所属的会话
+ *  @param option  检索选项
+ *  @param result  读取的消息列表结果
+ *  @discussion    检索消息内容，此接口仅支持查询P2P和群聊消息，不支持聊天室和超大群
+ *
+ */
+- (void)retrieveServerMessages:(NIMMessageFullKeywordSearchOption *)option
                         result:(nullable NIMRetrieveServerMessagesBlock)result;
 
 /**

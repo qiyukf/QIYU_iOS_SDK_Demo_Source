@@ -28,6 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,assign,readonly)       NSInteger unreadCount;
 
+/**
+ * 账号
+ * @discussion 新读过这条消息的用户的账号
+ */
+@property (nonatomic,copy,readonly)      NSString    *readerAccount;
+
 @end
 
 NS_ASSUME_NONNULL_END
