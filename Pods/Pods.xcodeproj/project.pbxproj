@@ -2359,8 +2359,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F741924D26FBF0403B284AED21EDCB /* IQBarButtonItem.h in Headers */,
-				12C6E46A5E0FD04DBF7866649491D5F7 /* IQKeyboardManager-umbrella.h in Headers */,
 				6BF82ADE657E689F4F4D4FB0C1D27248 /* IQKeyboardManager.h in Headers */,
+				12C6E46A5E0FD04DBF7866649491D5F7 /* IQKeyboardManager-umbrella.h in Headers */,
 				2B3C65EB96B8237408B8CFC1586F406E /* IQKeyboardManagerConstants.h in Headers */,
 				1B41AC54E11CACC13E07B06EC6D17919 /* IQKeyboardManagerConstantsInternal.h in Headers */,
 				8839DA33B5164E66F5730317AE92546E /* IQKeyboardReturnKeyHandler.h in Headers */,
@@ -2484,8 +2484,8 @@
 				4C421A924893DDAEDEEEB7145C1E7C3F /* ZXGridSampler.h in Headers */,
 				CB5D0B3A5E393A7C8B852C02F73E2996 /* ZXHybridBinarizer.h in Headers */,
 				52068C2728473B658A10880C786EB333 /* ZXImage.h in Headers */,
-				303C336FF7A471F52DB307F7ADFF5179 /* ZXingObjC-umbrella.h in Headers */,
 				9DF3A0E6DE3536921C465DFC39F43344 /* ZXingObjC.h in Headers */,
+				303C336FF7A471F52DB307F7ADFF5179 /* ZXingObjC-umbrella.h in Headers */,
 				5786FB5A749366D659F314FBE8D05870 /* ZXingObjCAztec.h in Headers */,
 				113F8095005F328CBEF6DA00A7B0DB77 /* ZXingObjCCore.h in Headers */,
 				E0389335C796549A455087AAAECB6AF4 /* ZXingObjCDataMatrix.h in Headers */,
@@ -2637,8 +2637,8 @@
 				1F55097C4490DCFB8BA4B3D8D284ED33 /* SDAnimatedImage.h in Headers */,
 				DDABCEDA1455A7213CC6411BEE294CCB /* SDAnimatedImagePlayer.h in Headers */,
 				B74F4E473F8A8EE8922DE009ADBA3AB0 /* SDAnimatedImageRep.h in Headers */,
-				18D1D252617EE8076F60E5F13462A79F /* SDAnimatedImageView+WebCache.h in Headers */,
 				870F8CC125713185231805CA5F1A3005 /* SDAnimatedImageView.h in Headers */,
+				18D1D252617EE8076F60E5F13462A79F /* SDAnimatedImageView+WebCache.h in Headers */,
 				6D807F4E3245C11DF14F39F681BAEA23 /* SDAssociatedObject.h in Headers */,
 				71C95FB341142F6C81587F4A60DC189F /* SDAsyncBlockOperation.h in Headers */,
 				7771562E8212237F9D71DFA61B548766 /* SDDeviceHelper.h in Headers */,
@@ -2671,8 +2671,8 @@
 				482390939D521EDC7E4197436C13C005 /* SDMemoryCache.h in Headers */,
 				B13000184102BC002BDF251521D52FBE /* SDmetamacros.h in Headers */,
 				3D375A85D8162BC44D045F53781D006A /* SDWeakProxy.h in Headers */,
-				B964F75E0BEC223C3DDD199C6342AE0F /* SDWebImage-umbrella.h in Headers */,
 				A128F49AA0C69EC677B7CBE89E876B42 /* SDWebImage.h in Headers */,
+				B964F75E0BEC223C3DDD199C6342AE0F /* SDWebImage-umbrella.h in Headers */,
 				04762E2F6696F6B57AC647288F800D2D /* SDWebImageCacheKeyFilter.h in Headers */,
 				08414C28164CC487E519E30C48342B08 /* SDWebImageCacheSerializer.h in Headers */,
 				84B3C925CCA883C89A4FAF942D952371 /* SDWebImageCompat.h in Headers */,
@@ -2793,8 +2793,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -3102,8 +3102,8 @@
 				6AC5D2781167F9081FBA570FC8B89C90 /* SDAnimatedImage.m in Sources */,
 				D91024E2275D2B62BB8CDFAADDA9F999 /* SDAnimatedImagePlayer.m in Sources */,
 				E3C7DC809034DACD9D1FF1856DAD3ED2 /* SDAnimatedImageRep.m in Sources */,
-				1F7AFE861609115DF7D756769A553F87 /* SDAnimatedImageView+WebCache.m in Sources */,
 				E57482DCBAB73E4AC9A8EB0816998D8F /* SDAnimatedImageView.m in Sources */,
+				1F7AFE861609115DF7D756769A553F87 /* SDAnimatedImageView+WebCache.m in Sources */,
 				02292FC1E8CF700F59D154DF2C841F75 /* SDAssociatedObject.m in Sources */,
 				AF855A5EDCAEFF0EFCD1F6AC49D664B5 /* SDAsyncBlockOperation.m in Sources */,
 				A8C8A2C92F70DFC3E67E1CCB0A5FBDA3 /* SDDeviceHelper.m in Sources */,
@@ -3173,8 +3173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C253F868600B259CA4FD39A9A5D7D025 /* IQBarButtonItem.m in Sources */,
-				BFCFD1B6E83BED8638290D9F0FB58E7C /* IQKeyboardManager-dummy.m in Sources */,
 				4D009BF653F1C9AB12CA9DECED6CAAB0 /* IQKeyboardManager.m in Sources */,
+				BFCFD1B6E83BED8638290D9F0FB58E7C /* IQKeyboardManager-dummy.m in Sources */,
 				FCEC05C4AD02A79F3F1B4B859186F401 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				25ED403997DCA16626CB15246ACEB3D7 /* IQNSArray+Sort.m in Sources */,
 				0E8B87FA998C7178EBEE0D8A3F6C0A98 /* IQPreviousNextView.m in Sources */,
