@@ -314,3 +314,4 @@
 "QYStringTellReasonTip" = "Please tell us the specific reason";
 "QYStringLeaveMsg" = "Message";
 "QYToastStringSessionHasEnded" = "session has ended";
+"QYToastStringSwitchCompanyError" = "商家客服快捷入口已过期";

@@ -314,3 +314,4 @@
 "QYStringTellReasonTip" = "请告知我们具体原因";
 "QYStringLeaveMsg" = "留言";
 "QYToastStringSessionHasEnded" = "会话已结束";
+"QYToastStringSwitchCompanyError" = "商家客服快捷入口已过期";

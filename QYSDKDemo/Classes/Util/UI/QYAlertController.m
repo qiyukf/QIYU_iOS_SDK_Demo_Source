@@ -531,9 +531,9 @@ static NSUInteger PSTVisibleAlertsCount = 0;
 
 @implementation QYAlertController (Convenience)
 
-+ (instancetype)actionWithTitle:(NSString *)title handler:(void (^)(QYAlertAction *action))handler {
-    return [[self alloc] initWithTitle:title style:QYAlertActionStyleDefault handler:handler];
-}
+//+ (instancetype)actionWithTitle:(NSString *)title handler:(void (^)(QYAlertAction *action))handler {
+//    return [[self alloc] initWithTitle:title style:QYAlertActionStyleDefault handler:handler];
+//}
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message {
     return [[self alloc] initWithTitle:title message:message preferredStyle:QYAlertControllerStyleAlert];
