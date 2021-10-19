@@ -214,6 +214,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setupSDKDir:(NSString *)sdkDir;
 
+
+@property (nonatomic,assign)    BOOL    linkQuickSwitch;
+
 @end
 
 
