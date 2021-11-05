@@ -215,6 +215,8 @@ typedef NS_ENUM(NSInteger, NIMMultiLoginType){
  */
 - (NSString *)provideDynamicTokenForAccount:(NSString *)account;
 
+- (int)reconnectDelay;
+
 @end
 
 /**

@@ -186,6 +186,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL asyncLoadRecentSessionEnabled;
 
 /**
+*  是否开启会话数据库备份，默认NO，不开启
+*  @discussion 开启数据库备份后，如果遇到数据库文件损坏，SDK会恢复备份的数据库文件，并重置漫游时间戳
+*/
+@property (nonatomic, assign) BOOL sessionDatabaseBackupEnabled;
+
+/**
  *  日志上传大小上限，默认 0，不限制，单位(byte)
  */
 @property (nonatomic, assign)  unsigned long long maxUploadLogSize;
@@ -204,6 +210,18 @@ NS_ASSUME_NONNULL_BEGIN
  * cdn统计回调触发间隔。触发cdn拉流前设置，触发拉流后改动将不生效。0s代表不统计。默认30s。
  */
 @property (nonatomic, assign) NSTimeInterval cdnTrackInterval;
+
+/**
+ * 聊天室消息接收回调最小时间间隔，不设置时，采用默认值
+ *  @discusssion SDK采纳的有效设置区间为：50毫秒到500毫秒，如果低于或高于边界值，采用边界值
+ */
+@property (nonatomic, assign) NSTimeInterval chatroomMessageReceiveMinInterval;
+
+/**
+ *  NIMSDK优化设置
+ *  @discussion 此选项为高级设置，具体设置需要联系技术支持。
+ */
+@property (nullable,nonatomic,copy)  NSString    *optimizeSettings;
 
 /**
  *  设置 SDK 根目录

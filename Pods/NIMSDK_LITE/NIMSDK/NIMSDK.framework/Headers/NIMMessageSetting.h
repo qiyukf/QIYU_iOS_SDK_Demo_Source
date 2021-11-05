@@ -73,6 +73,12 @@ NS_ASSUME_NONNULL_BEGIN
 */
 @property (nonatomic,assign)    BOOL isSessionUpdate;
 
+/**
+ *  消息是否需要快速投递
+ *  @discussion 默认为NO。将这个字段设为YES，消息在SDK内部将以最高优先级处理并发送，但会抢占其他业务的处理资源。此选项仅对点对点，群组，超大群会话类型有效
+ */
+@property (nonatomic,assign)    BOOL        quickDeliveryEnabled;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -191,6 +191,16 @@ typedef NS_ENUM(NSInteger, NIMMessageStatus) {
 @property (nullable,nonatomic,copy) NSDictionary *yidunAntiCheating;
 
 /**
+ * 易盾反垃圾扩展字段，限制json，长度限制1024
+ */
+@property (nullable,nonatomic,copy) NSString *yidunAntiSpamExt;
+
+/**
+ * 易盾反垃圾返回的结果字段
+ */
+@property (nullable,nonatomic,copy) NSString *yidunAntiSpamRes;
+
+/**
 *  消息的目标标签表达式
 */
 @property (nullable,nonatomic,copy) NSString *notifyTargetTags;
