@@ -264,6 +264,11 @@ typedef void(^NIMUploadLogsHandler)(NSError *error, NSString *path);
  */
 @property (nonatomic,strong,readonly)   id<NIMChatExtendManager> chatExtendManager;
 
+/**
+ *   索引管理类
+ */
+@property (nonatomic,strong,readonly)   id<NIMIndexManager> indexManager;
+
 @end
 
 NS_ASSUME_NONNULL_END

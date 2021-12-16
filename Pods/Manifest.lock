@@ -1,8 +1,8 @@
 PODS:
   - IQKeyboardManager (6.5.6)
-  - NIMSDK_LITE (8.7.2)
-  - QY_iOS_SDK (6.10.0):
-    - NIMSDK_LITE (= 8.7.2)
+  - NIMSDK_LITE (8.8.3)
+  - QY_iOS_SDK (6.11.0):
+    - NIMSDK_LITE (= 8.8.3)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -12,7 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager
-  - QY_iOS_SDK (~> 6.10.0)
+  - QY_iOS_SDK (~> 6.11.0)
   - SDWebImage
   - ZXingObjC
 
@@ -26,11 +26,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  NIMSDK_LITE: e6aa51eda2e5568956adae6c726063fb6d411cc4
-  QY_iOS_SDK: 5a618c420e0f8fc6b95d85e12c367bc414d69f2d
+  NIMSDK_LITE: 40f02533dcacd7a61a9a84a7755db791fdb68633
+  QY_iOS_SDK: 6bac560e5830c90e06f9af3fb80ec515faf71c85
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 72784de6c79c779ee400224b645386f46be36b13
+PODFILE CHECKSUM: 07a61c4aed22a0e29992ae2b840a0d11e8f46e42
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2

@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NIMSessionDeleteAllRemoteMessagesInfo;
 @class NIMAddEmptyRecentSessionBySessionOption;
 @class NIMMessageFullKeywordSearchOption;
+@class NIMMessageFullKeywordSearchOrderByTimeOption;
 
 /**
  *  读取服务器消息记录block
@@ -768,7 +769,6 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
 /**
  *  根据关键字从服务器上全量检索消息
  *
- *  @param session 消息所属的会话
  *  @param option  检索选项
  *  @param result  读取的消息列表结果
  *  @discussion    检索消息内容，此接口仅支持查询P2P和群聊消息，不支持聊天室和超大群
@@ -776,6 +776,16 @@ typedef NS_ENUM(NSUInteger, NIMClearMessagesStatus)
  */
 - (void)retrieveServerMessages:(NIMMessageFullKeywordSearchOption *)option
                         result:(nullable NIMRetrieveServerMessagesBlock)result;
+
+/**
+ * 云端历史消息全文检索（按时间排序，不按会话分组）
+ *
+ * @param option 检索选项，其中sessionLimit为无效变量
+ * @param result  读取的消息列表结果
+ * @discussion    检索消息内容
+ */
+- (void)retrieveServerMessagesOrderByTime:(NIMMessageFullKeywordSearchOrderByTimeOption *)option
+                                   result:(nullable NIMRetrieveServerMessagesBlock)result;
 
 /**
  *  搜索本地会话内消息

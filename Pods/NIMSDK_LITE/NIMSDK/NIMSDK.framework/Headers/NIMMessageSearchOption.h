@@ -293,4 +293,72 @@ typedef NS_ENUM(NSInteger,NIMMessageSearchOrder) {
 
 @end
 
+
+/**
+ *  服务端消息全量检索选项
+ *  @discussion 搜索条件: 时间在(startTime,endTime) 内(不包含)，类型为 messageTypes （或全类型） ，且匹配 searchContent 或 fromIds 的一定数量 (limit) 消息
+ */
+@interface NIMMessageFullKeywordSearchOrderByTimeOption : NSObject
+
+/**
+ *  关键字
+ */
+@property (nullable,nonatomic,copy)      NSString *keyword;
+
+/**
+ *  起始时间,默认为0
+ */
+@property (nonatomic,assign)    NSTimeInterval startTime;
+
+
+/**
+ *  结束时间,默认为0
+ *  @discussion 搜索的结束时间,0 表示最大时间戳
+ */
+@property (nonatomic,assign)    NSTimeInterval endTime;
+
+/**
+ *  消息的检索条数
+ *  @discussion 消息条数限制
+ */
+@property (nonatomic,assign)    NSUInteger msgLimit;
+
+/**
+ * 检索结果的排列顺序
+ * @diacussion 如果为true，结果按照升序排列，如果为false，按照时间降序排列
+ */
+@property (nonatomic, assign) BOOL asc;
+
+/**
+ * P2P会话列表
+ * @discussion
+ */
+@property (nullable, nonatomic, copy)   NSArray *p2pArray;
+
+/**
+ * 群列表
+ * @discussion
+ */
+@property (nullable, nonatomic, copy)   NSArray *teamArray;
+
+/**
+ * 发送方列表
+ * @discussion
+ */
+@property (nullable, nonatomic, copy)   NSArray *senderArray;
+
+/**
+ * 消息类型列表
+ * @discussion
+ */
+@property (nullable, nonatomic, copy)   NSArray *msgTypeArray;
+
+/**
+ * 消息子类型列表
+ * @discussion
+ */
+@property (nullable, nonatomic, copy)   NSArray *msgSubtypeArray;
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -190,6 +190,11 @@ typedef NS_ENUM(NSInteger, NIMLocalErrorCode) {
      *  重复加入白板会议
      */
     NIMLocalErrorCodeJoinSameRTSConference = 23,
+    
+    /**
+     *  功能不支持
+     */
+    NIMLocalErrorCodeNotSupported = 24,
 };
 
 

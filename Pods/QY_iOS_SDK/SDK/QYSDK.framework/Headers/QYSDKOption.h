@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * App名称，即七鱼管理后台添加App时填写的App名称；对应云信的Apns推送证书名apnsCername
  */
-@property (nullable, nonatomic, copy) NSString *appName;
+@property (nonnull, nonatomic, copy) NSString *appName;
 
 /**
  * PushKit推送证书名；对应云信的pkCername

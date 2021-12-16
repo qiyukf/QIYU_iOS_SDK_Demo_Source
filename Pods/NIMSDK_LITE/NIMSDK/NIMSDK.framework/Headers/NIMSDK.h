@@ -146,6 +146,7 @@
 #import "NIMSignalManagerProtocol.h"
 #import "NIMPassThroughManagerProtocol.h"
 #import "NIMChatExtendManagerProtocol.h"
+#import "NIMIndexManagerProtocol.h"
 
 /**
  *  SDK业务类
