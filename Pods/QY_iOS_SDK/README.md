@@ -169,7 +169,7 @@ QYSDK 动态库已在 **V5.11.0** 版本正式上线：[CocoaPods地址](http://
 
 #### https相关
 
-V3.1.3 版本开始，SDK 已全面支持 https，但是聊天消息中可能存在链接，点击链接会用 `UIWebView` 打开，链接地址有可能是 http 的，为了能够正常打开，需要增加配置项。在 **Info.plist** 中加入以下内容：
+V3.1.3 版本开始，SDK 已全面支持 https，但是聊天消息中可能存在链接，点击链接会用 `webView` 打开，链接地址有可能是 http 的，为了能够正常打开，需要增加配置项。在 **Info.plist** 中加入以下内容：
 
 ```objectivec
 <key>NSAppTransportSecurity</key>
@@ -181,7 +181,7 @@ V3.1.3 版本开始，SDK 已全面支持 https，但是聊天消息中可能存
 </dict>
 ```
 
-加了这些配置项，在 iOS9 下，系统仅读取 `NSAllowsArbitraryLoads`，会放开所有 http 请求；在 iOS10 及以上系统，设置了 `NSAllowsArbitraryLoadsInWebContent`，就会忽略 `NSAllowsArbitraryLoads`，效果是只允许 `WKWebView` 中使用 http。SDK 消息流链接默认使用 `UIWebView` 打开，可通过截获链接点击事件使用自定义网页视图。
+加了这些配置项，在 iOS9 下，系统仅读取 `NSAllowsArbitraryLoads`，会放开所有 http 请求；在 iOS10 及以上系统，设置了 `NSAllowsArbitraryLoadsInWebContent`，就会忽略 `NSAllowsArbitraryLoads`，效果是只允许 `WKWebView` 中使用 http。SDK 消息流链接默认使用 `webView` 打开，可通过截获链接点击事件使用自定义网页视图。
 
 #### 类库说明
 
