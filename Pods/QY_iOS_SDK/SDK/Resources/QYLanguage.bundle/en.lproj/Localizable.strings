@@ -10,6 +10,7 @@
 "QYTitleStringVideo" = "Video";
 "QYTitleStringDetail" = "Detail";
 "QYTitleStringFilePreview" = "File Preview";
+"QYTitleStringLogining" = "正在登录";
 "QYTitleStringConnecting" = "Connecting";
 "QYTitleStringInputting" = "Inputting...";
 "QYTitleStringFillRemark" = "Fill In Remark";
@@ -208,6 +209,7 @@
 "QYToastStringEvaluationTimeout" = "The evaluation has timed out and cannot be evaluated";
 "QYToastStringBypassTip" = "In order to provide you with more professional services, please select the type of content you want to consult";
 "QYToastStringWaitConnecting" = "Please wait for a successful connection before sending a message";
+"QYToastStringSwitchDeviceLogin" = "您的聊天账号已切换设备登录，请重新发送消息";
 "QYToastStringBlankMsgTip" = "Cannot send blank message";
 "QYToastStringInSessionTip" = "You have a conversation in progress. Do you want to end the conversation and initiate a new consultation?";
 "QYToastStringInQueueToNewSession" = "You have a queue in progress. Do you want to exit the queue and initiate a new consultation?";

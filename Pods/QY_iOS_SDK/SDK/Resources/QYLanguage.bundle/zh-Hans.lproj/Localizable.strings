@@ -10,6 +10,7 @@
 "QYTitleStringVideo" = "视频";
 "QYTitleStringDetail" = "详情";
 "QYTitleStringFilePreview" = "文件预览";
+"QYTitleStringLogining" = "正在登录";
 "QYTitleStringConnecting" = "正在连接";
 "QYTitleStringInputting" = "对方正在输入...";
 "QYTitleStringFillRemark" = "填写备注";
@@ -208,6 +209,7 @@
 "QYToastStringEvaluationTimeout" = "评价已超时，无法进行评价";
 "QYToastStringBypassTip" = "为了给您提供更专业的服务，请您选择要咨询的内容类型";
 "QYToastStringWaitConnecting" = "请等待连接成功后，再发送消息";
+"QYToastStringSwitchDeviceLogin" = "您的聊天账号已切换设备登录，请重新发送消息";
 "QYToastStringBlankMsgTip" = "不能发送空白消息";
 "QYToastStringInSessionTip" = "您有会话正在进行中，是否结束会话发起新的咨询？";
 "QYToastStringInQueueToNewSession" = "您有排队正在进行中，是否退出排队发起新的咨询？";
