@@ -260,10 +260,13 @@ typedef NS_ENUM(NSInteger, QYMessagesLoadState) {
 @property (nonatomic, assign) BOOL showEmoticonEntry;
 
 /**
- *  输入栏相机按钮是否显示，默认为YES
+ *  输入栏机器人阶段相机按钮是否显示，默认为NO
+ */
+@property (nonatomic, assign) BOOL showRobotImageEntry;
+/**
+ *  输入栏人工阶段相机按钮是否显示，默认为YES
  */
 @property (nonatomic, assign) BOOL showImageEntry;
-
 /**
  * 照片/视频选择页面主题颜色，默认为蓝色
  */
