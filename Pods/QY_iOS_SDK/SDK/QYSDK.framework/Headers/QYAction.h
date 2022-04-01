@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, QYActionType) {
     QYActionTypeNone = 0,
     QYActionTypeRequestStaffBefore,     //请求客服前
     QYActionTypeRequestStaffAfter,      //请求客服后
+    QYActionTypeSessionAllocation       //会话分配
 };
 
 /**
