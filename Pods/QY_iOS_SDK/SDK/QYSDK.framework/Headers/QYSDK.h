@@ -58,6 +58,14 @@ typedef NS_ENUM(NSInteger, QYLanguage) {
     QYLanguageChineseSimplified     = 0,    //简体中文
     QYLanguageChineseTraditional    = 1,    //繁体中文
     QYLanguageEnglish               = 2,    //英语
+    QYLanguageJapan                 = 3,    //日语
+    QYLanguageKorea                 = 4,    //韩语
+    QYLanguageGerman                = 5,    //德语
+    QYLanguageFrench                = 6,    //法语
+    QYLanguageThai                  = 7,    //泰语
+    QYLanguageIndonesian            = 8,    //印尼语
+    QYLanguageVietnamese            = 9,    //越南语
+    QYLanguageFilipino              = 10,    //菲律宾语
 };
 
 
@@ -95,7 +103,7 @@ typedef NS_ENUM(NSInteger, QYLanguage) {
 
 /**
  * 语言设置，默认简体中文
- * @discussion 目前仅支持简体中文、繁体中文、英语
+ * @discussion 目前仅支持简体中文、繁体中文、英、日、韩、德、法、泰、印尼语、越南语、菲律宾语
  * @discussion 因部分设置项文案需在App启动时刻配置，故修改语言后会影响此部分配置项自定义，即可能会恢复默认设置；因此推荐调用顺序为SDK注册后，即刻设置语言，之后再配置一些自定义属性
  */
 @property (nonatomic, assign) QYLanguage language;
