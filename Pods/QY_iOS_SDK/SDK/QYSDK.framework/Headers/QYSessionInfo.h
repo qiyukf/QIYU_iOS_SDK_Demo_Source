@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "QYMessageInfo.h"
 
+@class NIMMessage;
+
 /**
  *  会话状态类型
  */
@@ -27,6 +29,11 @@ typedef NS_ENUM(NSInteger, QYSessionStatus) {
  *  会话最后一条消息文本
  */
 @property (nonatomic, copy) NSString *lastMessageText;
+
+/**
+ *  会话最后一条消息
+ */
+@property (nullable,nonatomic,strong) NIMMessage  *lastMessage;
 
 /**
  *  消息类型

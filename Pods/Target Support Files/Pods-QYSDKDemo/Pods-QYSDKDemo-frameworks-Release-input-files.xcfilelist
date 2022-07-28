@@ -1,6 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-QYSDKDemo/Pods-QYSDKDemo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
-${PODS_ROOT}/NIMSDK_LITE/NIMSDK/NIMSDK.framework
+${PODS_ROOT}/QY_NIMSDK_LITE/NIMSDK.framework
 ${PODS_ROOT}/QY_iOS_SDK/SDK/QYSDK.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/ZXingObjC/ZXingObjC.framework
